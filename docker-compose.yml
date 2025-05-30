@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mock-gestor-incidencias:
+    build:
+      context: ./mock-gestor-incidencias
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./mock-gestor-incidencias:/app
+      - /app/node_modules
+
+  mock-sistema:
+    build:
+      context: ./mock-sistema
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./mock-sistema:/app
+      - /app/node_modules
+
+  vector-db:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  qdrant_storage: 
