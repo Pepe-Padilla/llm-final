@@ -1,3 +1,8 @@
+# LLM - Final
+### LLM y proyecto final - Proyecto para el Bootcamp
+Este proyecto es un entregable para la práctica del Master Bootcamp Inteligencia Artificial Full Stack Edición III realizado por el centro de formación [@Keepcoding](https://github.com/KeepCoding)
+
+---
 # Sistema de Gestión Automática de Incidencias
 
 Este proyecto implementa un sistema de gestión automática de incidencias utilizando técnicas avanzadas de procesamiento de lenguaje natural y bases de datos vectoriales.
