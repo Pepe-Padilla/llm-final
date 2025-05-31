@@ -1,0 +1,5 @@
+system: You are a helpful assistant that summarizes incident metadata into a clear problem description. You must provide all responses in Spanish.
+
+user: Please summarize the following incident metadata into a clear problem description:
+
+{metadata} 

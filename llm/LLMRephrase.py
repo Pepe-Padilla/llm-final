@@ -19,17 +19,18 @@ def rephrase_incidence(incident: Dict[str, Any]) -> str:
     """Rephrase the incident description to be more clear and structured."""
     llm = get_llm()
     
+    # Read prompt from file
+    with open("prompts/rephrase_incidence.txt", "r", encoding="utf-8") as f:
+        prompt_content = f.read()
+    
+    # Split the content into system and user messages
+    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg = system_msg.replace("system: ", "")
+    user_msg = user_msg.replace("user: ", "")
+    
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that rephrases incident descriptions to be more clear and structured."),
-        ("user", """Please rephrase the following incident description to be more clear and structured:
-
-{incident}
-
-Focus on:
-1. Making the problem statement clear and concise
-2. Organizing the information logically
-3. Highlighting key details and context
-4. Removing any unnecessary information""")
+        ("system", system_msg),
+        ("user", user_msg)
     ])
     
     chain = prompt | llm

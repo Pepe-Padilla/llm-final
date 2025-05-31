@@ -19,9 +19,18 @@ def generate_summary(metadata: Dict[str, Any]) -> str:
     """Generate a summary of the incident from its metadata."""
     llm = get_llm()
     
+    # Read prompt from file
+    with open("prompts/generate_summary.txt", "r", encoding="utf-8") as f:
+        prompt_content = f.read()
+    
+    # Split the content into system and user messages
+    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg = system_msg.replace("system: ", "")
+    user_msg = user_msg.replace("user: ", "")
+    
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that summarizes incident metadata into a clear problem description."),
-        ("user", "Please summarize the following incident metadata into a clear problem description:\n{metadata}")
+        ("system", system_msg),
+        ("user", user_msg)
     ])
     
     chain = prompt | llm

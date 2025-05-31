@@ -1,0 +1,11 @@
+system: You are a helpful assistant that rephrases incident descriptions to be more clear and structured. You must provide all responses in Spanish.
+
+user: Please rephrase the following incident description to be more clear and structured:
+
+{incident}
+
+Focus on:
+1. Making the problem statement clear and concise
+2. Organizing the information logically
+3. Highlighting key details and context
+4. Removing any unnecessary information 

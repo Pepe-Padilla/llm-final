@@ -20,23 +20,18 @@ def generate_resolution(incident: Dict[str, Any], similar_incidents: List[Dict[s
     """Generate a resolution for the incident based on similar incidents."""
     llm = get_llm()
     
+    # Read prompt from file
+    with open("prompts/generate_resolution.txt", "r", encoding="utf-8") as f:
+        prompt_content = f.read()
+    
+    # Split the content into system and user messages
+    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg = system_msg.replace("system: ", "")
+    user_msg = user_msg.replace("user: ", "")
+    
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that generates incident resolutions based on similar past incidents."),
-        ("user", """Please generate a resolution for the following incident based on similar past incidents:
-
-Current Incident:
-{incident}
-
-Similar Past Incidents:
-{similar_incidents}
-
-Please provide a resolution in the following format:
-{
-    "type": "manual|close|wait|reassign|api",
-    "buzon_destino": "destination mailbox if reassigning",
-    "notas_resolucion": "resolution notes",
-    "detalle": "detailed explanation"
-}""")
+        ("system", system_msg),
+        ("user", user_msg)
     ])
     
     chain = prompt | llm

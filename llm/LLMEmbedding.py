@@ -8,7 +8,7 @@ def get_embeddings():
     if os.getenv("ENTORNO") == "DESA":
         return OllamaEmbeddings(
             base_url=os.getenv("OLLAMA_BASE_URL"),
-            model="llama2"
+            model="all-minilm"
         )
     else:
         return OpenAIEmbeddings(

@@ -19,19 +19,18 @@ def check_relevance(incident: Dict[str, Any]) -> bool:
     """Check if the incident is relevant for automatic resolution."""
     llm = get_llm()
     
+    # Read prompt from file
+    with open("prompts/check_relevance.txt", "r", encoding="utf-8") as f:
+        prompt_content = f.read()
+    
+    # Split the content into system and user messages
+    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg = system_msg.replace("system: ", "")
+    user_msg = user_msg.replace("user: ", "")
+    
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that determines if an incident can be automatically resolved."),
-        ("user", """Please determine if the following incident can be automatically resolved:
-
-{incident}
-
-Consider the following criteria:
-1. The incident has enough information to make a decision
-2. The incident is not too complex or requires human judgment
-3. The incident is not a critical system issue
-4. The incident is not a security-related issue
-
-Please respond with 'true' if the incident can be automatically resolved, or 'false' if it requires human intervention.""")
+        ("system", system_msg),
+        ("user", user_msg)
     ])
     
     chain = prompt | llm
