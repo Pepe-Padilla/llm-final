@@ -1,0 +1,440 @@
+COMPONENTE,DESCRIPCION,TIPO INCIDENCIA,SOLUCIÓN,FECHA DE RESOLUCIÓN,RESOLUCION AUTOMÁTICA,BUZON REASIGNACION
+Reembolsos,"No se visualiza la póliza, tiene cancellationDate mayor que el día actual",Código Back,"Se actualiza el código en el componente de Reembolsos para controlar que la fecha de Cancelación sea menor, actualmente está como mayor",,api|actualizaCodigoReembolsos,
+Reembolsos,No carga documentación general de la póliza. ,Dato,"Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de ""idDistributor"" e ""idAgente""",,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Reembolsos,No carga documentación particular de la póliza,Dato,Derivar a GR_SAL_CIC_PLANENTREGA_NET. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir,,reasignacion,GR_SAL_CIC_PLANENTREGA_NET
+Reembolsos,No aparecen todos los asegurados,Dato,Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario,,manual,
+Reembolsos,Error al adjuntar documentacion,API Tercero,Derivar al componente de Arquitectura GR_ARQUITECTURA,,reasignacion,GR_ARQUITECTURA
+Autorizaciones,"EN POSICIÓN GLOBAL SE CARGAN LOS SEGUROS PERO EN EL COMPONENTE DE AUTORIZACIONES SOLAMENTE SE CARGA LA PÓLIZA DENTAL
+",Código Back,Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario,,manual,
+Reembolsos,Error al finalizar el proceso Reembolsos,API Tercero,"Se encuentra relacion con error en KIBANA, pasar a equipo CORE",,reasignacion,CORE
+Reembolsos,PROBLEMA IBAN,Dato Usuario,Se valida en un validador online y se solicita al usuario que vuelva a probar,,api|comprobarIban,
+Reembolsos,No permite reembolsos de farmacia,No es incidencia,"Se revisa con Elena y la póliza del cliente no es Reembolsable, por lo que se cierra",,cierre,
+Autorizaciones,Error inesperado al finalizar Autorizaciones,Dato,Se cierra por strikes,,cierre,
+Tarjeta Digital,No carga la tarjeta digital,Código Back, Se corrige el decoder del token del usuario para que permita caracteres que no son Base64,,api|reviarToken,
+Batch,Incidencia Batch caido paso stepSptperactProvFather,Dato,Los proveedores hijos tenían una fecha anterior a los padres. Verificar word con pasos a seguir,,manual,
+Duplicado Tarjeta,boton ir a tarjeta digital apunta a url PRE,Código Front,Se modifical a url,,api|comprobarUrl,
+Cuadro Médico,"Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página",Código Front,El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente,,reasignacion,CARTERA
+Reembolsos,No puede añadir información requerida al reembolso,Usuario,Se cierra ya que el usuario no puede añadir más información a un reembolsos ya tramitado,,En espera,
+Tarjeta Digital,Sólo se ve tarjeta dental en Componente en Tarjeta Digital,Dato,Pendiente Cliente,,En espera,
+Reembolsos,No carga datos en Componente Reembolsos,Código Back,"Actualmente se comprueba que el idAlhambra del usuario logado (obtenido del Directorio activo) coincida con sus pólizas de alta (llamada al searchByPoliza). Una vez obtenido el resultado, se recorren las pólizas comparando con el idAlhambra y en caso de no existir ese id retorna un error. Esto se soluciona buscando por DNI, pero es un cambio ya que habría que definir bien todas las casuísticas y deriva de la nueva versión del API, con la anterior no pasaba. Se realizará el cambio para subirlo lo antes posible una vez acordada la lógica con los responsables",,api|compruebaAlhambra,
+Cuadro Médico,No carga pólizas en Cuadro Médico,Código Back,"Al realizar la llamada a ""health_insureds_comp/insured_modules/opt_search_by_policy"" se indica el idAlhambra del usuario logado. Al invocar a la nueva versión del API e indicar un idAlhambra que no coincide con la póliza enviada pero sí con el mismo cliente, no lo retorna, mostrando menos pólizas. La solución para esta sería eliminar de la llamada el idAlhambra pero tenemos que confirmar con Cartera ya que si se aplica alguna lógica de visibilidad podríamos saltárnosla. Es un cambio, ya que antes no ocurría y ahora si, debido a cambios en el API de Cartera que afectan al componente y no estaban contemplados",,manual,
+Tarjeta Digital,"Botón ir a tarjeta digital en la pantalla final, pero apunta a url de PRE.",Código Front,Se soluciona modificando la url en el código. Pendiente de subida,,En espera,
+Tarjeta Digital,PDF en blanco,Dato,El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga,,api|scriptCarga,
+Autorizaciones,Titular no visualiza los beneficiarios de la póliza,Dato,No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo PYME y no pueden verlos,,cierre,
+Reembolsos,Error al adjuntar fotografia. Le lleva a pantalla inicial,Código Front,Se deriva al componente de Arquitectura,,reasignacion,ARQUITECTURA
+Autorizaciones,Error inesperado al finalizar petición de autorizaciones,Dato,Se deriva la incidencia ya que es problema del api de medial request. Revisar en kibana si da fallo,,manual,
+Autorizaciones,Al acceder a la web no le carga los apartados de autorizaciones,N/D,3 strikes,,cierre,
+Autorizaciones,Error cuando ha rellenado y adjuntado el archivo al enviar,Dato,Puede ser igual que el ID016,,cierre,
+Cuadro Médico,No visualiza la póliza en CM,Código Back,PTE. CLIENTE,,En espera,
+Cuadro Médico,Al compartir profesional genera url localhost,Código Front,En los dispositivos moviles recoge la url como localhost. Se añade parametrizacion específica para que siempre vaya a la web publica,,manual,
+Cuadro Médico,Vínculo erróneo en una FAQ,Código Front,Se modificará el link,4/3/2023,api|comprobarUrl,
+Autorizaciones,No le aparece ningun asegurado,API Tercero,Se deriva a Cartera. Al consultar el searchByPolicy se retorna vacio,,reasignacion,CARTERA
+Gestión Pólizas,No sale traza en Siebel,Código Back,Retormarla,,manual,
+Tarjeta Digital,No esta dado de alta el ID_Product en la base de datos,Dato,"No es una incidencia, se debe a ser un nuevo producto. Se debe solicitar a Negocio que envíe los nuevos colores de la tarjeta y darlos de alta en la BBDD intermedia",,cierre,
+Reembolsos,Error validación NIF/CIF,Dato Usuario,B61862826. Falla un validador web. Falla en PRE,,api|comprobarCIF,
+Gestión Pólizas,Error al acceder al componente de Pólizas. Aspa Roja,API Tercero,"Se comprueba en Kibana de Aplicaciones por userId y se detectan errores, comprobando en Kibana API y verificando error en Kibana de API del servicio searchByPolicy",,manual,
+Gestión Pólizas,No le carga la póliza en mi póliza,API Tercero,"Se comprueba en Kibana de Aplicaciones por userId y se detectan errores, comprobando en Kibana API y verificando que el searchByRol devuelve el bloque de insured vacío",,manual,
+Autorizaciones,Al llegar al paso donde debe adjuntar la documentación no le sale el botón de hacer foto o adjuntar archivos,Cerrada,Actualizar app,,cierre,
+Cuadro Médico,No visualiza la poliza,Dato,"Se deriva a Cartera, en la operación SearchByPolicyOpt no venía la información de la segunda póliza",,reasignacion,CARTERA
+Autorizaciones,Al adjuntar documento le saca de la sesión,Código Front,"Pendiente de actualizar el componente de Files, bloqueado por Arquitectura",,reasignacion,ARQUITECTURA
+Reembolsos,No visualiza el historico,Dato,Fallo en llamada al core,,reasignacion,CORE
+Reembolsos,No carga beneficiarios,Cerrada,Cerrada por ser el comportamiento correcto. Asegurados no pueden ver a otros asegurados en reembolsos,,cierre,
+Reembolsos,Aparece la cuenta duplicada y no le deja introducir otra. Aparece el asegurado multiples veces,Dato,Se actualizan datos en BBDD,,manual,
+Gestión Pólizas,No le aparece uno de los beneficiarios,Dato,Parece derivar de clientes con DNI duplicados,,reasignacion,CORE
+Cuadro Médico,No carga poliza por error con versionOfferDescription,Código Back,Work in progress pendiente de reasignar a cartera,,reasignacion,CARTERA
+Tarjeta Digital,No aparecen todos los beneficiarios,Dato,Al ser póliza pyme no debería ver ninguno,,cierre,
+Gestión Pólizas,No permite descargar documentación,Código Front,Fallo en codigo agente,,reasignacion,AGENTE
+Gestión Pólizas,Datos de los asegurados intercambiados,Dato,No reproducible,,En espera,
+Reembolsos,Carga beneficiario que esta de baja,Dato,No reproducible,,En espera,
+Cuadro Médico,Proveedor tiene mal la dirección,Dato,Script,,api|scriptDirecciones,
+Reembolsos,No carga poliza ni asegurado,API Tercero,El usuario logado viene con el campo cancellationDate informado en la llamada al /search_by_policy con una póliza en estado ALTA en la llamada /search_relations,,manual,
+Tarjeta Digital,Muestra una tarjeta dada de baja,Dato,"Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)",,api|cancelationDate,
+Reembolsos,VALIDATE PERCIPIENT DATA IF NO EMPTY,Dato,"Comprobar si el campo acc_nif_beneficiary es null en BBDD. En ese caso, revisar le documentNumber de la llamada serch_by_rol de la asegurada a la que se le asigna la cuenta bancaria",,manual,
+Autorizaciones,El campo de Medico Realizador no admite comillas dobles,Front,Se modificaran las comillas dobles por simples,,manual,
+Reembolsos,REEMBOLSO NO ENCONTRADO,Código Back,"Se corrige el campo la forma de mapear el campo ""lgAmbulatorio"" de responseMapper.toResponseInvoiceDetailsDTO() en el método generateCommunicationWithExtractList() porque llega como int y no como un String",,api|actualizaAmbulatorio,
+Reembolsos,No carga poliza ni asegurado por caracter especial,Codigo Back,Se ha refactorizado la construcción de JSON para usar explícitamente JSONObject.put() en lugar de .toString() para resolver errores de formato por comillas simples y caracteres especiales en el método getPoliciesByToken(),,manual,
+Reembolsos,Mensaje aparece con letras en blanco,,,,manual,
+Autorizaciones,Fallo con la provincia de la solicitud (sin acentos),Front,,,manual,
+Autorizaciones,"Error para solicitar autorizacion con traza ""Se ha capturado una FunctionalException: Cn [45826709Z] dont found in active directory""",,,,manual,
+,"APARECE REEMBOLSO NO ENCONTRADO CON UNA CRUZ CUANDO PINCHA EN REQUIERE INFORMACÓN
+ Nombre y Apellidos. MARC JEAN-PAUL SERIN 
+ ◦ Número de tarjeta. 568880621
+ ◦ Póliza. PO: 883413978-0-1 
+ ◦ DNI/NIE X8270981C
+ ◦ Teléfono de contacto. 660 412 203
+ ◦ E-mail marc.j.serin@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+,"NO PUEDE VER LA INFORMACION QUE LE SOLICITAN PARA RESPONDER A LA COMUNICACION. ADJUNTO FOTO 
+ Nombre y Apellidos. MARIA DE LOS AN MONTERO SANTALLA 
+ ◦ Número de tarjeta. 886942062
+ ◦ Póliza. PO: 888540506-0-1 
+ ◦ DNI/NIE 00402806F 
+ ◦ Teléfono de contacto. 668582230
+ ◦ E-mail marian.montero.mail@gmail.com
+ 
+ VALERIA DEL CA ARIÑO MONTERO
+ DNI : 53815348V",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+,"EL ASEGURADO A LA HORA DE PEDIR LA AUTORIZACION CUANDO ACCEDER DESDE GESTIONES - AUTORIZACIONES Y LUEGO LE DA A SOLICITAR AUTORIZACION TODO OK Y CUANDO RELLENA GRAN PARTE DE LA SOLICITUD TODO BIEN PERO CUANDO SELECCIONA PRUEBA MEDICA SALE EL MENSAJE DEL CUADRO MEDIDO, CUANDO LE DA A DE ACUERDO VUELVE A SALIR UNA Y OTRA VEZ EL MENSAJE SIN DEJARLE CONTINUAR CON LA SOLICITUD
+ 
+ JOSE LUIS MORANT RAMON 
+ T: 692349824 
+ PO: 666000001-286202657-0 
+ CORREO: jlmorant48@gmail.com
+ DNI: 22502249S",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,"NO PUEDE SGESTIONAR CITAS DESDE LA APP
+ DAVID BREZNIK 
+ T: 568778404 
+ PO: 882851690-0-43 
+ X4978676G
+ davidbreznik@hotmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Error: Asegurado no visualiza condicionado de Adesla plena extra 150.000€
+ NIF/NIE/Otros: 29079290E
+ Nombre y apellidos: JOSE ANTONIO MONTERO CASTILLA 
+ Nº de Tarjeta: T: 181012354 
+ Nº de póliza: PO: 181047405-0-1 
+ Fecha de nacimiento: 22/03/1967
+ Ramo: Salud
+ Día y Hora en que se produce el error:19/05/25-16:13
+ Email y teléfono de contacto: giusam@hotmail.com-620206090",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_GESTION_POLIZAS
+,MANUEL FERNANDEZ HIGUERA T: 15377759 PO: 666000001-16012738-0 PR: MUFACE SubCol: M.U.F.A.C.E. FA: 2/1/90 EMAIL manumendi@gmail.com MOVIL 656742943 NIF: 16246640S,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,"Buenos días,
+ 
+ Hemos observado que la vista web de ciertos centros aparecen mal. No es siempre ni a todos los usuarios pero, de repente, salen mal. Adjuntamos word con ejemplos.
+ 
+ La primera vez tras la búsqueda sale mal (lo lee como profesional porque aparece esa palabra arriba) y luego hay en casos que sale bien cuando repites la búsqueda y otros que no (como los Manzanos que aunque repitas sigue saliendo mal).
+ 
+ Un saludo",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"WEB// INDICA ERROR AL FINALIZAR PETICIÓN DE AUTORIZACIÓN, RELLENA TODO, ADJUNTA DOC Y AL FINALIZARLA SALTA ERROR: ""SE HA PRODUCIDO UN ERROR, POR FAVOR INTÉNTELO MÁS TARDE"" . ANULA PERFIL Y VUELVE A REGISTRARSE Y LA INCIDENCIA PERSISTE, DE FORMA EXCEPCIONAL ENVÍO PLANTILLA PARA QUE PUEDA GESTIONAR LA PETICIÓN DE AUTORIZACIÓN. PASO SD.
+ NORA MOHAMED BEKAY T: 520166621 PO: 666000005-382459-0 PR: ISFAS SubCol: NORMAL FA: 20/12/10 
+ DNI: 45300240S
+ FECHA DE NACIMIENTO: 28/01/1987
+ EMAIL: flower_pawer@hotmail.com
+ TLF: 647023655",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,"ADJUNTO CAPTURAS DE PANTALLAS QUE ENVIA EL ASEGURADO. 
+ Nombre y Apellidos. DAVID MONTAÑES ANDREU 
+ ◦ Número de tarjeta. 889123015 
+ ◦ Póliza. 888042826-0-1 
+ ◦ DNI/NIE 17754395M
+ ◦ E-mail mallarino79@hotmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Buenos días ,
+ 
+ Adjuntamos Word con incidencia para que, por favor, se revise.
+ 
+ Muchas gracias y un saludo",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Buenos días,
+ 
+ Se ha detectado que cuando abrimos un presupuesto ya existente desde Salesforce, y se produce un error en la llamada al API (por ejemplo en ""pricings"") el tarificador te deja en la primera pantalla, en lugar de posicionarte en la que debería (selección de productos, en este caso). Es necesario revisarlo porque seguramente suceda con cualquier pantalla, y es importante que te posicione en la correcta.
+ 
+ Adjuntamos una captura de ejemplo.
+ 
+ Muchas gracias.
+ 
+ Un saludo.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_TARIFICADOR_AGENCIAL
+,"ITZIAR LOPEZ XIOL 
+ NIF: 47894589X
+ T: 571328882 
+ PO: 882700087-0-30 
+ Tlf.: 609765826
+ Correo electrónico: itloxiol@gmail.com
+ 
+ NO LE PERMITE PEDIR CITA ONLINE, SIEMPRE LE SALTA ESE MENSAJE DE ERROR",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Buenas,
+ hemos realizado el cruce de TT y nuestro CM, ambos ficheros del dia 10_04, y adjuntamos listado revisado. En la pestaña denominada TT Revisar estan filtrados los 789 registros que estando en TT publicados no tienen en nuestro CM indicador cita on line en RPA a true.
+ Un saludo",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,"WEB// CONTACTA HIJA DE ASEGURADO, KAREN NICOLE, INDICANDO QUE CUANDO ENTRA AL AREA CLIENTE DEL ASEGURADO Y HACE EL FORMULARIO DE LA AUTORIZACION, LE APARECE EL DESPLEGABLE PARA SELECCIONAR AL ASEGURADO Y A ELLA MISMA, A LA HORA DE SOLICITAR LA AUTORIZACION PARA CUALQUIERA DE LOS DOS ASEGURADOS APARECE EN LA POLIZA DE KAREN. 
+ 
+ Nombre y Apellidos. JAIRO SILVA MARTINEZ 
+ Número de tarjeta. 698940791
+ Póliza. 666022601-18014-1 
+ DNI 46486171C
+ Teléfono de contacto. 679595143
+ E-mail: jairo.silva546@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,"DESDE SCA (WEB) Y ASYB (APP) ESTA TODO OK A EXCEP. DEL COMPONENTE DE AUTOR DONDE AL GESTIONAR AUTORIZACIONES POR MANUEL, SE GESTIONAN A NOMBRE DE MELISSA, (QUIEN ESTA EN OTRA PÓLIZA DONDE MANUEL ES SOLO PAGADOR) AUNQUE DESDE EL ÁREA DE CLIENTES CONSTEN COMO QUE ESTA NOMBRE DE MANUEL NO ES ASI Y LE SALTAN EN EL ÁREA DE CLIENETES DE MELISSA COMO DE ELLA.
+ 
+ DATOS ASEGURADO AFECTADO:
+ 
+ MANUEL JIMENEZ RAIGON
+ T: 862286111 
+ NIF: 34020586K
+ EMAIL: 05/06/1964
+ TLF: 699829584
+ 
+ PÓLIZA DONDE ES TITULAR/TOMADOR: PO: 666008765-291-0 PR: MODULAR COLECTIVOS SubCol: METRO MADRID C/COPAG FA: 1/12/08 
+ 
+ PÓLIZA DONDE SOLO ES PAGADOR: PO: 666008765-18884-0 PR: MODULAR COLECTIVOS SubCol: SUB. 2- SIN COPAGO FA: 1/2/21",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,Los botones a tarjeta digital están llevando al sharepoint,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_DUPLICADO_TARJETA
+,"Buenas tardes,
+ 
+ Hemos detectado que en el WC de gestión de solicitudes, cuando se borra un interviniente, se refresca la pantalla de forma asíncrona sin esperar a tener el OK del borrado, por lo que sigue apareciendo el interviniente borrado y la pestaña de documentación tampoco aparece actualizada. Si refrescas el navegador, ya aparece bien.
+ 
+ Es necesario controlar la llamada ""borrado interviniente"" y que hasta que no responda, no se refresque la pantalla (no se hagan las llamadas a recuperar toda la info con el resto de operaciones).
+ 
+ Os dejo por aquí una solicitud creada en PRE que os puede servir de apoyo: 4001299029. Si tenéis dudas, contactad conmigo por favor (David Duran).
+ 
+ Muchas gracias.
+ 
+ Un saludo.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_GESTION_SOLICITUDES
+,"Cuando se modifica cualquier mensaje parametrizable que está publicado, tiene que desactivarse para que el rol Asistencial, vuelva a publicarlo.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,"Buenas, 
+ 
+ Antes de que se implementara el batch de carga de PRO nocturno para que los datos de la BBDD intermedia se trasladen al fichero de ingesta para que Elastic pueda trabajar con él y, en consecuencia el CM tenga los datos actualizados, todos los textos de las especialidades, prestadores, direcciones, etc venían en mayúscula.
+ 
+ Esto se mantuvo como incidencia puesto que en los mockups definidos por UX/UI no aparecía así. Por tanto, lo que se acordó fué que los nombres de los prestadores para evitar problemas se iban a mantener en mayúsculas y todo lo demás vendría capitalizado.
+ 
+ Lo que se hizo cuando se subió este proceso batch es capitalizarlo todo (primera en mayúscula y resto en minúscula). Por tanto, lo que hay que hacer es que los nombres de los prestadores, los continúe dejando en mayúscula. 
+ 
+ Os adjunto ppt con lo indicado.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Buenos días,
+ 
+ Adjuntamos word con una incidencia que observamos al realizar la búsqueda del texto libre ""mano"" en el cuadro médico web.
+ 
+ Muchas gracias y un saludo",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,"Hola
+ al levantar la pantalla de realizar el envío en otra dirección la ventana aparece sin scroll, no se ven todos los campos y es imposible trabajar con ella. Adjunto pantallazo
+ Muchas gracias",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_DUPLICADO_TARJETA
+,ERROR AL ENVIAR AUTORIZACION,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+,No puede leer los mensajes de reembolsos,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+,ERROR AL SOLICITAR REEMBOLSOS,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,ERROR AL SOLICITAR AUTORIZACION,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,NO APARECE COMUNICACION EN REQUIERE INFORMACION,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_GESTION_POLIZAS
+,ERROR REEMBOLSO NO ENCONTRADO AL VER REQUIERE INFORMACION,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,NO PUEDE GESTIONAR CITAS,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,ERROR AL FINALIZAR UNA AUTORIZACIÓN.,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,Error en la parametrización de un centro,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,Error en tratamiento de errores tras iniciar un presupuesto preexistente desde Salesforce,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,ERROR AL INTENTAR PEDIR CITA ONLINE,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_TARIFICADOR_AGENCIAL
+,Adjuntamos listado de 789 registros que estan en TT y no pintan boton en nuestro CM,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,ERROR AUTORIZACION,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,SE GESTIONAN LAS SOLICITUDES DE AUTOR A OTRO NOMBRE,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+,Tras borrar un interviniente no se refresca la información del WC,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_DUPLICADO_TARJETA
+,Desactivar mensajes modificados,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_GESTION_SOLICITUDES
+,Formato Texto tras el batch de actualización datos de ingesta,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CUADRO_MEDICO
+,INCIDENCIA BUSQUEDA TEXTO LIBRE MANO EN WEB,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+,No se puede incluir otra dirección,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+ERROR AL SOLICITAR AUTORIZACION,"ASEGURADO INDICA QUE MIENTRAS REALIZA SU AUTORIZACION , CUANDO PULSA EN UN APARTADO A ""SIGUIENTE"" LE VUELVE A LA PANTALLA DE INICIO NO DEJANDO SEGUIR CON SU GESTION
+ Nombre y Apellidos. MARIA CONSUELO CARRALERO CARVAJAL 
+ ◦ Número de tarjeta. 428011762
+ ◦ Póliza. PO: 282056879-0-1 
+ ◦ DNI/NIE 05213183A
+ ◦ E-mail carraleroconsuelo@gmail.com
+ TLFN 646924064",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_AUTORIZACIONES
+ERROR AL PEDIR CITA BOTON NO FUNCIONA,"MARIA SOL ALIVERTI NIF: AAJ893062 T: 568083118 PO: 666028765-4665-1 PR: MODULAR COLECTIVOS SubCol: SEPTIEMBRE ARISTEO FA: 1/9/24 solaliverti@gmail.com EMAIL: 662543983
+ 
+ ASEGURADA CONTACTA YA QUE INDICA QUE HA INTENTANDO ACCEDER AL CUARO MEDICO PARA PEDIR CITA CON VARIOS ESPECIALISTAS COMO GINECOLOGIA Y ENDOCRINO, PERO SIEMPRE LE DA ERROR, ASEGURADA ANEXA CAPTURA DE PANTALLA Y VIDEO EN DONDE INTENTA SOLICITAR EN OTRORRINO EN CLINICA AMSTRONG INTERNACIONAL PERO LE DA ERROR 
+ 
+ NOTA DE LA ASEGURADA: Intenté desde mi móvil Android y desde el ordenador. Ambos, con Chrome.Cuando voy al cuadro médico para solicitar cita hago click en ""pedir cita"" y no me despliega ninguna opción de dia ni de hora. NO pasa la interfaz de la página. Adjunto video. Esto pasa con cualquier especialista",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+CUADRO MEDICO,"NO FUNCIONA EN CUADRO MEDICO EL BOTON PARA PEDIR CITA, CUANDO LO PRESIONA NO LE APARECE NADA NADIA AREA VAAMONDE T: 165634405 PO: 666023187-504-0 PR: MODULAR COLECTIVOS SubCol: GERENPIACC FA: 1/11/20 CORREO: nadiaarea0@gmail.com TELEFONO: 605899173
+ 53160476R",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+NO CARGA LA POLIZA EN REEMBOLSOS,"MERCEDES ALONSO LOPEZ T: 571951675 PO: 282635912-0-2 PR: ADESLAS EMPRESAS Y DENTAL SubCol: FA: 1/1/25 
+ Fecha Nacimiento: 11/07/1971
+ DNI. 51686352Q
+ EMAIL. mercedes@antariaservices.es
+ TLFN. 647562236
+ ---ERROR AL SOLICITAR REEMBOLSO, NO LE CARGA LA POLIZA NI EL ASEGURADO",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+NO APARECE POLIZA EN REEMBOLSOS,"AL ACCEDER DESDE LA APP AL APARTADO REEMBOLSOS. NO LE FIGURA PÓLIZA PARA SELECCIONAR. APARECE EN BLANCO. NO PUEDE CONTINUAR. SI APARECE EN OTROS COMPONENTES COMO EN AUTORIZACIONES.
+ 
+ ALMUDENA ABAD CARDENAS 
+ NIF: 07244515K
+ T: 860286395 
+ PO: 666005000-32958-0 
+ Fecha Nacimiento: 08/11/1973
+ Teléfono: +34609552350
+ EMAIL: correoalmudena73@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Incidencia en cuadro médico MUFACE,"Buenos días,
+ 
+ Adjuntamos e-mails que nos trasladan desde Alicante indicando que un usuario cuando accede a su cuadro médico MUFACE lo que le muestra es el privado.
+ 
+ Por favor, necesitamos se revise.
+ 
+ Muchas gracias y un saludo",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+No visualiza Poliza en componente reembolsos,"Buenas tardes , paso datos para reportar incidencia con componente reembolsos, no le aparece póliza se le queda en blanco y no le deja selecciónar
+ 
+ NOMBRE: FRANCESC D'ASIS
+ APELLIDOS: BLAYA LARA
+ DNI/NIE/PASAPORTE: 46812031Q
+  T: 162295870
+ PO: 666012942-446
+ PR: PR: MODULAR COLECTIVOS 
+ SubCol: SubCol: CAIXABANK (COMPLETA) 
+ FA: FA: 1/2/20 
+ TELÉFONO: 620036244 
+ CORREO ELECTRÓNICO: fblayalara@gmail.com
+ FECHA DE NACIMIENTO: 01/02/1975
+ FECHA: 30.04.2025",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+NO RECONOCE EN EL AREA DE CLIENTE AL ASEGURADO EN LA OPCION DE REEMBOLSO,"ASEGURADO INDICA QUE NO LE RECONOCE EN LA OPCION DE REEMBOLSO NINGUN ASEGURADO, VEMOS EN SLA Y APARECEN LOS DATOS BLOQUEADOS, EN MDM DESBLOQUEADOS Y EN ECO APARECEN DUPLICADOS 
+ 
+ JOSE JOAQUIN LOBO MENDEZ DE VIGO 
+ T: 570054842 
+  PO: 282625776-0-1 
+ PR: ADESLAS PLENA EXTRA 
+ FA: 21/10/24 
+ NIF: 50849825E
+ TELEFONO: 660417006 
+ EMAIL: jjlobomv@yahoo.es",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR TARJETA DIGITAL,"Asegurado reclama que le aparece mal la tarjeta digital y al solicitar el duplicado le salta error. Adjunto imágenes.
+ 
+ Solicito se solvente la incidencia.
+ JOSE PAULINO FERNANDEZ MALLADA T: 0 PO: 666019955-11-0 PR: MODULAR COLECTIVOS SubCol: SIPLA- CSL FA: 1/1/18 -FB: NIF: 11063421F Fecha Nacimiento: 10/03/1961 Codigo Cliente: 6666103467 MARIA ISABEL MARTIN HOLGADO T: 0 PO: 666019955-11-1 PR: MODULAR COLECTIVOS SubCol: SIPLA- CSL FA: 1/1/18 -FB: Fecha Nacimiento: 04/01/1965 NIF: 11071592J Tfno. 687554718. jospau047@hotmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_TARJETA_DIGITAL
+ERROR MODIFICACION DE CUENTA BANCARIA,"WEB// ASEGURADA INDICA QUE DESDE SU AREA DE CLIENTE NO PUEDE MODIFICAR SU CUENTA BANCARIA, INDICA QUE ACCEDE A ""MI PERFIL > DATOS BANCARIOS"" Y NO LE DEJA HACER EN CLIC EN MODIFICAR LA CUENTA BANCARIA.
+ 
+ Nombre y Apellidos. NOEMI RODRIGUEZ BENITEZ
+ Número de tarjeta. 89433446
+ Póliza. 81588749-0-1
+ DNI: 77746547S
+ Teléfono de contacto. 644031011
+ E-mail: noemirodriguezb@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_GESTION_POLIZAS
+ERROR COMPONENTE REEMBOLSOS,"Buenos días, compañeros:
+ 
+ Tras gestionar baja y alta del usuario, la información sigue sin arrojarse en el área privada. No se carga la info de la póliza para solicitar el reembolso (tiene módulos, no es póliza pura de reembolsos)
+ Os paso datos:
+ 
+ FRANCESC PIÑAS DALMAU 
+ T: 442447795 
+ PO: 882982924-0-2 
+ PR: MYBOX SALUD 
+ SubCol: 
+ FA: 15/10/21 
+ NIF: 47755469V 
+ Fecha Nacimiento: 06/06/1978
+ Teléfono: 653539993
+ E-mail: fpinasd@gmail.com
+ Fecha: 28/04/25
+ Hora: 11:40
+ 
+ Muchas gracias!",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Usuario con cuadro médico Classic ve prestadores que no debería ver,"Os traslado literalmente lo que nos envía la Delegada de Guadalajara.
+ 
+ Tenemos una reclamación de la hija de dos asegurados con Póliza Classic 3/53 de Madrid porque solicitaban cirugía en Guadalajara y se denegó al ser una póliza de ámbito provincial restringido, pero en su APP les aparece el cuadro médico general incluyendo Guadalajara.
+ Por favor podéis revisar e indicarnos por qué no les aparece el cuadro de Classic?
+ Muchas gracias
+ Un saludo
+  
+ PO: 282035595-0-2 
+ M.A. Sánchez Herrero
+ Tarjeta: 4278 1370 5
+  
+ Pedro Garcia Sánchez
+ Tarjeta: 4276 5672 5
+ 
+ Es cierto que el cuadro médico Classic tiene más provincias pero no está guadalajara entre ellas y por el motivo que sea le está mostrando lo del CM General.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+REEMBOLSOS. NO APARECE PÓLIZA NI ASEGURADO NI DEJA RELLENARLO PARA AVANZAR AL PASO 2,"NO APARECE PÓLIZA NI ASEGURADO NI DEJA RELLENARLO PARA AVANZAR AL PASO 2
+ Nombre y Apellidos. JOSE JOAQUIN LOBO MENDEZ DE VIGO 
+ ◦ Número de tarjeta. 570054842
+ ◦ Póliza. : 282625776-0-1 
+ ◦ DNI/NIE 50849825E 
+ ◦ Teléfono de contacto. 660417006 
+ ◦ E-mail jjlobomv@yahoo.es",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR AL PASAR DEL PASO 2 AL SOLICITAR REEMBOLSO,"ERROR AL PASAR DEL PASO 2 AL SOLICITAR REEMBOLSO, NO SE LE CARGA ASEGURADO NI LA PÓLIZA Y NO LE DEJA AVANZAR 
+ Nombre y Apellidos. MARTA PRIETO CAZORLA 
+ ◦ Número de tarjeta. 564130343
+ ◦ Póliza. 282585258-0-2 
+ ◦ DNI/NIE 51672713Q
+ ◦ Teléfono de contacto. 640896808 
+ ◦ E-mail mpcazorla@yahoo.es",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+no se muestra poliza ni nombre en solicitud reembolsos ni deja seleccinar ninguna,"no se muestra poliza ni nombre en solicitud reembolsos ni deja seleccionar ninguna dni: 50444791H
+ RAQUEL BARBA URRACO T: 169444800 PO: 282485187-0-1 PR: ADESLAS PLENA EXTRA 2021 SubCol: FA: 1/5/21 
+ tlf :647527382
+ mail: raquelbarbau@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR COMPONENTE REEMBOLSOS,"LA ASEGURADA AL ENTRAR EN GESTIONES, LUEGON REEMBOLSO TODO OK PERO CUANDO LE DA A SOLICITAR REEMBOLSO NO LE CARGA NINGUN DATO Y CUANDO LE DA A CUALQUIER PARTE DE LA SOLICITUD NO LE PERMITE CAMBIAR NADA NI SUCEDE NADA POR LO QUE SE LE IMPOSIBILITA EL SOLICITARLO. SOLICITAMOS SE SOLUCIONE ESTE ERROR. GRACIAS.
+ 
+ JOHANNA CAROLIN RINCONES MUÑOZ 
+ T: 449989302 
+ PO: 666016788-20039-0 
+ DNI: 23926134Q
+ CORREO: J.RINCONES.M@GMAIL.COM",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Alerta Dynatrace Netcool - Cuadro Médico WEB y CITA ONLINE,"Buenos dias,
+ 
+ Tenemos la una alerta en consola y podemos validarlo correctamente desde el botón ""pedir cita"" desde fuera. Si clickamos ""pedir cita"" desde dentro del nombre del Doctor no funciona. Entendemos que es por eso por lo que no desaparece la alerta.
+ 
+ ¿Podéis revisarlo?",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+NO CARGA LA POLIZA EN MI POLIZA,"MARTA MARRON RODRIGUEZ NIF: 09399058Q T: 868962195 PO: 666023424-652-0 EMAIL marta.marron@hotmail.com TLFNO 609226179
+  
+ A LA CLIENTE NO LE CARGA LA PÓLIZA EN MI POLIZA.
+ 
+ TAMPOCO LE CARGA EN REEMBOLSOS.
+ 
+ EN AUTORIZACIONES SIN EMBARGO LE CARGAN DOS POLIZAS CUANDO LA CLIENTE SOLO TIENE UNA",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Error en reembolso,"Al entrar para hacer el reembolso los campos de póliza y asegurado, que tenían que estar rellenos por defecto, salen vacíos y no se pueden escribir en ellos. Por favor tiene que aparecer póliza y asegurado. NIDIA DIAZ ARDILA T: 465996753 PO: 461177074-0-1 PR: ADESLAS EXTRA 150 MIL SubCol: FA: 1/5/23 
+ NIF: 52070258Y Fecha Nacimiento: 22/05/1969 Teléfono Móvil: +34685104580 
+ email: nidiadiaz22@hotmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR DE COMPONENTE DE REEMBOLSOS,"Buenos días, paso datos para reportar incidencia de Componente de reembolsos, no puede solicitar reembolso por el área privada.
+ NOMBRE: MARIA ANGELS
+ APELLIDOS: AMIGO BADIA
+ DNI/NIE/PASAPORTE: 38140178Z
+  T: 445626354
+ PO: 883090546-0-1 
+ PR: ADESLAS PREMIUM 
+ SubCol: --
+ FA: 1/5/22 
+ TELÉFONO: 678947762
+ CORREO ELECTRÓNICO: fridamigo@hotmail.com
+ FECHA DE NACIMIENTO: 31/01/1974
+ FECHA: 02/04/2025",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+INC0149223 NO RESUELTA. NO CARGA SU POLIZA EN EL APARTADO DE REEMBOLSOS,"NO CARGA NOMBRE NI POLIZA AL INTENTAR SOLICITAR UN REEMBOLSO. EN CUANTO A LA FECHA Y HORA DE LA CAPTURA: LA CLIENTE LO INTENTA PERIODICAMENTE Y NOSOTROS TAMBIEN HEMPS PROBADO Y NO FUNCIONA A NINGUNA FECHA NI A NINGUNA HORA DESDE HACER MAS DE UN MES, AJINTAMOS NUEVA CAPTURA // NATALIA DEL RIO SANCHEZ NIF: 50112363D T: 443193313 PO: 666005001-44677-2 PR: MODULAR COLECTIVOS SubCol: FAM. FA: 1/1/22 // TLF: 638 12 24 11 Ó 916529487 EMAIL: darioonei@yahoo.es",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR CONTINUADO EN REEMBOLSOS,"EDUARDO DE VIZCAYA ALBEROLA NIF: 52994564B T: 442687490 PO: 282503461-0-1 Teléfono: +34616152757 Email: evizcaya07@gmail.com 
+ 
+ VIENE DE INCIDENCIAS INC0148148 Y INC0142756
+ 
+ HEMOS ESPERADO DOS SEMANAS DESDE LA ULTIMA RESOLUCIÓN PARA VER SI SE SOLUCIONABA PERO A PESAR DE DAR DE BAJA Y ALTA EL USUARIO CONTINUA FALLANDO.
+ 
+ EL CLIENTE TIENE VARIAS PÓLIZAS Y VEMOS GRABADA LA FECHA DE BAJA EN LA EXTRA, POR SI ESTE DATO FUERA DE UTILIDAD PARA LA RESOLUCIÓN DE LA INCIDENCIA",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+"CM TO-BE: Funcionalidad Mensajes Configurables, Cards no redirigen a URL indicada en la configuración del taller","Buenos días,
+ 
+ Os traslado tras hacer unas pruebas un problema que está sucediendo en la nueva funcionalidad de Mensajes Configurables del nuevo cuadro médico. La casuística es la siguiente:
+ 
+ Yo puedo configurar desde el taller de cuadro médico un tipo de mensaje que es ""Card"" y lo que hace es que cuando los parámetros de búsqueda/tipo cliente/etc coinciden, la primera tarjeta de resultados tiene la especificación que se indica en el taller: Una imagen específica, un texto específico y una URL de destino que es donde quiero que me redirija dicha tarjeta al pinchar sobre ella.
+ 
+ Pues bien, comprueba que ponga lo que ponga en esa URL la primera tarjeta siempre me lleva a otra URL fija que es la siguiente: ""https://saludybienestar.segurcaixaadeslas.es/mis-medicos/orientacion-medica/bienvenida""
+ 
+ He comprado en el depurador del navegador que la información llega correctamente, es decir, que la URL que se solicita a Elastic está bien y es distinta de la anterior. Por lo que deduzco (no sé si bien o mal) que como antes de este nuevo desarrollo, la primera tarjeta era fija y apuntaba a orientación médica (es decir a la URL que os he puesto arriba"" por lo que sea eso en el front lo tienen a fuego y no hace el cambio.
+ 
+ IMPORTANTE:
+ 1. Se ha de coger la URL que viene de Elastic que es la que se indica desde el taller y no la que hay a fuego.
+ 2. Se ha de garantizar que se llama o se invoca a esa URL de la misma forma que la que está a fuego, por qué digo esto, porque la llamada tiene algún matriz para que en la App de Salud y Bienetar se comporte de forma correcta, es decir:
+  - Si la URL está dentro del dominio ""https://saludybienestar.segurcaixaadeslas.es/......."" me lleva a la vista indicada dentro de la App (sin levantar nada dentro de la App ni sacarme de ella)
+  - Si la URL no está dentro de este dominio entonces sí que me sacará de la App y me levantará el navegador por defecto con la URL específica. Muy importante esto.
+ 
+ Cualquier información adicional, no dudéis en poneros en contacto conmigo.
+ 
+ Muchas gracias.
+ 
+ Un Saludo.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+ERROR EN SOLICITUD DE REEMBOLSO,"ACCEDO A CUENTA DE CLIENTE PARA VERIFICAR ERROR Y AL MOMENTO DE SOLICITAR REEMBOLSO NO LE DEJA SELECCIONAR LA POLIZA NI SELECCIONAR EL ASEGURADO, TAMPOCO LE DEJA ESCRIBIR 
+ 
+ JUAN PORTILLO JIMENEZ-LANDI T: 690844280 PO: 666007202-31491-1 PR: MODULAR COLECTIVOS SubCol: BANCO ESPAÑA FA: 2/7/18 
+ 
+ NIF: 50757234Y
+ EMAIL: juanport84@gmail.com
+ TELEFONO: 625903631
+ 
+ ADJUNTO CAPTURA DE ERROR",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+Error en reembolso,"UNA VEZ ACCEDEMOS A SU CUENTA Y ENTRAMOS EN EL APARTADO DE REEMBOLSO, LA POLIZA Y EL ASEGURADO NO CARGA Y DA ERROR AL DARLE AL BOTON DE ""SIGUIENTE"" YA QUE ES EL PRIMER PASO Y SON CAMPOS OBLIGATORIOS A RELLENAR. PASAMOS INCIDDENCIA POR 2ª VEZ.
+ ANA REVILLA BONED T: 501904264 PO: 501207584-0-1 PR: ADESLAS EXTRA 2022 SubCol: FA: 1/7/22
+ NIF: 72970886M Teléfono Móvil: +34639955663 Email: anitarpro@gmail.com",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+NO CARGA POLIZA EN REEMBOLSOS,"PALOMA MUÑOZ CASTELLANO 05445594E T: 871643500 PO: 666009600-13450184-0 paloma.munoz@accenture.com
+ 
+ NO LE CARGA POLIZA EN COMPONENTE DE REEMBOLSOS WEB, BAJA Y ALTA NO SOLUCIONA EL PROBLEMA",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+No se puede descargar CM en PDF. (web publica móvil IOS),"Al navegar en movil (iphone) por el cuadro médico integrado en la web publica, no se puede descargar el CM en PDF porque no se muestra el botón de descargar.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_CMEDICO_WEB
+WEB// NO CARGA ASEGURADO NI POLIZA EN COMPONENTE REEMBOLSOS,"EDUARDO DE VIZCAYA ALBEROLA NIF: 52994564B T: 442687490 PO: 282503461-0-1
+ E-mail: EVIZCAYA07@GMAIL.COM
+ Teléfono móvil: 616 15 27 57 
+ 
+ RELACIONADO CON INCIDENCIA INC0142756
+ 
+ CONTINUA EL ERROR DE NO PERMITIR SOLICITAR REEMBOLSOS POR QUE NO CARGA POLIZA NI ASEGURADO EN EL COMPONENTE.
+ 
+ SE HA INTENTADO BAJA Y ALTA Y EL PROBLEMA PERSISTE. SON LAS 12:15 DEL DIA 3 DE MARZO DE 2025 CUANDO SE HAN HECHO ESTAS COMPROBACIONES.",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_REEMBOLSOS
+ERROR RECIBOS Y COPAGOS,"WEB//ERROR RECIBOS Y COPAGOS ,RESETEO EL PORTAL Y LO VUELVO A REGISTARARLO TODO OK,EXCEPTO RECIBOS, NO SALEN LOS RECIBOS CON LA NUEVA POLIZA , SOLO SALEN LOS RECIBOS DE LA POLIZA ANTIGUA ,AUNQUE SELECCIONE LA NUEVA QUE ES LA POLIZA 666027634-6790-1 SIGUE APARECIENDO LOS RECIBOS DE LA POLIZA ANTERIOR 666027634-2072-1 Y NO DE LA NUEVA .
+ 
+ AGABO PALENZUELA TORELLO T: 570179559 PO: 666027634-6790-1 PR: MODULAR COLECTIVOS SubCol: CAM. DE COMERCIO FA: 1/11/24 
+ DNI: 43041977F
+ 
+ tlf:695452544
+ email: agabo10@hotmail.es",,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_COMP_RECIBOS_COPAGOS
+,ERROR ACCESO ASYB,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,ASyB
+,ERROR ADJUNTAR FICHEROS,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,ARQUITECTURA
+,Reembolsos histórico,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,reembolsos historico
+,CAU,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,No aparece opción reembolsos
+,RECUPERA DATOS INCORRECTOS,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,CARTERA
+,No muestra IBAN ,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,CARTERA
+,No envian codigo sms ,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,Router
+,Derivada a Gestion Documental Particular,,Se reasigna incidencia a buzón correspondiente para su gestión,,reasignacion,GR_SAL_CIC_PLANENTREGA_NET

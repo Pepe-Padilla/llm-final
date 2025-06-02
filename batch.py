@@ -69,29 +69,26 @@ def main():
         client,
         "resources/PROBLEMAS_GLOBALES.csv",
         [
-            "INCIDENCIAS",
-            "ID PROBLEMA",
             "COMPONENTE",
             "DESCRIPCION",
             "TIPO INCIDENCIA",
-            "SOLUCIÓN",
-            "FECHA DE RESOLUCIÓN",
-            "BUZON REASIGNACION",
-            "RESOLUCION AUTOMÁTICA"
+            "SOLUCIÓN,FECHA DE RESOLUCIÓN",
+            "RESOLUCION AUTOMÁTICA",
+            "BUZON REASIGNACION"
         ]
     )
     
     # Process CORRECTIVOS_ABIERTOS.csv
-    process_csv(
-        client,
-        "resources/CORRECTIVOS_ABIERTOS.csv",
-        [
-            "ID INCIDENCIA",
-            "DESCRIPCION",
-            "FECHA PREVISTA",
-            "RESOLUCION AUTOMÁTICA"
-        ]
-    )
+    #process_csv(
+    #    client,
+    #    "resources/CORRECTIVOS_ABIERTOS.csv",
+    #    [
+    #        "ID INCIDENCIA",
+    #        "DESCRIPCION",
+    #        "FECHA PREVISTA",
+    #        "RESOLUCION AUTOMÁTICA"
+    #    ]
+    #)
 
 if __name__ == "__main__":
     main() 

@@ -8,10 +8,10 @@ from .LLMQuery import query_vector_db
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
     else:
         return ChatOpenAI(
-            model="gpt-4",
+            model="gpt-4-mini",
             temperature=0,
             api_key=os.getenv("OPENAI_API_KEY")
         )

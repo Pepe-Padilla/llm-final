@@ -10,7 +10,7 @@ def get_llm():
         return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
     else:
         return ChatOpenAI(
-            model="gpt-4",
+            model="gpt-4-mini",
             temperature=0,
             api_key=os.getenv("OPENAI_API_KEY")
         )
