@@ -6,6 +6,7 @@ from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from llm.LLMGenerator import generate_summary
 from llm.LLMEmbedding import get_embedding
+import time
 
 # Load environment variables
 load_dotenv()
@@ -47,9 +48,6 @@ def process_csv(client, file_path, metadata_columns):
         # Generate summary using LLM
         summary = generate_summary(row.to_dict())
         
-        print(row.to_dict())
-        print(summary)
-        
         # Get embedding
         vector = get_embedding(summary)
         
@@ -79,6 +77,10 @@ def process_csv(client, file_path, metadata_columns):
     print(f"\nCompleted processing {processed} documents from {file_path}")
 
 def main():
+
+    # Start timing
+    start_time = time.time()
+
     # Initialize vector database
     client = init_vector_db()
     
@@ -112,6 +114,8 @@ def main():
                 "RESOLUCION AUTOMÁTICA"
             ]
         )
+
+    print(f"\nTiempo total: {time.time() - start_time:.2f} segundos")
 
 if __name__ == "__main__":
     main() 

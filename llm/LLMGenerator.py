@@ -41,8 +41,4 @@ def generate_summary(incident: Dict[str, Any]) -> str:
     chain = prompt | llm
     
     # Get summary
-    summary = chain.invoke({"metadata": str(incident)}) 
-    print(summary)
-    print(incident)
-
-    return summary
+    return chain.invoke({"metadata": str(incident)}) 

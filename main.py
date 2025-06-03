@@ -11,6 +11,7 @@ from llm.LLMQuery import query_vector_db
 from llm.LLMKeywords import extract_keywords
 from resolution import process_resolution
 from collections import Counter
+import time
 
 # Load environment variables
 load_dotenv()
@@ -33,6 +34,9 @@ def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
     return relevant_solutions
 
 def main():
+    # Start timing
+    start_time = time.time()
+    
     # Get open incidents
     print("Obteniendo incidencias abiertas...")
     incidencias = get_incidencias()
@@ -114,6 +118,7 @@ def main():
     # Print final statistics
     print("\n=== Estadísticas Finales ===")
     print(f"Total de incidencias procesadas: {total_incidencias}")
+    print(f"Tiempo total: {time.time() - start_time:.2f} segundos")
     print("\nDistribución de resoluciones:")
     for tipo, cantidad in stats.items():
         porcentaje = (cantidad / total_incidencias) * 100

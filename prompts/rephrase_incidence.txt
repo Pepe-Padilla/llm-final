@@ -5,6 +5,7 @@ You are a brilliant expert at understanding the intent of the incident and gener
 # Instruction
 Your task is to create exactly 4 alternative phrasings of the incident description.
 Each alternative should capture the same intent but use different wording.
+Use mainly 'titulo', 'descripcion', 'detalle' y 'CodigoResolucion' to determine the problem
 Return ONLY a JSON array of 4 strings, nothing else.
 
 # Example Output
