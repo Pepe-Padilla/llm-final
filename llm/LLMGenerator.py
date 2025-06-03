@@ -1,13 +1,18 @@
 import os
 from typing import Dict, Any
-from langchain.llms import Ollama
-from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
+from langchain_ollama import OllamaLLM
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+
+# Load environment variables
+load_dotenv()
 
 def get_llm():
     """Get the appropriate LLM based on environment."""
+    
     if os.getenv("ENTORNO") == "DESA":
-        return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -15,8 +20,8 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def generate_summary(metadata: Dict[str, Any]) -> str:
-    """Generate a summary of the incident from its metadata."""
+def generate_summary(incident: Dict[str, Any]) -> str:
+    """Generate a clear and concise summary of the incident."""
     llm = get_llm()
     
     # Read prompt from file
@@ -24,7 +29,7 @@ def generate_summary(metadata: Dict[str, Any]) -> str:
         prompt_content = f.read()
     
     # Split the content into system and user messages
-    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg, user_msg = prompt_content.split("---", 1)
     system_msg = system_msg.replace("system: ", "")
     user_msg = user_msg.replace("user: ", "")
     
@@ -35,4 +40,9 @@ def generate_summary(metadata: Dict[str, Any]) -> str:
     
     chain = prompt | llm
     
-    return chain.invoke({"metadata": str(metadata)}) 
+    # Get summary
+    summary = chain.invoke({"metadata": str(incident)}) 
+    print(summary)
+    print(incident)
+
+    return summary

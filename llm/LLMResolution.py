@@ -1,14 +1,17 @@
 import os
 from typing import Dict, Any, List
-from langchain.llms import Ollama
-from langchain.chat_models import ChatOpenAI
+from dotenv import load_dotenv
+from langchain_ollama import OllamaLLM
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from .LLMQuery import query_vector_db
+
+# Load environment variables
+load_dotenv()
 
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -16,8 +19,8 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def generate_resolution(incident: Dict[str, Any], similar_incidents: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Generate a resolution for the incident based on similar incidents."""
+def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Get the best resolution from a list of relevant solutions."""
     llm = get_llm()
     
     # Read prompt from file
@@ -25,7 +28,7 @@ def generate_resolution(incident: Dict[str, Any], similar_incidents: List[Dict[s
         prompt_content = f.read()
     
     # Split the content into system and user messages
-    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg, user_msg = prompt_content.split("---", 1)
     system_msg = system_msg.replace("system: ", "")
     user_msg = user_msg.replace("user: ", "")
     
@@ -38,15 +41,7 @@ def generate_resolution(incident: Dict[str, Any], similar_incidents: List[Dict[s
     
     resolution = chain.invoke({
         "incident": str(incident),
-        "similar_incidents": str(similar_incidents)
+        "similar_incidents": str(relevant_solutions)
     })
     
-    return eval(resolution)  # Convert string to dict
-
-def get_resolution(incident: Dict[str, Any]) -> Dict[str, Any]:
-    """Get a resolution for the incident by querying similar incidents and generating a resolution."""
-    # Query similar incidents
-    similar_incidents = query_vector_db(str(incident))
-    
-    # Generate resolution
-    return generate_resolution(incident, similar_incidents) 
+    return eval(resolution)  # Convert string to dict 

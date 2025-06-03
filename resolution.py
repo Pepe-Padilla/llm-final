@@ -8,7 +8,15 @@ load_dotenv()
 
 def process_resolution(resolution, incidencia):
     if not resolution:
-        return "manual sin resolución"
+        return {
+            "RESOLUCION AUTOMÁTICA": "manual",
+            "BUZON REASIGNACION": "",
+            "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente",
+            "estado_api": {
+                "gestor_incidencias": "",
+                "sistema": ""
+            }
+        } 
     
     etiqueta = os.getenv("ETIQUETA", "[SPAI] ")
     
@@ -20,34 +28,56 @@ def process_resolution(resolution, incidencia):
     # Add label to solution
     solucion = f"{etiqueta}{solucion}"
     
+    # Initialize API status
+    estado_api = {
+        "gestor_incidencias": "",
+        "sistema": ""
+    }
+    
     # Process based on resolution type
     if resolution_type == "manual":
-        return "manual"
+        resolution["estado_api"] = estado_api
+        return resolution
     
     elif resolution_type == "cierre":
-        patch_incidencia(
-            incidencia["codIncidencia"],
-            "resolver",
-            notasResolucion=solucion
-        )
-        return "cierre"
+        try:
+            patch_incidencia(
+                incidencia["codIncidencia"],
+                "resolver",
+                notasResolucion=solucion
+            )
+            estado_api["gestor_incidencias"] = "OK"
+        except Exception as e:
+            estado_api["gestor_incidencias"] = f"error: {str(e)}"
+        resolution["estado_api"] = estado_api
+        return resolution
     
     elif resolution_type == "en espera":
-        patch_incidencia(
-            incidencia["codIncidencia"],
-            "en_espera",
-            detalle=solucion
-        )
-        return "en espera"
+        try:
+            patch_incidencia(
+                incidencia["codIncidencia"],
+                "en_espera",
+                detalle=solucion
+            )
+            estado_api["gestor_incidencias"] = "OK"
+        except Exception as e:
+            estado_api["gestor_incidencias"] = f"error: {str(e)}"
+        resolution["estado_api"] = estado_api
+        return resolution
     
     elif resolution_type == "reasignacion":
-        patch_incidencia(
-            incidencia["codIncidencia"],
-            "reasignar",
-            buzonDestino=buzon_reasignacion,
-            detalle=solucion
-        )
-        return "reasignacion"
+        try:
+            patch_incidencia(
+                incidencia["codIncidencia"],
+                "reasignar",
+                buzonDestino=buzon_reasignacion,
+                detalle=solucion
+            )
+            estado_api["gestor_incidencias"] = "OK"
+        except Exception as e:
+            estado_api["gestor_incidencias"] = f"error: {str(e)}"
+        resolution["estado_api"] = estado_api
+        return resolution
     
     elif resolution_type.startswith("api|"):
         # Extract solution code
@@ -56,16 +86,35 @@ def process_resolution(resolution, incidencia):
         # Get policy data from metadata
         poliza = resolution.get("metadata", {}).get("poliza")
         if not poliza:
-            return "manual sin poliza"
+            new_resolution = {
+                "RESOLUCION AUTOMÁTICA": "en espera",
+                "BUZON REASIGNACION": "",
+                "SOLUCIÓN": "Por favor, ingrese la poliza para poder continuar con la resolución",
+                "estado_api": estado_api
+            }
+            return process_resolution(new_resolution, incidencia)
         
         # Call policy check API
-        response = comprobacion_poliza(
-            poliza=poliza,
-            codSolucion=cod_solucion,
-            strJson=str(resolution.get("metadata", {}))
-        )
+        try:
+            response = comprobacion_poliza(
+                poliza=poliza,
+                codSolucion=cod_solucion,
+                strJson=str(resolution.get("metadata", {}))
+            )
+            estado_api["sistema"] = "ok"
+        except Exception as e:
+            estado_api["sistema"] = f"error: {str(e)}"
+            response = {
+                "RESOLUCION AUTOMÁTICA": "manual",
+                "BUZON REASIGNACION": "",
+                "SOLUCIÓN": f"Error al llamar al sistema: {str(e)}",
+                "estado_api": estado_api
+            }
         
         # Process the response recursively
         return process_resolution(response, incidencia)
     
-    return "manual sin tipo de resolución" 
+    # Default to manual resolution
+    resolution["RESOLUCION AUTOMÁTICA"] = "manual"
+    resolution["estado_api"] = estado_api
+    return resolution

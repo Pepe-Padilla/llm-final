@@ -19,12 +19,12 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> bool:
-    """Check if the incident is relevant for automatic resolution."""
+def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
+    """Extract keywords from incident description, title and history."""
     llm = get_llm()
     
     # Read prompt from file
-    with open("prompts/check_relevance.txt", "r", encoding="utf-8") as f:
+    with open("prompts/extract_keywords.txt", "r", encoding="utf-8") as f:
         prompt_content = f.read()
     
     # Split the content into system and user messages
@@ -39,9 +39,8 @@ def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> bool:
     
     chain = prompt | llm
     
-    response = chain.invoke({
-        "incident": str(incident),
-        "solution": str(solution)
-    })
+    response = chain.invoke({"incident": str(incident)})
     
-    return response.lower().strip() == "true" 
+    # Parse the JSON response
+    import json
+    return json.loads(response) 

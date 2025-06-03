@@ -1,7 +1,11 @@
 import os
 from typing import List
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.embeddings import OllamaEmbeddings
+from dotenv import load_dotenv
+from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_ollama import OllamaEmbeddings
+
+# Load environment variables
+load_dotenv()
 
 def get_embeddings():
     """Get the appropriate embedding model based on environment."""

@@ -1,13 +1,17 @@
 import os
-from typing import Dict, Any
-from langchain.llms import Ollama
-from langchain.chat_models import ChatOpenAI
+from typing import Dict, Any, List
+from dotenv import load_dotenv
+from langchain_ollama import OllamaLLM
+from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+
+# Load environment variables
+load_dotenv()
 
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return Ollama(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -15,7 +19,7 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def rephrase_incidence(incident: Dict[str, Any]) -> str:
+def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     """Rephrase the incident description to be more clear and structured."""
     llm = get_llm()
     
@@ -24,7 +28,7 @@ def rephrase_incidence(incident: Dict[str, Any]) -> str:
         prompt_content = f.read()
     
     # Split the content into system and user messages
-    system_msg, user_msg = prompt_content.split("\n\n", 1)
+    system_msg, user_msg = prompt_content.split("---", 1)
     system_msg = system_msg.replace("system: ", "")
     user_msg = user_msg.replace("user: ", "")
     
@@ -34,5 +38,13 @@ def rephrase_incidence(incident: Dict[str, Any]) -> str:
     ])
     
     chain = prompt | llm
+
+    # Get rephrased versions
+    rephrased = chain.invoke({"incident": str(incident)})
     
-    return chain.invoke({"incident": str(incident)}) 
+    # Parse the JSON array from the response
+    import json
+    rephrased_list = json.loads(rephrased)
+    
+    # Add the original incident at the beginning
+    return [str(incident)] + rephrased_list 

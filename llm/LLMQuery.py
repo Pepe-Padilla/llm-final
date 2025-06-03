@@ -1,8 +1,12 @@
 import os
 from typing import List, Dict, Any
+from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from .LLMEmbedding import get_embedding
+
+# Load environment variables
+load_dotenv()
 
 def get_qdrant_client() -> QdrantClient:
     """Get a Qdrant client instance."""
