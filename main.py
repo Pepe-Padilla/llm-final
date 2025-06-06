@@ -18,18 +18,21 @@ load_dotenv()
 
 def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
     """Get relevant solutions from vector DB for a given incident."""
+
+    # print(incident)
+
     # Get similar incidents from vector DB
     similar_incidents = query_vector_db(incident)
     
     # Filter relevant solutions
     relevant_solutions = []
 
-    print(len(similar_incidents))
+    # print(len(similar_incidents))
     for solution in similar_incidents:
-        print(solution)
+        # print(solution)
         if check_relevance(incident, solution):
             relevant_solutions.append(solution)
-            print("relevante")
+            # print("relevante")
     
     return relevant_solutions
 
@@ -56,18 +59,24 @@ def main():
         print(f"Código: {incidencia['codIncidencia']}")
         
         # Get rephrased versions of the incident
-        print("Generando versiones alternativas...")
+        print("Generando consultas...")
         rephrased_versions = rephrase_incidence(incidencia)
         
         # Get relevant solutions for each version
         print("Buscando soluciones relevantes...")
         all_relevant_solutions = []
+        progress = 0
+        total_rows = len(rephrased_versions)
+        processed = 0
         for version in rephrased_versions:
+            processed += 1
+            progress = (processed / total_rows) * 100
+            print(f"\rProgress: {progress:.1f}% ({processed}/{total_rows})", end="")
             relevant_solutions = get_relevant_solutions(version)
             all_relevant_solutions.extend(relevant_solutions)
         
         # Get final resolution from all relevant solutions
-        print("Generando resolución final...")
+        print("\nGenerando resolución final...")
         resolution = None
         if all_relevant_solutions:
             resolution = get_resolution(incidencia, all_relevant_solutions)
@@ -84,6 +93,7 @@ def main():
         # Extract keywords and add to metadata
         print("Extrayendo palabras clave...")
         keywords = extract_keywords(incidencia)
+        print(keywords)
         result["metadata"] = keywords
         
         # Store result and resolution type

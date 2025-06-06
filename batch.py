@@ -47,12 +47,15 @@ def process_csv(client, file_path, metadata_columns):
     for _, row in df.iterrows():
         # Generate summary using LLM
         summary = generate_summary(row.to_dict())
+        # print(summary)
         
         # Get embedding
         vector = get_embedding(summary)
         
         # Prepare metadata
         metadata = row.to_dict() #{col: str(row[col]) for col in metadata_columns}
+        # print("--------------------------------")
+        # print(metadata)
         
         # Add to vector database
         client.upsert(

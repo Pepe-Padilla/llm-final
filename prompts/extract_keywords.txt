@@ -12,24 +12,15 @@ Analyze the incident and extract key information of relevant data, specialy of I
 6. idServicios
 
 # Constraint
-1. Extract only factual information, no interpretations
-2. Use Spanish terms
-3. Be specific and concise
-4. Include all relevant technical terms
-5. Consider both the current state and history
-6. If more than one element is provided of the same category use arrays
-7. Return only the JSON response, no additional text
-
-# Example 
-```
-{
-    "poliza": "X16516",
-    "DNI": ["1234567X", "G1561616"],
-    "url": ["http://anurl.go", "http://otherUrl.no/goToThePoint"],
-    "teléfonos": "963852147",
-    "IBAN": ["data1", "data2"]
-}
-```
+1. Return only the JSON response, no additional text
+2. Extract only factual information, no interpretations
+3. Use Spanish terms
+4. Be specific and concise
+5. Include all relevant technical terms
+6. Consider both the current state and history
+7. If more than one element is provided of the same category use arrays
+8. Return only the JSON response, no additional text
+9. Return only the JSON response, no additional text
 
 You must provide all responses in Spanish.
 
@@ -41,3 +32,5 @@ Please extract key information from the following incident:
 ```
 {incident}
 ``` 
+
+Return only the JSON response, no additional text

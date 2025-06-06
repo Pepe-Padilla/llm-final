@@ -41,7 +41,9 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
     
     resolution = chain.invoke({
         "incident": str(incident),
-        "similar_incidents": str(relevant_solutions)
+        "solutions": str(relevant_solutions)
     })
+
+    # print(resolution)
     
     return eval(resolution)  # Convert string to dict 

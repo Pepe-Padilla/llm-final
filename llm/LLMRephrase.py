@@ -47,4 +47,4 @@ def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     rephrased_list = json.loads(rephrased)
     
     # Add the original incident at the beginning
-    return [str(incident)] + rephrased_list 
+    return [str(incident["descripcion"])] + rephrased_list 

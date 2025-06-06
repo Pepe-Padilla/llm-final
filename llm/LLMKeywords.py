@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+import json
 
 # Load environment variables
 load_dotenv()
@@ -42,5 +43,5 @@ def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
     response = chain.invoke({"incident": str(incident)})
     
     # Parse the JSON response
-    import json
+    print(response)
     return json.loads(response) 

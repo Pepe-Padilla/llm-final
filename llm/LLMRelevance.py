@@ -43,5 +43,7 @@ def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> bool:
         "incident": str(incident),
         "solution": str(solution)
     })
-    
-    return response.lower().strip() == "true" 
+
+    # print(response)
+    # print(response.lower().strip().find("true"))
+    return response.lower().strip().find("true") >= 0

@@ -20,6 +20,7 @@ def process_resolution(resolution, incidencia):
     
     etiqueta = os.getenv("ETIQUETA", "[SPAI] ")
     
+    print(type(resolution))
     # Get resolution type and metadata
     resolution_type = resolution.get("RESOLUCION AUTOMÁTICA", "manual")
     buzon_reasignacion = resolution.get("BUZON REASIGNACION", "")
