@@ -44,6 +44,6 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
         "solutions": str(relevant_solutions)
     })
 
-    # print(resolution)
+    print(resolution)
     
     return eval(resolution)  # Convert string to dict 

@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+import json
 
 # Load environment variables
 load_dotenv()
@@ -42,8 +43,13 @@ def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     # Get rephrased versions
     rephrased = chain.invoke({"incident": str(incident)})
     
+    print(rephrased)
+
+    # A veces mete agrupadores tipo {} en vez de un Array simple de Strings
+    rephrased.replace("{","")
+    rephrased.replace("}","")
+
     # Parse the JSON array from the response
-    import json
     rephrased_list = json.loads(rephrased)
     
     # Add the original incident at the beginning

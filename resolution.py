@@ -6,7 +6,7 @@ from api.sistema import comprobacion_poliza
 # Load environment variables
 load_dotenv()
 
-def process_resolution(resolution, incidencia):
+def process_resolution(resolution, incidencia, keywords):
     if not resolution:
         return {
             "RESOLUCION AUTOMÁTICA": "manual",
@@ -20,9 +20,15 @@ def process_resolution(resolution, incidencia):
     
     etiqueta = os.getenv("ETIQUETA", "[SPAI] ")
     
+    print("-----")
     print(type(resolution))
+    print(resolution)
+    # Handle case where resolution is a list
+    if isinstance(resolution, list) and len(resolution) > 0:
+        resolution = resolution[0]
+    print("-----")
     # Get resolution type and metadata
-    resolution_type = resolution.get("RESOLUCION AUTOMÁTICA", "manual")
+    resolution_type = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA", "manual")
     buzon_reasignacion = resolution.get("BUZON REASIGNACION", "")
     solucion = resolution.get("SOLUCIÓN", "")
     
@@ -85,7 +91,7 @@ def process_resolution(resolution, incidencia):
         cod_solucion = resolution_type.split("|")[1]
         
         # Get policy data from metadata
-        poliza = resolution.get("metadata", {}).get("poliza")
+        poliza = str(keywords.get("poliza"))
         if not poliza:
             new_resolution = {
                 "RESOLUCION AUTOMÁTICA": "en espera",
@@ -93,14 +99,14 @@ def process_resolution(resolution, incidencia):
                 "SOLUCIÓN": "Por favor, ingrese la poliza para poder continuar con la resolución",
                 "estado_api": estado_api
             }
-            return process_resolution(new_resolution, incidencia)
+            return process_resolution(new_resolution, incidencia, keywords)
         
         # Call policy check API
         try:
             response = comprobacion_poliza(
                 poliza=poliza,
                 codSolucion=cod_solucion,
-                strJson=str(resolution.get("metadata", {}))
+                strJson=str(keywords)
             )
             estado_api["sistema"] = "ok"
         except Exception as e:
@@ -113,7 +119,7 @@ def process_resolution(resolution, incidencia):
             }
         
         # Process the response recursively
-        return process_resolution(response, incidencia)
+        return process_resolution(response, incidencia, keywords)
     
     # Default to manual resolution
     resolution["RESOLUCION AUTOMÁTICA"] = "manual"

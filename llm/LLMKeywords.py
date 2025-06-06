@@ -12,7 +12,7 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
     else:
         return ChatOpenAI(
             model="gpt-4-mini",

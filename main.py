@@ -87,21 +87,24 @@ def main():
                 "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente"
             }
         
-        # Process the resolution
-        result = process_resolution(resolution, incidencia)
-        
         # Extract keywords and add to metadata
         print("Extrayendo palabras clave...")
         keywords = extract_keywords(incidencia)
         print(keywords)
-        result["metadata"] = keywords
+
+        # Process the resolution
+        result = process_resolution(resolution, incidencia, keywords)
+
+        result["keywords"] = keywords
         
         # Store result and resolution type
         resultados.append({
             "incidencia": incidencia,
             "resolucion": result
         })
-        tipos_resolucion.append(result["RESOLUCION AUTOMÁTICA"])
+        print(result)
+        resolucion_automatica = result.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
+        tipos_resolucion.append(resolucion_automatica)
         
         # Count API errors
         estado_api = result.get("estado_api", {})
@@ -110,7 +113,7 @@ def main():
         if estado_api.get("sistema", "").startswith("error"):
             errores_api["sistema"] += 1
         
-        print(f"Resolución: {result['RESOLUCION AUTOMÁTICA']}")
+        print(f"Resolución: {resolucion_automatica}")
         if estado_api.get("gestor_incidencias", "").startswith("error"):
             print(f"Error gestor incidencias: {estado_api['gestor_incidencias']}")
         if estado_api.get("sistema", "").startswith("error"):

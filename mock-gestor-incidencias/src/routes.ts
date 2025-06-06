@@ -6,56 +6,272 @@ const router = Router();
 // Mock data
 const incidencias: Incidencia[] = [
   {
-    codIncidencia: "INC0176438",
-    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    codIncidencia: "MOCK_INC0001",
+    buzon: "MOCK_BUZON",
     titulo: "No puede leer los mensajes de reembolsos",
-    solicitante: "ROSA MARIA VEGA RODRIGUEZ",
+    solicitante: "MOCK_NAME",
     estado: "En curso",
-    apertura: "23/05/2025 14:43:45 CEST",
+    apertura: "01/01/2025 10:00:00 CEST",
     prioridad: "3 - Media",
-    descripcion: "Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: 44446321V Nombre y apellidos: MARIA TERESA GONZALEZ ESTEVEZ Nº de Tarjeta: T: 568016846 Nº de póliza: PO: 666023054-53-1 Fecha de nacimiento: 13/12/1971 Ramo: salud Día y Hora en que se produce el error:22/05/2025-16:46 Email y teléfono de contacto: magoe1971@GMAIL.COM-630151240",
+    descripcion: "Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",
     historial: [
       {
-        Fecha: "26/05/2025 08:08:10 CEST",
-        Autor: "Celia Jiménez de Andrés",
+        Fecha: "02/01/2025 08:00:00 CEST",
+        Autor: "MOCK_NAME",
         CodigoResolucion: null,
         NotasResolucion: null,
-        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
-        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON",
         estado: "En espera",
-        detalle: "Buenos dias,\n\nHemos revisado la incidencia y no vemos a que se refiere el solicitante con la letra apareciendo en blanco, ya que no vemos que en las notificaciones la letra salga asi. ¿Podeis adjuntarnos una captura del error para que podamos identificar el problema?\n\nGracias y un saludo"
+        detalle: "Mensaje de ejemplo de historial."
       },
       {
-        Fecha: "28/05/2025 08:05:40 CEST",
-        Autor: "Celia Jiménez de Andrés",
-        CodigoResolucion: "851315",
-        NotasResolucion: "Buenas,\nTras no recibir respuesta y haber realizado los tres strikes, procedemos a cerrar la incidencia.\nUn saludo",
-        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
-        buzonAsignado: "GR_SAL_COMP_CIERRE",
+        Fecha: "03/01/2025 08:00:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: "MOCK_CODE",
+        NotasResolucion: "Mensaje de cierre automático de ejemplo.",
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON_CIERRE",
         estado: "Resuelta",
         detalle: null
       },
       {
-        Fecha: "29/05/2025 08:26:10 CEST",
-        Autor: "ROSA MARIA VEGA RODRIGUEZ",
+        Fecha: "04/01/2025 08:00:00 CEST",
+        Autor: "MOCK_NAME",
         CodigoResolucion: null,
         NotasResolucion: null,
-        buzonComentario: "GR_SAL_COMP_CIERRE",
-        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonComentario: "MOCK_BUZON_CIERRE",
+        buzonAsignado: "MOCK_BUZON",
         estado: "En curso",
-        detalle: "Reapertura: Se adjunta evidencias del error, pop up avissos de reembolsos, la letra aparece en blanco"
+        detalle: "Reapertura: Se adjunta evidencias del error, pop up avisos de reembolsos, la letra aparece en blanco"
       }
     ]
   },
   {
-    codIncidencia: "INC0176098",
-    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    codIncidencia: "MOCK_INC0002",
+    buzon: "MOCK_BUZON",
     titulo: "ERROR AL ENVIAR AUTORIZACION",
-    solicitante: "ROSA MARIA VEGA RODRIGUEZ",
+    solicitante: "MOCK_NAME",
     estado: "En curso",
-    apertura: "23/05/2025 14:43:45 CEST",
+    apertura: "01/01/2025 10:00:00 CEST",
     prioridad: "3 - Media",
-    descripcion: "ERROR AL ENVIAR AUTORIZACION 23/05/2025 10:48H Pantalla en que se produce el error: Al enviar. Contenedor: SCA web y App S&B Dispositivo: Chrome y Iphone Documentación: Talón en Captura de pantalla 26804196L Alberto Rioja Cepe PO: 666000001-56447147-0 Email: betorc85@gmail.com Tel: 615 55 10 22",
+    descripcion: "ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0003",
+    buzon: "MOCK_BUZON",
+    titulo: "Error al cargar documentación general",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "02/01/2025 09:15:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY",
+    historial: [
+      {
+        Fecha: "02/01/2025 10:30:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: null,
+        NotasResolucion: null,
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON",
+        estado: "En espera",
+        detalle: "Se requiere verificación de permisos de acceso a documentos."
+      },
+      {
+        Fecha: "02/01/2025 14:45:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: "MOCK_CODE",
+        NotasResolucion: "Se ha verificado que el problema está relacionado con la versión del API de documentación.",
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON_TECNICO",
+        estado: "En curso",
+        detalle: "Reasignación a equipo técnico para actualización de API."
+      }
+    ]
+  },
+  {
+    codIncidencia: "MOCK_INC0004",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con beneficiarios en reembolsos",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "02/01/2025 11:30:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0005",
+    buzon: "MOCK_BUZON",
+    titulo: "Error al adjuntar documentación",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "03/01/2025 14:20:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0006",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con IBAN en reembolsos",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "03/01/2025 16:45:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0007",
+    buzon: "MOCK_BUZON",
+    titulo: "Error en tarjeta digital",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "04/01/2025 10:00:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME",
+    historial: [
+      {
+        Fecha: "04/01/2025 11:20:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: null,
+        NotasResolucion: null,
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON",
+        estado: "En espera",
+        detalle: "Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE."
+      },
+      {
+        Fecha: "04/01/2025 15:30:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: null,
+        NotasResolucion: "Se está trabajando en la actualización del componente de generación de tarjetas digitales.",
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON_TECNICO",
+        estado: "En curso",
+        detalle: "Implementando solución para manejo de tarjetas MOCK_TYPE."
+      }
+    ]
+  },
+  {
+    codIncidencia: "MOCK_INC0008",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con cuadro médico",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "04/01/2025 15:30:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0009",
+    buzon: "MOCK_BUZON",
+    titulo: "Error en gestión de pólizas",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "05/01/2025 09:00:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+    historial: [
+      {
+        Fecha: "05/01/2025 10:15:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: null,
+        NotasResolucion: null,
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON",
+        estado: "En curso",
+        detalle: "Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy."
+      },
+      {
+        Fecha: "05/01/2025 13:45:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: null,
+        NotasResolucion: null,
+        buzonComentario: "MOCK_BUZON",
+        buzonAsignado: "MOCK_BUZON_TECNICO",
+        estado: "En espera",
+        detalle: "Pendiente de confirmación de cambios en el API de MOCK_BUZON."
+      },
+      {
+        Fecha: "05/01/2025 16:30:00 CEST",
+        Autor: "MOCK_NAME",
+        CodigoResolucion: "MOCK_CODE",
+        NotasResolucion: "Se requiere actualización del componente para adaptarse a la nueva versión del API.",
+        buzonComentario: "MOCK_BUZON_TECNICO",
+        buzonAsignado: "MOCK_BUZON",
+        estado: "Pendiente implantar",
+        detalle: "Se ha identificado la causa raíz y se está trabajando en la solución."
+      }
+    ]
+  },
+  {
+    codIncidencia: "MOCK_INC0010",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con autorizaciones",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "05/01/2025 11:45:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0011",
+    buzon: "MOCK_BUZON",
+    titulo: "Error en descarga de documentación",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "06/01/2025 13:20:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0012",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con datos de asegurados",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "06/01/2025 16:00:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0013",
+    buzon: "MOCK_BUZON",
+    titulo: "Error en validación de NIF",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "07/01/2025 10:30:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0014",
+    buzon: "MOCK_BUZON",
+    titulo: "Problema con PDF de tarjeta",
+    solicitante: "MOCK_NAME",
+    estado: "En espera",
+    apertura: "07/01/2025 14:15:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0015",
+    buzon: "MOCK_BUZON",
+    titulo: "Error en médico realizador",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "08/01/2025 09:45:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF",
     historial: []
   }
 ];

@@ -27,6 +27,9 @@ def patch_incidencia(
     if detalle:
         data["detalle"] = detalle
     
+    print(f"Sending request to {BASE_URL}/api/incidencias/{cod_incidencia}")
+    print(f"With data: {data}")
+    
     response = requests.patch(
         f"{BASE_URL}/api/incidencias/{cod_incidencia}",
         json=data
