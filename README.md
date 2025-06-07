@@ -2,6 +2,8 @@
 ### LLM y proyecto final - Proyecto para el Bootcamp
 Este proyecto es un entregable para la práctica del Master Bootcamp Inteligencia Artificial Full Stack Edición III realizado por el centro de formación [@Keepcoding](https://github.com/KeepCoding)
 
+[Concluciones](#Concluciones)
+
 ---
 # Sistema de Gestión Automática de Incidencias
 
@@ -23,7 +25,7 @@ El proyecto está dividido en varios componentes:
 
 ## Características Principales
 
-- Procesamiento de incidencias usando LLMs (Ollama en DESA, GPT-4 en producción)
+- Procesamiento de incidencias usando LLMs (Ollama llama2 o llama3 en DESA, gpt-4o-mini en producción)
 - Base de datos vectorial para búsqueda semántica de soluciones
 - Sistema de reestructuración de incidencias para mejor comprensión
 - API REST para gestión de incidencias
@@ -111,3 +113,20 @@ El sistema utiliza las siguientes variables de entorno:
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT.
+
+-------
+## Conclusiones
+
+- Para la revisión del proyecto ahora se muestran los logs de ejecución. Primero se ejecuta `batch.py` y luego `main.py`: puedes revisar los logs aquí → [execution.log](./resources/execution.log).
+- El resultado final se puede consultar en el [reporte generado](./resources/reporte20250607_1709.json).
+
+### Pensamientos finales
+
+El sistema está funcionando razonablemente bien. Recorre todas las incidencias, aplica una solución cuando puede (de forma automática o semiautomática), y si no, las deja listas para intervención manual. En las pruebas, se logró procesar más del 50% de las incidencias. Las llamadas al mock para resolver y cerrar fallaron, pero decidí no "arreglarlo" porque me interesa más demostrar que el sistema maneja correctamente esos errores. Al final, deja claro que sí se intentó la llamada y se gestionó la respuesta, lo cual era el objetivo.
+
+Mi idea inicial era montar todo en local y experimentar con modelos como LLaMA 2 o 3. Quería vivir el reto técnico, y poner a prueba si se podía lograr algo decente sin depender de modelos gigantes. Como dijimos en clase: *"Un buen prompt con un mal modelo funciona"*. Me topé con el problema de que LLaMA 2 no se lleva bien con el castellano, así que para todo lo relacionado con el idioma, usé LLaMA 3. Aún así, blindé todo lo posible, aunque a veces el modelo devuelve JSON mal formado.
+
+Estoy contento con el resultado actual: el sistema funciona sin intervención humana directa. Eso sí, para que escale bien y se use en producción, habría que adaptarlo a cada caso. Por ejemplo, este se basa en un caso de incidencias sobre pólizas, pero podría adaptarse a pedidos, solicitudes, etc.
+
+Algo que me quedó clarísimo: el **diccionario de soluciones es el corazón del sistema**. Cuanto más preciso y actualizado esté, mejores serán los resultados. Especialmente al principio, conviene revisar cómo resuelve cada caso. Por eso, si pudiera mejorar el proyecto, añadiría un agente que analice el histórico de incidencias ya resueltas, para ayudar a enriquecer y mantener el diccionario. Esa sería una evolución natural: que el sistema aprenda de sí mismo.
+
