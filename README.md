@@ -130,3 +130,5 @@ Estoy contento con el resultado actual: el sistema funciona sin intervención hu
 
 Algo que me quedó clarísimo: el **diccionario de soluciones es el corazón del sistema**. Cuanto más preciso y actualizado esté, mejores serán los resultados. Especialmente al principio, conviene revisar cómo resuelve cada caso. Por eso, si pudiera mejorar el proyecto, añadiría un agente que analice el histórico de incidencias ya resueltas, para ayudar a enriquecer y mantener el diccionario. Esa sería una evolución natural: que el sistema aprenda de sí mismo.
 
+- Post en [hugging face](https://discuss.huggingface.co/t/my-thoughts-on-ollama-for-a-serious-project/158380)
+- Post en [Linkedin](https://www.linkedin.com/posts/jose-padilla-rodr%C3%ADguez-ba211546_ai-llms-ollama-activity-7337162971564969984-sPDp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAmgpWoBgJzcTB9n31uaF7xFuABNxQ1BSmQ)
