@@ -103,7 +103,9 @@ def main():
             "resolucion": result
         })
         # print(result)
-        resolucion_automatica = result.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
+        resolucion_automatica = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
+        if resolucion_automatica == None:
+            resolucion_automatica = "api resolution ->" +  result.get("RESOLUCION AUTOMÁTICA")
         tipos_resolucion.append(resolucion_automatica)
         
         # Count API errors

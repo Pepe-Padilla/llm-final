@@ -29,8 +29,8 @@ def process_resolution(resolution, incidencia, keywords):
     # print("-----")
     # Get resolution type and metadata
     resolution_type = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA", "manual")
-    buzon_reasignacion = resolution.get("BUZON REASIGNACION", "")
-    solucion = resolution.get("SOLUCIÓN", "")
+    buzon_reasignacion = resolution.get("metadata",{}).get("BUZON REASIGNACION", "")
+    solucion = resolution.get("metadata",{}).get("SOLUCIÓN", "")
     
     # Add label to solution
     solucion = f"{etiqueta}{solucion}"
@@ -94,10 +94,12 @@ def process_resolution(resolution, incidencia, keywords):
         poliza = str(keywords.get("poliza"))
         if not poliza:
             new_resolution = {
-                "RESOLUCION AUTOMÁTICA": "en espera",
-                "BUZON REASIGNACION": "",
-                "SOLUCIÓN": "Por favor, ingrese la poliza para poder continuar con la resolución",
-                "estado_api": estado_api
+                "metadata": {
+                    "RESOLUCION AUTOMÁTICA": "en espera",
+                    "BUZON REASIGNACION": "",
+                    "SOLUCIÓN": "Por favor, ingrese la poliza para poder continuar con la resolución",
+                    "estado_api": estado_api
+                }
             }
             return process_resolution(new_resolution, incidencia, keywords)
         
@@ -112,16 +114,18 @@ def process_resolution(resolution, incidencia, keywords):
         except Exception as e:
             estado_api["sistema"] = f"error: {str(e)}"
             response = {
-                "RESOLUCION AUTOMÁTICA": "manual",
-                "BUZON REASIGNACION": "",
-                "SOLUCIÓN": f"Error al llamar al sistema: {str(e)}",
-                "estado_api": estado_api
+                "metadata": {
+                    "RESOLUCION AUTOMÁTICA": "manual",
+                    "BUZON REASIGNACION": "",
+                    "SOLUCIÓN": f"[resolution_type] Error al llamar al sistema: {str(e)}",
+                    "estado_api": estado_api
+                }
             }
         
         # Process the response recursively
         return process_resolution(response, incidencia, keywords)
     
     # Default to manual resolution
-    resolution["RESOLUCION AUTOMÁTICA"] = "manual"
+    resolution["metadata"]["RESOLUCION AUTOMÁTICA"] = "manual"
     resolution["estado_api"] = estado_api
     return resolution

@@ -50,4 +50,5 @@ def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
         print("Error al interpretar json de extract_keywords")
         print(response)
 
-    return json.loads(json_response) 
+
+    return json_response
