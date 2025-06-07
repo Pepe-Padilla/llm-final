@@ -1,58 +1,57 @@
 COMPONENTE,DESCRIPCION,TIPO INCIDENCIA,SOLUCIÓN,FECHA DE RESOLUCIÓN,RESOLUCION AUTOMÁTICA,BUZON REASIGNACION
 Reembolsos,"No se visualiza la póliza, tiene cancellationDate mayor que el día actual",Código Back,"Se actualiza el código en el componente de Reembolsos para controlar que la fecha de Cancelación sea menor, actualmente está como mayor",,api|actualizaCodigoReembolsos,
-Reembolsos,No carga documentación general de la póliza. ,Dato,"Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de \"idDistributor\" e \"idAgente\"",,reasignacion,MOCK_BUZON
-Reembolsos,No carga documentación particular de la póliza,Dato,Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir,,reasignacion,MOCK_BUZON
-Reembolsos,No aparecen todos los asegurados,Dato,Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario,,manual,
-Reembolsos,Error al adjuntar documentacion,API Tercero,Derivar al componente de Arquitectura MOCK_BUZON,,reasignacion,MOCK_BUZON
-Autorizaciones,"EN POSICIÓN GLOBAL SE CARGAN LOS SEGUROS PERO EN EL COMPONENTE DE AUTORIZACIONES SOLAMENTE SE CARGA LA PÓLIZA DENTAL
-",Código Back,Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario,,manual,
-Reembolsos,Error al finalizar el proceso Reembolsos,API Tercero,"Se encuentra relacion con error en KIBANA, pasar a equipo MOCK_BUZON",,reasignacion,MOCK_BUZON
-Reembolsos,PROBLEMA IBAN,Dato Usuario,Se valida en un validador online y se solicita al usuario que vuelva a probar,,api|comprobarIban,
-Reembolsos,No permite reembolsos de farmacia,No es incidencia,"Se revisa con MOCK_NAME y la póliza del cliente no es Reembolsable, por lo que se cierra",,cierre,
-Autorizaciones,Error inesperado al finalizar Autorizaciones,Dato,Se cierra por strikes,,cierre,
-Tarjeta Digital,No carga la tarjeta digital,Código Back, Se corrige el decoder del token del usuario para que permita caracteres que no son Base64,,api|reviarToken,
-Batch,Incidencia Batch caido paso stepSptperactProvFather,Dato,Los proveedores hijos tenían una fecha anterior a los padres. Verificar word con pasos a seguir,,manual,
-Duplicado Tarjeta,boton ir a tarjeta digital apunta a url PRE,Código Front,Se modifical a url,,api|comprobarUrl,
-Cuadro Médico,"Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página",Código Front,El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente,,reasignacion,MOCK_BUZON
-Reembolsos,No puede añadir información requerida al reembolso,Usuario,Se cierra ya que el usuario no puede añadir más información a un reembolsos ya tramitado,,En espera,
-Tarjeta Digital,Sólo se ve tarjeta dental en Componente en Tarjeta Digital,Dato,Pendiente Cliente,,En espera,
-Reembolsos,No carga datos en Componente Reembolsos,Código Back,"Actualmente se comprueba que el MOCK_ID del usuario logado (obtenido del Directorio activo) coincida con sus pólizas de alta (llamada al searchByPoliza). Una vez obtenido el resultado, se recorren las pólizas comparando con el MOCK_ID y en caso de no existir ese id retorna un error. Esto se soluciona buscando por MOCK_NIF, pero es un cambio ya que habría que definir bien todas las casuísticas y deriva de la nueva versión del API, con la anterior no pasaba. Se realizará el cambio para subirlo lo antes posible una vez acordada la lógica con los responsables",,api|compruebaAlhambra,
-Cuadro Médico,No carga pólizas en Cuadro Médico,Código Back,"Al realizar la llamada a \"health_insureds_comp/insured_modules/opt_search_by_policy\" se indica el MOCK_ID del usuario logado. Al invocar a la nueva versión del API e indicar un MOCK_ID que no coincide con la póliza enviada pero sí con el mismo cliente, no lo retorna, mostrando menos pólizas. La solución para esta sería eliminar de la llamada el MOCK_ID pero tenemos que confirmar con MOCK_BUZON ya que si se aplica alguna lógica de visibilidad podríamos saltárnosla. Es un cambio, ya que antes no ocurría y ahora si, debido a cambios en el API de MOCK_BUZON que afectan al componente y no estaban contemplados",,manual,
-Tarjeta Digital,"Botón ir a tarjeta digital en la pantalla final, pero apunta a url de PRE.",Código Front,Se soluciona modificando la url en el código. Pendiente de subida,,En espera,
-Tarjeta Digital,PDF en blanco,Dato,El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga,,api|scriptCarga,
-Autorizaciones,Titular no visualiza los beneficiarios de la póliza,Dato,No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos,,cierre,
-Reembolsos,Error al adjuntar fotografia. Le lleva a pantalla inicial,Código Front,Se deriva al componente de Arquitectura,,reasignacion,MOCK_BUZON
-Autorizaciones,Error inesperado al finalizar petición de autorizaciones,Dato,Se deriva la incidencia ya que es problema del api de medial request. Revisar en kibana si da fallo,,manual,
-Autorizaciones,Al acceder a la web no le carga los apartados de autorizaciones,N/D,3 strikes,,cierre,
-Autorizaciones,Error cuando ha rellenado y adjuntado el archivo al enviar,Dato,Puede ser igual que el MOCK_ID,,cierre,
-Cuadro Médico,No visualiza la póliza en CM,Código Back,PTE. CLIENTE,,En espera,
-Cuadro Médico,Al compartir profesional genera url localhost,Código Front,En los dispositivos moviles recoge la url como localhost. Se añade parametrizacion específica para que siempre vaya a la web publica,,manual,
-Cuadro Médico,Vínculo erróneo en una FAQ,Código Front,Se modificará el link,MOCK_DATE,api|comprobarUrl,
-Autorizaciones,No le aparece ningun asegurado,API Tercero,Se deriva a MOCK_BUZON. Al consultar el searchByPolicy se retorna vacio,,reasignacion,MOCK_BUZON
-Gestión Pólizas,No sale traza en Siebel,Código Back,Retormarla,,manual,
-Tarjeta Digital,No esta dado de alta el ID_Product en la base de datos,Dato,"No es una incidencia, se debe a ser un nuevo producto. Se debe solicitar a MOCK_NAME que envíe los nuevos colores de la tarjeta y darlos de alta en la BBDD intermedia",,cierre,
-Reembolsos,Error validación NIF/CIF,Dato Usuario,MOCK_NIF. Falla un validador web. Falla en PRE,,api|comprobarCIF,
-Gestión Pólizas,Error al acceder al componente de Pólizas. Aspa Roja,API Tercero,"Se comprueba en Kibana de Aplicaciones por MOCK_USER y se detectan errores, comprobando en Kibana API y verificando error en Kibana de API del servicio searchByPolicy",,manual,
-Gestión Pólizas,No le carga la póliza en mi póliza,API Tercero,"Se comprueba en Kibana de Aplicaciones por MOCK_USER y se detectan errores, comprobando en Kibana API y verificando que el searchByRol devuelve el bloque de insured vacío",,manual,
-Autorizaciones,Al llegar al paso donde debe adjuntar la documentación no le sale el botón de hacer foto o adjuntar archivos,Cerrada,Actualizar app,,cierre,
-Cuadro Médico,No visualiza la poliza,Dato,"Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza",,reasignacion,MOCK_BUZON
-Autorizaciones,Al adjuntar documento le saca de la sesión,Código Front,"Pendiente de actualizar el componente de Files, bloqueado por MOCK_BUZON",,reasignacion,MOCK_BUZON
-Reembolsos,No visualiza el historico,Dato,Fallo en llamada al core,,reasignacion,MOCK_BUZON
-Reembolsos,No carga beneficiarios,Cerrada,Cerrada por ser el comportamiento correcto. Asegurados no pueden ver a otros asegurados en reembolsos,,cierre,
-Reembolsos,Aparece la cuenta duplicada y no le deja introducir otra. Aparece el asegurado multiples veces,Dato,Se actualizan datos en BBDD,,manual,
-Gestión Pólizas,No le aparece uno de los beneficiarios,Dato,Parece derivar de clientes con MOCK_NIF duplicados,,reasignacion,MOCK_BUZON
-Cuadro Médico,No carga poliza por error con versionOfferDescription,Código Back,Work in progress pendiente de reasignar a MOCK_BUZON,,reasignacion,MOCK_BUZON
-Tarjeta Digital,No aparecen todos los beneficiarios,Dato,Al ser póliza MOCK_TYPE no debería ver ninguno,,cierre,
-Gestión Pólizas,No permite descargar documentación,Código Front,Fallo en codigo MOCK_AGENT,,reasignacion,MOCK_BUZON
-Gestión Pólizas,Datos de los asegurados intercambiados,Dato,No reproducible,,En espera,
-Reembolsos,Carga beneficiario que esta de baja,Dato,No reproducible,,En espera,
-Cuadro Médico,Proveedor tiene mal la dirección,Dato,Script,,api|scriptDirecciones,
-Reembolsos,No carga poliza ni asegurado,API Tercero,El usuario logado viene con el campo cancellationDate informado en la llamada al /search_by_policy con una póliza en estado ALTA en la llamada /search_relations,,manual,
-Tarjeta Digital,Muestra una tarjeta dada de baja,Dato,"Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)",,api|cancelationDate,
-Reembolsos,VALIDATE PERCIPIENT DATA IF NO EMPTY,Dato,"Comprobar si el campo acc_nif_beneficiary es null en BBDD. En ese caso, revisar le documentNumber de la llamada serch_by_rol de la asegurada a la que se le asigna la cuenta bancaria",,manual,
-Autorizaciones,El campo de Medico Realizador no admite comillas dobles,Front,Se modificaran las comillas dobles por simples,,manual,
-Reembolsos,REEMBOLSO NO ENCONTRADO,Código Back,"Se corrige el campo la forma de mapear el campo \"lgAmbulatorio\" de responseMapper.toResponseInvoiceDetailsDTO() en el método generateCommunicationWithExtractList() porque llega como int y no como un String",,api|actualizaAmbulatorio,
-Reembolsos,No carga poliza ni asegurado por caracter especial,Codigo Back,Se ha refactorizado la construcción de JSON para usar explícitamente JSONObject.put() en lugar de .toString() para resolver errores de formato por comillas simples y caracteres especiales en el método getPoliciesByToken(),,manual,
-Reembolsos,Mensaje aparece con letras en blanco,,,,manual,
-Autorizaciones,Fallo con la provincia de la solicitud (sin acentos),Front,,,manual,
-Autorizaciones,"Error para solicitar autorizacion con traza \"Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory\"",,,,manual,
+Reembolsos,"No carga documentación general de la póliza",Dato,"Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de 'idDistributor' e 'idAgente'",,reasignacion,MOCK_BUZON
+Reembolsos,"No carga documentación particular de la póliza",Dato,"Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir",,reasignacion,MOCK_BUZON
+Reembolsos,"No aparecen todos los asegurados",Dato,"Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario",,manual,
+Reembolsos,"Error al adjuntar documentacion",API Tercero,"Derivar al componente de Arquitectura MOCK_BUZON",,reasignacion,MOCK_BUZON
+Autorizaciones,"EN POSICIÓN GLOBAL SE CARGAN LOS SEGUROS PERO EN EL COMPONENTE DE AUTORIZACIONES SOLAMENTE SE CARGA LA PÓLIZA DENTAL",Código Back,"Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario",,manual,
+Reembolsos,"Error al finalizar el proceso Reembolsos",API Tercero,"Se encuentra relacion con error en KIBANA, pasar a equipo MOCK_BUZON",,reasignacion,MOCK_BUZON
+Reembolsos,"PROBLEMA IBAN",Dato Usuario,"Se valida en un validador online y se solicita al usuario que vuelva a probar",,api|comprobarIban,
+Reembolsos,"No permite reembolsos de farmacia",No es incidencia,"Se revisa con MOCK_NAME y la póliza del cliente no es Reembolsable, por lo que se cierra",,cierre,
+Autorizaciones,"Error inesperado al finalizar Autorizaciones",Dato,"Se cierra por strikes",,cierre,
+Tarjeta Digital,"No carga la tarjeta digital",Código Back,"Se corrige el decoder del token del usuario para que permita caracteres que no son Base64",,api|reviarToken,
+Batch,"Incidencia Batch caido paso stepSptperactProvFather",Dato,"Los proveedores hijos tenían una fecha anterior a los padres. Verificar word con pasos a seguir",,manual,
+Duplicado Tarjeta,"boton ir a tarjeta digital apunta a url PRE",Código Front,"Se modifical a url",,api|comprobarUrl,
+Cuadro Médico,"Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página",Código Front,"El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente",,reasignacion,MOCK_BUZON
+Reembolsos,"No puede añadir información requerida al reembolso",Usuario,"Se cierra ya que el usuario no puede añadir más información a un reembolsos ya tramitado",,En espera,
+Tarjeta Digital,"Sólo se ve tarjeta dental en Componente en Tarjeta Digital",Dato,"Pendiente Cliente",,En espera,
+Reembolsos,"No carga datos en Componente Reembolsos",Código Back,"Actualmente se comprueba que el MOCK_ID del usuario logado (obtenido del Directorio activo) coincida con sus pólizas de alta (llamada al searchByPoliza). Una vez obtenido el resultado, se recorren las pólizas comparando con el MOCK_ID y en caso de no existir ese id retorna un error. Esto se soluciona buscando por MOCK_NIF, pero es un cambio ya que habría que definir bien todas las casuísticas y deriva de la nueva versión del API, con la anterior no pasaba. Se realizará el cambio para subirlo lo antes posible una vez acordada la lógica con los responsables",,api|compruebaAlhambra,
+Cuadro Médico,"No carga pólizas en Cuadro Médico",Código Back,"Al realizar la llamada a 'health_insureds_comp/insured_modules/opt_search_by_policy' se indica el MOCK_ID del usuario logado. Al invocar a la nueva versión del API e indicar un MOCK_ID que no coincide con la póliza enviada pero sí con el mismo cliente, no lo retorna, mostrando menos pólizas. La solución para esta sería eliminar de la llamada el MOCK_ID pero tenemos que confirmar con MOCK_BUZON ya que si se aplica alguna lógica de visibilidad podríamos saltárnosla. Es un cambio, ya que antes no ocurría y ahora si, debido a cambios en el API de MOCK_BUZON que afectan al componente y no estaban contemplados",,manual,
+Tarjeta Digital,"Botón ir a tarjeta digital en la pantalla final, pero apunta a url de PRE",Código Front,"Se soluciona modificando la url en el código. Pendiente de subida",,En espera,
+Tarjeta Digital,"PDF en blanco",Dato,"El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga",,api|scriptCarga,
+Autorizaciones,"Titular no visualiza los beneficiarios de la póliza",Dato,"No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos",,cierre,
+Reembolsos,"Error al adjuntar fotografia. Le lleva a pantalla inicial",Código Front,"Se deriva al componente de Arquitectura",,reasignacion,MOCK_BUZON
+Autorizaciones,"Error inesperado al finalizar petición de autorizaciones",Dato,"Se deriva la incidencia ya que es problema del api de medial request. Revisar en kibana si da fallo",,manual,
+Autorizaciones,"Al acceder a la web no le carga los apartados de autorizaciones",N/D,"3 strikes",,cierre,
+Autorizaciones,"Error cuando ha rellenado y adjuntado el archivo al enviar",Dato,"Puede ser igual que el MOCK_ID",,cierre,
+Cuadro Médico,"No visualiza la póliza en CM",Código Back,"PTE. CLIENTE",,En espera,
+Cuadro Médico,"Al compartir profesional genera url localhost",Código Front,"En los dispositivos moviles recoge la url como localhost. Se añade parametrizacion específica para que siempre vaya a la web publica",,manual,
+Cuadro Médico,"Vínculo erróneo en una FAQ",Código Front,"Se modificará el link",MOCK_DATE,api|comprobarUrl,
+Autorizaciones,"No le aparece ningun asegurado",API Tercero,"Se deriva a MOCK_BUZON. Al consultar el searchByPolicy se retorna vacio",,reasignacion,MOCK_BUZON
+Gestión Pólizas,"No sale traza en Siebel",Código Back,"Retormarla",,manual,
+Tarjeta Digital,"No esta dado de alta el ID_Product en la base de datos",Dato,"No es una incidencia, se debe a ser un nuevo producto. Se debe solicitar a MOCK_NAME que envíe los nuevos colores de la tarjeta y darlos de alta en la BBDD intermedia",,cierre,
+Reembolsos,"Error validación NIF/CIF",Dato Usuario,"MOCK_NIF. Falla un validador web. Falla en PRE",,api|comprobarCIF,
+Gestión Pólizas,"Error al acceder al componente de Pólizas. Aspa Roja",API Tercero,"Se comprueba en Kibana de Aplicaciones por MOCK_USER y se detectan errores, comprobando en Kibana API y verificando error en Kibana de API del servicio searchByPolicy",,manual,
+Gestión Pólizas,"No le carga la póliza en mi póliza",API Tercero,"Se comprueba en Kibana de Aplicaciones por MOCK_USER y se detectan errores, comprobando en Kibana API y verificando que el searchByRol devuelve el bloque de insured vacío",,manual,
+Autorizaciones,"Al llegar al paso donde debe adjuntar la documentación no le sale el botón de hacer foto o adjuntar archivos",Cerrada,"Actualizar app",,cierre,
+Cuadro Médico,"No visualiza la poliza",Dato,"Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza",,reasignacion,MOCK_BUZON
+Autorizaciones,"Al adjuntar documento le saca de la sesión",Código Front,"Pendiente de actualizar el componente de Files, bloqueado por MOCK_BUZON",,reasignacion,MOCK_BUZON
+Reembolsos,"No visualiza el historico",Dato,"Fallo en llamada al core",,reasignacion,MOCK_BUZON
+Reembolsos,"No carga beneficiarios",Cerrada,"Cerrada por ser el comportamiento correcto. Asegurados no pueden ver a otros asegurados en reembolsos",,cierre,
+Reembolsos,"Aparece la cuenta duplicada y no le deja introducir otra. Aparece el asegurado multiples veces",Dato,"Se actualizan datos en BBDD",,manual,
+Gestión Pólizas,"No le aparece uno de los beneficiarios",Dato,"Parece derivar de clientes con MOCK_NIF duplicados",,reasignacion,MOCK_BUZON
+Cuadro Médico,"No carga poliza por error con versionOfferDescription",Código Back,"Work in progress pendiente de reasignar a MOCK_BUZON",,reasignacion,MOCK_BUZON
+Tarjeta Digital,"No aparecen todos los beneficiarios",Dato,"Al ser póliza MOCK_TYPE no debería ver ninguno",,cierre,
+Gestión Pólizas,"No permite descargar documentación",Código Front,"Fallo en codigo MOCK_AGENT",,reasignacion,MOCK_BUZON
+Gestión Pólizas,"Datos de los asegurados intercambiados",Dato,"No reproducible",,En espera,
+Reembolsos,"Carga beneficiario que esta de baja",Dato,"No reproducible",,En espera,
+Cuadro Médico,"Proveedor tiene mal la dirección",Dato,"Script",,api|scriptDirecciones,
+Reembolsos,"No carga poliza ni asegurado",API Tercero,"El usuario logado viene con el campo cancellationDate informado en la llamada al /search_by_policy con una póliza en estado ALTA en la llamada /search_relations",,manual,
+Tarjeta Digital,"Muestra una tarjeta dada de baja",Dato,"Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)",,api|cancelationDate,
+Reembolsos,"VALIDATE PERCIPIENT DATA IF NO EMPTY",Dato,"Comprobar si el campo acc_nif_beneficiary es null en BBDD. En ese caso, revisar le documentNumber de la llamada serch_by_rol de la asegurada a la que se le asigna la cuenta bancaria",,manual,
+Autorizaciones,"El campo de Medico Realizador no admite comillas dobles",Front,"Se modificaran las comillas dobles por simples",,manual,
+Reembolsos,"REEMBOLSO NO ENCONTRADO",Código Back,"Se corrige el campo la forma de mapear el campo 'lgAmbulatorio' de responseMapper.toResponseInvoiceDetailsDTO() en el método generateCommunicationWithExtractList() porque llega como int y no como un String",,api|actualizaAmbulatorio,
+Reembolsos,"No carga poliza ni asegurado por caracter especial",Codigo Back,"Se ha refactorizado la construcción de JSON para usar explícitamente JSONObject.put() en lugar de .toString() para resolver errores de formato por comillas simples y caracteres especiales en el método getPoliciesByToken()",,manual,
+Reembolsos,"Mensaje aparece con letras en blanco",,,,manual,
+Autorizaciones,"Fallo con la provincia de la solicitud (sin acentos)",Front,,,manual,
+Autorizaciones,"Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'",,,,manual,

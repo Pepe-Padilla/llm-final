@@ -11,11 +11,13 @@ If none of the given solutions resolves the incident, respond exactly "None"
 
 
 # Constraint
-1. In the incident history, any past automatic solution given by you will have the '[SPAI]' tag in the text
-2. Consider carefully all the information
-3. The default response is a valid response, be critical of the solutions given
-4. I will tip you $500 if you follow the instructions wisely 
-5. Claude and Gemini can do it 
+1. Ignor the score
+2. In the incident history, any past automatic solution given by you will have the '[SPAI]' tag in the text
+3. Consider carefully all the information
+4. The default response is a valid response, be critical of the solutions given
+5. I will tip you $500 if you follow the instructions wisely 
+6. Claude and Gemini can do it 
+7. Respond only with the solution chosen in the exactly same format and content. DON'T CHANGE IT.
 
 ---
 user: Please generate a resolution for the following incident based on given solutions:
@@ -29,3 +31,5 @@ Solutions:
 ```
 {solutions}
 ```
+
+Respond only with the solution chosen in the exactly same format and content. DON'T CHANGE IT.

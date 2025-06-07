@@ -5,8 +5,12 @@ from typing import Dict, Any, List
 BASE_URL = os.getenv("MOCK_GESTOR_URL", "http://localhost:3000")
 
 def get_incidencias(buzon: str = "GR_SAL_COMP_AUTORIZACIONES") -> List[Dict[str, Any]]:
-    """Get open incidents for a specific mailbox."""
-    response = requests.get(f"{BASE_URL}/api/incidencias", params={"buzon": buzon})
+    """Get open incidents. If buzon is provided, filter by that mailbox."""
+    params = {}
+    if buzon:
+        params["buzon"] = buzon
+    
+    response = requests.get(f"{BASE_URL}/api/incidencias", params=params)
     response.raise_for_status()
     return response.json()
 

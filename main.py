@@ -90,9 +90,9 @@ def main():
         # Extract keywords and add to metadata
         print("Extrayendo palabras clave...")
         keywords = extract_keywords(incidencia)
-        print(keywords)
-
+        
         # Process the resolution
+        print("Ejectuadndo resolución")
         result = process_resolution(resolution, incidencia, keywords)
 
         result["keywords"] = keywords
@@ -102,7 +102,7 @@ def main():
             "incidencia": incidencia,
             "resolucion": result
         })
-        print(result)
+        # print(result)
         resolucion_automatica = result.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
         tipos_resolucion.append(resolucion_automatica)
         

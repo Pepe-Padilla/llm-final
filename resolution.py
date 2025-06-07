@@ -20,13 +20,13 @@ def process_resolution(resolution, incidencia, keywords):
     
     etiqueta = os.getenv("ETIQUETA", "[SPAI] ")
     
-    print("-----")
-    print(type(resolution))
-    print(resolution)
+    # print("-----")
+    # print(type(resolution))
+    # print(resolution)
     # Handle case where resolution is a list
     if isinstance(resolution, list) and len(resolution) > 0:
         resolution = resolution[0]
-    print("-----")
+    # print("-----")
     # Get resolution type and metadata
     resolution_type = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA", "manual")
     buzon_reasignacion = resolution.get("BUZON REASIGNACION", "")

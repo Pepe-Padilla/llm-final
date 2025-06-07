@@ -7,7 +7,7 @@ const router = Router();
 const incidencias: Incidencia[] = [
   {
     codIncidencia: "MOCK_INC0001",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "No puede leer los mensajes de reembolsos",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -30,9 +30,9 @@ const incidencias: Incidencia[] = [
         Autor: "MOCK_NAME",
         CodigoResolucion: "MOCK_CODE",
         NotasResolucion: "Mensaje de cierre automático de ejemplo.",
-        buzonComentario: "MOCK_BUZON",
-        buzonAsignado: "MOCK_BUZON_CIERRE",
-        estado: "Resuelta",
+        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
+        estado: "En curso",
         detalle: null
       },
       {
@@ -49,7 +49,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0002",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "ERROR AL ENVIAR AUTORIZACION",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -60,7 +60,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0003",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error al cargar documentación general",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -92,7 +92,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0004",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con beneficiarios en reembolsos",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -103,7 +103,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0005",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error al adjuntar documentación",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -114,7 +114,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0006",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con IBAN en reembolsos",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -125,7 +125,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0007",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error en tarjeta digital",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -138,8 +138,8 @@ const incidencias: Incidencia[] = [
         Autor: "MOCK_NAME",
         CodigoResolucion: null,
         NotasResolucion: null,
-        buzonComentario: "MOCK_BUZON",
-        buzonAsignado: "MOCK_BUZON",
+        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "En espera",
         detalle: "Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE."
       },
@@ -157,7 +157,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0008",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con cuadro médico",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -168,7 +168,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0009",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error en gestión de pólizas",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -181,8 +181,8 @@ const incidencias: Incidencia[] = [
         Autor: "MOCK_NAME",
         CodigoResolucion: null,
         NotasResolucion: null,
-        buzonComentario: "MOCK_BUZON",
-        buzonAsignado: "MOCK_BUZON",
+        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "En curso",
         detalle: "Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy."
       },
@@ -191,8 +191,8 @@ const incidencias: Incidencia[] = [
         Autor: "MOCK_NAME",
         CodigoResolucion: null,
         NotasResolucion: null,
-        buzonComentario: "MOCK_BUZON",
-        buzonAsignado: "MOCK_BUZON_TECNICO",
+        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "En espera",
         detalle: "Pendiente de confirmación de cambios en el API de MOCK_BUZON."
       },
@@ -201,8 +201,8 @@ const incidencias: Incidencia[] = [
         Autor: "MOCK_NAME",
         CodigoResolucion: "MOCK_CODE",
         NotasResolucion: "Se requiere actualización del componente para adaptarse a la nueva versión del API.",
-        buzonComentario: "MOCK_BUZON_TECNICO",
-        buzonAsignado: "MOCK_BUZON",
+        buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
+        buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "Pendiente implantar",
         detalle: "Se ha identificado la causa raíz y se está trabajando en la solución."
       }
@@ -210,7 +210,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0010",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con autorizaciones",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -221,7 +221,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0011",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error en descarga de documentación",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -232,7 +232,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0012",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con datos de asegurados",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -243,7 +243,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0013",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error en validación de NIF",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -254,7 +254,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0014",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Problema con PDF de tarjeta",
     solicitante: "MOCK_NAME",
     estado: "En espera",
@@ -265,7 +265,7 @@ const incidencias: Incidencia[] = [
   },
   {
     codIncidencia: "MOCK_INC0015",
-    buzon: "MOCK_BUZON",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
     titulo: "Error en médico realizador",
     solicitante: "MOCK_NAME",
     estado: "En curso",
@@ -279,7 +279,9 @@ const incidencias: Incidencia[] = [
 // GET /api/incidencias?buzon=GR_SAL_COMP_AUTORIZACIONES
 router.get('/incidencias', (req: Request, res: Response) => {
   const buzon = req.query.buzon as string;
-  const incidenciasFiltradas = incidencias.filter(inc => inc.buzon === buzon);
+  const incidenciasFiltradas = buzon 
+    ? incidencias.filter(inc => inc.buzon === buzon)
+    : incidencias;
   res.json(incidenciasFiltradas);
 });
 

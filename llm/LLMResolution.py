@@ -11,7 +11,7 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -44,6 +44,5 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
         "solutions": str(relevant_solutions)
     })
 
-    print(resolution)
-    
+    # print(resolution)
     return eval(resolution)  # Convert string to dict 

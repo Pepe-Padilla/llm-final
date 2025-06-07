@@ -12,7 +12,7 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -43,7 +43,7 @@ def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     # Get rephrased versions
     rephrased = chain.invoke({"incident": str(incident)})
     
-    print(rephrased)
+    # print(rephrased)
 
     # A veces mete agrupadores tipo {} en vez de un Array simple de Strings
     rephrased.replace("{","")
