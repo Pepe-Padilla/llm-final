@@ -50,7 +50,12 @@ def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     rephrased.replace("}","")
 
     # Parse the JSON array from the response
-    rephrased_list = json.loads(rephrased)
+    rephrased_list = []
+    try :
+        rephrased_list = json.loads(rephrased)
+    except:
+        print("Error en json loads rephrase_incidence")
+        print(rephrased)
     
     # Add the original incident at the beginning
     return [str(incident["descripcion"])] + rephrased_list 

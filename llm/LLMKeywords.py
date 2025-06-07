@@ -43,5 +43,11 @@ def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
     response = chain.invoke({"incident": str(incident)})
     
     # Parse the JSON response
-    # print(response)
-    return json.loads(response) 
+    json_response = {}
+    try:
+        json_response = json.loads(response)
+    except:
+        print("Error al interpretar json de extract_keywords")
+        print(response)
+
+    return json.loads(json_response) 
