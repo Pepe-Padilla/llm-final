@@ -17,15 +17,25 @@ def init_vector_db():
     client = QdrantClient(url=os.getenv("VECTOR_DB_URL"))
     
     # Delete existing collections
+    batch_logger.info("Limpiando colecciones existentes", extra_data={
+        "action": "delete_collection",
+        "collection_name": "incidencias"
+    })
     try:
         client.delete_collection("incidencias")
-    except:
+    except Exception as e:
+        batch_logger.error(f"Error deleting collection", extra_data={
+            "action": "delete_collection",
+            "collection_name": "incidencias",
+            "error": str(e)
+        })
         pass
     
     # Set vector size based on environment
     vector_size = 384 if os.getenv("ENTORNO") == "DESA" else 1536
     
     # Create new collection
+    batch_logger.info("Creando nueva colección")
     client.create_collection(
         collection_name="incidencias",
         vectors_config=models.VectorParams(
@@ -42,21 +52,36 @@ def process_csv(client, file_path, metadata_columns):
     total_rows = len(df)
     processed = 0
     
-    batch_logger.info(f"Total documents to process: {total_rows}")
+    batch_logger.info(f"Total documents to process {total_rows}", extra_data={
+        "action": "start_processing",
+        "file_path": file_path,
+        "total_rows": total_rows,
+        "metadata_columns": metadata_columns
+    })
     
     # Process each row
     for _, row in df.iterrows():
         # Generate summary using LLM
         summary = generate_summary(row.to_dict())
-        # print(summary)
+        batch_logger.debug(f"Summary:", extra_data={
+            "action": "generate_summary",
+            "summary": summary,
+            "DESCRIPCION": row["DESCRIPCION"],
+            "row_index": processed,
+            "summary_length": len(summary)
+        })
         
         # Get embedding
         vector = get_embedding(summary)
         
         # Prepare metadata
-        metadata = row.to_dict() #{col: str(row[col]) for col in metadata_columns}
-        # print("--------------------------------")
-        # print(metadata)
+        metadata = row.to_dict() 
+        batch_logger.debug(f"Metadata:", extra_data={
+            "action": "prepare_metadata",
+            "metadata": metadata,
+            "row_index": processed,
+            "metadata_keys": list(metadata.keys())
+        })
         
         # Add to vector database
         client.upsert(
@@ -76,7 +101,12 @@ def process_csv(client, file_path, metadata_columns):
         # Update progress
         processed += 1
         progress = (processed / total_rows) * 100
-        print(f"\rProgress: {progress:.1f}% ({processed}/{total_rows})", end="")
+        batch_logger.info(f"Progress: {progress:.1f}% ({processed}/{total_rows})", extra_data={
+            "action": "progress",
+            "progress": progress,
+            "processed": processed,
+            "total": total_rows
+        })
     
     batch_logger.info(f"Completed processing {processed} documents from {file_path}")
 
@@ -119,7 +149,12 @@ def main():
             ]
         )
 
-    batch_logger.info(f"Tiempo total: {time.time() - start_time:.2f} segundos")
+    total_time = time.time() - start_time
+    batch_logger.info(f"Tiempo total: {total_time:.2f} segundos", extra_data={
+        "action": "batch_complete",
+        "total_time_seconds": round(total_time, 2),
+        "files_processed": ["PROBLEMAS_GLOBALES.csv", "CORRECTIVOS_ABIERTOS.csv"] if os.path.exists(correctivos_path) else ["PROBLEMAS_GLOBALES.csv"]
+    })
 
 if __name__ == "__main__":
     main() 
