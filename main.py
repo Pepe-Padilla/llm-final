@@ -1,4 +1,3 @@
-import os
 import json
 from datetime import datetime
 from typing import List, Dict, Any
@@ -14,9 +13,81 @@ from resolution import process_resolution
 from observabilidad.logger import main_logger
 from collections import Counter
 import time
+import re
 
 # Load environment variables
 load_dotenv()
+
+def markdownJson(response: str) -> str:
+    """
+    Convierte una respuesa de un LLM, si tiene acotadores de código markdown se los quita
+    
+    Args:
+        response: String con la respuesta de un LLM y si la respuesta esta en entre indicadores de código markdown
+            los elimina
+            
+    Returns:
+        String si backquotes de markdown
+    """
+    match = re.search(r"```(?:[a-zA-Z]+\n)?(.*?)```", response, re.DOTALL)
+    if match:
+        return match.group(1)
+    return response
+    
+def convert_json_response(response: str, section: str) -> Dict[str, Any]:
+    """
+    Convierte la respuesta string a json
+    
+    Args:
+        response: String raw de la respuesta del LLM
+        section: String de la sección para controlar el log
+        
+    Returns:
+        Dict con la respuesta
+    """
+    try:
+        response = markdownJson(response)
+        json_response = json.loads(response)
+        main_logger.debug(f"{section} response convertidas exitosamente", extra_data={
+            "action": f"{section}_converted_success",
+            "response": json_response,
+            "keys": list(json_response.keys()) if hasattr(json_response, 'keys') else [],
+            "response_type": type(json_response).__name__
+        })
+        return json_response
+    except Exception as e:
+        main_logger.error("Error convert_json_response", extra_data={
+            "action": f"{section}_conversion_error",
+            "error": str(e),
+            "error_type": type(e).__name__,
+            "raw_response": response
+        })
+        
+        # Fallback to empty dict
+        return {}
+    
+def convert_eval_response(response: str, section: str) -> Dict[str, Any]:
+    """
+    Convierte la respuesta string a python object por donde se deje el eval o json.loads
+    """
+    response = markdownJson(response)
+    try:
+        resp = eval(response)
+        return resp
+    except Exception as e:
+        try:
+            resp = convert_json_response(response, section)
+            return resp
+        except Exception as e2:
+            main_logger.error("Error convert_eval_response", extra_data={
+                "action": f"{section}_conversion_error",
+                "error1": str(e),
+                "error2": str(e2),
+                "error_type": type(e).__name__,
+                "error_type2": type(e2).__name__,
+                "raw_response": response
+            })
+            return {}
 
 def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
     """Get relevant solutions from vector DB for a given incident."""
@@ -46,7 +117,10 @@ def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
             "solution_keys": list(solution.keys()) if isinstance(solution, dict) else []
         })
         
-        if check_relevance(incident, solution):
+        relevance_response = check_relevance(incident, solution)
+        is_relevant = relevance_response.lower().strip().find("true") >= 0
+        
+        if is_relevant:
             relevant_solutions.append(solution)
             main_logger.debug("Solución marcada como relevante", extra_data={
                 "action": "solution_relevant",
@@ -98,26 +172,21 @@ def main():
         enhanced_historial = []
         
         for j, entry in enumerate(incidencia.get('historial', [])):
-            main_logger.debug(f"Procesando entrada {j+1} del historial", extra_data={
-                "action": "process_historial_entry",
-                "entry_index": j,
-                "total_entries": len(incidencia.get('historial', [])),
-                "entry_has_attachments": bool(entry.get('adjuntos')),
-                "entry_has_detail": bool(entry.get('detalle'))
-            })
             
             enhanced_entry = entry.copy()
             
             # Process attachments for this entry
             attachment_desc = process_attachments(entry)
-            if attachment_desc:
+            if(attachment_desc != ""):
                 main_logger.debug("Adjuntos procesados", extra_data={
                     "action": "attachments_processed",
                     "entry_index": j,
-                    "attachment_desc_length": len(attachment_desc),
-                    "attachment_desc_preview": attachment_desc[:100] + "..." if len(attachment_desc) > 100 else attachment_desc
+                    "attachment_desc": attachment_desc,
+                    "entry": entry.get('adjuntos', [])
                 })
-                
+
+            if attachment_desc:
+
                 if entry.get('detalle'):
                     # Enhance the detail with attachment analysis
                     enhanced_entry['detalle'] = entry['detalle'] + " | Análisis de adjuntos: " + attachment_desc
@@ -144,7 +213,17 @@ def main():
         
         # Get rephrased versions of the enhanced incident
         main_logger.info("Generando consultas...")
-        rephrased_versions = rephrase_incidence(enhanced_incidencia)
+        rephrase_response = rephrase_incidence(enhanced_incidencia)
+        
+        main_logger.debug("Respuesta raw de rephrase recibida", extra_data={
+            "action": "raw_rephrase_received",
+            "response_length": len(rephrase_response),
+            "response_preview": rephrase_response[:200] + "..." if len(rephrase_response) > 200 else rephrase_response
+        })
+        
+        # Convert the string response to the required format
+        rephrased_versions = convert_json_response(rephrase_response, "rephrase")
+        rephrased_versions = [str(incidencia["descripcion"])] + rephrased_versions
         
         main_logger.debug(f"Versiones reformuladas generadas: {len(rephrased_versions)}", extra_data={
             "action": "rephrased_versions_created",
@@ -190,12 +269,17 @@ def main():
         main_logger.info("Generando resolución final...")
         resolution = None
         if all_relevant_solutions:
-            resolution = get_resolution(enhanced_incidencia, all_relevant_solutions)
-            main_logger.debug("Resolución generada automáticamente", extra_data={
-                "action": "auto_resolution_generated",
+            resolution_response = get_resolution(enhanced_incidencia, all_relevant_solutions)
+            
+            main_logger.debug("Respuesta raw de get_resolution recibida", extra_data={
+                "action": "raw_resolution_received",
                 "solutions_used": len(all_relevant_solutions),
-                "resolution_keys": list(resolution.keys()) if isinstance(resolution, dict) else []
+                "response_length": len(resolution_response),
+                "response_preview": resolution_response[:200] + "..." if len(resolution_response) > 200 else resolution_response
             })
+            
+            # Convert the string response to the required format
+            resolution = convert_eval_response(resolution_response, "resolution")
         else:
             resolution = {
                 "RESOLUCION AUTOMÁTICA": "manual",
@@ -207,14 +291,24 @@ def main():
                 "reason": "no_solutions_available"
             })
         
+        # Si por alguna razon la resolución es una lista, se toma el primer elemento
+        if isinstance(resolution,List):
+            main_logger.warning("Resolución es una lista wtf", extra_data={
+                "action": "resolution_is_list",
+                "resolution": resolution
+            })
+            resolution = resolution[0]
+
         # Extract keywords and add to metadata
         main_logger.info("Extrayendo palabras clave...")
-        keywords = extract_keywords(enhanced_incidencia)
+        keywords_response = extract_keywords(enhanced_incidencia)
+
+        # Convert the string response to the required format
+        keywords = convert_json_response(keywords_response, "keywords")
         
         main_logger.debug("Palabras clave extraídas", extra_data={
             "action": "keywords_extracted",
-            "keywords_count": len(keywords),
-            "keywords": keywords[:10] if len(keywords) > 10 else keywords
+            "keywords":keywords
         })
         
         # Process the resolution
@@ -225,7 +319,7 @@ def main():
         
         main_logger.debug("Resolución procesada", extra_data={
             "action": "resolution_processed",
-            "resolution_type": resolution.get("RESOLUCION AUTOMÁTICA", result.get("RESOLUCION AUTOMÁTICA")),
+            "resolution_type": result.get("RESOLUCION AUTOMÁTICA"),
             "result_keys": list(result.keys()),
             "api_status": result.get("estado_api", {})
         })
@@ -235,7 +329,7 @@ def main():
             "incidencia": incidencia,
             "resolucion": result
         })
-        
+
         resolucion_automatica = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
         if resolucion_automatica == None:
             resolucion_automatica = "api resolution ->" +  result.get("RESOLUCION AUTOMÁTICA")

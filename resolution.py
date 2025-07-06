@@ -41,16 +41,6 @@ def process_resolution(resolution, incidencia, keywords):
         "resolution_preview": str(resolution)[:200] + "..." if len(str(resolution)) > 200 else str(resolution)
     })
     
-    # Handle case where resolution is a list
-    if isinstance(resolution, list) and len(resolution) > 0:
-        resolution_logger.debug("Resolución es una lista, tomando primer elemento", extra_data={
-            "action": "resolution_list_handling",
-            "codIncidencia": incidencia["codIncidencia"],
-            "list_length": len(resolution),
-            "selected_index": 0
-        })
-        resolution = resolution[0]
-    
     # Get resolution type and metadata
     resolution_type = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA", "manual")
     buzon_reasignacion = resolution.get("metadata",{}).get("BUZON REASIGNACION", "")
@@ -58,10 +48,9 @@ def process_resolution(resolution, incidencia, keywords):
     
     resolution_logger.debug("Metadatos de resolución extraídos", extra_data={
         "action": "resolution_metadata_extracted",
-        "codIncidencia": incidencia["codIncidencia"],
         "resolution_type": resolution_type,
         "buzon_reasignacion": buzon_reasignacion,
-        "solucion_length": len(solucion),
+        "solucion_length": len(solucion) if solucion else 0,
         "etiqueta": etiqueta
     })
     

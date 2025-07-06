@@ -12,7 +12,8 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        # return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="gemma3", temperature=0)
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -20,7 +21,7 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
+def extract_keywords(incident: Dict[str, Any]) -> str:
     """Extract keywords from incident description, title and history."""
     llm = get_llm()
     
@@ -42,13 +43,5 @@ def extract_keywords(incident: Dict[str, Any]) -> Dict[str, Any]:
     
     response = chain.invoke({"incident": str(incident)})
     
-    # Parse the JSON response
-    json_response = {}
-    try:
-        json_response = json.loads(response)
-    except:
-        print("Error al interpretar json de extract_keywords")
-        print(response)
-
-
-    return json_response
+    # Return the raw response string for the calling service to handle
+    return response

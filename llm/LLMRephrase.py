@@ -12,7 +12,8 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        # return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="gemma3", temperature=0)
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -20,7 +21,7 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
+def rephrase_incidence(incident: Dict[str, Any]) -> str:
     """Rephrase the incident description to be more clear and structured."""
     llm = get_llm()
     
@@ -40,22 +41,8 @@ def rephrase_incidence(incident: Dict[str, Any]) -> List[str]:
     
     chain = prompt | llm
 
-    # Get rephrased versions
+    # Get rephrased versions and return raw response
     rephrased = chain.invoke({"incident": str(incident)})
     
-    # print(rephrased)
-
-    # A veces mete agrupadores tipo {} en vez de un Array simple de Strings
-    rephrased.replace("{","")
-    rephrased.replace("}","")
-
-    # Parse the JSON array from the response
-    rephrased_list = []
-    try :
-        rephrased_list = json.loads(rephrased)
-    except:
-        print("Error en json loads rephrase_incidence")
-        print(rephrased)
-    
-    # Add the original incident at the beginning
-    return [str(incident["descripcion"])] + rephrased_list 
+    # Return the raw response string for the calling service to handle
+    return rephrased 

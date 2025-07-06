@@ -11,7 +11,8 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        # return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama2")
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="gemma3")
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -19,7 +20,7 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> bool:
+def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> str:
     """Check if the incident is relevant for automatic resolution."""
     llm = get_llm()
     
@@ -44,6 +45,5 @@ def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> bool:
         "solution": str(solution)
     })
 
-    # print(response)
-    # print(response.lower().strip().find("true"))
-    return response.lower().strip().find("true") >= 0
+    # Return the raw response string for the calling service to handle
+    return response

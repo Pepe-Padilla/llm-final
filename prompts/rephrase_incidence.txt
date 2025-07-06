@@ -6,18 +6,19 @@ You are a brilliant expert at understanding the intent of the incident and gener
 Your task is to create exactly 2 alternative phrasings of the incident description.
 Each alternative should capture the same intent but use different wording.
 Use mainly 'titulo', 'descripcion', 'detalle' y 'CodigoResolucion' to determine the problem
-Return ONLY a JSON array of 2 strings, nothing else.
+Return ONLY a JSON array of 2 strings, nothing else, Don't include markdown quotes like ```json.
 
 # Example Output
 ["No carga pólizas en Cuadro Médico", "Las pólizas en Cuadro Médico no son visibles", "Al intentar acceder a la información de las pólizas no obtengo resultados desde la sección del Cuadro Médico", "[Cuadro Médico] Las pólizas no son visibles"]
 
 # Requirements
 1. Return ONLY a JSON array of exactly 2 strings
-2. Each string should be a clear, concise rephrasing of the incident
-3. Use different wording but maintain the same meaning
-4. Do not include any explanations or additional text
-5. The response must be valid JSON that can be parsed by json.loads()
-6. Return ONLY a JSON array of exactly 2 strings
+2. ONLY JSON aray, Don't include markdown quotes like ```json
+3. Each string should be a clear, concise rephrasing of the incident
+4. Use different wording but maintain the same meaning
+5. Do not include any explanations or additional text
+6. The response must be valid JSON that can be parsed by json.loads()
+7. Return ONLY a JSON array of exactly 2 strings
 
 You must provide all responses in Spanish.
 

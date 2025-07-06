@@ -59,16 +59,19 @@ class LokiLogger:
     def info(self, message: str, extra_data: Dict[str, Any] = None):
         """Log de información."""
         self.logger.info(message)
+        print(f"[INFO] {message}")
         self._send_to_loki("INFO", message, extra_data)
     
     def error(self, message: str, extra_data: Dict[str, Any] = None):
         """Log de error."""
         self.logger.error(message)
+        print(f"[ERROR] {message} | extra: {json.dumps(extra_data, ensure_ascii=False)}")
         self._send_to_loki("ERROR", message, extra_data)
     
     def warning(self, message: str, extra_data: Dict[str, Any] = None):
         """Log de advertencia."""
         self.logger.warning(message)
+        print(f"[WARNING] {message} | extra: {json.dumps(extra_data, ensure_ascii=False)}")
         self._send_to_loki("WARNING", message, extra_data)
     
     def debug(self, message: str, extra_data: Dict[str, Any] = None):

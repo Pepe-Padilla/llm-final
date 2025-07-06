@@ -10,21 +10,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def load_fine_tuned_model():
-    """
-    Carga el modelo fine-tuneado desde MLflow.
-    """
-    try:
-        # Conectar a MLflow
-        mlflow.set_tracking_uri('http://localhost:5000')
-        
-        # Cargar el modelo más reciente
-        model = mlflow.pytorch.load_model('models:/image-to-text-simple/latest')
-        print("Modelo fine-tuneado cargado exitosamente")
-        return model
-    except Exception as e:
-        print(f"Error cargando modelo fine-tuneado: {e}")
-        return None
+# Cargar modelo una sola vez globalmente
+try:
+    mlflow.set_tracking_uri('http://localhost:5000')
+    global_model = mlflow.pytorch.load_model('models:/image-to-text-base/latest')
+    print("Modelo fine-tuneado cargado exitosamente")
+except Exception as e:
+    print(f"Error cargando modelo fine-tuneado: {e}")
+    global_model = None
 
 def analyze_image_with_fine_tuned_model(image_url: str, model) -> str:
     """
@@ -67,7 +60,7 @@ def analyze_image_with_fine_tuned_model(image_url: str, model) -> str:
             generated_ids = model.generate(
                 pixel_values,
                 max_length=128,
-                num_beams=4,
+                num_beams=1,
                 early_stopping=True
             )
         
@@ -80,7 +73,7 @@ def analyze_image_with_fine_tuned_model(image_url: str, model) -> str:
         return generated_text
         
     except Exception as e:
-        return f"Error al analizar imagen con modelo fine-tuneado: {str(e)}"
+        raise e
 
 def analyze_image(image_url: str) -> str:
     """
@@ -93,16 +86,14 @@ def analyze_image(image_url: str) -> str:
         str: Descripción del problema encontrado en la imagen
     """
     try:
-        # Cargar modelo fine-tuneado
-        model = load_fine_tuned_model()
-        if model is None:
+        if global_model is None:
             return f"Error: No se pudo cargar el modelo fine-tuneado"
         
         # Analizar con modelo fine-tuneado
-        return analyze_image_with_fine_tuned_model(image_url, model)
+        return analyze_image_with_fine_tuned_model(image_url, global_model)
         
     except Exception as e:
-        return f"Error al analizar imagen: {str(e)}"
+        raise e
 
 def process_attachments(historial_entry: dict) -> str:
     """

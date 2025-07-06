@@ -11,7 +11,8 @@ load_dotenv()
 def get_llm():
     """Get the appropriate LLM based on environment."""
     if os.getenv("ENTORNO") == "DESA":
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        # return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
+        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="gemma3", temperature=0)
     else:
         return ChatOpenAI(
             model="gpt-4-mini",
@@ -19,7 +20,7 @@ def get_llm():
             api_key=os.getenv("OPENAI_API_KEY")
         )
 
-def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, Any]]) -> Dict[str, Any]:
+def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, Any]]) -> str:
     """Get the best resolution from a list of relevant solutions."""
     llm = get_llm()
     
@@ -44,5 +45,5 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
         "solutions": str(relevant_solutions)
     })
 
-    # print(resolution)
-    return eval(resolution)  # Convert string to dict 
+    # Return the raw response string for the calling service to handle
+    return resolution 

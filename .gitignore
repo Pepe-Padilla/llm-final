@@ -180,3 +180,5 @@ cython_debug/
 mlruns/
 mlartifacts/
 finetune/LLMimage/results/
+
+playground.ipynb
