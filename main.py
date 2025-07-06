@@ -9,7 +9,9 @@ from llm.LLMRelevance import check_relevance
 from llm.LLMResolution import get_resolution
 from llm.LLMQuery import query_vector_db
 from llm.LLMKeywords import extract_keywords
+from llm.LLMImageAnalysis import process_attachments
 from resolution import process_resolution
+from observabilidad.logger import main_logger
 from collections import Counter
 import time
 
@@ -41,10 +43,10 @@ def main():
     start_time = time.time()
     
     # Get open incidents
-    print("Obteniendo incidencias abiertas...")
+    main_logger.info("Obteniendo incidencias abiertas...")
     incidencias = get_incidencias()
     total_incidencias = len(incidencias)
-    print(f"Total de incidencias a procesar: {total_incidencias}")
+    main_logger.info(f"Total de incidencias a procesar: {total_incidencias}")
     
     # Process each incident
     resultados = []
@@ -55,15 +57,39 @@ def main():
     }
     
     for i, incidencia in enumerate(incidencias, 1):
-        print(f"\nProcesando incidencia {i}/{total_incidencias}")
-        print(f"Código: {incidencia['codIncidencia']}")
+        main_logger.info(f"Procesando incidencia {i}/{total_incidencias}", {
+            "codIncidencia": incidencia['codIncidencia'],
+            "titulo": incidencia['titulo']
+        })
         
-        # Get rephrased versions of the incident
-        print("Generando consultas...")
-        rephrased_versions = rephrase_incidence(incidencia)
+        # Process attachments from historial and enhance historial descriptions
+        main_logger.info("Procesando adjuntos...")
+        enhanced_historial = []
+        
+        for entry in incidencia.get('historial', []):
+            enhanced_entry = entry.copy()
+            
+            # Process attachments for this entry
+            attachment_desc = process_attachments(entry)
+            if attachment_desc and entry.get('detalle'):
+                # Enhance the detail with attachment analysis
+                enhanced_entry['detalle'] = entry['detalle'] + " | Análisis de adjuntos: " + attachment_desc
+            elif attachment_desc:
+                # If no detail exists, create one with attachment analysis
+                enhanced_entry['detalle'] = "Análisis de adjuntos: " + attachment_desc
+            
+            enhanced_historial.append(enhanced_entry)
+        
+        # Create enhanced incident with improved historial
+        enhanced_incidencia = incidencia.copy()
+        enhanced_incidencia['historial'] = enhanced_historial
+        
+        # Get rephrased versions of the enhanced incident
+        main_logger.info("Generando consultas...")
+        rephrased_versions = rephrase_incidence(enhanced_incidencia)
         
         # Get relevant solutions for each version
-        print("Buscando soluciones relevantes...")
+        main_logger.info("Buscando soluciones relevantes...")
         all_relevant_solutions = []
         progress = 0
         total_rows = len(rephrased_versions)
@@ -76,10 +102,10 @@ def main():
             all_relevant_solutions.extend(relevant_solutions)
         
         # Get final resolution from all relevant solutions
-        print("\nGenerando resolución final...")
+        main_logger.info("Generando resolución final...")
         resolution = None
         if all_relevant_solutions:
-            resolution = get_resolution(incidencia, all_relevant_solutions)
+            resolution = get_resolution(enhanced_incidencia, all_relevant_solutions)
         else:
             resolution = {
                 "RESOLUCION AUTOMÁTICA": "manual",
@@ -88,11 +114,11 @@ def main():
             }
         
         # Extract keywords and add to metadata
-        print("Extrayendo palabras clave...")
-        keywords = extract_keywords(incidencia)
+        main_logger.info("Extrayendo palabras clave...")
+        keywords = extract_keywords(enhanced_incidencia)
         
         # Process the resolution
-        print("Ejectuadndo resolución")
+        main_logger.info("Ejecutando resolución")
         result = process_resolution(resolution, incidencia, keywords)
 
         result["keywords"] = keywords
@@ -115,11 +141,11 @@ def main():
         if estado_api.get("sistema", "").startswith("error"):
             errores_api["sistema"] += 1
         
-        print(f"Resolución: {resolucion_automatica}")
-        if estado_api.get("gestor_incidencias", "").startswith("error"):
-            print(f"Error gestor incidencias: {estado_api['gestor_incidencias']}")
-        if estado_api.get("sistema", "").startswith("error"):
-            print(f"Error sistema: {estado_api['sistema']}")
+        main_logger.info(f"Resolución completada: {resolucion_automatica}", {
+            "resolucion": resolucion_automatica,
+            "errores_gestor": estado_api.get("gestor_incidencias", ""),
+            "errores_sistema": estado_api.get("sistema", "")
+        })
     
     # Calculate statistics
     stats = Counter(tipos_resolucion)
@@ -130,18 +156,15 @@ def main():
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(resultados, f, ensure_ascii=False, indent=2)
     
-    # Print final statistics
-    print("\n=== Estadísticas Finales ===")
-    print(f"Total de incidencias procesadas: {total_incidencias}")
-    print(f"Tiempo total: {time.time() - start_time:.2f} segundos")
-    print("\nDistribución de resoluciones:")
-    for tipo, cantidad in stats.items():
-        porcentaje = (cantidad / total_incidencias) * 100
-        print(f"- {tipo}: {cantidad} ({porcentaje:.1f}%)")
-    print("\nErrores de API:")
-    print(f"- Gestor de incidencias: {errores_api['gestor_incidencias']} errores")
-    print(f"- Sistema: {errores_api['sistema']} errores")
-    print(f"\nReporte guardado en: {report_path}")
+    # Log final statistics
+    main_logger.info("=== Estadísticas Finales ===", {
+        "total_incidencias": total_incidencias,
+        "tiempo_total": time.time() - start_time,
+        "distribucion_resoluciones": dict(stats),
+        "errores_gestor": errores_api['gestor_incidencias'],
+        "errores_sistema": errores_api['sistema'],
+        "reporte_path": report_path
+    })
 
 if __name__ == "__main__":
     main() 

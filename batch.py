@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import uuid
 from dotenv import load_dotenv
+from observabilidad.logger import batch_logger
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from llm.LLMGenerator import generate_summary
@@ -41,7 +42,7 @@ def process_csv(client, file_path, metadata_columns):
     total_rows = len(df)
     processed = 0
     
-    print(f"Total documents to process: {total_rows}")
+    batch_logger.info(f"Total documents to process: {total_rows}")
     
     # Process each row
     for _, row in df.iterrows():
@@ -77,7 +78,7 @@ def process_csv(client, file_path, metadata_columns):
         progress = (processed / total_rows) * 100
         print(f"\rProgress: {progress:.1f}% ({processed}/{total_rows})", end="")
     
-    print(f"\nCompleted processing {processed} documents from {file_path}")
+    batch_logger.info(f"Completed processing {processed} documents from {file_path}")
 
 def main():
 
@@ -88,7 +89,7 @@ def main():
     client = init_vector_db()
     
     # Process PROBLEMAS_GLOBALES.csv
-    print("Processing PROBLEMAS_GLOBALES.csv")
+    batch_logger.info("Processing PROBLEMAS_GLOBALES.csv")
     process_csv(
         client,
         "resources/PROBLEMAS_GLOBALES.csv",
@@ -104,7 +105,7 @@ def main():
     )
     
     # Process CORRECTIVOS_ABIERTOS.csv if it exists
-    print("Processing CORRECTIVOS_ABIERTOS.csv")
+    batch_logger.info("Processing CORRECTIVOS_ABIERTOS.csv")
     correctivos_path = "resources/CORRECTIVOS_ABIERTOS.csv"
     if os.path.exists(correctivos_path):
         process_csv(
@@ -118,7 +119,7 @@ def main():
             ]
         )
 
-    print(f"\nTiempo total: {time.time() - start_time:.2f} segundos")
+    batch_logger.info(f"Tiempo total: {time.time() - start_time:.2f} segundos")
 
 if __name__ == "__main__":
     main() 

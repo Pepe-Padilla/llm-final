@@ -7,6 +7,7 @@ export interface HistorialEntry {
   buzonAsignado: string;
   estado: string;
   detalle: string | null;
+  adjuntos?: string[];
 }
 
 export interface Incidencia {

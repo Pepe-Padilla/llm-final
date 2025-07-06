@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from observabilidad.logger import resolution_logger
 from api.gestor_incidencias import patch_incidencia
 from api.sistema import comprobacion_poliza
 
@@ -43,6 +44,10 @@ def process_resolution(resolution, incidencia, keywords):
     
     # Process based on resolution type
     if resolution_type == "manual":
+        resolution_logger.info("Resolución manual", {
+            "codIncidencia": incidencia["codIncidencia"],
+            "tipo": "manual"
+        })
         resolution["estado_api"] = estado_api
         return resolution
     
@@ -54,8 +59,17 @@ def process_resolution(resolution, incidencia, keywords):
                 notasResolucion=solucion
             )
             estado_api["gestor_incidencias"] = "OK"
+            resolution_logger.info("Incidencia cerrada", {
+                "codIncidencia": incidencia["codIncidencia"],
+                "tipo": "cierre",
+                "solucion": solucion
+            })
         except Exception as e:
             estado_api["gestor_incidencias"] = f"error: {str(e)}"
+            resolution_logger.error("Error cerrando incidencia", {
+                "codIncidencia": incidencia["codIncidencia"],
+                "error": str(e)
+            })
         resolution["estado_api"] = estado_api
         return resolution
     

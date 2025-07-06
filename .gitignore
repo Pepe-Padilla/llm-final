@@ -175,3 +175,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# MLflow
+mlruns/
+mlartifacts/
+finetune/LLMimage/results/

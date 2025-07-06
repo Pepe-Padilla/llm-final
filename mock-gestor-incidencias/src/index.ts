@@ -8,6 +8,9 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
+// Servir archivos estáticos desde public
+app.use('/api/adjuntos', express.static('public/adjuntos'));
+
 app.use('/api', router);
 
 app.listen(port, () => {

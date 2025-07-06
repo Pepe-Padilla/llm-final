@@ -151,7 +151,8 @@ const incidencias: Incidencia[] = [
         buzonComentario: "MOCK_BUZON",
         buzonAsignado: "MOCK_BUZON_TECNICO",
         estado: "En curso",
-        detalle: "Implementando solución para manejo de tarjetas MOCK_TYPE."
+        detalle: "Implementando solución para manejo de tarjetas MOCK_TYPE.",
+        adjuntos: ["/api/adjuntos/imagen001.png", "/api/adjuntos/imagen002.png"]
       }
     ]
   },
@@ -184,7 +185,8 @@ const incidencias: Incidencia[] = [
         buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
         buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "En curso",
-        detalle: "Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy."
+        detalle: "Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy.",
+        adjuntos: ["/api/adjuntos/imagen003.png"]
       },
       {
         Fecha: "05/01/2025 13:45:00 CEST",
@@ -194,7 +196,8 @@ const incidencias: Incidencia[] = [
         buzonComentario: "GR_SAL_COMP_AUTORIZACIONES",
         buzonAsignado: "GR_SAL_COMP_AUTORIZACIONES",
         estado: "En espera",
-        detalle: "Pendiente de confirmación de cambios en el API de MOCK_BUZON."
+        detalle: "Pendiente de confirmación de cambios en el API de MOCK_BUZON.",
+        adjuntos: ["/api/adjuntos/imagen004.png", "/api/adjuntos/imagen005.png"]
       },
       {
         Fecha: "05/01/2025 16:30:00 CEST",
@@ -362,6 +365,19 @@ router.patch('/incidencias/:codIncidencia', (req: Request, res: Response) => {
   }
 
   res.json(incidencia);
+});
+
+// GET /api/adjuntos/:filename
+router.get('/adjuntos/:filename', (req: Request, res: Response) => {
+  const { filename } = req.params;
+  
+  // Los archivos se sirven automáticamente por express.static
+  // Este endpoint solo maneja casos especiales si es necesario
+  res.json({
+    message: `Adjunto disponible: ${filename}`,
+    url: `/api/adjuntos/${filename}`,
+    tipo: "imagen"
+  });
 });
 
 export { router }; 

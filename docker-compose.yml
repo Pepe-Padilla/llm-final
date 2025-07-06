@@ -33,5 +33,26 @@ services:
     volumes:
       - qdrant_storage:/qdrant/storage
 
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    volumes:
+      - ./observabilidad/loki-config.yml:/etc/loki/local-config.yaml
+      - loki_data:/loki
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3002:3001"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./observabilidad/grafana-config.ini:/etc/grafana/grafana.ini
+
 volumes:
-  qdrant_storage: 
+  qdrant_storage:
+  loki_data:
+  grafana_data: 
