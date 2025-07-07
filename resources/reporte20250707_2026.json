@@ -1,0 +1,742 @@
+[
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0001",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "No puede leer los mensajes de reembolsos",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "01/01/2025 10:00:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",
+      "historial": [
+        {
+          "Fecha": "02/01/2025 08:00:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "MOCK_BUZON",
+          "buzonAsignado": "MOCK_BUZON",
+          "estado": "En espera",
+          "detalle": "Mensaje de ejemplo de historial."
+        },
+        {
+          "Fecha": "03/01/2025 08:00:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": "MOCK_CODE",
+          "NotasResolucion": "Mensaje de cierre automático de ejemplo.",
+          "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+          "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+          "estado": "En curso",
+          "detalle": null
+        },
+        {
+          "Fecha": "04/01/2025 08:00:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "MOCK_BUZON_CIERRE",
+          "buzonAsignado": "MOCK_BUZON",
+          "estado": "En curso",
+          "detalle": "Reapertura: Se adjunta evidencias del error, pop up avisos de reembolsos, la letra aparece en blanco"
+        }
+      ]
+    },
+    "resolucion": {
+      "score": 0.6733821,
+      "metadata": {
+        "COMPONENTE": "Reembolsos",
+        "DESCRIPCION": "Mensaje aparece con letras en blanco",
+        "TIPO INCIDENCIA": null,
+        "SOLUCIÓN": null,
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "Un mensaje con letras en blanco aparece.",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "poliza": "MOCK_POLICY",
+        "DNI": null,
+        "emails": "mock@email.com",
+        "telefono": "MOCK_PHONE",
+        "urls": null,
+        "idServicios": null
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0002",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "ERROR AL ENVIAR AUTORIZACION",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "01/01/2025 10:00:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.69155216,
+      "metadata": {
+        "COMPONENTE": "Autorizaciones",
+        "DESCRIPCION": "Error al solicitar autorización con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] no encontrado en directorio activo'",
+        "TIPO INCIDENCIA": null,
+        "SOLUCIÓN": null,
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "Error al solicitar autorización con traza \"Se ha capturado una FunctionalException: Cn [MOCK_NIF] no encontrado en directorio activo\".",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0002",
+        "poliza": "MOCK_POLICY",
+        "solicitante": "MOCK_NAME",
+        "email": "mock@email.com",
+        "telefono": "MOCK_PHONE",
+        "contenedor": "MOCK_WEB",
+        "app": "MOCK_APP",
+        "dispositivo": "MOCK_BROWSER",
+        "fechaApertura": "01/01/2025 10:00:00 CEST"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0003",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error al cargar documentación general",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "02/01/2025 09:15:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY",
+      "historial": [
+        {
+          "Fecha": "02/01/2025 10:30:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "MOCK_BUZON",
+          "buzonAsignado": "MOCK_BUZON",
+          "estado": "En espera",
+          "detalle": "Se requiere verificación de permisos de acceso a documentos."
+        },
+        {
+          "Fecha": "02/01/2025 14:45:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": "MOCK_CODE",
+          "NotasResolucion": "Se ha verificado que el problema está relacionado con la versión del API de documentación.",
+          "buzonComentario": "MOCK_BUZON",
+          "buzonAsignado": "MOCK_BUZON_TECNICO",
+          "estado": "En curso",
+          "detalle": "Reasignación a equipo técnico para actualización de API."
+        }
+      ]
+    },
+    "resolucion": {
+      "score": 0.65166104,
+      "metadata": {
+        "COMPONENTE": "Reembolsos",
+        "DESCRIPCION": "No carga documentación general de la póliza",
+        "TIPO INCIDENCIA": "Dato",
+        "SOLUCIÓN": "Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de 'idDistributor' e 'idAgente'",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "reasignacion",
+        "BUZON REASIGNACION": "MOCK_BUZON"
+      },
+      "summary": "La documentación general de la póliza no se carga correctamente.",
+      "estado_api": {
+        "gestor_incidencias": "error: patch_incidencia() got an unexpected keyword argument 'buzonDestino'. Did you mean 'buzon_destino'?",
+        "sistema": ""
+      },
+      "keywords": {
+        "poliza": "MOCK_POLICY",
+        "DNI": "MOCK_NIF",
+        "emails": [],
+        "telefono": [],
+        "urls": [],
+        "idServicios": []
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0004",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con beneficiarios en reembolsos",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "02/01/2025 11:30:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.7644923,
+      "metadata": {
+        "COMPONENTE": "Tarjeta Digital",
+        "DESCRIPCION": "No aparecen todos los beneficiarios",
+        "TIPO INCIDENCIA": "Dato",
+        "SOLUCIÓN": "Al ser póliza MOCK_TYPE no debería ver ninguno",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "cierre",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "No se muestran todos los beneficiarios.",
+      "estado_api": {
+        "gestor_incidencias": "error: patch_incidencia() got an unexpected keyword argument 'notasResolucion'. Did you mean 'notas_resolucion'?",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0004",
+        "poliza": "MOCK_POLICY",
+        "NIF": "MOCK_NIF",
+        "nombre": "MOCK_NAME"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0005",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error al adjuntar documentación",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "03/01/2025 14:20:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.609772,
+      "metadata": {
+        "COMPONENTE": "Reembolsos",
+        "DESCRIPCION": "Error al adjuntar documentacion",
+        "TIPO INCIDENCIA": "API Tercero",
+        "SOLUCIÓN": "Derivar al componente de Arquitectura MOCK_BUZON",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "reasignacion",
+        "BUZON REASIGNACION": "MOCK_BUZON"
+      },
+      "summary": "Error al adjuntar documentación en el componente de reembolsos.",
+      "estado_api": {
+        "gestor_incidencias": "error: patch_incidencia() got an unexpected keyword argument 'buzonDestino'. Did you mean 'buzon_destino'?",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0005",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "solicitante": "MOCK_NAME",
+        "titulo": "Error al adjuntar documentación",
+        "descripcion": "No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0006",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con IBAN en reembolsos",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "03/01/2025 16:45:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN",
+      "historial": []
+    },
+    "resolucion": {
+      "metadata": {
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": "",
+        "SOLUCIÓN": "[resolution_type] Error al llamar al sistema: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?",
+        "estado_api": {
+          "gestor_incidencias": "",
+          "sistema": "error: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?"
+        }
+      },
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0006",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "IBAN": "MOCK_IBAN",
+        "NIF": "MOCK_NIF",
+        "estado": "En curso",
+        "apertura": "03/01/2025 16:45:00 CEST",
+        "prioridad": "3 - Media"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0007",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error en tarjeta digital",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "04/01/2025 10:00:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME",
+      "historial": [
+        {
+          "Fecha": "04/01/2025 11:20:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+          "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+          "estado": "En espera",
+          "detalle": "Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE."
+        },
+        {
+          "Fecha": "04/01/2025 15:30:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": "Se está trabajando en la actualización del componente de generación de tarjetas digitales.",
+          "buzonComentario": "MOCK_BUZON",
+          "buzonAsignado": "MOCK_BUZON_TECNICO",
+          "estado": "En curso",
+          "detalle": "Implementando solución para manejo de tarjetas MOCK_TYPE.",
+          "adjuntos": [
+            "http://localhost:3000/api/adjuntos/imagen001.png",
+            "http://localhost:3000/api/adjuntos/imagen002.png"
+          ]
+        }
+      ]
+    },
+    "resolucion": {
+      "metadata": {
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": "",
+        "SOLUCIÓN": "[resolution_type] Error al llamar al sistema: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?",
+        "estado_api": {
+          "gestor_incidencias": "",
+          "sistema": "error: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?"
+        }
+      },
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "poliza": [],
+        "DNI": [],
+        "emails": [],
+        "telefono": [],
+        "urls": [
+          "http://localhost:3000/api/adjuntos/imagen001.png",
+          "http://localhost:3000/api/adjuntos/imagen002.png"
+        ],
+        "idServicios": [],
+        "codIncidencia": "MOCK_INC0007",
+        "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+        "titulo": "Error en tarjeta digital",
+        "solicitante": "MOCK_NAME",
+        "estado": "En espera",
+        "apertura": "04/01/2025 10:00:00 CEST",
+        "prioridad": "2 - Alta",
+        "descripcion": "No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME",
+        "historial": [
+          {
+            "Fecha": "04/01/2025 11:20:00 CEST",
+            "Autor": "MOCK_NAME",
+            "CodigoResolucion": null,
+            "NotasResolucion": null,
+            "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+            "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+            "estado": "En espera",
+            "detalle": "Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE."
+          },
+          {
+            "Fecha": "04/01/2025 15:30:00 CEST",
+            "Autor": "MOCK_NAME",
+            "CodigoResolucion": null,
+            "NotasResolucion": "Se está trabajando en la actualización del componente de generación de tarjetas digitales.",
+            "buzonComentario": "MOCK_BUZON",
+            "buzonAsignado": "MOCK_BUZON_TECNICO",
+            "estado": "En curso",
+            "detalle": "Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos: ison savings investment. your insurance MAPRE access promotions new. | cul your insurance MAPRE access promotions new."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0008",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con cuadro médico",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "04/01/2025 15:30:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.741719,
+      "metadata": {
+        "COMPONENTE": "Cuadro Médico",
+        "DESCRIPCION": "Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página",
+        "TIPO INCIDENCIA": "Código Front",
+        "SOLUCIÓN": "El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "reasignacion",
+        "BUZON REASIGNACION": "MOCK_BUZON"
+      },
+      "summary": "Al acceder al Cuadro Médico público y pinchar en OM, se descarga el fichero de OM html en lugar de abrir la página.",
+      "estado_api": {
+        "gestor_incidencias": "error: patch_incidencia() got an unexpected keyword argument 'buzonDestino'. Did you mean 'buzon_destino'?",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0008",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "titulo": "Problema con cuadro médico",
+        "solicitante": "MOCK_NAME",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0009",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error en gestión de pólizas",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "05/01/2025 09:00:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+      "historial": [
+        {
+          "Fecha": "05/01/2025 10:15:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+          "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+          "estado": "En curso",
+          "detalle": "Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy.",
+          "adjuntos": [
+            "http://localhost:3000/api/adjuntos/imagen003.png"
+          ]
+        },
+        {
+          "Fecha": "05/01/2025 13:45:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": null,
+          "NotasResolucion": null,
+          "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+          "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+          "estado": "En espera",
+          "detalle": "Pendiente de confirmación de cambios en el API de MOCK_BUZON.",
+          "adjuntos": [
+            "http://localhost:3000/api/adjuntos/imagen004.png",
+            "http://localhost:3000/api/adjuntos/imagen005.png"
+          ]
+        },
+        {
+          "Fecha": "05/01/2025 16:30:00 CEST",
+          "Autor": "MOCK_NAME",
+          "CodigoResolucion": "MOCK_CODE",
+          "NotasResolucion": "Se requiere actualización del componente para adaptarse a la nueva versión del API.",
+          "buzonComentario": "GR_SAL_COMP_AUTORIZACIONES",
+          "buzonAsignado": "GR_SAL_COMP_AUTORIZACIONES",
+          "estado": "Pendiente implantar",
+          "detalle": "Se ha identificado la causa raíz y se está trabajando en la solución."
+        }
+      ]
+    },
+    "resolucion": {
+      "score": 0.56510925,
+      "metadata": {
+        "COMPONENTE": "Cuadro Médico",
+        "DESCRIPCION": "No carga pólizas en Cuadro Médico",
+        "TIPO INCIDENCIA": "Código Back",
+        "SOLUCIÓN": "Al realizar la llamada a 'health_insureds_comp/insured_modules/opt_search_by_policy' se indica el MOCK_ID del usuario logado. Al invocar a la nueva versión del API e indicar un MOCK_ID que no coincide con la póliza enviada pero sí con el mismo cliente, no lo retorna, mostrando menos pólizas. La solución para esta sería eliminar de la llamada el MOCK_ID pero tenemos que confirmar con MOCK_BUZON ya que si se aplica alguna lógica de visibilidad podríamos saltárnosla. Es un cambio, ya que antes no ocurría y ahora si, debido a cambios en el API de MOCK_BUZON que afectan al componente y no estaban contemplados",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "La carga de pólizas en el Cuadro Médico no se realiza correctamente debido a la llamada al API que indica un MOCK_ID del usuario logado, lo que provoca que no se devuelvan todas las pólizas.",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "poliza": [
+          "MOCK_POLICY"
+        ],
+        "DNI": [
+          "MOCK_NIF"
+        ],
+        "emails": [],
+        "telefono": [],
+        "urls": [
+          "http://localhost:3000/api/adjuntos/imagen003.png",
+          "http://localhost:3000/api/adjuntos/imagen004.png",
+          "http://localhost:3000/api/adjuntos/imagen005.png"
+        ],
+        "idServicios": []
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0010",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con autorizaciones",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "05/01/2025 11:45:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.8464156,
+      "metadata": {
+        "COMPONENTE": "Autorizaciones",
+        "DESCRIPCION": "Error inesperado al finalizar petición de autorizaciones",
+        "TIPO INCIDENCIA": "Dato",
+        "SOLUCIÓN": "Se deriva la incidencia ya que es problema del api de medial request. Revisar en kibana si da fallo",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "Error inesperado al finalizar petición de autorizaciones.",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0010",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "titulo": "Problema con autorizaciones",
+        "solicitante": "MOCK_NAME",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0011",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error en descarga de documentación",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "06/01/2025 13:20:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.7902591,
+      "metadata": {
+        "COMPONENTE": "Reembolsos",
+        "DESCRIPCION": "No carga documentación general de la póliza",
+        "TIPO INCIDENCIA": "Dato",
+        "SOLUCIÓN": "Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de 'idDistributor' e 'idAgente'",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "reasignacion",
+        "BUZON REASIGNACION": "MOCK_BUZON"
+      },
+      "summary": "La documentación general de la póliza no se carga correctamente.",
+      "estado_api": {
+        "gestor_incidencias": "error: patch_incidencia() got an unexpected keyword argument 'buzonDestino'. Did you mean 'buzon_destino'?",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0011",
+        "poliza": "MOCK_POLICY",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0012",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con datos de asegurados",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "06/01/2025 16:00:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.67573047,
+      "metadata": {
+        "COMPONENTE": "Autorizaciones",
+        "DESCRIPCION": "Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'",
+        "TIPO INCIDENCIA": null,
+        "SOLUCIÓN": "None",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "Error al solicitar autorización con traza \"Se ha capturado una FunctionalException: CN [MOCK_NIF] no encontrado en directorio activo\".",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0012",
+        "poliza": "MOCK_POLICY",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0013",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error en validación de NIF",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "07/01/2025 10:30:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF",
+      "historial": []
+    },
+    "resolucion": {
+      "metadata": {
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": "",
+        "SOLUCIÓN": "[resolution_type] Error al llamar al sistema: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?",
+        "estado_api": {
+          "gestor_incidencias": "",
+          "sistema": "error: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?"
+        }
+      },
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0013",
+        "poliza": null,
+        "DNI": "MOCK_NIF",
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0014",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Problema con PDF de tarjeta",
+      "solicitante": "MOCK_NAME",
+      "estado": "En espera",
+      "apertura": "07/01/2025 14:15:00 CEST",
+      "prioridad": "3 - Media",
+      "descripcion": "El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF",
+      "historial": []
+    },
+    "resolucion": {
+      "metadata": {
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": "",
+        "SOLUCIÓN": "[resolution_type] Error al llamar al sistema: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?",
+        "estado_api": {
+          "gestor_incidencias": "",
+          "sistema": "error: comprobacion_poliza() got an unexpected keyword argument 'codSolucion'. Did you mean 'cod_solucion'?"
+        }
+      },
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0014",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "titulo": "Problema con PDF de tarjeta",
+        "solicitante": "MOCK_NAME",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  },
+  {
+    "incidencia": {
+      "codIncidencia": "MOCK_INC0015",
+      "buzon": "GR_SAL_COMP_AUTORIZACIONES",
+      "titulo": "Error en médico realizador",
+      "solicitante": "MOCK_NAME",
+      "estado": "En curso",
+      "apertura": "08/01/2025 09:45:00 CEST",
+      "prioridad": "2 - Alta",
+      "descripcion": "El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF",
+      "historial": []
+    },
+    "resolucion": {
+      "score": 0.8597306,
+      "metadata": {
+        "COMPONENTE": "Autorizaciones",
+        "DESCRIPCION": "El campo de Medico Realizador no admite comillas dobles",
+        "TIPO INCIDENCIA": "Front",
+        "SOLUCIÓN": "Se modificaran las comillas dobles por simples",
+        "FECHA DE RESOLUCIÓN": null,
+        "RESOLUCION AUTOMÁTICA": "manual",
+        "BUZON REASIGNACION": null
+      },
+      "summary": "El campo de \"Medico Realizador\" no admite comillas dobles.",
+      "estado_api": {
+        "gestor_incidencias": "",
+        "sistema": ""
+      },
+      "keywords": {
+        "codIncidencia": "MOCK_INC0015",
+        "poliza": null,
+        "DNI": null,
+        "emails": null,
+        "telefono": null,
+        "urls": null,
+        "idServicios": null,
+        "titulo": "Error en médico realizador",
+        "solicitante": "MOCK_NAME",
+        "NIF": "MOCK_NIF"
+      }
+    }
+  }
+]

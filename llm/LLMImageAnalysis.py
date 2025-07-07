@@ -13,7 +13,7 @@ load_dotenv()
 # Cargar modelo una sola vez globalmente
 try:
     mlflow.set_tracking_uri('http://localhost:5000')
-    global_model = mlflow.pytorch.load_model('models:/image-to-text-base/latest')
+    global_model = mlflow.pytorch.load_model('models:/image-to-text-finetuned/latest')
     print("Modelo fine-tuneado cargado exitosamente")
 except Exception as e:
     print(f"Error cargando modelo fine-tuneado: {e}")
