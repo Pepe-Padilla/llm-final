@@ -1,6 +1,7 @@
 import os
 import requests
 from typing import Dict, Any, List
+from datetime import datetime, timedelta
 
 BASE_URL = os.getenv("MOCK_GESTOR_URL", "http://localhost:3000")
 
@@ -13,6 +14,19 @@ def get_incidencias(buzon: str = "GR_SAL_COMP_AUTORIZACIONES") -> List[Dict[str,
     response = requests.get(f"{BASE_URL}/api/incidencias", params=params)
     response.raise_for_status()
     return response.json()
+
+def get_incidencias_cerradas(buzon: str = "GR_SAL_COMP_AUTORIZACIONES", meses: int = 2) -> List[Dict[str, Any]]:
+    """Get closed incidents. For mock, returns all closed incidents regardless of date."""
+    response = requests.get(f"{BASE_URL}/api/incidencias/cerradas")
+    response.raise_for_status()
+    incidencias_cerradas = response.json()
+    
+    # Filter by buzon if provided
+    if buzon:
+        incidencias_cerradas = [inc for inc in incidencias_cerradas if inc["buzon"] == buzon]
+    
+    # For mock environment, return all incidents (no date filtering)
+    return incidencias_cerradas
 
 def patch_incidencia(
     cod_incidencia: str,
