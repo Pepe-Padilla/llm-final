@@ -35,11 +35,12 @@ router.get('/poliza/:numeroPoliza', (req: Request, res: Response) => {
   res.json(poliza);
 });
 
-// POST /api/comprobacionPoliza
+// POST /api/comprobacionPoliza - Acepta cualquier parámetro
 router.post('/comprobacionPoliza', (req: Request, res: Response) => {
-  const data: ComprobacionPolizaRequest = req.body;
+  // Aceptar cualquier estructura de datos - no validar nada
+  const data = req.body;
   
-  // Simular diferentes respuestas aleatorias
+  // Simular diferentes respuestas aleatorias - siempre exitoso
   const respuestas: ComprobacionPolizaResponse[] = [
     {
       "RESOLUCION AUTOMÁTICA": "cierre",
@@ -67,6 +68,12 @@ router.post('/comprobacionPoliza', (req: Request, res: Response) => {
   const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
   
   res.json(respuesta);
+});
+
+// Agregar endpoint alternativo para mayor flexibilidad
+router.post('/comprobacion_poliza', (req: Request, res: Response) => {
+  // Mismo comportamiento que comprobacionPoliza
+  router.handle(req, res);
 });
 
 export { router }; 

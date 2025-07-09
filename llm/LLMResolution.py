@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+from .LLMLogger import log_llm_interaction
 
 # Load environment variables
 load_dotenv()
@@ -44,6 +45,9 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
         "incident": str(incident),
         "solutions": str(relevant_solutions)
     })
+
+    # Log the interaction
+    log_llm_interaction("LLMResolution", f"incident: {incident}, solutions: {len(relevant_solutions)}", resolution)
 
     # Return the raw response string for the calling service to handle
     return resolution 

@@ -7,6 +7,7 @@ import torch
 from transformers import AutoTokenizer
 from typing import List, Optional
 from dotenv import load_dotenv
+from .LLMLogger import log_llm_interaction
 
 load_dotenv()
 
@@ -87,12 +88,19 @@ def analyze_image(image_url: str) -> str:
     """
     try:
         if global_model is None:
-            return f"Error: No se pudo cargar el modelo fine-tuneado"
+            result = f"Error: No se pudo cargar el modelo fine-tuneado"
+        else:
+            # Analizar con modelo fine-tuneado
+            result = analyze_image_with_fine_tuned_model(image_url, global_model)
         
-        # Analizar con modelo fine-tuneado
-        return analyze_image_with_fine_tuned_model(image_url, global_model)
+        # Log the interaction
+        log_llm_interaction("LLMImageAnalysis", image_url, result)
+        
+        return result
         
     except Exception as e:
+        # Log the error
+        log_llm_interaction("LLMImageAnalysis", image_url, f"Error: {str(e)}")
         raise e
 
 def process_attachments(historial_entry: dict) -> str:

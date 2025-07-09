@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from .LLMEmbedding import get_embedding
+from .LLMLogger import log_llm_interaction
 
 # Load environment variables
 load_dotenv()
@@ -25,11 +26,16 @@ def query_vector_db(query: str, limit: int = 2) -> List[Dict[str, Any]]:
         limit=limit
     )
     
-    return [
+    result = [
         {
             "score": hit.score,
             "metadata": {k: v for k, v in hit.payload.items() if k != "summary"},
             "summary": hit.payload.get("summary", "")
         }
         for hit in search_result
-    ] 
+    ]
+    
+    # Log the interaction
+    log_llm_interaction("LLMQuery", f"query: {query}, limit: {limit}", f"results: {len(result)}")
+    
+    return result 

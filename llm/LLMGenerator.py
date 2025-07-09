@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+from .LLMLogger import log_llm_interaction
 
 # Load environment variables
 load_dotenv()
@@ -42,4 +43,9 @@ def generate_summary(incident: Dict[str, Any]) -> str:
     chain = prompt | llm
     
     # Get summary
-    return chain.invoke({"metadata": str(incident)}) 
+    summary = chain.invoke({"metadata": str(incident)})
+    
+    # Log the interaction
+    log_llm_interaction("LLMGenerator", incident, summary)
+    
+    return summary 

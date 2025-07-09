@@ -5,6 +5,7 @@ from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 import json
+from .LLMLogger import log_llm_interaction
 
 # Load environment variables
 load_dotenv()
@@ -43,6 +44,9 @@ def rephrase_incidence(incident: Dict[str, Any]) -> str:
 
     # Get rephrased versions and return raw response
     rephrased = chain.invoke({"incident": str(incident)})
+    
+    # Log the interaction
+    log_llm_interaction("LLMRephrase", incident, rephrased)
     
     # Return the raw response string for the calling service to handle
     return rephrased 

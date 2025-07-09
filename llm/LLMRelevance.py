@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+from .LLMLogger import log_llm_interaction
 
 # Load environment variables
 load_dotenv()
@@ -44,6 +45,9 @@ def check_relevance(incident: Dict[str, Any], solution: Dict[str, Any]) -> str:
         "incident": str(incident),
         "solution": str(solution)
     })
+
+    # Log the interaction
+    log_llm_interaction("LLMRelevance", f"incident: {incident}, solution: {solution}", response)
 
     # Return the raw response string for the calling service to handle
     return response
