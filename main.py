@@ -9,85 +9,165 @@ from llm.LLMResolution import get_resolution
 from llm.LLMQuery import query_vector_db
 from llm.LLMKeywords import extract_keywords
 from llm.LLMImageAnalysis import process_attachments
+from llm.LLMCritic import evaluate_resolution
 from resolution import process_resolution
 from observabilidad.logger import main_logger
+from utils import convert_json_response, convert_eval_response
 from collections import Counter
 import time
-import re
 
 # Load environment variables
 load_dotenv()
 
-def markdownJson(response: str) -> str:
+def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_relevant_solutions: List[Dict[str, Any]], max_retries: int = 2) -> Dict[str, Any]:
     """
-    Convierte una respuesa de un LLM, si tiene acotadores de código markdown se los quita
+    Process resolution with LLM Critic validation.
     
     Args:
-        response: String con la respuesta de un LLM y si la respuesta esta en entre indicadores de código markdown
-            los elimina
+        enhanced_incidencia: The enhanced incident with all details
+        all_relevant_solutions: List of relevant solutions found
+        max_retries: Maximum number of retries (default 2)
+    
+    Returns:
+        Dict with the final resolution
+    """
+    
+    main_logger.info("Iniciando proceso de resolución con crítico", extra_data={
+        "action": "start_critic_process",
+        "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown"),
+        "solutions_count": len(all_relevant_solutions),
+        "max_retries": max_retries
+    })
+    
+    critique_context = ""
+    
+    for attempt in range(max_retries + 1):
+        main_logger.debug(f"Intento {attempt + 1}/{max_retries + 1}", extra_data={
+            "action": "critic_attempt",
+            "attempt": attempt + 1,
+            "max_attempts": max_retries + 1,
+            "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown"),
+            "has_critique": len(critique_context) > 0
+        })
+        
+        # Generate resolution
+        resolution = None
+        if all_relevant_solutions:
+            # Include critique in context if available
+            context_incident = enhanced_incidencia.copy()
+            if critique_context:
+                context_incident["critique_context"] = critique_context
+                main_logger.debug("Agregando contexto de crítica", extra_data={
+                    "action": "add_critique_context",
+                    "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context
+                })
             
-    Returns:
-        String si backquotes de markdown
-    """
-    match = re.search(r"```(?:[a-zA-Z]+\n)?(.*?)```", response, re.DOTALL)
-    if match:
-        return match.group(1)
-    return response
-    
-def convert_json_response(response: str, section: str) -> Dict[str, Any]:
-    """
-    Convierte la respuesta string a json
-    
-    Args:
-        response: String raw de la respuesta del LLM
-        section: String de la sección para controlar el log
-        
-    Returns:
-        Dict con la respuesta
-    """
-    try:
-        response = markdownJson(response)
-        json_response = json.loads(response)
-        main_logger.debug(f"{section} response convertidas exitosamente", extra_data={
-            "action": f"{section}_converted_success",
-            "response": json_response,
-            "keys": list(json_response.keys()) if hasattr(json_response, 'keys') else [],
-            "response_type": type(json_response).__name__
-        })
-        return json_response
-    except Exception as e:
-        main_logger.error("Error convert_json_response", extra_data={
-            "action": f"{section}_conversion_error",
-            "error": str(e),
-            "error_type": type(e).__name__,
-            "raw_response": response
-        })
-        
-        # Fallback to empty dict
-        return {}
-    
-def convert_eval_response(response: str, section: str) -> Dict[str, Any]:
-    """
-    Convierte la respuesta string a python object por donde se deje el eval o json.loads
-    """
-    response = markdownJson(response)
-    try:
-        resp = eval(response)
-        return resp
-    except Exception as e:
-        try:
-            resp = convert_json_response(response, section)
-            return resp
-        except Exception as e2:
-            main_logger.error("Error convert_eval_response", extra_data={
-                "action": f"{section}_conversion_error",
-                "error1": str(e),
-                "error2": str(e2),
-                "error_type": type(e).__name__,
-                "error_type2": type(e2).__name__,
-                "raw_response": response
+            resolution_response = get_resolution(context_incident, all_relevant_solutions)
+            resolution = convert_eval_response(resolution_response, "resolution")
+            
+            main_logger.debug("Resolución generada", extra_data={
+                "action": "resolution_generated",
+                "attempt": attempt + 1,
+                "resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", ""),
+                "has_solution": bool(resolution.get("metadata", {}).get("SOLUCIÓN", ""))
             })
-            return {}
+        else:
+            resolution = {
+                "metadata": {
+                    "RESOLUCION AUTOMÁTICA": "manual",
+                    "BUZON REASIGNACION": "",
+                    "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente"
+                }
+            }
+            main_logger.debug("No hay soluciones disponibles, resolución manual", extra_data={
+                "action": "no_solutions_manual",
+                "attempt": attempt + 1
+            })
+        
+        # Si es una lista, tomar el primer elemento
+        if isinstance(resolution, list):
+            resolution = resolution[0]
+        
+        # Evaluate with critic
+        main_logger.debug("Evaluando resolución con crítico", extra_data={
+            "action": "critic_evaluation",
+            "attempt": attempt + 1,
+            "resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", "")
+        })
+        
+        critic_response = evaluate_resolution(enhanced_incidencia, resolution)
+        critic_evaluation = convert_json_response(critic_response, "critic")
+        
+        main_logger.debug("Evaluación del crítico recibida", extra_data={
+            "action": "critic_evaluation_received",
+            "attempt": attempt + 1,
+            "status": critic_evaluation.get("status", "unknown"),
+            "reason": critic_evaluation.get("reason", "")
+        })
+        
+        status = critic_evaluation.get("status", "APPROVED")
+        
+        if status == "APPROVED":
+            main_logger.info("Resolución aprobada por el crítico", extra_data={
+                "action": "resolution_approved",
+                "attempt": attempt + 1,
+                "reason": critic_evaluation.get("reason", ""),
+                "final_resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", "")
+            })
+            return resolution
+        
+        elif status == "ALREADY_TRIED":
+            main_logger.info("Resolución ya intentada anteriormente, cambiando a manual", extra_data={
+                "action": "already_tried_manual",
+                "attempt": attempt + 1,
+                "reason": critic_evaluation.get("reason", "")
+            })
+            return {
+                "metadata": {
+                    "RESOLUCION AUTOMÁTICA": "manual",
+                    "BUZON REASIGNACION": "",
+                    "SOLUCIÓN": f"La solución propuesta ya fue intentada anteriormente. {critic_evaluation.get('reason', '')}"
+                }
+            }
+        
+        elif status == "REJECTED":
+            if attempt < max_retries:
+                critique_context = critic_evaluation.get("critique", "")
+                main_logger.info("Resolución rechazada, reintentando", extra_data={
+                    "action": "resolution_rejected_retry",
+                    "attempt": attempt + 1,
+                    "reason": critic_evaluation.get("reason", ""),
+                    "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context
+                })
+                continue
+            else:
+                main_logger.info("Resolución rechazada, máximo de reintentos alcanzado", extra_data={
+                    "action": "resolution_rejected_max_retries",
+                    "attempt": attempt + 1,
+                    "reason": critic_evaluation.get("reason", ""),
+                    "critique": critic_evaluation.get("critique", "")
+                })
+                return {
+                    "metadata": {
+                        "RESOLUCION AUTOMÁTICA": "manual",
+                        "BUZON REASIGNACION": "",
+                        "SOLUCIÓN": f"No se pudo generar una resolución automática adecuada después de {max_retries + 1} intentos. Última crítica: {critic_evaluation.get('critique', '')}"
+                    }
+                }
+    
+    # Fallback (shouldn't reach here)
+    main_logger.warning("Fallback a resolución manual", extra_data={
+        "action": "fallback_manual",
+        "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown")
+    })
+    
+    return {
+        "metadata": {
+            "RESOLUCION AUTOMÁTICA": "manual",
+            "BUZON REASIGNACION": "",
+            "SOLUCIÓN": "Error en el proceso de resolución con crítico, revisar manualmente"
+        }
+    }
 
 def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
     """Get relevant solutions from vector DB for a given incident."""
@@ -265,39 +345,9 @@ def main():
             "unique_solutions": len(set(str(s) for s in all_relevant_solutions))
         })
         
-        # Get final resolution from all relevant solutions
-        main_logger.info("Generando resolución final...")
-        resolution = None
-        if all_relevant_solutions:
-            resolution_response = get_resolution(enhanced_incidencia, all_relevant_solutions)
-            
-            main_logger.debug("Respuesta raw de get_resolution recibida", extra_data={
-                "action": "raw_resolution_received",
-                "solutions_used": len(all_relevant_solutions),
-                "response_length": len(resolution_response),
-                "response_preview": resolution_response[:200] + "..." if len(resolution_response) > 200 else resolution_response
-            })
-            
-            # Convert the string response to the required format
-            resolution = convert_eval_response(resolution_response, "resolution")
-        else:
-            resolution = {
-                "RESOLUCION AUTOMÁTICA": "manual",
-                "BUZON REASIGNACION": "",
-                "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente"
-            }
-            main_logger.debug("No se encontraron soluciones, resolución manual", extra_data={
-                "action": "manual_resolution_fallback",
-                "reason": "no_solutions_available"
-            })
-        
-        # Si por alguna razon la resolución es una lista, se toma el primer elemento
-        if isinstance(resolution,List):
-            main_logger.warning("Resolución es una lista wtf", extra_data={
-                "action": "resolution_is_list",
-                "resolution": resolution
-            })
-            resolution = resolution[0]
+        # Get final resolution with critic validation
+        main_logger.info("Generando resolución final con validación crítica...")
+        resolution = process_resolution_with_critic(enhanced_incidencia, all_relevant_solutions)
 
         # Extract keywords and add to metadata
         main_logger.info("Extrayendo palabras clave...")

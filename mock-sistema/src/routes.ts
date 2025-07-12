@@ -73,7 +73,36 @@ router.post('/comprobacionPoliza', (req: Request, res: Response) => {
 // Agregar endpoint alternativo para mayor flexibilidad
 router.post('/comprobacion_poliza', (req: Request, res: Response) => {
   // Mismo comportamiento que comprobacionPoliza
-  router.handle(req, res);
+  const data = req.body;
+  
+  // Simular diferentes respuestas aleatorias - siempre exitoso
+  const respuestas: ComprobacionPolizaResponse[] = [
+    {
+      "RESOLUCION AUTOMÁTICA": "cierre",
+      "BUZON REASIGNACION": "",
+      "SOLUCIÓN": "La reclamación por tiempos de procesamiento de poliza es rechazada por estar dentro de los límites, solo se puede reclamar tras pasar el tiempo estimado de resolución (7 días habiles)"
+    },
+    {
+      "RESOLUCION AUTOMÁTICA": "reasignacion",
+      "BUZON REASIGNACION": "GR_SAL_COMP_CIERRE",
+      "SOLUCIÓN": "La póliza requiere una revisión manual por parte del equipo de cierre"
+    },
+    {
+      "RESOLUCION AUTOMÁTICA": "en espera",
+      "BUZON REASIGNACION": "",
+      "SOLUCIÓN": "Se requiere información adicional del cliente para proceder con la resolución"
+    },
+    {
+      "RESOLUCION AUTOMÁTICA": "manual",
+      "BUZON REASIGNACION": "",
+      "SOLUCIÓN": "Caso complejo que requiere intervención manual del equipo de soporte"
+    }
+  ];
+  
+  // Seleccionar una respuesta aleatoria
+  const respuesta = respuestas[Math.floor(Math.random() * respuestas.length)];
+  
+  res.json(respuesta);
 });
 
 export { router }; 

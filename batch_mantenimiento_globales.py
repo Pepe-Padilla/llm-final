@@ -9,35 +9,15 @@ from api.gestor_incidencias import get_incidencias_cerradas
 from llm.LLMGenerator import generate_summary
 from llm.LLMQuery import query_vector_db
 from llm.LLMSuggestion import suggest_solution
+from utils import simple_json_parse
 import time
 
 # Load environment variables
 load_dotenv()
 
-def simple_json_parse(response: str) -> Dict[str, Any]:
-    """
-    Simple JSON parser for LLM responses - KISS approach
-    """
-    try:
-        # Try to parse as JSON directly
-        return json.loads(response)
-    except:
-        try:
-            # Try to extract JSON from markdown code blocks
-            import re
-            match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", response, re.DOTALL)
-            if match:
-                return json.loads(match.group(1))
-        except:
-            pass
-        
-        # If all fails, return None (will be handled by caller)
-        batch_logger.warning(f"Failed to parse JSON response: {response[:100]}...")
-        return None
-
 def check_if_incident_exists_in_db(incident_summary: str, similarity_threshold: float = 0.70) -> bool:
     """
-    Check if similar incident exists in vector database - KISS approach
+    Check if similar incident exists in vector database
     """
     try:
         # Query vector database 
@@ -59,7 +39,7 @@ def check_if_incident_exists_in_db(incident_summary: str, similarity_threshold: 
 
 def process_closed_incident(incident: Dict[str, Any], similarity_threshold: float = 0.70) -> Dict[str, Any]:
     """
-    Process a closed incident to generate a solution entry - KISS approach
+    Process a closed incident to generate a solution entry
     """
     try:
         incident_code = incident['codIncidencia']
@@ -78,7 +58,7 @@ def process_closed_incident(incident: Dict[str, Any], similarity_threshold: floa
         # Generate solution suggestion 
         try:
             solution_response = suggest_solution(incident)
-            solution_data = simple_json_parse(solution_response)
+            solution_data = simple_json_parse(solution_response, batch_logger)
             
             if not solution_data:
                 # Create default solution if LLM fails
