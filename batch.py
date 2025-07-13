@@ -150,10 +150,43 @@ def main():
         )
 
     total_time = time.time() - start_time
+    
+    # Generar reporte simple
+    from datetime import datetime
+    import json
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    report_path = f"resources/reporte_batch_{timestamp}.json"
+    
+    files_processed = ["PROBLEMAS_GLOBALES.csv"]
+    if os.path.exists(correctivos_path):
+        files_processed.append("CORRECTIVOS_ABIERTOS.csv")
+    
+    # Contar total de documentos procesados
+    total_docs = 0
+    for file_path in files_processed:
+        if os.path.exists(f"resources/{file_path}"):
+            df_temp = pd.read_csv(f"resources/{file_path}")
+            total_docs += len(df_temp)
+    
+    reporte = {
+        "fecha": datetime.now().isoformat(),
+        "tiempo_total_segundos": round(total_time, 2),
+        "archivos_procesados": files_processed,
+        "total_documentos_cargados": total_docs,
+        "base_datos_vectorial": "inicializada y cargada",
+        "estado": "completado exitosamente"
+    }
+    
+    with open(report_path, "w", encoding="utf-8") as f:
+        json.dump(reporte, f, ensure_ascii=False, indent=2)
+    
     batch_logger.info(f"Tiempo total: {total_time:.2f} segundos", extra_data={
         "action": "batch_complete",
         "total_time_seconds": round(total_time, 2),
-        "files_processed": ["PROBLEMAS_GLOBALES.csv", "CORRECTIVOS_ABIERTOS.csv"] if os.path.exists(correctivos_path) else ["PROBLEMAS_GLOBALES.csv"]
+        "files_processed": files_processed,
+        "total_docs": total_docs,
+        "report_path": report_path
     })
 
 if __name__ == "__main__":

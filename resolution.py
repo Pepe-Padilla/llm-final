@@ -92,7 +92,7 @@ def process_resolution(resolution, incidencia, keywords):
             patch_incidencia(
                 incidencia["codIncidencia"],
                 "resolver",
-                notasResolucion=solucion
+                notas_resolucion=solucion
             )
             estado_api["gestor_incidencias"] = "OK"
             resolution_logger.info("Incidencia cerrada exitosamente", extra_data={
@@ -159,7 +159,7 @@ def process_resolution(resolution, incidencia, keywords):
             patch_incidencia(
                 incidencia["codIncidencia"],
                 "reasignar",
-                buzonDestino=buzon_reasignacion,
+                buzon_destino=buzon_reasignacion,
                 detalle=solucion
             )
             estado_api["gestor_incidencias"] = "OK"
@@ -226,8 +226,8 @@ def process_resolution(resolution, incidencia, keywords):
         try:
             response = comprobacion_poliza(
                 poliza=poliza,
-                codSolucion=cod_solucion,
-                strJson=str(keywords)
+                cod_solucion=cod_solucion,
+                str_json=str(keywords)
             )
             estado_api["sistema"] = "ok"
             resolution_logger.info("Llamada al sistema exitosa", extra_data={
@@ -253,20 +253,35 @@ def process_resolution(resolution, incidencia, keywords):
                 "metadata": {
                     "RESOLUCION AUTOMÁTICA": "manual",
                     "BUZON REASIGNACION": "",
-                    "SOLUCIÓN": f"[resolution_type] Error al llamar al sistema: {str(e)}",
+                    "SOLUCIÓN": f"[{resolution_type}] Error al llamar al sistema: {str(e)}",
                     "estado_api": estado_api
                 }
             }
+        
+        # Preserve original LLM solution and combine with system response
+        if isinstance(response, dict) and "metadata" in response:
+            original_solution = solucion
+            system_solution = response["metadata"].get("SOLUCIÓN", "")
+            combined_solution = f"{original_solution} | Sistema: {system_solution}"
+            response["metadata"]["SOLUCIÓN"] = combined_solution
+            response["metadata"]["original_resolution_type"] = resolution_type
         
         resolution_logger.debug("Procesando respuesta del sistema recursivamente", extra_data={
             "action": "recursive_response_processing",
             "codIncidencia": incidencia["codIncidencia"],
             "response_type": type(response).__name__,
-            "response_keys": list(response.keys()) if isinstance(response, dict) else []
+            "response_keys": list(response.keys()) if isinstance(response, dict) else [],
+            "preserved_original": True
         })
         
-        # Process the response recursively
-        return process_resolution(response, incidencia, keywords)
+        # Process the response recursively and preserve original resolution type
+        result = process_resolution(response, incidencia, keywords)
+        
+        # Ensure original resolution type is preserved in the final result
+        if isinstance(result, dict):
+            result["original_resolution_type"] = resolution_type
+        
+        return result
     
     # Default to manual resolution
     resolution_logger.debug("Tipo de resolución no reconocido, usando manual por defecto", extra_data={

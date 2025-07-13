@@ -50,3 +50,884 @@ timestamp,input,output
 2025-07-09T21:07:28.391689,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
 2025-07-09T21:07:42.207975,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
 2025-07-09T21:07:52.442806,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T18:08:49.867312,"La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posterior a la fecha actual.
+",Vector de 384 dimensiones
+2025-07-12T18:08:57.730605,"La carga de documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de cartera estaba retornando valores incorrectos para 'idDistributor' e 'idAgente'.
+",Vector de 384 dimensiones
+2025-07-12T18:09:03.995246,"La aplicación no carga la documentación específica de la póliza.
+",Vector de 384 dimensiones
+2025-07-12T18:09:10.403941,"Algunos asegurados no están apareciendo en el sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:09:16.922792,"Error al adjuntar documentación relacionado con la API de Terceros, específicamente al componente de Reembolsos.",Vector de 384 dimensiones
+2025-07-12T18:09:24.617883,"Se produce una inconsistencia en la carga de pólizas, donde a nivel global se cargan los seguros pero únicamente la póliza dental se carga dentro del componente de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-12T18:09:31.459427,"Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KIBANA.",Vector de 384 dimensiones
+2025-07-12T18:09:37.995435,"Existe un problema con los datos del IBAN proporcionados por el usuario en el proceso de reembolso.
+",Vector de 384 dimensiones
+2025-07-12T18:09:44.226002,"El sistema no permite el proceso de reembolsos de farmacia.
+",Vector de 384 dimensiones
+2025-07-12T18:09:50.931908,"Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.",Vector de 384 dimensiones
+2025-07-12T18:09:58.086175,"La tarjeta digital no carga debido a un fallo en el decodificador del token de usuario, específicamente en la gestión de caracteres que no son Base64.
+",Vector de 384 dimensiones
+2025-07-12T18:10:04.752671,La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en comparación con los padres.,Vector de 384 dimensiones
+2025-07-12T18:10:11.123350,"El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+",Vector de 384 dimensiones
+2025-07-12T18:10:18.378419,"Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga correctamente, impidiendo la navegación a la página correspondiente.
+",Vector de 384 dimensiones
+2025-07-12T18:10:24.628348,El usuario no puede agregar información necesaria a un reembolso ya tramitado.,Vector de 384 dimensiones
+2025-07-12T18:10:31.429528,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.
+",Vector de 384 dimensiones
+2025-07-12T18:10:41.385809,"Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación del MOCK_ID del usuario con sus pólizas de alta. La solución implica cambiar la búsqueda a MOCK_NIF, lo que requiere una definición exhaustiva de las casuísticas y se deriva de la nueva versión del API.
+",Vector de 384 dimensiones
+2025-07-12T18:10:51.783813,"El componente Cuadro Médico no carga pólizas debido a que, al invocar la nueva versión del API y proporcionar un MOCK_ID que coincide con el cliente pero no con la póliza enviada, se retorna un número reducido de pólizas. Este comportamiento es nuevo y se debe a cambios en el API de MOCK_BUZON que no fueron contemplados previamente.
+",Vector de 384 dimensiones
+2025-07-12T18:10:58.756486,"El botón de acceso a la tarjeta digital en la pantalla final dirige a una URL incorrecta, apuntando a la URL de PRE.
+",Vector de 384 dimensiones
+2025-07-12T18:11:06.371035,"Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.",Vector de 384 dimensiones
+2025-07-12T18:11:13.465320,El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.,Vector de 384 dimensiones
+2025-07-12T18:11:20.183446,"Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla inicial.
+",Vector de 384 dimensiones
+2025-07-12T18:11:26.698881,"Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-12T18:11:32.949053,La aplicación no carga los apartados de autorizaciones al acceder a la web.,Vector de 384 dimensiones
+2025-07-12T18:11:39.323516,"Error al enviar un archivo después de haberlo rellenado y adjuntado.
+",Vector de 384 dimensiones
+2025-07-12T18:11:45.890696,"No se visualiza la póliza en el Cuadro Médico, indicando un fallo en el código back.
+",Vector de 384 dimensiones
+2025-07-12T18:11:52.050520,"Al compartir un profesional, la URL generada es localhost.",Vector de 384 dimensiones
+2025-07-12T18:11:58.268958,Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico.,Vector de 384 dimensiones
+2025-07-12T18:12:05.006428,"No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda por póliza.
+",Vector de 384 dimensiones
+2025-07-12T18:12:11.494402,"No se genera traza en el componente de Gestión de Pólizas, correspondiente a código back.
+",Vector de 384 dimensiones
+2025-07-12T18:12:18.248611,"No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-12T18:12:24.685660,"Error en la validación del NIF/CIF durante el proceso de reembolso.
+",Vector de 384 dimensiones
+2025-07-12T18:12:32.532418,"Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"", debido a errores detectados en la API de terceros, identificados a través de la observación en Kibana.",Vector de 384 dimensiones
+2025-07-12T18:12:40.001308,"La póliza no se está cargando debido a errores en la API de un tercero, específicamente, la consulta `searchByRol` devuelve un bloque `insured` vacío.
+",Vector de 384 dimensiones
+2025-07-12T18:12:46.958359,"El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de hacer foto o adjuntar archivos no aparece.
+",Vector de 384 dimensiones
+2025-07-12T18:12:54.371630,"No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza durante la operación SearchByPolicyOpt.
+",Vector de 384 dimensiones
+2025-07-12T18:13:00.951172,"Al adjuntar un documento, el usuario es desconectado de la sesión.
+",Vector de 384 dimensiones
+2025-07-12T18:13:06.984965,El sistema no muestra el historial de reembolsos.,Vector de 384 dimensiones
+2025-07-12T18:13:13.142612,Los beneficiarios no cargan en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-12T18:13:20.239109,"Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de cuentas, impidiendo la introducción de información adicional.",Vector de 384 dimensiones
+2025-07-12T18:13:27.599147,"Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-12T18:13:34.657923,"La carga de la póliza falla debido a un error con la versión de la descripción de la oferta, originado en el código back.
+",Vector de 384 dimensiones
+2025-07-12T18:13:40.991363,"No se están visualizando todos los beneficiarios en la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-12T18:13:47.411799,"No se permite descargar documentación debido a un fallo en el código MOCK_AGENT.
+",Vector de 384 dimensiones
+2025-07-12T18:13:53.976108,"Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-12T18:14:00.276133,"El sistema no está cargando beneficiarios que han sido dados de baja.
+",Vector de 384 dimensiones
+2025-07-12T18:14:06.352075,"El proveedor presenta una incorrecta dirección de datos.
+",Vector de 384 dimensiones
+2025-07-12T18:14:14.185240,"La API de Terceros no carga pólizas ni información de asegurado, debido a que la llamada a /search_by_policy incluye un campo cancellationDate con una póliza en estado ALTA.
+",Vector de 384 dimensiones
+2025-07-12T18:14:20.419245,La tarjeta digital muestra una tarjeta dada de baja.,Vector de 384 dimensiones
+2025-07-12T18:14:29.097664,La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de datos está vacío. Se requiere verificar el número de documento de la llamada de la asegurada a la que se le asigna la cuenta bancaria en estos casos.,Vector de 384 dimensiones
+2025-07-12T18:14:35.445789,El campo de Médico Realizador no permite el uso de comillas dobles.,Vector de 384 dimensiones
+2025-07-12T18:14:43.120763,"No se encuentra el reembolso debido a que el campo `lgAmbulatorio` se recibía como un entero en lugar de una cadena de texto en el mapeo de respuesta.
+",Vector de 384 dimensiones
+2025-07-12T18:14:49.937769,"La carga de pólizas y asegurados falla debido a caracteres especiales en el método getPoliciesByToken().
+",Vector de 384 dimensiones
+2025-07-12T18:14:55.784822,"Aparece un mensaje con letras blancas.
+",Vector de 384 dimensiones
+2025-07-12T18:15:02.435354,"Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente cuando esta no contiene caracteres especiales.
+",Vector de 384 dimensiones
+2025-07-12T18:15:09.418557,"Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no se encontró en Active Directory.
+",Vector de 384 dimensiones
+2025-07-12T18:15:16.048688,Hay retrasos en la provisión de pólizas a través de la API del sistema.,Vector de 384 dimensiones
+2025-07-12T18:15:23.143715,"Se produjo una reclamación relacionada con un exceso de tiempo en la provisión, identificada como un problema en la API del sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:15:29.981773,"Existe una consulta sobre el estado de una póliza en relación con la provisión, originada a través de una API del sistema.",Vector de 384 dimensiones
+2025-07-12T18:15:36.549353,"Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+",Vector de 384 dimensiones
+2025-07-12T18:15:43.525857,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del sistema.
+",Vector de 384 dimensiones
+2025-07-12T18:15:50.707152,"Se produjo un rechazo de apelación para una póliza, relacionado con un fallo en la API del sistema de reembolsos, indicando disconformidad del usuario.",Vector de 384 dimensiones
+2025-07-12T18:24:10.759156,"La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posterior a la fecha actual.
+",Vector de 384 dimensiones
+2025-07-12T18:24:18.630504,La carga de la documentación general de la póliza falla debido a la reasignación de valores incorrectos para 'idDistributor' e 'idAgente' a través del API 2.1.1 de cartera.,Vector de 384 dimensiones
+2025-07-12T18:24:24.894305,"La documentación particular de la póliza no se está cargando.
+",Vector de 384 dimensiones
+2025-07-12T18:24:31.384205,"Algunos asegurados no están apareciendo en el sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:24:37.949013,"Error al adjuntar documentación relacionado con la API de Terceros, específicamente al componente de Reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:24:45.727540,"Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, pero únicamente la póliza dental se carga dentro del componente de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-12T18:24:52.534534,"Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KIBANA.",Vector de 384 dimensiones
+2025-07-12T18:24:59.130107,Existe un problema con los datos del IBAN proporcionados por el usuario en el componente de Reembolsos.,Vector de 384 dimensiones
+2025-07-12T18:25:05.376889,"El sistema no permite el proceso de reembolsos de farmacia.
+",Vector de 384 dimensiones
+2025-07-12T18:25:12.034111,"Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.",Vector de 384 dimensiones
+2025-07-12T18:25:19.187907,"La tarjeta digital no carga debido a un fallo en el decodificador del token de usuario, específicamente en la gestión de caracteres que no son Base64.
+",Vector de 384 dimensiones
+2025-07-12T18:25:26.341247,"La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en comparación con los padres, requiriendo una verificación y corrección manual.",Vector de 384 dimensiones
+2025-07-12T18:25:32.815086,"El botón ""ir a tarjeta digital"" redirige a una URL incorrecta (PRE).
+",Vector de 384 dimensiones
+2025-07-12T18:25:40.045368,"Al acceder al Cuadro Médico público y seleccionar OM, la descarga del archivo HTML de OM no redirige al usuario a la página correspondiente.
+",Vector de 384 dimensiones
+2025-07-12T18:25:46.305165,El usuario no puede agregar información necesaria a un reembolso ya tramitado.,Vector de 384 dimensiones
+2025-07-12T18:25:53.100946,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.
+",Vector de 384 dimensiones
+2025-07-12T18:26:03.275300,"Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación del MOCK_ID del usuario con sus pólizas de alta. La solución actual, derivada de un cambio en el API, no es la correcta y requiere una modificación buscando por MOCK_NIF, lo cual implica definir las casuísticas de manera precisa.
+",Vector de 384 dimensiones
+2025-07-12T18:26:12.318967,"El Cuadro Médico no carga pólizas debido a un cambio en el API de MOCK_BUZON, que al invocar con un MOCK_ID diferente pero asociado al mismo cliente, impide la correcta recuperación de las pólizas.
+",Vector de 384 dimensiones
+2025-07-12T18:26:19.040170,"El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PRE.
+",Vector de 384 dimensiones
+2025-07-12T18:26:26.622663,"Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.",Vector de 384 dimensiones
+2025-07-12T18:26:33.707891,El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.,Vector de 384 dimensiones
+2025-07-12T18:26:40.395507,"Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla inicial.
+",Vector de 384 dimensiones
+2025-07-12T18:26:46.899413,"Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-12T18:26:53.132097,La aplicación no carga los apartados de autorizaciones al acceder a la web.,Vector de 384 dimensiones
+2025-07-12T18:26:59.395085,"Error al enviar un archivo después de haberlo completado y adjuntado.
+",Vector de 384 dimensiones
+2025-07-12T18:27:05.892336,No se visualiza la póliza en el Cuadro Médico debido a un fallo en el código back.,Vector de 384 dimensiones
+2025-07-12T18:27:12.073044,"Al compartir un profesional, la URL generada es localhost.
+",Vector de 384 dimensiones
+2025-07-12T18:27:18.310415,Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico.,Vector de 384 dimensiones
+2025-07-12T18:27:25.042726,"No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda por póliza.
+",Vector de 384 dimensiones
+2025-07-12T18:27:31.762036,"No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código back.
+",Vector de 384 dimensiones
+2025-07-12T18:27:38.501614,"No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-12T18:27:45.020222,"Error en la validación del NIF/CIF durante el proceso de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:27:53.422484,"Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"", debido a errores detectados en la API de terceros, identificados a través de la observación en Kibana y la verificación del servicio de búsqueda por póliza.
+",Vector de 384 dimensiones
+2025-07-12T18:28:00.834812,"La póliza no se está cargando debido a errores en la API de un tercero, específicamente, la consulta `searchByRol` devuelve un bloque `insured` vacío.
+",Vector de 384 dimensiones
+2025-07-12T18:28:07.772155,"El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de captura o adjuntar archivos no está disponible.
+",Vector de 384 dimensiones
+2025-07-12T18:28:15.175466,"No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.
+",Vector de 384 dimensiones
+2025-07-12T18:28:21.691664,"Al adjuntar un documento, el usuario es desconectado de la sesión.
+",Vector de 384 dimensiones
+2025-07-12T18:28:27.785189,"El sistema no muestra el historial de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:28:33.903725,Los beneficiarios no cargan en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-12T18:28:40.970194,"Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de cuentas, impidiendo la introducción de información adicional.",Vector de 384 dimensiones
+2025-07-12T18:28:48.092643,"Un beneficiario no aparece en el sistema debido a la duplicación de NIFs ficticios (MOCK_NIF) en los clientes.
+",Vector de 384 dimensiones
+2025-07-12T18:28:55.208111,"La carga de la póliza falla debido a un error con la versión de la descripción de la oferta, originado en el código back.",Vector de 384 dimensiones
+2025-07-12T18:29:01.458044,"No se muestran todos los beneficiarios en la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-12T18:29:07.965818,"No se permite la descarga de documentación debido a un fallo en el código MOCK_AGENT.
+",Vector de 384 dimensiones
+2025-07-12T18:29:14.574211,"Se produjo una inconsistencia en el intercambio de datos de los asegurados dentro del componente de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-12T18:29:20.688558,"Se presenta un error al cargar un beneficiario inactivo.
+",Vector de 384 dimensiones
+2025-07-12T18:29:26.652344,El proveedor presenta una incorrecta dirección de datos.,Vector de 384 dimensiones
+2025-07-12T18:29:34.451928,"La API de Terceros no carga pólizas ni información de asegurado cuando la llamada al `/search_by_policy` incluye un campo `cancellationDate` con una póliza en estado ALTA.
+",Vector de 384 dimensiones
+2025-07-12T18:29:40.660119,La tarjeta digital muestra una tarjeta dada de baja.,Vector de 384 dimensiones
+2025-07-12T18:29:49.363626,La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de datos está vacío. Se requiere verificar el número de documento de la llamada de la asegurada a la que se le asigna la cuenta bancaria en estos casos.,Vector de 384 dimensiones
+2025-07-12T18:29:55.675979,El campo de Médico Realizador no permite el uso de comillas dobles.,Vector de 384 dimensiones
+2025-07-12T18:30:03.365980,"No se encuentra el reembolso debido a que el campo 'lgAmbulatorio' llegaba como un entero en lugar de una cadena de texto en el mapeo de respuesta.
+",Vector de 384 dimensiones
+2025-07-12T18:30:10.300552,"No se cargan pólizas ni se procesan correctamente debido a caracteres especiales en el método getPoliciesByToken.
+",Vector de 384 dimensiones
+2025-07-12T18:30:16.195963,"Aparece un mensaje con letras blancas.
+",Vector de 384 dimensiones
+2025-07-12T18:30:23.084256,"Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente cuando esta no contenía caracteres especiales (acentos).
+",Vector de 384 dimensiones
+2025-07-12T18:30:30.118423,"Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.
+",Vector de 384 dimensiones
+2025-07-12T18:30:37.246841,"Retraso en la provisión de la póliza, originado por un fallo en la API del sistema de FXprovicion.
+",Vector de 384 dimensiones
+2025-07-12T18:30:44.349015,"Se produjo una reclamación relacionada con un exceso de tiempo en la provisión, identificada como un problema en la API del sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-12T18:30:51.330370,"Existe una consulta sobre el estado de una póliza en proceso de provisión, originada por un fallo en la API del sistema de provisión.
+",Vector de 384 dimensiones
+2025-07-12T18:30:57.898687,"Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+",Vector de 384 dimensiones
+2025-07-12T18:31:04.607381,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del sistema.",Vector de 384 dimensiones
+2025-07-12T18:31:11.470030,"Se produjo un rechazo de apelación relacionado con la cancelación de una póliza, originado por un fallo en la API del sistema.",Vector de 384 dimensiones
+2025-07-12T18:34:49.984154,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T18:35:06.581057,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T18:35:17.021732,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T18:36:49.122813,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T18:37:03.869000,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T18:37:14.256884,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T18:41:20.132953,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T18:41:36.632532,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T18:41:46.938199,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T18:42:19.824820,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T18:42:34.499994,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T18:42:44.762249,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T18:43:21.255902,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T18:43:35.523193,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T18:43:46.363605,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:01:12.677778,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T19:01:29.245208,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T19:01:39.542358,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T19:02:12.289155,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T19:02:26.972854,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T19:02:37.261463,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T19:03:13.556887,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:03:27.766375,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:03:38.663663,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:14:55.708883,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T19:15:12.192694,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T19:15:22.570704,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T19:15:55.172072,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T19:16:09.984324,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T19:16:20.303686,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T19:16:57.072324,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:17:11.803226,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:17:22.703702,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:19:48.174361,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:20:02.562903,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado.",Vector de 384 dimensiones
+2025-07-12T19:20:12.816903,"El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME.",Vector de 384 dimensiones
+2025-07-12T19:21:08.794797,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T19:21:24.440199,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-12T19:21:34.960397,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-12T19:22:07.127111,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-12T19:22:21.380930,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-12T19:22:31.781895,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-12T19:24:48.504804,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T19:25:03.893913,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-12T19:25:14.172136,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-12T19:26:31.469867,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-12T19:26:45.753767,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-12T19:26:56.372519,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-12T19:29:21.365824,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:29:35.667171,Error al cargar información de pólizas en el componente de gestión.,Vector de 384 dimensiones
+2025-07-12T19:29:45.853957,Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información.,Vector de 384 dimensiones
+2025-07-12T19:30:59.399237,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T19:31:12.276929,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-12T19:31:22.637462,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-12T19:36:32.957135,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T19:36:49.479589,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T19:37:00.099112,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T19:38:29.241145,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T19:38:45.804188,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T19:38:56.124741,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T19:39:29.695123,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T19:39:44.859401,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T19:39:55.253767,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T19:40:31.884955,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:40:46.361011,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:40:57.332010,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T19:43:26.101854,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:43:41.489104,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular.",Vector de 384 dimensiones
+2025-07-12T19:43:51.837618,"El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular asociado a la póliza MOCK_POLICY.",Vector de 384 dimensiones
+2025-07-12T19:44:57.177057,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T19:45:13.150132,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-12T19:45:23.760194,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-12T19:45:56.569760,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-12T19:46:11.316205,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-12T19:46:21.748234,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-12T19:48:38.064256,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T19:48:53.768573,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-12T19:49:04.106484,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-12T19:50:21.521793,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-12T19:50:36.007774,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-12T19:50:46.674940,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-12T19:53:19.782680,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:53:34.458136,Error al cargar datos de la póliza en el componente de gestión. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T19:53:45.288650,"Imposibilidad de visualizar la información de la póliza en el componente de gestión, asociado al NIF MOCK_NIF",Vector de 384 dimensiones
+2025-07-12T19:55:09.557304,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T19:55:22.634268,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-12T19:55:33.062129,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-12T19:57:56.710082,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T19:58:11.169453,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-12T19:58:21.771275,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-12T20:00:33.933855,Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:00:48.268874,Se presentan datos de asegurados incorrectos en la visualización.,Vector de 384 dimensiones
+2025-07-12T20:00:58.284125,"Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY.",Vector de 384 dimensiones
+2025-07-12T20:01:54.702956,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:02:07.754817,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-12T20:02:18.317307,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-12T20:03:12.560942,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:03:25.565314,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-12T20:03:36.097429,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-12T20:04:37.582134,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:04:50.338513,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-12T20:05:00.833095,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-12T20:06:03.114766,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-12T20:06:16.124708,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-12T20:06:27.099812,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-12T20:13:18.514609,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T20:13:35.319525,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T20:13:45.742254,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T20:19:08.763790,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T20:22:14.559333,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T20:22:31.314278,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo en blanco.",Vector de 384 dimensiones
+2025-07-12T20:22:41.870966,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, impidiendo su lectura.",Vector de 384 dimensiones
+2025-07-12T20:23:15.208048,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T20:23:30.010490,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T20:23:40.384850,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T20:24:17.443057,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:24:32.018091,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T20:24:43.101349,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T20:27:13.957159,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:27:28.737030,No se muestran los beneficiarios en el módulo de reembolsos,Vector de 384 dimensiones
+2025-07-12T20:27:39.070422,"Existe un problema al visualizar los beneficiarios en el proceso de reembolso, solo se muestra el titular.",Vector de 384 dimensiones
+2025-07-12T20:28:44.879264,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T20:29:00.489984,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-12T20:29:11.107254,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-12T20:29:43.897890,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-12T20:29:58.278447,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-12T20:30:08.687837,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-12T20:32:24.478672,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T20:32:40.237303,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-12T20:32:50.598370,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-12T20:34:08.756947,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-12T20:34:23.342725,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-12T20:34:33.961867,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-12T20:37:07.567764,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:37:22.125341,Error al cargar datos de la póliza en el módulo de gestión.,Vector de 384 dimensiones
+2025-07-12T20:37:32.504229,Imposibilidad de visualizar la información de la póliza en el componente de gestión.,Vector de 384 dimensiones
+2025-07-12T20:39:07.849082,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:39:21.033099,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-12T20:39:31.549610,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-12T20:41:56.005260,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:42:10.405351,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-12T20:42:20.857797,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-12T20:44:28.409693,Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T20:44:42.817122,"Datos de asegurados incorrectos en la visualización: NIF MOCK_NIF, Póliza MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T20:44:53.777433,"Se detecta error en los datos del asegurado, con NIF MOCK_NIF y póliza MOCK_POLICY, según informe del sistema automático.",Vector de 384 dimensiones
+2025-07-12T20:45:56.781458,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:46:09.950826,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-12T20:46:20.451016,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-12T20:47:15.538102,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:47:28.849056,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-12T20:47:39.758497,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-12T20:50:11.923706,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T20:50:24.769020,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-12T20:50:35.572007,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-12T20:52:51.820599,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-12T20:53:04.996846,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-12T20:53:15.805370,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-12T20:55:28.411716,Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B,Vector de 384 dimensiones
+2025-07-12T20:55:41.735524,"Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B",Vector de 384 dimensiones
+2025-07-12T20:55:52.581180,El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B),Vector de 384 dimensiones
+2025-07-12T20:56:22.767364,Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C,Vector de 384 dimensiones
+2025-07-12T20:56:36.161307,"El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión.",Vector de 384 dimensiones
+2025-07-12T20:56:46.983700,"Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente.",Vector de 384 dimensiones
+2025-07-12T20:57:17.732133,Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D,Vector de 384 dimensiones
+2025-07-12T20:57:30.881005,"El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D.",Vector de 384 dimensiones
+2025-07-12T20:57:41.651211,"Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D.",Vector de 384 dimensiones
+2025-07-12T20:58:12.192873,Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E,Vector de 384 dimensiones
+2025-07-12T20:58:25.237698,El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información.,Vector de 384 dimensiones
+2025-07-12T20:58:36.010474,Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente.,Vector de 384 dimensiones
+2025-07-12T20:59:06.702061,Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F,Vector de 384 dimensiones
+2025-07-12T20:59:19.979469,Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos.,Vector de 384 dimensiones
+2025-07-12T20:59:30.695404,Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME.,Vector de 384 dimensiones
+2025-07-12T23:39:38.936599,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-12T23:39:55.608569,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-12T23:40:06.126420,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-12T23:40:39.458877,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-12T23:40:54.502815,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-12T23:41:04.754712,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-12T23:41:41.881205,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T23:41:56.297786,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T23:42:07.442099,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-12T23:44:35.981839,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T23:44:50.807992,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado.",Vector de 384 dimensiones
+2025-07-12T23:45:01.140875,"El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME.",Vector de 384 dimensiones
+2025-07-12T23:45:57.983503,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T23:46:13.723642,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-12T23:46:24.456906,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-12T23:46:57.417197,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-12T23:47:11.963279,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-12T23:47:22.550724,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-12T23:49:37.798006,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-12T23:49:53.469728,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-12T23:50:03.934858,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-12T23:51:21.544482,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-12T23:51:35.984392,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-12T23:51:46.679524,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-12T23:54:17.506850,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T23:54:32.010723,Error al cargar información de pólizas en el componente de gestión.,Vector de 384 dimensiones
+2025-07-12T23:54:42.366336,Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información.,Vector de 384 dimensiones
+2025-07-12T23:55:57.677498,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-12T23:56:10.720346,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-12T23:56:20.956326,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-12T23:58:44.787953,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-12T23:58:59.024284,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-12T23:59:09.563826,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-13T00:01:21.909520,Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:01:36.197006,Se presentan datos de asegurados incorrectos en la visualización.,Vector de 384 dimensiones
+2025-07-13T00:01:46.378427,"Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY.",Vector de 384 dimensiones
+2025-07-13T00:02:42.951143,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T00:02:55.995905,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-13T00:03:06.495594,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-13T00:04:01.197446,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T00:04:14.355280,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-13T00:04:25.012447,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-13T00:06:49.635679,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T00:07:02.667887,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-13T00:07:13.236837,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-13T00:09:28.477026,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-13T00:09:41.639509,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-13T00:09:52.406500,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-13T00:12:04.740805,Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B,Vector de 384 dimensiones
+2025-07-13T00:12:18.160889,"Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B",Vector de 384 dimensiones
+2025-07-13T00:12:29.015320,El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B),Vector de 384 dimensiones
+2025-07-13T00:12:59.031590,Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C,Vector de 384 dimensiones
+2025-07-13T00:13:12.485040,"El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión.",Vector de 384 dimensiones
+2025-07-13T00:13:23.300688,"Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente.",Vector de 384 dimensiones
+2025-07-13T00:13:53.847801,Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D,Vector de 384 dimensiones
+2025-07-13T00:14:07.035683,"El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T00:14:17.793254,"Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T00:14:48.137298,Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E,Vector de 384 dimensiones
+2025-07-13T00:15:01.249243,El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información.,Vector de 384 dimensiones
+2025-07-13T00:15:12.128891,Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente.,Vector de 384 dimensiones
+2025-07-13T00:15:42.496207,Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F,Vector de 384 dimensiones
+2025-07-13T00:15:55.863763,Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos.,Vector de 384 dimensiones
+2025-07-13T00:16:06.588409,Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME.,Vector de 384 dimensiones
+2025-07-13T00:26:00.862167,"La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posterior a la fecha actual.
+",Vector de 384 dimensiones
+2025-07-13T00:26:08.786233,"La carga de la documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de cartera estaba retornando valores incorrectos para 'idDistributor' e 'idAgente'.
+",Vector de 384 dimensiones
+2025-07-13T00:26:15.008871,"La aplicación no carga la documentación específica de la póliza.
+",Vector de 384 dimensiones
+2025-07-13T00:26:21.133237,"Algunos asegurados no están apareciendo correctamente.
+",Vector de 384 dimensiones
+2025-07-13T00:26:28.375176,"Error al adjuntar documentación en la API de Terceros, específicamente al componente de Reembolsos, que ha sido reasignado al buzón MOCK_BUZON.",Vector de 384 dimensiones
+2025-07-13T00:26:36.237691,"Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, pero únicamente la póliza dental se carga dentro del componente de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T00:26:43.039508,"Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KIBANA.",Vector de 384 dimensiones
+2025-07-13T00:26:49.627222,"Existe un problema con los datos del IBAN proporcionados por el usuario, afectando al componente de reembolsos.",Vector de 384 dimensiones
+2025-07-13T00:26:55.859630,"El sistema no permite el proceso de reembolsos de farmacia.
+",Vector de 384 dimensiones
+2025-07-13T00:27:02.551188,"Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.",Vector de 384 dimensiones
+2025-07-13T00:27:09.664568,"La tarjeta digital no carga debido a un fallo en el decodificador de token del usuario, específicamente en la gestión de caracteres que no son Base64.
+",Vector de 384 dimensiones
+2025-07-13T00:27:16.374065,La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en comparación con los proveedores padres.,Vector de 384 dimensiones
+2025-07-13T00:27:22.787163,"El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+",Vector de 384 dimensiones
+2025-07-13T00:27:29.839688,"Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.
+",Vector de 384 dimensiones
+2025-07-13T00:27:36.076801,El usuario no puede agregar información necesaria a un reembolso ya tramitado.,Vector de 384 dimensiones
+2025-07-13T00:27:42.857523,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.",Vector de 384 dimensiones
+2025-07-13T00:27:52.701628,"Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación del MOCK_ID del usuario con sus pólizas de alta. La solución actual, derivada de un cambio en el API, busca por MOCK_NIF, lo que requiere una definición exhaustiva de las casuísticas.
+",Vector de 384 dimensiones
+2025-07-13T00:28:01.987128,"El componente Cuadro Médico no carga pólizas debido a un cambio en el API de MOCK_BUZON, que al indicar un MOCK_ID que no coincide con la póliza, pero sí con el mismo cliente, retorna menos pólizas de lo esperado.
+",Vector de 384 dimensiones
+2025-07-13T00:28:08.936805,"El botón de acceso a la tarjeta digital en la pantalla final dirige a una URL incorrecta, apuntando a la URL de PRE.
+",Vector de 384 dimensiones
+2025-07-13T00:28:16.571142,"Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.",Vector de 384 dimensiones
+2025-07-13T00:28:23.653911,El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.,Vector de 384 dimensiones
+2025-07-13T00:28:30.342896,"Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla inicial.
+",Vector de 384 dimensiones
+2025-07-13T00:28:36.878635,"Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T00:28:43.113754,No se cargan los apartados de autorizaciones al acceder a la web.,Vector de 384 dimensiones
+2025-07-13T00:28:49.425562,"Error al enviar un archivo después de haberlo rellenado y adjuntado.
+",Vector de 384 dimensiones
+2025-07-13T00:28:56.024933,"No se visualiza la póliza en el Cuadro Médico, indicando un fallo en el código back.",Vector de 384 dimensiones
+2025-07-13T00:29:02.147535,"Al compartir un profesional, la URL generada es localhost.",Vector de 384 dimensiones
+2025-07-13T00:29:08.374233,Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico.,Vector de 384 dimensiones
+2025-07-13T00:29:15.156111,"No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda por póliza.
+",Vector de 384 dimensiones
+2025-07-13T00:29:21.729564,"No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código back.",Vector de 384 dimensiones
+2025-07-13T00:29:28.578715,"No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T00:29:35.088828,"Error en la validación de NIF/CIF durante el proceso de reembolsos.
+",Vector de 384 dimensiones
+2025-07-13T00:29:43.561737,"Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"", debido a errores detectados en la API de terceros, identificados a través de la observación en Kibana y la verificación de errores en la API de búsqueda de pólizas.",Vector de 384 dimensiones
+2025-07-13T00:29:50.952363,"No se está cargando la póliza debido a errores en la API de un tercero, específicamente, la consulta `searchByRol` devuelve un bloque `insured` vacío.
+",Vector de 384 dimensiones
+2025-07-13T00:29:58.148360,"El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de ""hacer foto"" o ""adjuntar archivos"" no está disponible.",Vector de 384 dimensiones
+2025-07-13T00:30:05.563893,"No se visualiza la póliza en el Cuadro Médico, debido a que la operación SearchByPolicyOpt no recuperaba correctamente la información de la segunda póliza.
+",Vector de 384 dimensiones
+2025-07-13T00:30:12.096773,"Al adjuntar un documento, el usuario es desconectado de la sesión.
+",Vector de 384 dimensiones
+2025-07-13T00:30:18.133397,No se visualiza el historial de reembolsos.,Vector de 384 dimensiones
+2025-07-13T00:30:24.309164,Los beneficiarios no cargan en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-13T00:30:31.514880,"Múltiples registros de asegurados aparecen en el sistema de reembolsos, y el usuario no puede ingresar información adicional debido a la duplicación de cuentas.
+",Vector de 384 dimensiones
+2025-07-13T00:30:38.821153,"Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T00:30:45.888384,"La carga de la póliza falla debido a un error en la versión de la descripción de la oferta, originado en el código back.
+",Vector de 384 dimensiones
+2025-07-13T00:30:52.285866,"No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T00:30:58.823599,"No se permite la descarga de documentación debido a un fallo en el código MOCK_AGENT.
+",Vector de 384 dimensiones
+2025-07-13T00:31:05.386213,"Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T00:31:11.694940,"El sistema no está cargando beneficiarios que han sido dados de baja.
+",Vector de 384 dimensiones
+2025-07-13T00:31:17.649048,El proveedor presenta una incorrecta dirección de datos.,Vector de 384 dimensiones
+2025-07-13T00:31:25.257888,"No se cargan pólizas ni asegurados debido a que la llamada a /search_by_policy incluye un campo cancellationDate informado, asociado a una póliza en estado ALTA.
+",Vector de 384 dimensiones
+2025-07-13T00:31:31.547689,La tarjeta digital muestra una tarjeta dada de baja.,Vector de 384 dimensiones
+2025-07-13T00:31:40.065594,La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de datos está vacío. Se requiere verificar el número de documento de la llamada realizada por la asegurada a la que se le asigna la cuenta bancaria.,Vector de 384 dimensiones
+2025-07-13T00:31:46.421130,El campo de Médico Realizador no permite el uso de comillas dobles.,Vector de 384 dimensiones
+2025-07-13T00:31:54.070216,"No se encuentra el reembolso debido a que el campo `lgAmbulatorio` se recibía como un entero en lugar de una cadena de texto en el mapeo de respuestas.
+",Vector de 384 dimensiones
+2025-07-13T00:32:00.980246,"No se cargan pólizas ni se procesan correctamente debido a caracteres especiales en el método getPoliciesByToken.
+",Vector de 384 dimensiones
+2025-07-13T00:32:06.832601,"Aparece un mensaje con letras blancas.
+",Vector de 384 dimensiones
+2025-07-13T00:32:13.493653,"Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente cuando esta no contiene caracteres especiales.
+",Vector de 384 dimensiones
+2025-07-13T00:32:20.464095,"Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.
+",Vector de 384 dimensiones
+2025-07-13T00:32:27.056637,Hay retrasos en la provisión de pólizas a través de la API del sistema.,Vector de 384 dimensiones
+2025-07-13T00:32:33.719766,"Se produjo una reclamación relacionada con tiempos de provisión excesivos a través de la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T00:32:40.582533,"Existe una consulta sobre el estado de una póliza en proceso de provisión, originada por una incidencia en la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T00:32:47.185908,"Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T00:32:53.833800,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del sistema.",Vector de 384 dimensiones
+2025-07-13T00:33:00.643518,"Se produjo un rechazo de apelación relacionado con la cancelación de una póliza, originado por un fallo en la API del sistema.",Vector de 384 dimensiones
+2025-07-13T00:34:35.240064,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-13T00:34:50.518471,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-13T00:35:01.048689,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-13T00:37:38.012496,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-13T00:37:52.963164,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-13T00:38:03.249048,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-13T00:38:40.029223,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:38:53.245033,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T00:39:04.104010,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T00:41:32.111979,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:41:46.618091,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular.",Vector de 384 dimensiones
+2025-07-13T00:41:57.001339,"El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular especificado (NIF: MOCK_NIF, Nombre: MOCK_NAME).",Vector de 384 dimensiones
+2025-07-13T00:43:00.613708,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T00:43:15.073759,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-13T00:43:25.741643,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-13T00:45:37.306057,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-13T00:45:51.581738,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-13T00:46:01.950525,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-13T00:46:37.527985,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T00:46:53.176672,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-13T00:47:03.586811,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-13T00:48:24.149026,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-13T00:48:38.684529,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-13T00:48:49.372684,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-13T00:51:22.833005,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:51:36.323253,Error al cargar datos de la póliza en el componente de gestión. Se requiere actualización del componente para adaptarse a la nueva versión del API.,Vector de 384 dimensiones
+2025-07-13T00:51:47.474102,Imposibilidad de visualizar la información de la póliza; se ha identificado un fallo en la carga de datos y se necesita una actualización del componente.,Vector de 384 dimensiones
+2025-07-13T00:53:09.217170,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T00:53:22.086119,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-13T00:53:32.451608,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-13T00:55:54.489919,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:56:08.889482,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-13T00:56:19.405148,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-13T00:58:31.462871,Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T00:58:44.597382,"Datos de asegurados incorrectos en la visualización: NIF MOCK_NIF, Póliza MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T00:58:55.561828,"Se detecta error en los datos del asegurado, NIF MOCK_NIF y póliza MOCK_POLICY, según reporte del sistema automático.",Vector de 384 dimensiones
+2025-07-13T00:59:59.011799,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T01:00:12.310924,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-13T01:00:23.086788,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-13T01:02:18.910257,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T01:02:31.843185,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-13T01:02:42.374266,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-13T01:05:06.536625,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T01:05:19.502285,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-13T01:05:30.145838,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-13T01:06:33.190571,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-13T01:06:46.249771,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-13T01:06:57.061270,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-13T01:07:27.617265,Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B,Vector de 384 dimensiones
+2025-07-13T01:07:40.811277,"Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B",Vector de 384 dimensiones
+2025-07-13T01:07:51.568685,El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B),Vector de 384 dimensiones
+2025-07-13T01:08:21.239138,Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C,Vector de 384 dimensiones
+2025-07-13T01:08:34.522656,"El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión.",Vector de 384 dimensiones
+2025-07-13T01:08:45.236989,"Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente.",Vector de 384 dimensiones
+2025-07-13T01:09:15.437276,Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D,Vector de 384 dimensiones
+2025-07-13T01:09:28.509318,"El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T01:09:39.149048,"Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T01:10:09.234938,Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E,Vector de 384 dimensiones
+2025-07-13T01:10:22.463684,El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información.,Vector de 384 dimensiones
+2025-07-13T01:10:33.322502,Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente.,Vector de 384 dimensiones
+2025-07-13T01:11:03.548288,Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F,Vector de 384 dimensiones
+2025-07-13T01:11:16.815885,Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos.,Vector de 384 dimensiones
+2025-07-13T01:11:27.441959,Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME.,Vector de 384 dimensiones
+2025-07-13T12:42:33.369007,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-13T12:42:48.592359,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-13T12:42:59.057159,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-13T12:45:35.081730,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-13T12:45:49.925943,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-13T12:46:00.388172,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-13T12:46:37.209040,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T12:46:50.441873,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T12:47:01.351706,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T12:49:25.820284,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T12:49:40.413218,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado.",Vector de 384 dimensiones
+2025-07-13T12:49:50.802165,"El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME.",Vector de 384 dimensiones
+2025-07-13T12:50:47.339439,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T12:51:01.774644,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-13T12:51:12.486725,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-13T12:53:38.763323,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-13T12:53:53.003993,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-13T12:54:03.369352,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-13T12:54:38.546374,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T12:54:53.911667,"La tarjeta digital no se visualiza correctamente, mostrando un error al acceder.",Vector de 384 dimensiones
+2025-07-13T12:55:04.192809,"Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante.",Vector de 384 dimensiones
+2025-07-13T12:56:23.847581,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-13T12:56:38.281521,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-13T12:56:48.976903,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-13T12:59:18.889857,No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T12:59:32.130533,Error al cargar información de pólizas en el componente de gestión.,Vector de 384 dimensiones
+2025-07-13T12:59:42.487711,Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información.,Vector de 384 dimensiones
+2025-07-13T13:01:48.736124,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T13:02:01.705882,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-13T13:02:12.047160,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-13T13:05:37.547379,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-13T13:05:52.830944,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-13T13:06:03.365769,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-13T13:07:23.801226,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-13T13:07:38.905005,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-13T13:07:49.228861,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-13T13:08:25.729964,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T13:08:38.972564,"Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T13:08:49.772703,"Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY",Vector de 384 dimensiones
+2025-07-13T13:09:58.197165,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T13:10:12.673935,"No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular.",Vector de 384 dimensiones
+2025-07-13T13:10:22.984887,"El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular especificado (NIF: MOCK_NIF, Nombre: MOCK_NAME).",Vector de 384 dimensiones
+2025-07-13T13:11:30.450369,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T13:11:44.640033,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-13T13:11:55.238261,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-13T13:14:58.237341,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-13T13:15:12.556570,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-13T13:15:22.948534,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-13T13:15:59.318860,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T13:16:14.882014,"La tarjeta digital no se visualiza correctamente, presentando un error al acceder.",Vector de 384 dimensiones
+2025-07-13T13:16:25.331388,"Existe un fallo al intentar acceder a la tarjeta digital, específicamente para tarjetas de tipo MOCK_TYPE.",Vector de 384 dimensiones
+2025-07-13T13:17:40.946030,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-13T13:17:55.352717,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-13T13:18:06.045996,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-13T13:20:49.100096,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T13:21:01.978796,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-13T13:21:12.276677,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-13T13:23:43.817470,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T13:23:58.146734,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-13T13:24:08.684175,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-13T13:25:53.323488,Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T13:26:06.557749,Se presentan datos de asegurados incorrectos en la visualización.,Vector de 384 dimensiones
+2025-07-13T13:26:16.902730,"Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY.",Vector de 384 dimensiones
+2025-07-13T13:27:59.497601,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T13:28:12.431842,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-13T13:28:22.977564,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-13T13:29:29.344992,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T13:29:42.112966,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-13T13:29:52.698742,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-13T13:30:56.697497,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T13:31:09.627704,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-13T13:31:20.259120,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-13T13:33:53.780219,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-13T13:34:06.795566,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-13T13:34:17.634388,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-13T13:34:47.939010,Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B,Vector de 384 dimensiones
+2025-07-13T13:35:01.090193,"Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B",Vector de 384 dimensiones
+2025-07-13T13:35:11.825894,El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B),Vector de 384 dimensiones
+2025-07-13T13:35:41.082053,Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C,Vector de 384 dimensiones
+2025-07-13T13:35:54.330126,"El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión.",Vector de 384 dimensiones
+2025-07-13T13:36:04.996722,"Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente.",Vector de 384 dimensiones
+2025-07-13T13:36:34.944781,Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D,Vector de 384 dimensiones
+2025-07-13T13:36:47.957341,"El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T13:36:58.505986,"Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T13:37:28.128856,Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E,Vector de 384 dimensiones
+2025-07-13T13:37:40.989775,El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información.,Vector de 384 dimensiones
+2025-07-13T13:37:51.651628,Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente.,Vector de 384 dimensiones
+2025-07-13T13:38:21.589215,Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F,Vector de 384 dimensiones
+2025-07-13T13:38:34.697905,Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos.,Vector de 384 dimensiones
+2025-07-13T13:38:45.209855,Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME.,Vector de 384 dimensiones
+2025-07-13T14:17:42.644632,"La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posterior a la fecha actual.
+",Vector de 384 dimensiones
+2025-07-13T14:17:50.583713,"La carga de la documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de cartera estaba retornando valores incorrectos para 'idDistributor' e 'idAgente'.
+",Vector de 384 dimensiones
+2025-07-13T14:17:56.864834,"La aplicación no carga la documentación específica de la póliza.
+",Vector de 384 dimensiones
+2025-07-13T14:18:03.274532,"Algunos asegurados no están apareciendo en el sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-13T14:18:10.594030,"Error al adjuntar documentación relacionado con la API de Terceros, específicamente en el componente de Reembolsos, que ha sido reasignado al buzón MOCK_BUZON.",Vector de 384 dimensiones
+2025-07-13T14:18:18.432610,"Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, pero únicamente la póliza dental se carga dentro del componente de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T14:18:25.261598,"Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KIBANA.",Vector de 384 dimensiones
+2025-07-13T14:18:32.539559,"Existe un problema de configuración del IBAN asociado al componente de Reembolsos, derivado de un error en los datos proporcionados por el usuario.
+",Vector de 384 dimensiones
+2025-07-13T14:18:38.572906,No se permite el reembolso de farmacias.,Vector de 384 dimensiones
+2025-07-13T14:18:45.264037,"Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.",Vector de 384 dimensiones
+2025-07-13T14:18:52.419946,"La tarjeta digital no carga debido a un fallo en el decodificador del token del usuario, específicamente en la gestión de caracteres que no son Base64.
+",Vector de 384 dimensiones
+2025-07-13T14:18:59.523248,"La ejecución del Batch falló debido a que los proveedores hijos tenían fechas anteriores a los padres, requiriendo una verificación y corrección de los datos.",Vector de 384 dimensiones
+2025-07-13T14:19:06.055176,"El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+",Vector de 384 dimensiones
+2025-07-13T14:19:13.455571,"Al acceder al Cuadro Médico público e intentar acceder al OM, se descarga el archivo HTML del OM en lugar de redirigir al usuario a la página correspondiente.
+",Vector de 384 dimensiones
+2025-07-13T14:19:19.767841,El usuario no puede agregar información necesaria a un reembolso ya procesado.,Vector de 384 dimensiones
+2025-07-13T14:19:26.593984,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.",Vector de 384 dimensiones
+2025-07-13T14:19:36.406740,"Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación del MOCK_ID con las pólizas de alta. La solución implica cambiar la búsqueda a MOCK_NIF, lo que requiere una definición exhaustiva de las casuísticas y se deriva de la nueva versión del API.
+",Vector de 384 dimensiones
+2025-07-13T14:19:46.181989,"El componente ""Cuadro Médico"" presenta un fallo en la carga de pólizas. La modificación en el API de MOCK_BUZON, al introducir un MOCK_ID diferente pero relacionado con el mismo cliente, provoca que el sistema no retorne las pólizas esperadas, generando un nuevo comportamiento inesperado.
+",Vector de 384 dimensiones
+2025-07-13T14:19:53.161176,"El botón de acceso a la tarjeta digital en la pantalla final dirige a una URL incorrecta, apuntando a la URL de PRE.
+",Vector de 384 dimensiones
+2025-07-13T14:20:00.768553,"Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.",Vector de 384 dimensiones
+2025-07-13T14:20:07.876163,El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.,Vector de 384 dimensiones
+2025-07-13T14:20:14.610032,"Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla inicial.
+",Vector de 384 dimensiones
+2025-07-13T14:20:21.159779,"Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T14:20:27.317178,El acceso a la web no carga los apartados de autorizaciones.,Vector de 384 dimensiones
+2025-07-13T14:20:33.643373,"Error al enviar un archivo después de haberlo completado y adjuntado.
+",Vector de 384 dimensiones
+2025-07-13T14:20:40.207853,"No se visualiza la póliza en el Cuadro Médico, indicando un fallo en el código back.",Vector de 384 dimensiones
+2025-07-13T14:20:46.386829,"Al compartir un profesional, la URL generada es localhost.
+",Vector de 384 dimensiones
+2025-07-13T14:20:52.688730,Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico.,Vector de 384 dimensiones
+2025-07-13T14:20:59.427402,"No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda por póliza.
+",Vector de 384 dimensiones
+2025-07-13T14:21:06.153453,"No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código back.
+",Vector de 384 dimensiones
+2025-07-13T14:21:12.927503,"No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T14:21:19.369998,"Error en la validación de NIF/CIF durante el proceso de reembolso.
+",Vector de 384 dimensiones
+2025-07-13T14:21:27.732183,"Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"", originado en una API de terceros y detectado a través de errores en Kibana, específicamente en las APIs de aplicaciones y búsqueda de pólizas.
+",Vector de 384 dimensiones
+2025-07-13T14:21:35.141386,"La póliza no se está cargando debido a errores detectados en la API de un tercero, específicamente el `searchByRol` devuelve un bloque `insured` vacío.
+",Vector de 384 dimensiones
+2025-07-13T14:21:42.041787,El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de captura o adjuntar archivos no está disponible.,Vector de 384 dimensiones
+2025-07-13T14:21:49.487616,"No se visualiza la póliza en el Cuadro Médico debido a un problema de datos en la operación SearchByPolicyOpt, específicamente relacionado con la segunda póliza.
+",Vector de 384 dimensiones
+2025-07-13T14:21:56.018119,"Al adjuntar un documento, la sesión del usuario se interrumpe.
+",Vector de 384 dimensiones
+2025-07-13T14:22:02.040530,No se visualiza el historial de reembolsos.,Vector de 384 dimensiones
+2025-07-13T14:22:08.221964,Los beneficiarios no cargan en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-13T14:22:15.347212,"Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de cuentas, impidiendo la introducción de información adicional.
+",Vector de 384 dimensiones
+2025-07-13T14:22:22.632398,"Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T14:22:29.236942,"La carga de la póliza falla debido a un error con la descripción de la oferta.
+",Vector de 384 dimensiones
+2025-07-13T14:22:35.557654,"No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T14:22:41.978328,"No se permite descargar documentación debido a un fallo en el código MOCK_AGENT.
+",Vector de 384 dimensiones
+2025-07-13T14:22:48.551458,"Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T14:22:54.954985,"El sistema no está cargando al beneficiario, quien se encuentra dado de baja.
+",Vector de 384 dimensiones
+2025-07-13T14:23:00.927269,El proveedor presenta una incorrecta dirección de datos.,Vector de 384 dimensiones
+2025-07-13T14:23:08.681974,"La API de Terceros no carga pólizas ni información de asegurado cuando la llamada al `/search_by_policy` incluye un campo `cancellationDate` con una póliza en estado ALTA.
+",Vector de 384 dimensiones
+2025-07-13T14:23:14.956901,"La tarjeta digital muestra una tarjeta dada de baja.
+",Vector de 384 dimensiones
+2025-07-13T14:23:23.567767,La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de datos está vacío. Se requiere verificar el número de documento de la llamada de la asegurada a la que se le asigna la cuenta bancaria en estos casos.,Vector de 384 dimensiones
+2025-07-13T14:23:29.938900,El campo de Médico Realizador no permite el uso de comillas dobles.,Vector de 384 dimensiones
+2025-07-13T14:23:37.567764,"No se encuentra el reembolso debido a que el campo ‘lgAmbulatorio’ llegaba como un entero en lugar de una cadena de texto en el mapeo de respuestas.
+",Vector de 384 dimensiones
+2025-07-13T14:23:44.153870,"No carga de pólizas ni asegurados debido a caracteres especiales en el código back.
+",Vector de 384 dimensiones
+2025-07-13T14:23:50.005264,"Aparece un mensaje con letras blancas.
+",Vector de 384 dimensiones
+2025-07-13T14:23:56.684296,"Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente cuando esta no contiene caracteres especiales.
+",Vector de 384 dimensiones
+2025-07-13T14:24:03.662017,"Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.
+",Vector de 384 dimensiones
+2025-07-13T14:24:10.297216,"Hay retrasos en la provisión de pólizas a través de la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T14:24:16.795980,Retrasos en la provisión de fondos que generan reclamaciones por exceso de tiempo.,Vector de 384 dimensiones
+2025-07-13T14:24:24.101882,"Existe un problema con el estado de una póliza en la sección de reembolsos, específicamente relacionado con tiempos de provisión que no se reflejan correctamente en el sistema API.",Vector de 384 dimensiones
+2025-07-13T14:24:30.642595,Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.,Vector de 384 dimensiones
+2025-07-13T14:24:37.182318,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T14:24:44.281261,"Se produjo un rechazo de apelación para una póliza, relacionado con un fallo en la API del sistema de reembolsos, indicando disconformidad del usuario.",Vector de 384 dimensiones
+2025-07-13T14:26:15.273065,"Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE",Vector de 384 dimensiones
+2025-07-13T14:26:30.452435,"No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco.",Vector de 384 dimensiones
+2025-07-13T14:26:40.807416,"El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura.",Vector de 384 dimensiones
+2025-07-13T14:27:13.701182,ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE,Vector de 384 dimensiones
+2025-07-13T14:27:27.321511,"No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío.",Vector de 384 dimensiones
+2025-07-13T14:27:37.744776,"Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado.",Vector de 384 dimensiones
+2025-07-13T14:28:12.417348,No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T14:28:25.563644,Imposibilidad de acceder a la documentación general de la póliza,Vector de 384 dimensiones
+2025-07-13T14:28:35.917297,"Error al visualizar la documentación asociada a la póliza, afectando al solicitante MOCK_NAME",Vector de 384 dimensiones
+2025-07-13T14:29:48.859744,No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T14:30:03.206391,No se muestran los beneficiarios en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-13T14:30:13.588307,"El módulo de reembolsos solo muestra un beneficiario, a pesar de que la póliza lo permite.",Vector de 384 dimensiones
+2025-07-13T14:31:30.657943,No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T14:31:44.869134,No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos.,Vector de 384 dimensiones
+2025-07-13T14:31:55.634807,El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos.,Vector de 384 dimensiones
+2025-07-13T14:34:03.089574,Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN,Vector de 384 dimensiones
+2025-07-13T14:34:17.328330,Error de validación de IBAN en reembolsos,Vector de 384 dimensiones
+2025-07-13T14:34:28.136293,El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto,Vector de 384 dimensiones
+2025-07-13T14:35:44.052844,No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME,Vector de 384 dimensiones
+2025-07-13T14:35:58.175796,"Error al visualizar la tarjeta digital, específicamente para pólizas de tipo MOCK_TYPE",Vector de 384 dimensiones
+2025-07-13T14:36:10.140288,"La tarjeta digital no se muestra correctamente, presentando un error al acceder a ella, especialmente en casos de pólizas MOCK_TYPE",Vector de 384 dimensiones
+2025-07-13T14:37:32.138669,"Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF",Vector de 384 dimensiones
+2025-07-13T14:37:46.654564,"No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML.",Vector de 384 dimensiones
+2025-07-13T14:37:57.323998,"Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada.",Vector de 384 dimensiones
+2025-07-13T14:40:36.689074,Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T14:40:49.530499,"Error al completar el proceso de autorización, el sistema genera un error inesperado.",Vector de 384 dimensiones
+2025-07-13T14:40:59.822651,"Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado.",Vector de 384 dimensiones
+2025-07-13T14:43:30.127901,No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY,Vector de 384 dimensiones
+2025-07-13T14:43:44.435572,No se puede descargar la documentación de la póliza. Error al acceder a los documentos.,Vector de 384 dimensiones
+2025-07-13T14:43:54.812627,Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos.,Vector de 384 dimensiones
+2025-07-13T14:45:38.877876,Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T14:45:51.777676,Error de validación del NIF/CIF en el proceso de reembolso.,Vector de 384 dimensiones
+2025-07-13T14:46:02.387711,"No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto.",Vector de 384 dimensiones
+2025-07-13T14:46:30.397497,El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T14:46:43.368278,"No se genera PDF de tarjeta digital, el documento resultante es en blanco",Vector de 384 dimensiones
+2025-07-13T14:46:53.987829,"El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco",Vector de 384 dimensiones
+2025-07-13T14:47:57.817027,El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF,Vector de 384 dimensiones
+2025-07-13T14:48:10.706553,No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador.,Vector de 384 dimensiones
+2025-07-13T14:48:20.998827,"Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas.",Vector de 384 dimensiones
+2025-07-13T14:50:54.287559,La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A,Vector de 384 dimensiones
+2025-07-13T14:51:07.191447,La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente.,Vector de 384 dimensiones
+2025-07-13T14:51:18.067490,"Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A.",Vector de 384 dimensiones
+2025-07-13T14:51:48.241762,Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B,Vector de 384 dimensiones
+2025-07-13T14:52:01.335309,"Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B",Vector de 384 dimensiones
+2025-07-13T14:52:12.196623,El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B),Vector de 384 dimensiones
+2025-07-13T14:52:44.751865,Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C,Vector de 384 dimensiones
+2025-07-13T14:52:57.995852,"El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión.",Vector de 384 dimensiones
+2025-07-13T14:53:08.885585,"Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente.",Vector de 384 dimensiones
+2025-07-13T14:53:39.525531,Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D,Vector de 384 dimensiones
+2025-07-13T14:53:53.002555,"El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T14:54:03.651298,"Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D.",Vector de 384 dimensiones
+2025-07-13T14:54:33.657324,Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E,Vector de 384 dimensiones
+2025-07-13T14:54:46.602779,El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información.,Vector de 384 dimensiones
+2025-07-13T14:54:57.143162,Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente.,Vector de 384 dimensiones
+2025-07-13T14:55:58.216547,Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F,Vector de 384 dimensiones
+2025-07-13T14:56:11.087911,Se rechaza la apelación de la póliza POL006-DISCONF-RECHAZADA por incumplimiento de requisitos.,Vector de 384 dimensiones
+2025-07-13T14:56:21.678339,La apelación de la póliza POL006-DISCONF-RECHAZADA (NIF: 33445566F) ha sido rechazada debido a la no cumplimentación de los requisitos.,Vector de 384 dimensiones
+2025-07-13T15:18:52.783145,"La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posterior a la fecha actual.
+",Vector de 384 dimensiones
+2025-07-13T15:19:00.662502,"La carga de documentación general de la póliza falla debido a errores en la devolución de valores de 'idDistributor' e 'idAgente' a través del API 2.1.1 de cartera.
+",Vector de 384 dimensiones
+2025-07-13T15:19:06.995071,"La aplicación no carga la documentación específica de la póliza.
+",Vector de 384 dimensiones
+2025-07-13T15:19:13.448972,"Algunos asegurados no están apareciendo en el sistema de reembolsos.
+",Vector de 384 dimensiones
+2025-07-13T15:19:20.143744,"Error al adjuntar documentación relacionado con la API de Terceros, específicamente en el componente de Reembolsos.
+",Vector de 384 dimensiones
+2025-07-13T15:19:27.971215,"Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, pero únicamente la póliza dental se carga dentro del componente de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T15:19:35.080999,"Error al completar el proceso de reembolsos asociado a una API de terceros, con relación a un problema detectado en KIBANA.",Vector de 384 dimensiones
+2025-07-13T15:19:42.528020,"Existe un problema de configuración del IBAN asociado al componente de Reembolsos, donde el sistema identifica una discrepancia en la información proporcionada por el usuario.
+",Vector de 384 dimensiones
+2025-07-13T15:19:48.883661,"El sistema no permite el proceso de reembolsos de farmacia.
+",Vector de 384 dimensiones
+2025-07-13T15:19:55.581357,"Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.",Vector de 384 dimensiones
+2025-07-13T15:20:02.925003,"La tarjeta digital no se carga debido a un problema en el decodificador del token de usuario, específicamente en la gestión de caracteres que no son Base64.
+",Vector de 384 dimensiones
+2025-07-13T15:20:09.801975,La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en comparación con los proveedores padres.,Vector de 384 dimensiones
+2025-07-13T15:20:16.264707,"El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+",Vector de 384 dimensiones
+2025-07-13T15:20:23.420915,"Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.
+",Vector de 384 dimensiones
+2025-07-13T15:20:29.795838,El usuario no puede agregar información necesaria a un reembolso ya tramitado.,Vector de 384 dimensiones
+2025-07-13T15:20:36.607373,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.",Vector de 384 dimensiones

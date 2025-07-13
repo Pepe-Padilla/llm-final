@@ -15,9 +15,60 @@ from observabilidad.logger import main_logger
 from utils import convert_json_response, convert_eval_response
 from collections import Counter
 import time
+import os
+import csv
 
 # Load environment variables
 load_dotenv()
+
+def log_rejected_resolution(incident_code: str, critic_evaluation: Dict[str, Any], resolution: Dict[str, Any]):
+    """Log rejected resolution to CSV file for analysis."""
+    try:
+        # Create rejected directory if it doesn't exist
+        rejected_dir = "./resources/rejected"
+        os.makedirs(rejected_dir, exist_ok=True)
+        
+        # Generate filename with current date
+        today = datetime.now().strftime("%Y%m%d")
+        csv_file = f"{rejected_dir}/rejected{today}.csv"
+        
+        # Check if file exists to determine if we need headers
+        file_exists = os.path.exists(csv_file)
+        
+        # Prepare row data
+        row_data = {
+            "timestamp": datetime.now().isoformat(),
+            "codigo_incidencia": incident_code,
+            "motivo_rechazo": critic_evaluation.get("reason", ""),
+            "critica_completa": critic_evaluation.get("critique", ""),
+            "tipo_problema": critic_evaluation.get("problem_type", ""),
+            "evitar_soluciones": str(critic_evaluation.get("avoid_solution_types", [])),
+            "enfoque_recomendado": critic_evaluation.get("recommended_approach", ""),
+            "resolucion_tipo": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", ""),
+            "resolucion_buzon": resolution.get("metadata", {}).get("BUZON REASIGNACION", ""),
+            "resolucion_solucion": resolution.get("metadata", {}).get("SOLUCIÓN", ""),
+            "resolucion_completa": str(resolution)
+        }
+        
+        # Write to CSV
+        with open(csv_file, "a", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=row_data.keys())
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow(row_data)
+            
+        main_logger.debug(f"Rechazo registrado en {csv_file}", extra_data={
+            "action": "rejection_logged_to_csv",
+            "csv_file": csv_file,
+            "incident_code": incident_code
+        })
+        
+    except Exception as e:
+        main_logger.error(f"Error registrando rechazo en CSV: {str(e)}", extra_data={
+            "action": "rejection_csv_error",
+            "error": str(e),
+            "incident_code": incident_code
+        })
 
 def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_relevant_solutions: List[Dict[str, Any]], max_retries: int = 2) -> Dict[str, Any]:
     """
@@ -39,7 +90,23 @@ def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_rele
         "max_retries": max_retries
     })
     
+    # Si no hay soluciones, ir directo a manual sin crítico
+    if not all_relevant_solutions:
+        main_logger.info("No hay soluciones, resolviendo como manual sin crítico", extra_data={
+            "action": "no_solutions_direct_manual",
+            "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown")
+        })
+        return {
+            "metadata": {
+                "RESOLUCION AUTOMÁTICA": "manual",
+                "BUZON REASIGNACION": "",
+                "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente"
+            }
+        }
+    
     critique_context = ""
+    rejected_solutions = []  # Track rejected solutions
+    structured_critique = {}  # Track structured critique information
     
     for attempt in range(max_retries + 1):
         main_logger.debug(f"Intento {attempt + 1}/{max_retries + 1}", extra_data={
@@ -47,42 +114,61 @@ def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_rele
             "attempt": attempt + 1,
             "max_attempts": max_retries + 1,
             "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown"),
-            "has_critique": len(critique_context) > 0
+            "has_critique": len(critique_context) > 0,
+            "rejected_solutions_count": len(rejected_solutions)
         })
         
-        # Generate resolution
-        resolution = None
-        if all_relevant_solutions:
-            # Include critique in context if available
-            context_incident = enhanced_incidencia.copy()
-            if critique_context:
-                context_incident["critique_context"] = critique_context
-                main_logger.debug("Agregando contexto de crítica", extra_data={
-                    "action": "add_critique_context",
-                    "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context
-                })
-            
-            resolution_response = get_resolution(context_incident, all_relevant_solutions)
-            resolution = convert_eval_response(resolution_response, "resolution")
-            
-            main_logger.debug("Resolución generada", extra_data={
-                "action": "resolution_generated",
-                "attempt": attempt + 1,
-                "resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", ""),
-                "has_solution": bool(resolution.get("metadata", {}).get("SOLUCIÓN", ""))
+        # Filter out rejected solutions from the catalog
+        available_solutions = [sol for sol in all_relevant_solutions if sol not in rejected_solutions]
+        
+        main_logger.debug(f"Soluciones disponibles después del filtro: {len(available_solutions)}/{len(all_relevant_solutions)}", extra_data={
+            "action": "solutions_filtered",
+            "total_solutions": len(all_relevant_solutions),
+            "available_solutions": len(available_solutions),
+            "rejected_count": len(rejected_solutions)
+        })
+        
+        # If no solutions available after filtering, go to manual
+        if not available_solutions:
+            main_logger.info("No hay soluciones disponibles después del filtro, resolviendo como manual", extra_data={
+                "action": "no_solutions_after_filter",
+                "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown"),
+                "rejected_solutions_count": len(rejected_solutions)
             })
-        else:
-            resolution = {
+            return {
                 "metadata": {
                     "RESOLUCION AUTOMÁTICA": "manual",
                     "BUZON REASIGNACION": "",
-                    "SOLUCIÓN": "No hay soluciones disponibles en el catálogo para esta incidencia, revisar manualmente"
+                    "SOLUCIÓN": f"No hay soluciones disponibles después de filtrar {len(rejected_solutions)} soluciones rechazadas, revisar manualmente"
                 }
             }
-            main_logger.debug("No hay soluciones disponibles, resolución manual", extra_data={
-                "action": "no_solutions_manual",
-                "attempt": attempt + 1
+        
+        # Generate resolution
+        resolution = None
+        # Include critique in context if available
+        context_incident = enhanced_incidencia.copy()
+        if critique_context and structured_critique:
+            context_incident["critique_context"] = critique_context
+            context_incident["structured_critique"] = structured_critique
+            main_logger.debug("Agregando contexto de crítica estructurada", extra_data={
+                "action": "add_structured_critique_context",
+                "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context,
+                "problem_type": structured_critique.get("problem_type", "unknown"),
+                "avoid_solution_types": structured_critique.get("avoid_solution_types", [])
             })
+        
+        resolution_response = get_resolution(context_incident, available_solutions)
+        resolution = convert_eval_response(resolution_response, "resolution")
+        
+        if type(resolution) == list:
+            resolution = resolution[0]
+
+        main_logger.debug("Resolución generada", extra_data={
+            "action": "resolution_generated",
+            "attempt": attempt + 1,
+            "resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", ""),
+            "has_solution": bool(resolution.get("metadata", {}).get("SOLUCIÓN", ""))
+        })
         
         # Si es una lista, tomar el primer elemento
         if isinstance(resolution, list):
@@ -102,7 +188,8 @@ def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_rele
             "action": "critic_evaluation_received",
             "attempt": attempt + 1,
             "status": critic_evaluation.get("status", "unknown"),
-            "reason": critic_evaluation.get("reason", "")
+            "reason": critic_evaluation.get("reason", ""),
+            "problem_type": critic_evaluation.get("problem_type", "unknown")
         })
         
         status = critic_evaluation.get("status", "APPROVED")
@@ -131,13 +218,45 @@ def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_rele
             }
         
         elif status == "REJECTED":
+            # Add rejected solution to tracking list
+            rejected_solutions.append(resolution)
+            
+            # Log rejected resolution with warning level and complete metadata
+            main_logger.warning("⚠️ RESOLUCIÓN RECHAZADA POR CRÍTICO", extra_data={
+                "action": "resolution_rejected_by_critic",
+                "codIncidencia": enhanced_incidencia.get("codIncidencia", "unknown"),
+                "attempt": attempt + 1,
+                "motivo_rechazo": critic_evaluation.get("reason", ""),
+                "critica_completa": critic_evaluation.get("critique", ""),
+                "tipo_problema": critic_evaluation.get("problem_type", "unknown"),
+                "evitar_soluciones": critic_evaluation.get("avoid_solution_types", []),
+                "enfoque_recomendado": critic_evaluation.get("recommended_approach", ""),
+                "resolucion_completa": resolution
+            })
+            
+            # Log to CSV file for analysis
+            log_rejected_resolution(
+                enhanced_incidencia.get("codIncidencia", "unknown"),
+                critic_evaluation,
+                resolution
+            )
+            
+            # Update structured critique information
+            structured_critique = {
+                "problem_type": critic_evaluation.get("problem_type", "unknown"),
+                "avoid_solution_types": critic_evaluation.get("avoid_solution_types", []),
+                "recommended_approach": critic_evaluation.get("recommended_approach", "")
+            }
+            
             if attempt < max_retries:
                 critique_context = critic_evaluation.get("critique", "")
                 main_logger.info("Resolución rechazada, reintentando", extra_data={
                     "action": "resolution_rejected_retry",
                     "attempt": attempt + 1,
                     "reason": critic_evaluation.get("reason", ""),
-                    "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context
+                    "critique_preview": critique_context[:100] + "..." if len(critique_context) > 100 else critique_context,
+                    "problem_type": structured_critique.get("problem_type", "unknown"),
+                    "avoid_solution_types": structured_critique.get("avoid_solution_types", [])
                 })
                 continue
             else:
@@ -145,13 +264,14 @@ def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_rele
                     "action": "resolution_rejected_max_retries",
                     "attempt": attempt + 1,
                     "reason": critic_evaluation.get("reason", ""),
-                    "critique": critic_evaluation.get("critique", "")
+                    "critique": critic_evaluation.get("critique", ""),
+                    "total_rejected_solutions": len(rejected_solutions)
                 })
                 return {
                     "metadata": {
                         "RESOLUCION AUTOMÁTICA": "manual",
                         "BUZON REASIGNACION": "",
-                        "SOLUCIÓN": f"No se pudo generar una resolución automática adecuada después de {max_retries + 1} intentos. Última crítica: {critic_evaluation.get('critique', '')}"
+                        "SOLUCIÓN": f"No se pudo generar una resolución automática adecuada después de {max_retries + 1} intentos. {len(rejected_solutions)} soluciones rechazadas. Última crítica: {critic_evaluation.get('critique', '')}"
                     }
                 }
     
@@ -382,8 +502,23 @@ def main():
 
         resolucion_automatica = resolution.get("metadata",{}).get("RESOLUCION AUTOMÁTICA")
         if resolucion_automatica == None:
-            resolucion_automatica = "api resolution ->" +  result.get("RESOLUCION AUTOMÁTICA")
-        tipos_resolucion.append(resolucion_automatica)
+            resolucion_automatica = "manual"
+            main_logger.error("Error al obtener la resolución automática, se asigna manual", extra_data={
+                "action": "error_getting_resolution",
+                "resolution": resolution
+            })
+        
+        # Track original resolution type for api|xxx cases
+        final_resolution_type = result.get("RESOLUCION AUTOMÁTICA", resolucion_automatica)
+        original_resolution_type = result.get("original_resolution_type", resolucion_automatica)
+        
+        # Format resolution for statistics: show "api|xxx[final]" for api cases
+        if original_resolution_type != final_resolution_type and original_resolution_type.startswith("api|"):
+            display_resolution = f"{original_resolution_type}[{final_resolution_type}]"
+        else:
+            display_resolution = resolucion_automatica
+        
+        tipos_resolucion.append(display_resolution)
         
         # Count API errors
         estado_api = result.get("estado_api", {})
@@ -392,10 +527,12 @@ def main():
         if estado_api.get("sistema", "").startswith("error"):
             errores_api["sistema"] += 1
         
-        main_logger.info(f"Resolución completada: {resolucion_automatica}", extra_data={
+        main_logger.info(f"Resolución completada: {display_resolution}", extra_data={
             "action": "incident_completed",
             "incident_index": i,
-            "resolucion": resolucion_automatica,
+            "resolucion": display_resolution,
+            "original_resolution": original_resolution_type,
+            "final_resolution": final_resolution_type,
             "errores_gestor": estado_api.get("gestor_incidencias", ""),
             "errores_sistema": estado_api.get("sistema", ""),
             "processing_time": time.time() - start_time

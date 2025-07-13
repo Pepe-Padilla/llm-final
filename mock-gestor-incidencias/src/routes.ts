@@ -502,6 +502,74 @@ const incidencias: Incidencia[] = [
     prioridad: "2 - Alta",
     descripcion: "El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF",
     historial: []
+  },
+  // Casos para fxprovicion
+  {
+    codIncidencia: "MOCK_INC0016",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Demora en provisión de póliza",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "09/01/2025 10:00:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0017",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Reclamación por exceso de tiempo en provisión",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "09/01/2025 11:30:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0018",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Consulta sobre estado de póliza en provisión",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "09/01/2025 14:00:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C",
+    historial: []
+  },
+  // Casos para disconformidad
+  {
+    codIncidencia: "MOCK_INC0019",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Disconformidad con rechazo de póliza",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "09/01/2025 15:30:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0020",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Consulta sobre rechazo de póliza",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "09/01/2025 16:45:00 CEST",
+    prioridad: "3 - Media",
+    descripcion: "Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E",
+    historial: []
+  },
+  {
+    codIncidencia: "MOCK_INC0021",
+    buzon: "GR_SAL_COMP_AUTORIZACIONES",
+    titulo: "Apelación rechazo póliza",
+    solicitante: "MOCK_NAME",
+    estado: "En curso",
+    apertura: "10/01/2025 09:00:00 CEST",
+    prioridad: "2 - Alta",
+    descripcion: "Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F",
+    historial: []
   }
 ];
 
@@ -524,6 +592,9 @@ router.patch('/incidencias/:codIncidencia', (req: Request, res: Response) => {
   const { codIncidencia } = req.params;
   const patchData = req.body; // Aceptar cualquier estructura
   
+  // Log para debugging
+  console.log('Recibida petición PATCH incidencia:', codIncidencia, JSON.stringify(patchData, null, 2));
+  
   // Buscar incidencia
   const incidencia = incidencias.find(inc => inc.codIncidencia === codIncidencia);
   if (!incidencia) {
@@ -532,7 +603,7 @@ router.patch('/incidencias/:codIncidencia', (req: Request, res: Response) => {
 
   const now = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' });
   
-  // Extraer campos de manera flexible
+  // Extraer campos de manera flexible - aceptar cualquier variante
   const action = patchData.action;
   const buzonDestino = patchData.buzonDestino || patchData.buzon_destino || "GR_SAL_COMP_CIERRE";
   const notasResolucion = patchData.notasResolucion || patchData.notas_resolucion || "Procesado automáticamente";

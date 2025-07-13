@@ -50,3 +50,448 @@ timestamp,input,output
 2025-07-09T21:07:28.422639,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
 2025-07-09T21:07:42.239573,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
 2025-07-09T21:07:52.475773,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T18:34:50.010860,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T18:35:06.607946,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T18:35:17.046185,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T18:36:49.145439,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T18:37:03.894569,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T18:37:14.282220,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T18:41:20.141234,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T18:41:36.660657,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T18:41:46.945383,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T18:42:19.850990,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T18:42:34.525766,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T18:42:44.768075,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T18:43:21.284722,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T18:43:35.549950,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T18:43:46.390589,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:01:12.699940,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:01:29.270772,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T19:01:39.566916,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T19:02:12.312944,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:02:26.999623,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T19:02:37.270463,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T19:03:13.583431,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:03:27.775074,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:03:38.691055,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:14:55.717768,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:15:12.219424,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T19:15:22.578987,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T19:15:55.197500,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:16:09.994597,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T19:16:20.329308,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T19:16:57.078836,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:17:11.828568,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:17:22.727480,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:19:48.197354,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:20:02.590369,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado., limit: 2",results: 2
+2025-07-12T19:20:12.842787,"query: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME., limit: 2",results: 2
+2025-07-12T19:21:08.819462,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T19:21:24.466843,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-12T19:21:34.984622,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-12T19:22:07.154770,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-12T19:22:21.407736,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-12T19:22:31.807088,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-12T19:24:48.529035,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T19:25:03.918757,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-12T19:25:14.199486,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-12T19:26:31.496463,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:26:45.779575,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-12T19:26:56.395288,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-12T19:29:21.389692,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:29:35.696132,"query: Error al cargar información de pólizas en el componente de gestión., limit: 2",results: 2
+2025-07-12T19:29:45.880013,"query: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información., limit: 2",results: 2
+2025-07-12T19:30:59.423990,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:31:12.302367,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-12T19:31:22.663133,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-12T19:36:32.976932,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:36:49.508693,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T19:37:00.123645,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T19:38:29.259410,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:38:45.829684,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T19:38:56.152338,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T19:39:29.719413,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T19:39:44.882925,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T19:39:55.279036,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T19:40:31.910222,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:40:46.387933,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:40:57.356173,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:43:26.124426,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:43:41.512922,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular., limit: 2",results: 2
+2025-07-12T19:43:51.843223,"query: El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular asociado a la póliza MOCK_POLICY., limit: 2",results: 2
+2025-07-12T19:44:57.183734,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T19:45:13.175354,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-12T19:45:23.785662,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-12T19:45:56.592021,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-12T19:46:11.341344,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-12T19:46:21.774890,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-12T19:48:38.088391,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T19:48:53.794188,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-12T19:49:04.132284,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-12T19:50:21.545717,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:50:36.032011,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-12T19:50:46.681293,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-12T19:53:19.806845,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:53:34.483461,"query: Error al cargar datos de la póliza en el componente de gestión. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:53:45.314328,"query: Imposibilidad de visualizar la información de la póliza en el componente de gestión, asociado al NIF MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:55:09.580344,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T19:55:22.658905,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-12T19:55:33.087518,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-12T19:57:56.735605,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T19:58:11.194120,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-12T19:58:21.795095,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-12T20:00:33.957292,"query: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:00:48.294870,"query: Se presentan datos de asegurados incorrectos en la visualización., limit: 2",results: 2
+2025-07-12T20:00:58.308908,"query: Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY., limit: 2",results: 2
+2025-07-12T20:01:54.727923,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:02:07.761892,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-12T20:02:18.340421,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-12T20:03:12.584998,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:03:25.571397,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-12T20:03:36.102401,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-12T20:04:37.609344,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:04:50.363671,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-12T20:05:00.858119,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-12T20:06:03.138744,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-12T20:06:16.148774,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-12T20:06:27.125222,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-12T20:13:18.523419,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T20:13:35.345228,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T20:13:45.749148,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T20:19:08.794153,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T20:22:14.591663,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T20:22:31.339387,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo en blanco., limit: 2",results: 2
+2025-07-12T20:22:41.896272,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, impidiendo su lectura., limit: 2",results: 2
+2025-07-12T20:23:15.231263,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T20:23:30.035507,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T20:23:40.408646,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T20:24:17.467691,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:24:32.024240,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:24:43.124844,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:27:13.981295,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:27:28.761965,"query: No se muestran los beneficiarios en el módulo de reembolsos, limit: 2",results: 2
+2025-07-12T20:27:39.095889,"query: Existe un problema al visualizar los beneficiarios en el proceso de reembolso, solo se muestra el titular., limit: 2",results: 2
+2025-07-12T20:28:44.902481,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T20:29:00.495662,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-12T20:29:11.112949,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-12T20:29:43.903451,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-12T20:29:58.302930,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-12T20:30:08.713591,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-12T20:32:24.493301,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T20:32:40.263601,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-12T20:32:50.620801,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-12T20:34:08.780883,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:34:23.349165,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-12T20:34:33.985445,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-12T20:37:07.590674,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:37:22.150093,"query: Error al cargar datos de la póliza en el módulo de gestión., limit: 2",results: 2
+2025-07-12T20:37:32.530469,"query: Imposibilidad de visualizar la información de la póliza en el componente de gestión., limit: 2",results: 2
+2025-07-12T20:39:07.872172,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:39:21.057964,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-12T20:39:31.573284,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-12T20:41:56.029257,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:42:10.429391,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-12T20:42:20.881230,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-12T20:44:28.433694,"query: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:44:42.842278,"query: Datos de asegurados incorrectos en la visualización: NIF MOCK_NIF, Póliza MOCK_POLICY, limit: 2",results: 2
+2025-07-12T20:44:53.801311,"query: Se detecta error en los datos del asegurado, con NIF MOCK_NIF y póliza MOCK_POLICY, según informe del sistema automático., limit: 2",results: 2
+2025-07-12T20:45:56.805594,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:46:09.976706,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-12T20:46:20.474822,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-12T20:47:15.563244,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:47:28.873276,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-12T20:47:39.783261,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-12T20:50:11.947455,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T20:50:24.792985,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-12T20:50:35.594862,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-12T20:52:51.843944,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-12T20:53:05.020620,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-12T20:53:15.829739,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-12T20:55:28.435460,"query: Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B, limit: 2",results: 2
+2025-07-12T20:55:41.758085,"query: Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B, limit: 2",results: 2
+2025-07-12T20:55:52.588061,"query: El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B), limit: 2",results: 2
+2025-07-12T20:56:22.790966,"query: Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C, limit: 2",results: 2
+2025-07-12T20:56:36.183906,"query: El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión., limit: 2",results: 2
+2025-07-12T20:56:46.990675,"query: Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente., limit: 2",results: 2
+2025-07-12T20:57:17.756871,"query: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D, limit: 2",results: 2
+2025-07-12T20:57:30.905706,"query: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D., limit: 2",results: 2
+2025-07-12T20:57:41.657644,"query: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D., limit: 2",results: 2
+2025-07-12T20:58:12.215440,"query: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E, limit: 2",results: 2
+2025-07-12T20:58:25.262359,"query: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información., limit: 2",results: 2
+2025-07-12T20:58:36.035566,"query: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente., limit: 2",results: 2
+2025-07-12T20:59:06.725932,"query: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F, limit: 2",results: 2
+2025-07-12T20:59:19.986965,"query: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos., limit: 2",results: 2
+2025-07-12T20:59:30.721287,"query: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME., limit: 2",results: 2
+2025-07-12T23:39:38.973828,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-12T23:39:55.635264,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-12T23:40:06.151833,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-12T23:40:39.480209,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-12T23:40:54.509738,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-12T23:41:04.780732,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-12T23:41:41.888161,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:41:56.323138,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:42:07.465996,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:44:35.988807,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:44:50.832545,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado., limit: 2",results: 2
+2025-07-12T23:45:01.166839,"query: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME., limit: 2",results: 2
+2025-07-12T23:45:58.008944,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T23:46:13.748839,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-12T23:46:24.482723,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-12T23:46:57.441697,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-12T23:47:11.987487,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-12T23:47:22.575517,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-12T23:49:37.821793,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-12T23:49:53.495071,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-12T23:50:03.960808,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-12T23:51:21.568610,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T23:51:36.009634,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-12T23:51:46.701513,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-12T23:54:17.513562,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:54:32.034118,"query: Error al cargar información de pólizas en el componente de gestión., limit: 2",results: 2
+2025-07-12T23:54:42.390196,"query: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información., limit: 2",results: 2
+2025-07-12T23:55:57.701350,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-12T23:56:10.745499,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-12T23:56:20.981112,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-12T23:58:44.810620,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-12T23:58:59.050869,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-12T23:59:09.588736,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-13T00:01:21.933677,"query: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:01:36.222406,"query: Se presentan datos de asegurados incorrectos en la visualización., limit: 2",results: 2
+2025-07-13T00:01:46.402427,"query: Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY., limit: 2",results: 2
+2025-07-13T00:02:42.974648,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T00:02:56.020628,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-13T00:03:06.520387,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-13T00:04:01.222347,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T00:04:14.380423,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-13T00:04:25.038165,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-13T00:06:49.658716,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T00:07:02.694169,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-13T00:07:13.243383,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-13T00:09:28.484943,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-13T00:09:41.662412,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-13T00:09:52.431218,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-13T00:12:04.765584,"query: Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B, limit: 2",results: 2
+2025-07-13T00:12:18.187312,"query: Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B, limit: 2",results: 2
+2025-07-13T00:12:29.038765,"query: El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B), limit: 2",results: 2
+2025-07-13T00:12:59.055571,"query: Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C, limit: 2",results: 2
+2025-07-13T00:13:12.509199,"query: El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión., limit: 2",results: 2
+2025-07-13T00:13:23.325167,"query: Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente., limit: 2",results: 2
+2025-07-13T00:13:53.872223,"query: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D, limit: 2",results: 2
+2025-07-13T00:14:07.058141,"query: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D., limit: 2",results: 2
+2025-07-13T00:14:17.818001,"query: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D., limit: 2",results: 2
+2025-07-13T00:14:48.144433,"query: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E, limit: 2",results: 2
+2025-07-13T00:15:01.274724,"query: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información., limit: 2",results: 2
+2025-07-13T00:15:12.152102,"query: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente., limit: 2",results: 2
+2025-07-13T00:15:42.520812,"query: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F, limit: 2",results: 2
+2025-07-13T00:15:55.887391,"query: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos., limit: 2",results: 2
+2025-07-13T00:16:06.612313,"query: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME., limit: 2",results: 2
+2025-07-13T00:34:35.257097,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-13T00:34:50.543179,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-13T00:35:01.056714,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-13T00:37:38.034127,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-13T00:37:52.988001,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-13T00:38:03.274396,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-13T00:38:40.036153,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:38:53.251893,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:39:04.109749,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:41:32.135883,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:41:46.643103,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular., limit: 2",results: 2
+2025-07-13T00:41:57.024161,"query: El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular especificado (NIF: MOCK_NIF, Nombre: MOCK_NAME)., limit: 2",results: 2
+2025-07-13T00:43:00.638088,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T00:43:15.098381,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-13T00:43:25.767805,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-13T00:45:37.329488,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-13T00:45:51.608400,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-13T00:46:01.975704,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-13T00:46:37.552247,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T00:46:53.202252,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-13T00:47:03.612538,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-13T00:48:24.173062,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T00:48:38.691600,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-13T00:48:49.396393,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-13T00:51:22.856544,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:51:36.348908,"query: Error al cargar datos de la póliza en el componente de gestión. Se requiere actualización del componente para adaptarse a la nueva versión del API., limit: 2",results: 2
+2025-07-13T00:51:47.498415,"query: Imposibilidad de visualizar la información de la póliza; se ha identificado un fallo en la carga de datos y se necesita una actualización del componente., limit: 2",results: 2
+2025-07-13T00:53:09.240507,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T00:53:22.110919,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-13T00:53:32.477362,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-13T00:55:54.513742,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:56:08.915490,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-13T00:56:19.430867,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-13T00:58:31.469744,"query: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:58:44.603909,"query: Datos de asegurados incorrectos en la visualización: NIF MOCK_NIF, Póliza MOCK_POLICY, limit: 2",results: 2
+2025-07-13T00:58:55.586287,"query: Se detecta error en los datos del asegurado, NIF MOCK_NIF y póliza MOCK_POLICY, según reporte del sistema automático., limit: 2",results: 2
+2025-07-13T00:59:59.035798,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T01:00:12.336532,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-13T01:00:23.111236,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-13T01:02:18.934177,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T01:02:31.869580,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-13T01:02:42.399985,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-13T01:05:06.560167,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T01:05:19.508220,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-13T01:05:30.169917,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-13T01:06:33.215547,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-13T01:06:46.255912,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-13T01:06:57.086180,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-13T01:07:27.642084,"query: Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B, limit: 2",results: 2
+2025-07-13T01:07:40.816463,"query: Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B, limit: 2",results: 2
+2025-07-13T01:07:51.592826,"query: El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B), limit: 2",results: 2
+2025-07-13T01:08:21.264108,"query: Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C, limit: 2",results: 2
+2025-07-13T01:08:34.545567,"query: El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión., limit: 2",results: 2
+2025-07-13T01:08:45.261208,"query: Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente., limit: 2",results: 2
+2025-07-13T01:09:15.460501,"query: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D, limit: 2",results: 2
+2025-07-13T01:09:28.534312,"query: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D., limit: 2",results: 2
+2025-07-13T01:09:39.173524,"query: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D., limit: 2",results: 2
+2025-07-13T01:10:09.260135,"query: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E, limit: 2",results: 2
+2025-07-13T01:10:22.488675,"query: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información., limit: 2",results: 2
+2025-07-13T01:10:33.345612,"query: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente., limit: 2",results: 2
+2025-07-13T01:11:03.571903,"query: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F, limit: 2",results: 2
+2025-07-13T01:11:16.840211,"query: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos., limit: 2",results: 2
+2025-07-13T01:11:27.466452,"query: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME., limit: 2",results: 2
+2025-07-13T12:42:33.401277,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-13T12:42:48.598085,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-13T12:42:59.080728,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-13T12:45:35.103322,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-13T12:45:49.950444,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-13T12:46:00.411075,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-13T12:46:37.232580,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T12:46:50.465117,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T12:47:01.375116,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T12:49:25.843974,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T12:49:40.438299,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado., limit: 2",results: 2
+2025-07-13T12:49:50.831367,"query: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el titular MOCK_NAME., limit: 2",results: 2
+2025-07-13T12:50:47.366560,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T12:51:01.800522,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-13T12:51:12.511532,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-13T12:53:38.785929,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-13T12:53:53.028836,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-13T12:54:03.393115,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-13T12:54:38.569377,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T12:54:53.935931,"query: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder., limit: 2",results: 2
+2025-07-13T12:55:04.217956,"query: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante., limit: 2",results: 2
+2025-07-13T12:56:23.870089,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T12:56:38.305412,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-13T12:56:48.999543,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-13T12:59:18.910727,"query: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T12:59:32.157143,"query: Error al cargar información de pólizas en el componente de gestión., limit: 2",results: 2
+2025-07-13T12:59:42.513037,"query: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información., limit: 2",results: 2
+2025-07-13T13:01:48.757714,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:02:01.729988,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-13T13:02:12.070662,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-13T13:05:37.563459,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-13T13:05:52.856033,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-13T13:06:03.389416,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-13T13:07:23.822883,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-13T13:07:38.929262,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-13T13:07:49.251516,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-13T13:08:25.752478,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:08:38.995893,"query: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:08:49.794686,"query: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención del equipo técnico para resolver el problema. NIF: MOCK_NIF, Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:09:58.218858,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:10:12.699193,"query: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular., limit: 2",results: 2
+2025-07-13T13:10:23.007985,"query: El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente el titular especificado (NIF: MOCK_NIF, Nombre: MOCK_NAME)., limit: 2",results: 2
+2025-07-13T13:11:30.473561,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T13:11:44.664426,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-13T13:11:55.261404,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-13T13:14:58.260021,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-13T13:15:12.581607,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-13T13:15:22.972563,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-13T13:15:59.342118,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T13:16:14.906477,"query: La tarjeta digital no se visualiza correctamente, presentando un error al acceder., limit: 2",results: 2
+2025-07-13T13:16:25.355628,"query: Existe un fallo al intentar acceder a la tarjeta digital, específicamente para tarjetas de tipo MOCK_TYPE., limit: 2",results: 2
+2025-07-13T13:17:40.969040,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:17:55.377099,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-13T13:18:06.070059,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-13T13:20:49.124117,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:21:02.003701,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-13T13:21:12.299535,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-13T13:23:43.841141,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:23:58.170857,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-13T13:24:08.707948,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-13T13:25:53.346299,"query: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T13:26:06.583005,"query: Se presentan datos de asegurados incorrectos en la visualización., limit: 2",results: 2
+2025-07-13T13:26:16.926367,"query: Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY., limit: 2",results: 2
+2025-07-13T13:27:59.520827,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:28:12.457212,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-13T13:28:23.003524,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-13T13:29:29.350252,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:29:42.138045,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-13T13:29:52.723368,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-13T13:30:56.720262,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T13:31:09.652567,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-13T13:31:20.265634,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-13T13:33:53.803207,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-13T13:34:06.818818,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-13T13:34:17.658565,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-13T13:34:47.962305,"query: Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B, limit: 2",results: 2
+2025-07-13T13:35:01.114635,"query: Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B, limit: 2",results: 2
+2025-07-13T13:35:11.849741,"query: El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B), limit: 2",results: 2
+2025-07-13T13:35:41.104834,"query: Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C, limit: 2",results: 2
+2025-07-13T13:35:54.354206,"query: El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión., limit: 2",results: 2
+2025-07-13T13:36:05.020018,"query: Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente., limit: 2",results: 2
+2025-07-13T13:36:34.968229,"query: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D, limit: 2",results: 2
+2025-07-13T13:36:47.981534,"query: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D., limit: 2",results: 2
+2025-07-13T13:36:58.530632,"query: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D., limit: 2",results: 2
+2025-07-13T13:37:28.153024,"query: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E, limit: 2",results: 2
+2025-07-13T13:37:40.995083,"query: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información., limit: 2",results: 2
+2025-07-13T13:37:51.675099,"query: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente., limit: 2",results: 2
+2025-07-13T13:38:21.612482,"query: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F, limit: 2",results: 2
+2025-07-13T13:38:34.720721,"query: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de requisitos., limit: 2",results: 2
+2025-07-13T13:38:45.232971,"query: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es MOCK_NAME., limit: 2",results: 2
+2025-07-13T14:26:15.295489,"query: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, los ha tenido de copiar y pegar en documento de texto y ponerlo en negrita para leer mensaje NIF/NIE/Otros: MOCK_NIF Nombre y apellidos: MOCK_NAME Nº de Tarjeta: T: MOCK_CARD Nº de póliza: PO: MOCK_POLICY Fecha de nacimiento: 01/01/1980 Ramo: salud Día y Hora en que se produce el error:01/01/2025-10:00 Email y teléfono de contacto: mock@email.com-MOCK_PHONE, limit: 2",results: 2
+2025-07-13T14:26:30.481431,"query: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco., limit: 2",results: 2
+2025-07-13T14:26:40.835484,"query: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pegado en un documento de texto para su lectura., limit: 2",results: 2
+2025-07-13T14:27:13.726880,"query: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Contenedor: MOCK_WEB y App MOCK_APP Dispositivo: MOCK_BROWSER y MOCK_DEVICE Documentación: Talón en Captura de pantalla MOCK_NIF MOCK_NAME PO: MOCK_POLICY Email: mock@email.com Tel: MOCK_PHONE, limit: 2",results: 2
+2025-07-13T14:27:27.330840,"query: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío., limit: 2",results: 2
+2025-07-13T14:27:37.772397,"query: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con detalles del envío y el usuario afectado., limit: 2",results: 2
+2025-07-13T14:28:12.445739,"query: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T14:28:25.591199,"query: Imposibilidad de acceder a la documentación general de la póliza, limit: 2",results: 2
+2025-07-13T14:28:35.946173,"query: Error al visualizar la documentación asociada a la póliza, afectando al solicitante MOCK_NAME, limit: 2",results: 2
+2025-07-13T14:29:48.887857,"query: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T14:30:03.235432,"query: No se muestran los beneficiarios en el módulo de reembolsos., limit: 2",results: 2
+2025-07-13T14:30:13.616709,"query: El módulo de reembolsos solo muestra un beneficiario, a pesar de que la póliza lo permite., limit: 2",results: 2
+2025-07-13T14:31:30.687111,"query: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar subir archivos. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T14:31:44.896833,"query: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar subir documentos., limit: 2",results: 2
+2025-07-13T14:31:55.660729,"query: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error al intentar subir archivos., limit: 2",results: 2
+2025-07-13T14:34:03.113721,"query: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN, limit: 2",results: 2
+2025-07-13T14:34:17.354172,"query: Error de validación de IBAN en reembolsos, limit: 2",results: 2
+2025-07-13T14:34:28.161217,"query: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto, limit: 2",results: 2
+2025-07-13T14:35:44.076589,"query: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME, limit: 2",results: 2
+2025-07-13T14:35:58.203800,"query: Error al visualizar la tarjeta digital, específicamente para pólizas de tipo MOCK_TYPE, limit: 2",results: 2
+2025-07-13T14:36:10.165493,"query: La tarjeta digital no se muestra correctamente, presentando un error al acceder a ella, especialmente en casos de pólizas MOCK_TYPE, limit: 2",results: 2
+2025-07-13T14:37:32.161994,"query: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T14:37:46.679642,"query: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTML., limit: 2",results: 2
+2025-07-13T14:37:57.347597,"query: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo HTML en lugar de la página solicitada., limit: 2",results: 2
+2025-07-13T14:40:36.713481,"query: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T14:40:49.556363,"query: Error al completar el proceso de autorización, el sistema genera un error inesperado., limit: 2",results: 2
+2025-07-13T14:40:59.846169,"query: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error inesperado., limit: 2",results: 2
+2025-07-13T14:43:30.135064,"query: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY, limit: 2",results: 2
+2025-07-13T14:43:44.460460,"query: No se puede descargar la documentación de la póliza. Error al acceder a los documentos., limit: 2",results: 2
+2025-07-13T14:43:54.836626,"query: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los archivos., limit: 2",results: 2
+2025-07-13T14:45:38.902203,"query: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T14:45:51.804115,"query: Error de validación del NIF/CIF en el proceso de reembolso., limit: 2",results: 2
+2025-07-13T14:46:02.394794,"query: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto., limit: 2",results: 2
+2025-07-13T14:46:30.422259,"query: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T14:46:43.374815,"query: No se genera PDF de tarjeta digital, el documento resultante es en blanco, limit: 2",results: 2
+2025-07-13T14:46:54.013627,"query: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco, limit: 2",results: 2
+2025-07-13T14:47:57.841555,"query: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF, limit: 2",results: 2
+2025-07-13T14:48:10.731645,"query: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador., limit: 2",results: 2
+2025-07-13T14:48:21.022124,"query: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales ni comillas., limit: 2",results: 2
+2025-07-13T14:50:54.310728,"query: La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A, limit: 2",results: 2
+2025-07-13T14:51:07.214643,"query: La provisión de la póliza POL001-FX-PROVISION (NIF: 12345678A) se ha retrasado significativamente., limit: 2",results: 2
+2025-07-13T14:51:18.091774,"query: Existe demora en la provisión de la póliza POL001-FX-PROVISION, cuyo NIF es 12345678A., limit: 2",results: 2
+2025-07-13T14:51:48.265705,"query: Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B, limit: 2",results: 2
+2025-07-13T14:52:01.360319,"query: Reclamo por demoras en la provisión de la póliza POL002-FX-PROVISION, NIF 87654321B, limit: 2",results: 2
+2025-07-13T14:52:12.220392,"query: El cliente presenta una reclamación debido a un tiempo excesivo en la provisión de la póliza POL002-FX-PROVISION (NIF: 87654321B), limit: 2",results: 2
+2025-07-13T14:52:44.780908,"query: Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C, limit: 2",results: 2
+2025-07-13T14:52:58.021295,"query: El cliente solicita información sobre el estado de la póliza POL003-FX-ACTIVA, que aún se encuentra en proceso de provisión., limit: 2",results: 2
+2025-07-13T14:53:08.912056,"query: Se requiere verificar el estado actual de la póliza POL003-FX-ACTIVA, la cual está en etapa de provisión según la consulta del cliente., limit: 2",results: 2
+2025-07-13T14:53:39.551883,"query: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55667788D, limit: 2",results: 2
+2025-07-13T14:53:53.030458,"query: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D., limit: 2",results: 2
+2025-07-13T14:54:03.677684,"query: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF 55667788D., limit: 2",results: 2
+2025-07-13T14:54:33.683074,"query: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E, limit: 2",results: 2
+2025-07-13T14:54:46.630007,"query: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información., limit: 2",results: 2
+2025-07-13T14:54:57.168070,"query: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud del cliente., limit: 2",results: 2
+2025-07-13T14:55:58.241193,"query: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F, limit: 2",results: 2
+2025-07-13T14:56:11.114446,"query: Se rechaza la apelación de la póliza POL006-DISCONF-RECHAZADA por incumplimiento de requisitos., limit: 2",results: 2
+2025-07-13T14:56:21.702633,"query: La apelación de la póliza POL006-DISCONF-RECHAZADA (NIF: 33445566F) ha sido rechazada debido a la no cumplimentación de los requisitos., limit: 2",results: 2

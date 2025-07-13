@@ -33,9 +33,15 @@ def patch_incidencia(
     action: str,
     buzon_destino: str = None,
     notas_resolucion: str = None,
-    detalle: str = None
+    detalle: str = None,
+    **kwargs
 ) -> Dict[str, Any]:
     """Update an incident with a specific action."""
+    # Flexible parameter handling
+    buzon_destino = buzon_destino or kwargs.get('buzonDestino', None)
+    notas_resolucion = notas_resolucion or kwargs.get('notasResolucion', None)
+    detalle = detalle or kwargs.get('detalle', None)
+    
     data = {"action": action}
     
     if buzon_destino:

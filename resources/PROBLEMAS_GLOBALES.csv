@@ -1,12 +1,12 @@
 COMPONENTE,DESCRIPCION,TIPO INCIDENCIA,SOLUCIÓN,FECHA DE RESOLUCIÓN,RESOLUCION AUTOMÁTICA,BUZON REASIGNACION
-Reembolsos,"No se visualiza la póliza, tiene cancellationDate mayor que el día actual",Código Back,"Se actualiza el código en el componente de Reembolsos para controlar que la fecha de Cancelación sea menor, actualmente está como mayor",,api|actualizaCodigoReembolsos,
+Reembolsos,"No se visualiza la póliza, tiene cancellationDate mayor que el día actual",Código Back,"Se actualiza el código en el componente de Reembolsos para controlar que la fecha de Cancelación sea menor, actualmente está como mayor, se utiliza el sistema api|actualizaCodigoReembolsos",,api|actualizaCodigoReembolsos,
 Reembolsos,"No carga documentación general de la póliza",Dato,"Suscripción al API 2.1.1 de cartera. El problema derivada de que estaban retornando cambiados el valor de 'idDistributor' e 'idAgente'",,reasignacion,MOCK_BUZON
 Reembolsos,"No carga documentación particular de la póliza",Dato,"Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir",,reasignacion,MOCK_BUZON
 Reembolsos,"No aparecen todos los asegurados",Dato,"Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario",,manual,
 Reembolsos,"Error al adjuntar documentacion",API Tercero,"Derivar al componente de Arquitectura MOCK_BUZON",,reasignacion,MOCK_BUZON
 Autorizaciones,"EN POSICIÓN GLOBAL SE CARGAN LOS SEGUROS PERO EN EL COMPONENTE DE AUTORIZACIONES SOLAMENTE SE CARGA LA PÓLIZA DENTAL",Código Back,"Suscripción al API 2.1.1 de cartera. La suscripción al API 2.0 permite recopilar la información de MDM y mostrar más datos al usuario",,manual,
 Reembolsos,"Error al finalizar el proceso Reembolsos",API Tercero,"Se encuentra relacion con error en KIBANA, pasar a equipo MOCK_BUZON",,reasignacion,MOCK_BUZON
-Reembolsos,"PROBLEMA IBAN",Dato Usuario,"Se valida en un validador online y se solicita al usuario que vuelva a probar",,api|comprobarIban,
+Reembolsos,"PROBLEMA con la configuración del IBAN",Dato Usuario,"Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error",,api|comprobarIban,
 Reembolsos,"No permite reembolsos de farmacia",No es incidencia,"Se revisa con MOCK_NAME y la póliza del cliente no es Reembolsable, por lo que se cierra",,cierre,
 Autorizaciones,"Error inesperado al finalizar Autorizaciones",Dato,"Se cierra por strikes",,cierre,
 Tarjeta Digital,"No carga la tarjeta digital",Código Back,"Se corrige el decoder del token del usuario para que permita caracteres que no son Base64",,api|reviarToken,
@@ -55,3 +55,10 @@ Reembolsos,"No carga poliza ni asegurado por caracter especial",Codigo Back,"Se 
 Reembolsos,"Mensaje aparece con letras en blanco",,,,manual,
 Autorizaciones,"Fallo con la provincia de la solicitud (sin acentos)",Front,,,manual,
 Autorizaciones,"Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'",,,,manual,
+Reembolsos,"Demora en provisión de póliza","API Sistema","Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora",,api|fxprovicion,
+Reembolsos,"Disconformidad con los tiempos de provisión o resolución de una póliza","API Sistema","Verificar estado de póliza y explicar motivo de rechazo si procede",,api|disconformidad,
+Reembolsos,"Reclamación por exceso de tiempo en provisión","API Sistema","Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora",,api|fxprovicion,
+Reembolsos,"Consulta sobre estado de póliza en provisión o reclamación por exceso de tiempo en provisión","API Sistema","Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora",,api|fxprovicion,
+Reembolsos,"Disconformidad con rechazo de póliza","API Sistema","Verificar estado de póliza y explicar motivo de rechazo si procede",,api|disconformidad,
+Reembolsos,"Consulta sobre rechazo de póliza","API Sistema","Verificar si la póliza está rechazada y explicar motivos",,api|disconformidad,
+Reembolsos,"Apelación rechazo póliza","API Sistema","Verificar estado de póliza y explicar motivos del rechazo",,api|disconformidad,

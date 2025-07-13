@@ -12,10 +12,15 @@ def get_poliza(numero_poliza: str) -> Dict[str, Any]:
 
 def comprobacion_poliza(
     poliza: str,
-    cod_solucion: str,
-    str_json: str
+    cod_solucion: str = None,
+    str_json: str = None,
+    **kwargs
 ) -> Dict[str, Any]:
     """Check policy status and get resolution."""
+    # Flexible parameter handling
+    cod_solucion = cod_solucion or kwargs.get('codSolucion', '')
+    str_json = str_json or kwargs.get('strJson', '')
+    
     data = {
         "poliza": poliza,
         "codSolucion": cod_solucion,

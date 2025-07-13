@@ -54,7 +54,7 @@ def evaluate_resolution(incident: Dict[str, Any], resolution: Dict[str, Any]) ->
         "incident_id": incident.get("codIncidencia", "unknown"),
         "incident_title": incident.get("titulo", ""),
         "resolution_type": resolution.get("metadata", {}).get("RESOLUCION AUTOMÁTICA", ""),
-        "resolution_summary": resolution.get("metadata", {}).get("SOLUCIÓN", "")[:100] + "..." if len(resolution.get("metadata", {}).get("SOLUCIÓN", "")) > 100 else resolution.get("metadata", {}).get("SOLUCIÓN", "")
+        "resolution_summary": resolution.get("metadata", {}).get("SOLUCIÓN", "")
     }
     
     # Get evaluation

@@ -5,6 +5,8 @@ export interface PolizaData {
   tarjeta: string;
   fechaNacimiento: string;
   estadoPoliza: string;
+  fechaCreacion: string;
+  motivoRechazo: string;
 }
 
 export interface ComprobacionPolizaRequest {
