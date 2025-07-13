@@ -1,12 +1,13 @@
 """Backup de la base de datos vectorial."""
+import json
 from datetime import datetime
 from qdrant_client import QdrantClient
 from config import VECTOR_DB_URL
 
-client = QdrantClient(url=VECTOR_DB_URL)
-
 def get_all_data():
     # Get all points from the collection
+    client = QdrantClient(url=VECTOR_DB_URL)
+    
     points = client.scroll(
         collection_name="incidencias",
         limit=100,  # Adjust this number based on your needs

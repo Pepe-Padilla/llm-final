@@ -7,13 +7,10 @@ from typing import List, Dict, Any
 from llm.LLMCritic import evaluate_resolution
 from llm.LLMResolution import get_resolution
 from observabilidad.logger import main_logger
-from utils import convert_json_response, convert_eval_response
-from metrics import system_metrics
-from decorators import handle_api_errors, log_execution_time
+from core.utils import convert_json_response, convert_eval_response
+from core.metrics import system_metrics
 from config import MAX_RETRIES_CRITIC
 
-
-@handle_api_errors("CSV_LOGGING", None)
 def log_rejected_resolution(incident_code: str, critic_evaluation: Dict[str, Any], resolution: Dict[str, Any]):
     """Registra resolución rechazada en CSV para análisis."""
     try:
@@ -51,8 +48,6 @@ def log_rejected_resolution(incident_code: str, critic_evaluation: Dict[str, Any
             "incident_code": incident_code
         })
 
-
-@log_execution_time
 def process_resolution_with_critic(enhanced_incidencia: Dict[str, Any], all_relevant_solutions: List[Dict[str, Any]], 
                                    max_retries: int = MAX_RETRIES_CRITIC) -> Dict[str, Any]:
     """Procesa resolución con validación del LLM Crítico."""

@@ -2,7 +2,7 @@
 
 import time
 from datetime import datetime
-from typing import Dict, List, Any
+from typing import Dict, Any
 from collections import defaultdict, Counter
 from observabilidad.logger import main_logger
 from config import CRITIC_APPROVAL_THRESHOLD

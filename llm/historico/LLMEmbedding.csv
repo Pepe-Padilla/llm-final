@@ -1007,3 +1007,326 @@ timestamp,input,output
 2025-07-13T15:25:53.622748,Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.,Vector de 384 dimensiones
 2025-07-13T15:26:00.461155,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del sistema.",Vector de 384 dimensiones
 2025-07-13T15:26:07.802131,"Se produjo un rechazo de apelación para una póliza, originado por un fallo en la API del sistema de reembolsos, indicando una disconformidad del cliente.",Vector de 384 dimensiones
+2025-07-13T17:28:43.207501,text: La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posteri...,embedding length: 384
+2025-07-13T17:28:51.278432,text: La carga de la documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de ...,embedding length: 384
+2025-07-13T17:28:57.607424,"text: La aplicación no carga la documentación específica de la póliza.
+...",embedding length: 384
+2025-07-13T17:29:04.135759,"text: Algunos asegurados no están apareciendo en el sistema de reembolsos.
+...",embedding length: 384
+2025-07-13T17:29:10.883269,"text: Error al adjuntar documentación relacionado con la API de Terceros, específicamente en el componente...",embedding length: 384
+2025-07-13T17:29:18.927716,"text: Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, p...",embedding length: 384
+2025-07-13T17:29:25.823123,"text: Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KI...",embedding length: 384
+2025-07-13T17:29:33.283935,"text: Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un ...",embedding length: 384
+2025-07-13T17:29:39.581503,"text: El sistema no permite el proceso de reembolsos de farmacia.
+...",embedding length: 384
+2025-07-13T17:29:46.337089,"text: Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como ...",embedding length: 384
+2025-07-13T17:29:53.611799,"text: La tarjeta digital no se carga debido a un fallo en el decodificador del token de usuario, específic...",embedding length: 384
+2025-07-13T17:30:00.388896,text: La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en compara...,embedding length: 384
+2025-07-13T17:30:06.856864,"text: El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+...",embedding length: 384
+2025-07-13T17:30:14.069974,"text: Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se...",embedding length: 384
+2025-07-13T17:30:20.412259,text: El usuario no puede agregar información necesaria a un reembolso ya tramitado....,embedding length: 384
+2025-07-13T17:30:27.249646,"text: La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con l...",embedding length: 384
+2025-07-13T17:30:37.369708,text: Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación de...,embedding length: 384
+2025-07-13T17:30:47.397388,text: El Cuadro Médico no carga pólizas debido a que al invocar el API con un MOCK_ID que coincide con el ...,embedding length: 384
+2025-07-13T17:30:54.222136,text: El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PR...,embedding length: 384
+2025-07-13T17:31:01.961289,text: Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del produc...,embedding length: 384
+2025-07-13T17:31:09.149238,text: El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tip...,embedding length: 384
+2025-07-13T17:31:15.927097,"text: Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla ...",embedding length: 384
+2025-07-13T17:31:22.545825,"text: Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+...",embedding length: 384
+2025-07-13T17:31:28.841173,text: No se cargan los apartados de autorizaciones al acceder a la web....,embedding length: 384
+2025-07-13T17:31:35.260285,"text: Error al enviar un archivo después de haberlo rellenado y adjuntado.
+...",embedding length: 384
+2025-07-13T17:31:41.861579,"text: No se visualiza la póliza en el Cuadro Médico debido a un fallo en el código back.
+...",embedding length: 384
+2025-07-13T17:31:48.144068,"text: Al compartir un profesional, la URL generada es localhost.
+...",embedding length: 384
+2025-07-13T17:31:54.467052,text: Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico....,embedding length: 384
+2025-07-13T17:32:01.374607,"text: No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda ...",embedding length: 384
+2025-07-13T17:32:08.150003,"text: No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código b...",embedding length: 384
+2025-07-13T17:32:14.949022,"text: No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T17:32:21.529062,"text: Error en la validación de NIF/CIF durante el proceso de reembolsos.
+...",embedding length: 384
+2025-07-13T17:32:30.130164,"text: Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"". El problema se ide...",embedding length: 384
+2025-07-13T17:32:37.581710,"text: La póliza no se está cargando debido a errores detectados en la API de un tercero, específicamente e...",embedding length: 384
+2025-07-13T17:32:44.657645,text: El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de ca...,embedding length: 384
+2025-07-13T17:32:52.152682,text: No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información d...,embedding length: 384
+2025-07-13T17:32:58.723038,"text: Al adjuntar un documento, el usuario es desconectado de la sesión.
+...",embedding length: 384
+2025-07-13T17:33:04.830723,text: No se visualiza el historial de reembolsos....,embedding length: 384
+2025-07-13T17:33:10.992823,text: Los beneficiarios no cargan en el módulo de reembolsos....,embedding length: 384
+2025-07-13T17:33:18.121722,"text: Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de ...",embedding length: 384
+2025-07-13T17:33:25.455377,text: Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de ...,embedding length: 384
+2025-07-13T17:33:32.070474,"text: La carga de la póliza falla debido a un error con la descripción de la oferta.
+...",embedding length: 384
+2025-07-13T17:33:38.396552,"text: No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T17:33:45.026087,"text: No se permite la descarga de documentación debido a un fallo en el código MOCK_AGENT.
+...",embedding length: 384
+2025-07-13T17:33:51.687011,text: Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gest...,embedding length: 384
+2025-07-13T17:33:57.962033,"text: El sistema no está cargando beneficiarios que han sido dados de baja.
+...",embedding length: 384
+2025-07-13T17:34:03.952055,text: El proveedor presenta una incorrecta dirección de datos....,embedding length: 384
+2025-07-13T17:34:11.716893,text: La API de Terceros no carga pólizas ni información de asegurado cuando la llamada al `/search_by_pol...,embedding length: 384
+2025-07-13T17:34:17.906939,text: La tarjeta digital muestra una tarjeta dada de baja....,embedding length: 384
+2025-07-13T17:34:26.604709,text: La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de ...,embedding length: 384
+2025-07-13T17:34:32.939667,text: El campo de Médico Realizador no permite el uso de comillas dobles....,embedding length: 384
+2025-07-13T17:34:40.405504,text: No se encuentra el reembolso debido a que el campo 'lgAmbulatorio' en el mapeo de respuesta llega co...,embedding length: 384
+2025-07-13T17:34:47.376447,text: No se cargan pólizas ni se procesan correctamente debido a caracteres especiales en el método getPol...,embedding length: 384
+2025-07-13T17:34:53.287040,"text: Aparece un mensaje con letras blancas.
+...",embedding length: 384
+2025-07-13T17:34:59.931702,"text: Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente c...",embedding length: 384
+2025-07-13T17:35:07.037555,"text: Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue...",embedding length: 384
+2025-07-13T17:35:13.653667,"text: Hay retrasos en la provisión de pólizas a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T17:35:20.805950,"text: Disconformidad del cliente con los tiempos de procesamiento o resolución de una póliza, originada po...",embedding length: 384
+2025-07-13T17:35:27.339920,text: Retrasos en la provisión de fondos que generan reclamaciones por exceso de tiempo....,embedding length: 384
+2025-07-13T17:35:34.956075,text: Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exces...,embedding length: 384
+2025-07-13T17:35:41.593594,"text: Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T17:35:48.341895,"text: Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del...",embedding length: 384
+2025-07-13T17:35:55.564902,"text: Se produjo un rechazo de apelación para una póliza, relacionado con un fallo en la API del sistema d...",embedding length: 384
+2025-07-13T17:37:02.418837,text: La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posteri...,embedding length: 384
+2025-07-13T17:37:10.354423,text: La carga de la documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de ...,embedding length: 384
+2025-07-13T17:37:16.595990,"text: La aplicación no carga la documentación específica de la póliza.
+...",embedding length: 384
+2025-07-13T17:37:23.000204,"text: Algunos asegurados no están apareciendo en el sistema de reembolsos.
+...",embedding length: 384
+2025-07-13T17:37:29.675008,"text: Error al adjuntar documentación relacionado con la API de Terceros, específicamente en el componente...",embedding length: 384
+2025-07-13T17:37:37.555432,"text: Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, p...",embedding length: 384
+2025-07-13T17:37:44.386620,"text: Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KI...",embedding length: 384
+2025-07-13T17:37:51.836461,"text: Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un ...",embedding length: 384
+2025-07-13T17:37:58.207244,"text: El sistema no permite el proceso de reembolsos de farmacia.
+...",embedding length: 384
+2025-07-13T17:38:04.882644,"text: Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como ...",embedding length: 384
+2025-07-13T17:38:12.168799,"text: La tarjeta digital no se carga debido a un fallo en el decodificador del token de usuario, específic...",embedding length: 384
+2025-07-13T17:38:18.890206,text: La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en compara...,embedding length: 384
+2025-07-13T17:38:25.307704,"text: El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+...",embedding length: 384
+2025-07-13T17:38:32.404907,"text: Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se...",embedding length: 384
+2025-07-13T17:38:38.746210,text: El usuario no puede agregar información necesaria a un reembolso ya tramitado....,embedding length: 384
+2025-07-13T17:38:45.528123,"text: La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con l...",embedding length: 384
+2025-07-13T17:38:55.622783,text: Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación de...,embedding length: 384
+2025-07-13T17:39:05.623628,text: El Cuadro Médico no carga pólizas debido a que al invocar el API con un MOCK_ID que coincide con el ...,embedding length: 384
+2025-07-13T17:39:12.410330,text: El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PR...,embedding length: 384
+2025-07-13T17:39:20.158604,text: Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del produc...,embedding length: 384
+2025-07-13T17:39:27.254777,text: El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tip...,embedding length: 384
+2025-07-13T17:39:34.014373,"text: Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla ...",embedding length: 384
+2025-07-13T17:39:40.605956,"text: Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+...",embedding length: 384
+2025-07-13T17:39:46.899529,text: No se cargan los apartados de autorizaciones al acceder a la web....,embedding length: 384
+2025-07-13T17:39:53.441226,"text: Error al enviar un archivo después de haberlo rellenado y adjuntado.
+...",embedding length: 384
+2025-07-13T17:40:00.194459,"text: No se visualiza la póliza en el Cuadro Médico debido a un fallo en el código back.
+...",embedding length: 384
+2025-07-13T17:40:06.433816,"text: Al compartir un profesional, la URL generada es localhost.
+...",embedding length: 384
+2025-07-13T17:40:12.728968,text: Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico....,embedding length: 384
+2025-07-13T17:40:19.532659,"text: No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda ...",embedding length: 384
+2025-07-13T17:40:26.230097,"text: No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código b...",embedding length: 384
+2025-07-13T17:40:33.005042,"text: No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T17:40:39.572020,"text: Error en la validación de NIF/CIF durante el proceso de reembolsos.
+...",embedding length: 384
+2025-07-13T17:40:48.057189,"text: Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"". El problema se ide...",embedding length: 384
+2025-07-13T17:40:55.511837,"text: La póliza no se está cargando debido a errores detectados en la API de un tercero, específicamente e...",embedding length: 384
+2025-07-13T17:41:02.547836,text: El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de ca...,embedding length: 384
+2025-07-13T17:41:10.007707,text: No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información d...,embedding length: 384
+2025-07-13T17:41:16.495414,"text: Al adjuntar un documento, el usuario es desconectado de la sesión.
+...",embedding length: 384
+2025-07-13T17:41:22.510422,text: No se visualiza el historial de reembolsos....,embedding length: 384
+2025-07-13T17:41:28.709848,text: Los beneficiarios no cargan en el módulo de reembolsos....,embedding length: 384
+2025-07-13T17:41:35.774897,"text: Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de ...",embedding length: 384
+2025-07-13T17:41:43.076815,text: Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de ...,embedding length: 384
+2025-07-13T17:41:49.745743,"text: La carga de la póliza falla debido a un error con la descripción de la oferta.
+...",embedding length: 384
+2025-07-13T17:41:56.059982,"text: No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T17:42:02.698599,"text: No se permite la descarga de documentación debido a un fallo en el código MOCK_AGENT.
+...",embedding length: 384
+2025-07-13T17:42:09.284072,text: Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gest...,embedding length: 384
+2025-07-13T17:42:15.646219,"text: El sistema no está cargando beneficiarios que han sido dados de baja.
+...",embedding length: 384
+2025-07-13T17:42:21.671129,text: El proveedor presenta una incorrecta dirección de datos....,embedding length: 384
+2025-07-13T17:42:29.438135,text: La API de Terceros no carga pólizas ni información de asegurado cuando la llamada al `/search_by_pol...,embedding length: 384
+2025-07-13T17:42:35.635026,text: La tarjeta digital muestra una tarjeta dada de baja....,embedding length: 384
+2025-07-13T17:42:44.252326,text: La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de ...,embedding length: 384
+2025-07-13T17:42:50.595407,text: El campo de Médico Realizador no permite el uso de comillas dobles....,embedding length: 384
+2025-07-13T17:42:58.055749,text: No se encuentra el reembolso debido a que el campo 'lgAmbulatorio' en el mapeo de respuesta llega co...,embedding length: 384
+2025-07-13T17:43:05.039511,text: No se cargan pólizas ni se procesan correctamente debido a caracteres especiales en el método getPol...,embedding length: 384
+2025-07-13T17:43:10.935795,"text: Aparece un mensaje con letras blancas.
+...",embedding length: 384
+2025-07-13T17:43:17.580887,"text: Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente c...",embedding length: 384
+2025-07-13T17:43:24.573424,"text: Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue...",embedding length: 384
+2025-07-13T17:43:31.211476,"text: Hay retrasos en la provisión de pólizas a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T17:43:38.297653,"text: Disconformidad del cliente con los tiempos de procesamiento o resolución de una póliza, originada po...",embedding length: 384
+2025-07-13T17:43:44.852762,text: Retrasos en la provisión de fondos que generan reclamaciones por exceso de tiempo....,embedding length: 384
+2025-07-13T17:43:52.549434,text: Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exces...,embedding length: 384
+2025-07-13T17:43:59.193441,"text: Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T17:44:05.915376,"text: Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del...",embedding length: 384
+2025-07-13T17:44:13.021855,"text: Se produjo un rechazo de apelación para una póliza, relacionado con un fallo en la API del sistema d...",embedding length: 384
+2025-07-13T17:45:37.139443,"text: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, l...",embedding length: 384
+2025-07-13T17:45:53.812193,"text: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco....",embedding length: 384
+2025-07-13T17:46:04.267374,"text: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pega...",embedding length: 384
+2025-07-13T17:46:24.775331,text: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Conte...,embedding length: 384
+2025-07-13T17:46:39.663231,"text: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío....",embedding length: 384
+2025-07-13T17:46:50.028955,"text: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con det...",embedding length: 384
+2025-07-13T17:47:13.085493,text: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los docume...,embedding length: 384
+2025-07-13T17:47:26.364059,text: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. ...,embedding length: 384
+2025-07-13T17:47:37.238302,text: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención de...,embedding length: 384
+2025-07-13T17:47:56.836609,text: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: M...,embedding length: 384
+2025-07-13T17:48:11.433337,"text: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado....",embedding length: 384
+2025-07-13T17:48:21.950117,"text: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el tit...",embedding length: 384
+2025-07-13T17:48:41.109467,text: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar ...,embedding length: 384
+2025-07-13T17:48:55.638370,text: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar...,embedding length: 384
+2025-07-13T17:49:06.303829,text: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error ...,embedding length: 384
+2025-07-13T17:49:25.622520,text: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto....,embedding length: 384
+2025-07-13T17:49:39.854315,text: Error de validación de IBAN en reembolsos...,embedding length: 384
+2025-07-13T17:49:50.634409,text: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto...,embedding length: 384
+2025-07-13T17:50:13.062181,text: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_N...,embedding length: 384
+2025-07-13T17:53:54.343724,"text: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, l...",embedding length: 384
+2025-07-13T17:54:12.504676,"text: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco....",embedding length: 384
+2025-07-13T17:54:23.301028,"text: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pega...",embedding length: 384
+2025-07-13T17:54:48.283066,text: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Conte...,embedding length: 384
+2025-07-13T17:54:48.673907,"text: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, l...",embedding length: 384
+2025-07-13T17:55:12.560372,text: No se está enviando la autorización correctamente...,embedding length: 384
+2025-07-13T17:55:12.589705,"text: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo en blanco....",embedding length: 384
+2025-07-13T17:55:23.373937,text: Error en el envío de la autorización a través de la aplicación y el contenedor web...,embedding length: 384
+2025-07-13T17:55:24.941120,"text: El mensaje de reembolso no se muestra correctamente, con la letra en blanco y requiere ser copiado y...",embedding length: 384
+2025-07-13T17:55:48.493096,text: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Conte...,embedding length: 384
+2025-07-13T17:55:51.448290,text: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los docume...,embedding length: 384
+2025-07-13T17:56:08.199388,text: No se está enviando la autorización correctamente...,embedding length: 384
+2025-07-13T17:56:09.520197,text: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. ...,embedding length: 384
+2025-07-13T17:56:18.468193,text: Error al enviar la autorización a través de la aplicación y el contenedor MOCK_WEB...,embedding length: 384
+2025-07-13T17:56:20.674254,text: Se presenta un fallo al cargar la documentación general de la póliza. El usuario MOCK_NAME no puede ...,embedding length: 384
+2025-07-13T17:56:44.825935,text: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los docume...,embedding length: 384
+2025-07-13T17:56:45.240550,text: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: M...,embedding length: 384
+2025-07-13T17:57:05.307520,text: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos....,embedding length: 384
+2025-07-13T17:57:05.322527,"text: No se muestran los beneficiarios en el módulo de reembolsos, solo aparece el titular....",embedding length: 384
+2025-07-13T17:57:16.556640,text: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere revisión de los pe...,embedding length: 384
+2025-07-13T17:57:18.079930,"text: El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente e...",embedding length: 384
+2025-07-13T17:57:40.481194,text: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: M...,embedding length: 384
+2025-07-13T17:57:40.823448,text: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar ...,embedding length: 384
+2025-07-13T17:57:59.757566,"text: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado....",embedding length: 384
+2025-07-13T17:58:01.090554,text: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar...,embedding length: 384
+2025-07-13T17:58:10.834443,"text: El módulo de reembolsos no visualiza correctamente a todos los beneficiarios, mostrando únicamente e...",embedding length: 384
+2025-07-13T17:58:12.510188,text: El usuario MOCK_NAME no puede cargar documentación al realizar el reembolso. El sistema informa de u...,embedding length: 384
+2025-07-13T17:58:34.847881,text: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto....,embedding length: 384
+2025-07-13T17:58:35.283069,text: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar ...,embedding length: 384
+2025-07-13T17:58:53.580196,text: Error de validación de IBAN en el proceso de reembolso....,embedding length: 384
+2025-07-13T17:58:54.806105,text: No se permite adjuntar archivos en el proceso de reembolso. El sistema genera un error al intentar s...,embedding length: 384
+2025-07-13T17:59:04.543288,text: El sistema rechaza la validación del IBAN proporcionado en las solicitudes de reembolso....,embedding length: 384
+2025-07-13T17:59:05.723643,"text: El usuario MOCK_NAME no puede cargar documentación en el flujo de reembolso, recibiendo un error al ...",embedding length: 384
+2025-07-13T17:59:32.078143,text: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto....,embedding length: 384
+2025-07-13T17:59:32.811119,text: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_N...,embedding length: 384
+2025-07-13T17:59:51.164688,text: Error de validación de IBAN en el proceso de reembolso....,embedding length: 384
+2025-07-13T17:59:52.364888,"text: Error al acceder a la tarjeta digital, mostrando un fallo al intentar visualizarla....",embedding length: 384
+2025-07-13T18:00:02.520471,text: El sistema rechaza la validación del IBAN proporcionado en las solicitudes de reembolso....,embedding length: 384
+2025-07-13T18:00:04.071710,"text: La tarjeta digital no se muestra correctamente, generando un error de acceso. Se investiga el proble...",embedding length: 384
+2025-07-13T18:00:30.389292,text: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_N...,embedding length: 384
+2025-07-13T18:00:30.777818,"text: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo H...",embedding length: 384
+2025-07-13T18:00:52.561532,text: La tarjeta digital no se visualiza correctamente y el sistema devuelve un error al intentar acceder....,embedding length: 384
+2025-07-13T18:00:52.623325,"text: No se visualiza el cuadro médico público, se descarga un archivo HTML al seleccionar especialidad mé...",embedding length: 384
+2025-07-13T18:01:05.232848,"text: Error al acceder al Cuadro Médico: al seleccionar una especialidad médica, se genera un archivo HTML...",embedding length: 384
+2025-07-13T18:01:30.187580,text: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la infor...,embedding length: 384
+2025-07-13T18:01:41.248296,text: Error al cargar información de pólizas en el componente de gestión....,embedding length: 384
+2025-07-13T18:01:51.861580,text: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información....,embedding length: 384
+2025-07-13T18:02:08.220454,text: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la soli...,embedding length: 384
+2025-07-13T18:02:18.933701,"text: Error al completar el proceso de autorización, el sistema genera un error inesperado....",embedding length: 384
+2025-07-13T18:02:29.311171,"text: Se presenta un fallo al finalizar la autorización, el sistema devuelve un error inesperado....",embedding length: 384
+2025-07-13T18:02:45.381973,text: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF...,embedding length: 384
+2025-07-13T18:09:26.549122,text: La póliza de reembolso no se visualiza correctamente debido a que la fecha de cancelación es posteri...,embedding length: 384
+2025-07-13T18:09:34.742057,text: La carga de la documentación general de la póliza falla debido a que la suscripción al API 2.1.1 de ...,embedding length: 384
+2025-07-13T18:09:41.041464,"text: La aplicación no carga la documentación específica de la póliza.
+...",embedding length: 384
+2025-07-13T18:09:47.534470,"text: Algunos asegurados no están apareciendo en el sistema de reembolsos.
+...",embedding length: 384
+2025-07-13T18:09:54.241303,"text: Error al adjuntar documentación relacionado con la API de Terceros, específicamente en el componente...",embedding length: 384
+2025-07-13T18:10:02.235484,"text: Se produce una inconsistencia en la carga de pólizas, ya que a nivel global se cargan los seguros, p...",embedding length: 384
+2025-07-13T18:10:09.128218,"text: Error al completar el proceso de reembolsos asociado a una API de terceros, detectado a través de KI...",embedding length: 384
+2025-07-13T18:10:16.688799,"text: Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un ...",embedding length: 384
+2025-07-13T18:10:22.998312,"text: El sistema no permite el proceso de reembolsos de farmacia.
+...",embedding length: 384
+2025-07-13T18:10:29.819776,"text: Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como ...",embedding length: 384
+2025-07-13T18:10:37.088830,"text: La tarjeta digital no se carga debido a un fallo en el decodificador del token de usuario, específic...",embedding length: 384
+2025-07-13T18:10:43.833052,text: La ejecución del Batch falló debido a que los proveedores hijos tenían fechas incorrectas en compara...,embedding length: 384
+2025-07-13T18:10:50.461419,"text: El botón ""ir a tarjeta digital"" dirige a una URL incorrecta (PRE).
+...",embedding length: 384
+2025-07-13T18:10:57.674735,"text: Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se...",embedding length: 384
+2025-07-13T18:11:03.954007,text: El usuario no puede agregar información necesaria a un reembolso ya tramitado....,embedding length: 384
+2025-07-13T18:11:10.799340,"text: La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con l...",embedding length: 384
+2025-07-13T18:11:21.104230,text: Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación de...,embedding length: 384
+2025-07-13T18:11:31.312805,text: El Cuadro Médico no carga pólizas debido a que al invocar el API con un MOCK_ID que coincide con el ...,embedding length: 384
+2025-07-13T18:11:38.107589,text: El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PR...,embedding length: 384
+2025-07-13T18:11:45.749309,text: Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del produc...,embedding length: 384
+2025-07-13T18:11:52.960434,text: El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tip...,embedding length: 384
+2025-07-13T18:11:59.702708,"text: Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla ...",embedding length: 384
+2025-07-13T18:12:06.264523,"text: Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+...",embedding length: 384
+2025-07-13T18:12:12.524240,text: No se cargan los apartados de autorizaciones al acceder a la web....,embedding length: 384
+2025-07-13T18:12:18.925558,"text: Error al enviar un archivo después de haberlo rellenado y adjuntado.
+...",embedding length: 384
+2025-07-13T18:12:25.592709,"text: No se visualiza la póliza en el Cuadro Médico debido a un fallo en el código back.
+...",embedding length: 384
+2025-07-13T18:12:31.842707,"text: Al compartir un profesional, la URL generada es localhost.
+...",embedding length: 384
+2025-07-13T18:12:38.141816,text: Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico....,embedding length: 384
+2025-07-13T18:12:44.942675,"text: No aparecen los asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda ...",embedding length: 384
+2025-07-13T18:12:51.691296,"text: No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código b...",embedding length: 384
+2025-07-13T18:12:58.499273,"text: No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T18:13:05.087354,"text: Error en la validación de NIF/CIF durante el proceso de reembolsos.
+...",embedding length: 384
+2025-07-13T18:13:13.664222,"text: Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"". El problema se ide...",embedding length: 384
+2025-07-13T18:13:21.115904,"text: La póliza no se está cargando debido a errores detectados en la API de un tercero, específicamente e...",embedding length: 384
+2025-07-13T18:13:28.047059,text: El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de ca...,embedding length: 384
+2025-07-13T18:13:35.506402,text: No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información d...,embedding length: 384
+2025-07-13T18:13:42.037819,"text: Al adjuntar un documento, el usuario es desconectado de la sesión.
+...",embedding length: 384
+2025-07-13T18:13:48.044705,text: No se visualiza el historial de reembolsos....,embedding length: 384
+2025-07-13T18:13:54.225904,text: Los beneficiarios no cargan en el módulo de reembolsos....,embedding length: 384
+2025-07-13T18:14:01.359990,"text: Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de ...",embedding length: 384
+2025-07-13T18:14:08.691910,text: Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de ...,embedding length: 384
+2025-07-13T18:14:15.257071,"text: La carga de la póliza falla debido a un error con la descripción de la oferta.
+...",embedding length: 384
+2025-07-13T18:14:21.581569,"text: No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.
+...",embedding length: 384
+2025-07-13T18:14:28.144954,"text: No se permite la descarga de documentación debido a un fallo en el código MOCK_AGENT.
+...",embedding length: 384
+2025-07-13T18:14:34.752102,text: Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gest...,embedding length: 384
+2025-07-13T18:14:41.042706,"text: El sistema no está cargando beneficiarios que han sido dados de baja.
+...",embedding length: 384
+2025-07-13T18:14:47.033433,text: El proveedor presenta una incorrecta dirección de datos....,embedding length: 384
+2025-07-13T18:14:54.841591,text: La API de Terceros no carga pólizas ni información de asegurado cuando la llamada al `/search_by_pol...,embedding length: 384
+2025-07-13T18:15:01.025847,text: La tarjeta digital muestra una tarjeta dada de baja....,embedding length: 384
+2025-07-13T18:15:09.622072,text: La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de ...,embedding length: 384
+2025-07-13T18:15:15.950275,text: El campo de Médico Realizador no permite el uso de comillas dobles....,embedding length: 384
+2025-07-13T18:15:23.409973,text: No se encuentra el reembolso debido a que el campo 'lgAmbulatorio' en el mapeo de respuesta llega co...,embedding length: 384
+2025-07-13T18:15:30.300569,text: No se cargan pólizas ni se procesan correctamente debido a caracteres especiales en el método getPol...,embedding length: 384
+2025-07-13T18:15:36.215928,"text: Aparece un mensaje con letras blancas.
+...",embedding length: 384
+2025-07-13T18:15:42.832340,"text: Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente c...",embedding length: 384
+2025-07-13T18:15:49.838797,"text: Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue...",embedding length: 384
+2025-07-13T18:15:56.446570,"text: Hay retrasos en la provisión de pólizas a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T18:16:03.662736,"text: Disconformidad del cliente con los tiempos de procesamiento o resolución de una póliza, originada po...",embedding length: 384
+2025-07-13T18:16:10.185746,text: Retrasos en la provisión de fondos que generan reclamaciones por exceso de tiempo....,embedding length: 384
+2025-07-13T18:16:17.849026,text: Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exces...,embedding length: 384
+2025-07-13T18:16:24.467618,"text: Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.
+...",embedding length: 384
+2025-07-13T18:16:31.175044,"text: Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del...",embedding length: 384
+2025-07-13T18:16:38.354399,"text: Se produjo un rechazo de apelación para una póliza, relacionado con un fallo en la API del sistema d...",embedding length: 384
+2025-07-13T18:17:46.641296,text: No se visualiza la póliza con fecha de cancelación Error: La póliza no se visualiza porque tiene can...,embedding length: 384
+2025-07-13T18:17:49.473250,text: No carga documentación general de póliza Error al cargar documentación general de la póliza. Los val...,embedding length: 384
+2025-07-13T18:17:52.283932,text: Error al adjuntar documentación en reembolsos Error al adjuntar documentación en el proceso de reemb...,embedding length: 384
+2025-07-13T18:17:55.093225,text: PROBLEMA con validación IBAN Error en validación de IBAN. Falla validador web. NIF: MOCK_NIF IBAN: E...,embedding length: 384
+2025-07-13T18:17:57.894245,text: No permite reembolsos de farmacia El usuario no puede realizar reembolsos de farmacia. Error en el s...,embedding length: 384
+2025-07-13T18:18:00.713911,text: Error en generación de PDF de facturas Error al generar PDF de facturas de reembolso. El archivo se ...,embedding length: 384
+2025-07-13T18:18:03.517465,text: Timeout en consulta de historial médico Timeout al consultar historial médico del paciente. La consu...,embedding length: 384
+2025-07-13T18:18:06.325802,text: Error de sincronización en actualizaciones de póliza Las actualizaciones de póliza no se sincronizan...,embedding length: 384
+2025-07-13T18:18:09.140192,text: Problema con códigos de autorización duplicados Se generan códigos de autorización duplicados causan...,embedding length: 384
+2025-07-13T18:18:11.938126,text: Error en cálculo de copagos Error en el cálculo de copagos para ciertas especialidades médicas. Valo...,embedding length: 384

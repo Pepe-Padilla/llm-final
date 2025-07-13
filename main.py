@@ -2,26 +2,19 @@ import json
 import time
 from datetime import datetime
 from typing import List, Dict, Any
-from dotenv import load_dotenv
 from api.gestor_incidencias import get_incidencias
 from llm.LLMRephrase import rephrase_incidence
 from llm.LLMRelevance import check_relevance
 from llm.LLMQuery import query_vector_db
 from llm.LLMKeywords import extract_keywords
 from llm.LLMImageAnalysis import process_attachments
-from critico import process_resolution_with_critic
-from resolution import process_resolution
+from core.critico import process_resolution_with_critic
+from core.resolution import process_resolution
 from observabilidad.logger import main_logger
-from utils import convert_json_response
+from core.utils import convert_json_response
 from collections import Counter
-from metrics import system_metrics
-from decorators import log_execution_time, handle_api_errors
+from core.metrics import system_metrics
 
-# Load environment variables
-load_dotenv()
-
-
-@handle_api_errors("VECTOR_DB_QUERY", [])
 def get_relevant_solutions(incident: str) -> List[Dict[str, Any]]:
     """Obtiene soluciones relevantes de la base de datos vectorial."""
     
@@ -108,8 +101,6 @@ def collect_relevant_solutions(rephrased_versions: List[str]) -> List[Dict[str, 
     main_logger.info(f"Total de soluciones relevantes encontradas: {len(all_relevant_solutions)}")
     return all_relevant_solutions
 
-
-@log_execution_time("SISTEMA_COMPLETO")
 def main():
     """Función principal del sistema."""
     start_time = time.time()

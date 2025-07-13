@@ -4,17 +4,18 @@ from typing import List
 from langchain_ollama import OllamaEmbeddings
 from langchain_community.embeddings import OpenAIEmbeddings
 from .LLMLogger import log_llm_interaction
-from config import ENTORNO, OLLAMA_BASE_URL, OPENAI_API_KEY, LLM_MODEL_DESA
+from config import ENTORNO, OLLAMA_BASE_URL, OPENAI_API_KEY, LLM_MODEL_EMBEDDING_DESA, LLM_MODEL_EMBEDDING_PROD
 
 def get_embedding(text: str) -> List[float]:
     """Obtiene el embedding de un texto."""
     if ENTORNO == "DESA":
         embedding_model = OllamaEmbeddings(
             base_url=OLLAMA_BASE_URL,
-            model=LLM_MODEL_DESA,
+            model=LLM_MODEL_EMBEDDING_DESA,
         )
     else:
         embedding_model = OpenAIEmbeddings(
+            model=LLM_MODEL_EMBEDDING_PROD,
             openai_api_key=OPENAI_API_KEY
         )
     

@@ -3,8 +3,8 @@ import json
 import os
 import pandas as pd
 import time
+import uuid
 from datetime import datetime
-from typing import List, Dict, Any
 from observabilidad.logger import batch_logger
 from qdrant_client import QdrantClient
 from qdrant_client.http import models

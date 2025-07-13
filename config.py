@@ -20,9 +20,13 @@ LLM_MODEL_DESA = "gemma3"
 LLM_MODEL_PROD = "gpt-4-mini"
 LLM_TEMPERATURE = 0
 
+# Configuración de embeddings
+LLM_MODEL_EMBEDDING_DESA = "all-minilm" #"all-MiniLM-L6-v2"
+LLM_MODEL_EMBEDDING_PROD = "text-embedding-ada-002"
+
 # Límites y configuraciones
 MAX_RETRIES_CRITIC = 2
 QUERY_LIMIT_VECTORDB = 2
 
 # Umbrales de métricas
-CRITIC_APPROVAL_THRESHOLD = 70  # % mínimo de aprobación del crítico 
+CRITIC_APPROVAL_THRESHOLD = 65  # % mínimo de aprobación del crítico 

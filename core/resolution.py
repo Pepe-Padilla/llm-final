@@ -1,20 +1,13 @@
 import os
-from dotenv import load_dotenv
 from observabilidad.logger import resolution_logger
 from api.gestor_incidencias import patch_incidencia
 from api.sistema import comprobacion_poliza
-from decorators import handle_api_errors
-from metrics import system_metrics
+from core.metrics import system_metrics
 
-# Load environment variables
-load_dotenv()
-
-@handle_api_errors("PATCH_INCIDENCIA", {"status": "error"})
 def safe_patch_incidencia(*args, **kwargs):
     """Wrapper seguro para patch_incidencia con manejo de errores."""
     return patch_incidencia(*args, **kwargs)
 
-@handle_api_errors("COMPROBACION_POLIZA", {"metadata": {"RESOLUCION AUTOMÁTICA": "manual", "SOLUCIÓN": "Error en sistema"}})
 def safe_comprobacion_poliza(*args, **kwargs):
     """Wrapper seguro para comprobacion_poliza con manejo de errores."""
     return comprobacion_poliza(*args, **kwargs)

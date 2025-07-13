@@ -1,27 +1,18 @@
 from datetime import datetime
-from dotenv import load_dotenv
 from observabilidad.logger import batch_logger
-from qdrant_client import QdrantClient
 from api.gestor_incidencias import get_incidencias_cerradas
 from llm.LLMGenerator import generate_summary
 from llm.LLMRephrase import rephrase_incidence
 from llm.LLMSuggestion import suggest_solution
 from llm.LLMEmbedding import get_embedding
 from llm.LLMQuery import query_vector_db
-from utils import convert_json_response
-
-# Load environment variables
-load_dotenv()
+from core.utils import convert_json_response
+import time
+import pandas as pd
 
 def analyze_closed_incident(incident):
     """
     Analiza una incidencia cerrada y genera la información necesaria para el catálogo.
-    
-    Args:
-        incident: Diccionario con los datos de la incidencia cerrada
-        
-    Returns:
-        dict: Datos procesados de la incidencia
     """
     batch_logger.info(f"Analizando incidencia cerrada: {incident['codIncidencia']}", extra_data={
         "action": "analyze_closed_incident",
@@ -66,12 +57,6 @@ def analyze_closed_incident(incident):
 def check_if_incident_exists(incident_text):
     """
     Verifica si una incidencia similar ya existe en la base de datos vectorial.
-    
-    Args:
-        incident_text: Texto de la incidencia a verificar
-        
-    Returns:
-        bool: True si existe una incidencia similar, False en caso contrario
     """
     batch_logger.debug("Verificando si la incidencia ya existe", extra_data={
         "action": "check_incident_exists",
@@ -98,12 +83,6 @@ def check_if_incident_exists(incident_text):
 def create_csv_entry(analyzed_incident):
     """
     Crea una entrada CSV basada en la incidencia analizada.
-    
-    Args:
-        analyzed_incident: Datos procesados de la incidencia
-        
-    Returns:
-        dict: Entrada para el archivo CSV
     """
     incident = analyzed_incident["incident"]
     suggested_solution = analyzed_incident["suggested_solution"]
