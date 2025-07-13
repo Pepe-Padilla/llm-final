@@ -24,6 +24,18 @@ Respond with a JSON object containing:
 - REJECTED: The resolution doesn't adequately address the incident or is inappropriate
 - ALREADY_TRIED: The same or very similar solution has been attempted before (found '[SPAI]' tag with similar solution)
 
+# Special Guidelines for API|* Resolutions
+When evaluating api|* resolutions, be more trusting if:
+1. The incident description mentions policy-related issues (poliza, póliza, policy)
+2. The problem involves data verification or validation
+3. The incident type suggests system integration needs
+4. The description contains keywords like: "verificar", "comprobar", "validar", "actualizar", "consultar"
+5. The incident severity and type align with automated system calls
+
+For api|* resolutions, APPROVE if:
+- The incident description is congruent with system API calls
+- No previous similar attempts found in history
+
 # Problem Type Categories
 - UI: User interface issues, display problems, rendering issues
 - Backend: Server-side logic problems, processing issues

@@ -1535,3 +1535,1183 @@ timestamp,input,output
   ""recommended_approach"": ""Continue with the API-based investigation to determine the specific reason for the policy rejection. Consider adding a step to document the findings for future reference.""
 }
 ```"
+2025-07-13T18:38:43.196100,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) preventing beneficiary viewing. The resolution type (cierre) is appropriate for a confirmed root cause."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T18:40:10.882360,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution accurately identifies the root cause of the issue – a specific policy type preventing beneficiary visibility – and suggests a suitable resolution type (cierre). It aligns with the incident description and history."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T18:42:38.673414,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a validation of the user's IBAN using an API call. This aligns with the reported error and the incident's description. The suggested API call is appropriate for the problem type (Data) and the resolution type (api|comprobarIban) is suitable."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the proposed API call. Monitor the results and investigate further if the IBAN is still invalid after the user's correction.""
+}
+```"
+2025-07-13T18:44:22.331114,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': '', 'resolution_summary': ''}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution of an empty dictionary does not address the reported incident. The incident details indicate a specific issue with 'MOCK_TYPE' cards and ongoing work on a component update. A blank resolution offers no action and ignores the critical context of the problem."",
+  ""critique"": ""This resolution is completely inadequate. The incident describes a specific card type issue ('MOCK_TYPE') and a component update is underway. A blank resolution provides no guidance and does not acknowledge the existing investigation.  It's crucial to document the specific card type and the ongoing component update to avoid repeating ineffective actions.  Consider a manual investigation into the 'MOCK_TYPE' cards or a request for more information on the component update."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Manual investigation into the 'MOCK_TYPE' cards, or request clarification on the component update and its potential impact on the card rendering issue.""
+}
+```"
+2025-07-13T18:45:11.842877,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'api|cancelationDate', 'resolution_summary': 'Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution focuses on a potential data issue (cancellation date) but doesn't adequately address the core problem reported in the incident history. The history indicates the issue is specifically with 'MOCK_TYPE' cards, suggesting a problem with the rendering or processing of those specific card types, not just data validity."",
+  ""critique"": ""The resolution jumps to a data-centric solution without fully investigating the root cause as described in the incident history. The 'MOCK_TYPE' detail is completely ignored.  A more appropriate initial step would be to investigate the rendering or processing logic related to 'MOCK_TYPE' cards.  The automatic resolution type (api|cancelationDate) is not suitable without understanding the underlying issue."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|cancelationDate"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the rendering or processing logic specifically for 'MOCK_TYPE' cards. Consider a UI inspection, debugging the card generation process, or examining the relevant code components.  A manual investigation or UI debugging would be more appropriate at this stage.""
+}
+```"
+2025-07-13T18:45:52.884932,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'En espera', 'resolution_summary': 'Se soluciona modificando la url en el código. Pendiente de subida'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the identified issue – a misdirected URL in the final screen's 'go to card' button. The resolution type (manual) is appropriate for this type of UI issue, and there's no indication of previous attempts to resolve this specific problem."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Manual resolution – Implement the suggested code modification as described in the proposed resolution.""
+}
+```"
+2025-07-13T18:47:45.085720,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T18:48:30.481087,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T18:49:16.065680,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T18:58:25.084257,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the root cause identified in the incident history (SPAI). The system automatically determined that the issue stemmed from a specific policy type (MOCK_TYPE) preventing beneficiary viewing, aligning with the previous automated attempt. The 'cierre' solution type is appropriate for this type of resolution."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:00:01.001512,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the policy type MOCK_TYPE preventing beneficiary visibility. The automatic resolution type 'cierre' is appropriate given the identified issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""N/A""
+}
+```"
+2025-07-13T19:02:32.257056,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a validation of the user's IBAN using an API call. This aligns with the reported error and the incident's description. The suggested API call is appropriate for the problem type (Data) and the resolution type (api|comprobarIban) is suitable."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the proposed API call. Monitor the results and investigate further if the IBAN is still invalid after the user's correction.""
+}
+```"
+2025-07-13T19:04:16.248489,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': '', 'resolution_summary': ''}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution of an empty dictionary does not address the reported incident. The incident details indicate a specific issue with 'MOCK_TYPE' cards and ongoing work on a component update. A blank resolution offers no action and ignores the critical context of the problem."",
+  ""critique"": ""This resolution is completely inadequate. The incident describes a specific card type issue ('MOCK_TYPE') and a component update is underway. A blank resolution provides no guidance and does not acknowledge the existing investigation.  It's crucial to document the specific card type and the ongoing component update to avoid repeating ineffective actions.  Consider a manual investigation into the 'MOCK_TYPE' cards or a request for more information on the component update."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Manual investigation into the 'MOCK_TYPE' cards, or request clarification on the component update and its potential impact on the card rendering issue.""
+}
+```"
+2025-07-13T19:05:05.154706,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'api|cancelationDate', 'resolution_summary': 'Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution focuses on a potential data issue (cancellation date) but doesn't adequately address the core problem reported in the incident history. The history indicates the issue is specifically with 'MOCK_TYPE' cards, suggesting a problem with the rendering or processing of those specific card types, not just data validity."",
+  ""critique"": ""The resolution jumps to a data-centric solution without fully investigating the root cause as described in the incident history. The 'MOCK_TYPE' detail is completely ignored.  A more appropriate initial step would be to investigate the rendering or processing logic related to 'MOCK_TYPE' cards.  The automatic resolution type (api|cancelationDate) is not suitable without understanding the underlying issue."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|cancelationDate"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the rendering or processing logic specifically for 'MOCK_TYPE' cards. Consider a UI inspection, debugging the card generation process, or examining the relevant code components.  A manual investigation or UI debugging would be more appropriate at this stage.""
+}
+```"
+2025-07-13T19:05:45.644610,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'En espera', 'resolution_summary': 'Se soluciona modificando la url en el código. Pendiente de subida'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the identified issue – a misdirected URL in the final screen's 'go to card' button. The resolution type (manual) is appropriate for this type of UI issue, and there's no indication of previous attempts to resolve this specific problem."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Manual resolution – Implement the suggested code modification as described in the proposed resolution.""
+}
+```"
+2025-07-13T19:12:48.896504,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""ALREADY_TRIED"",
+  ""reason"": ""The proposed resolution is a duplicate of a previous automatic resolution identified by the '[SPAI]' tag. The system has already automatically closed the incident based on the same root cause – the MOCK_TYPE policy preventing beneficiary visualization."",
+  ""critique"": ""While the root cause is correctly identified, the resolution type (cierre) is appropriate given the automated nature of the previous attempt.  Manual intervention isn't needed here.  The system is designed to handle this specific policy type issue automatically."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""cierre"", ""api|actualizaXXX""],
+  ""recommended_approach"": ""None. The system should continue to automatically resolve this issue based on the policy type.""
+}
+```"
+2025-07-13T19:14:33.267470,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""ALREADY_TRIED"",
+  ""reason"": ""The proposed resolution is identical to previous automatic resolutions (identified by '[SPAI]' tags) which confirmed the issue is related to the 'MOCK_TYPE' policy and its inability to view beneficiaries. This indicates a known and documented problem."",
+  ""critique"": ""While the resolution accurately describes the root cause, simply closing the incident without addressing the underlying policy restriction is not a sustainable solution.  It's a reactive approach that doesn't prevent future occurrences.  A more appropriate response would involve escalating the policy issue for review and potential modification."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Re-open the incident and escalate to the policy team for investigation and potential modification of the 'MOCK_TYPE' policy to allow beneficiary viewing.""
+}
+```"
+2025-07-13T19:17:04.015201,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a validation of the user's IBAN using an API call. This aligns with the reported error and the incident's description. The suggested API call is appropriate for the problem type (Data) and the resolution type (api|comprobarIban) is suitable."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the proposed API call. Monitor the results and investigate further if the IBAN is still invalid after the user's correction.""
+}
+```"
+2025-07-13T19:18:42.136240,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution aligns with the incident details and history. The incident description and the subsequent history note that the issue is specific to 'MOCK_TYPE' cards. The proposed resolution, suggesting that this type of card should not display beneficiaries, directly addresses this identified root cause."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:20:34.524761,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T19:21:20.170669,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T19:22:05.663646,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly technical and doesn't address the user-reported issue. The description of the problem is a user experience issue – a download instead of a page load. The resolution mentioning 'contenedores' is irrelevant and doesn't explain how the user's problem was fixed."",
+  ""critique"": ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""api|actualizaXXX"", ""backend_data_updates"", ""reasignacion""],
+  ""recommended_approach"": ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""
+}
+```"
+2025-07-13T19:23:49.722635,"{'incident_id': 'MOCK_INC0009', 'incident_title': 'Error en gestión de pólizas', 'resolution_type': 'reasignacion', 'resolution_summary': 'Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the root cause identified in the incident history (SearchByPolicyOpt failing to return data). The re-assignment to MOCK_BUZON is appropriate given the API-related issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Re-assignment to MOCK_BUZON is suitable. Consider adding a step to verify the data retrieval after the re-assignment to ensure the issue is fully resolved.""
+}
+```"
+2025-07-13T19:25:25.333095,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is too generic and doesn't address the underlying issue effectively. Simply stating the NIF wasn't found in Active Directory without a concrete action plan is insufficient. The incident requires investigation and potential remediation steps, not just a diagnosis."",
+  ""critique"": ""The resolution lacks detail and doesn't propose a solution. It needs to include steps like verifying Active Directory configuration, checking user permissions, or investigating potential synchronization issues. The 'manual' resolution type is appropriate for investigation but needs to be guided by a specific action plan. The score of 0.7838342 doesn't justify the lack of a defined action."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate solution type would be 'backend_data_updates' combined with a detailed investigation plan. This should include steps to verify Active Directory synchronization, check user permissions, and potentially escalate to the Active Directory team for further investigation.""
+}
+```"
+2025-07-13T19:26:06.738946,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'cierre', 'resolution_summary': 'Se cierra por strikes'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution of 'cierre' based solely on a 'Dato' type incident is insufficient. The incident description explicitly states an 'error inesperado' during the authorization process, indicating a more complex backend or API issue. Simply closing the incident without investigating the root cause is not appropriate given the severity (Priority 3 - Media) and the nature of the problem."",
+  ""critique"": ""The resolution lacks detail and doesn't address the core issue. A more appropriate response would involve investigating the API calls, database interactions, or backend processes related to authorization.  The 'cierre' action should only be considered after a thorough investigation and confirmation that the issue is truly resolved and not just temporarily masked."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""cierre"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the backend processes involved in the authorization workflow. This could involve logging, API monitoring, database query analysis, and potentially engaging with the development team for debugging.""
+}
+```"
+2025-07-13T19:26:47.225501,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the underlying issue. Simply stating 'manual' doesn't provide any actionable steps. The root cause (NIF not found in Active Directory) needs investigation and a targeted solution, not a generic manual resolution."",
+  ""critique"": ""The resolution lacks detail and doesn't consider the incident's priority (Medium). A more appropriate response would involve steps to verify the NIF exists in Active Directory, investigate potential synchronization issues, or escalate to the Active Directory team. The 'manual' resolution is a placeholder and doesn't contribute to resolving the problem."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""Investigate Active Directory synchronization, verify NIF existence, or escalate to the Active Directory team. Consider a 'backend_data_updates' solution to correct the Active Directory entry if the NIF is valid but missing.""
+}
+```"
+2025-07-13T19:28:20.120230,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a re-assignment without investigating the root cause of the download error. It doesn't address the underlying issue of why the documentation isn't being downloaded."",
+  ""critique"": ""The resolution simply reassigns the incident to another team. This is a reactive approach and doesn't attempt to diagnose the problem. The incident description clearly states an 'Error al intentar acceder a los documentos,' suggesting a potential issue with the download process itself, the API, or the data retrieval. A more appropriate initial action would be to investigate the API endpoint, check for network connectivity issues, or examine the data being returned. Re-assigning without investigation is a suboptimal strategy."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX""],
+  ""recommended_approach"": ""Investigate the API endpoint responsible for downloading the documentation. Check for network connectivity issues. Examine the response from the API for error codes or malformed data. Consider logging the API request and response for detailed analysis.""
+}
+```"
+2025-07-13T19:28:58.020868,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a re-assignment without investigating the root cause of the download error. It doesn't address the underlying issue of why the documentation isn't being downloaded."",
+  ""critique"": ""Simply reassigning the incident to another team without attempting to diagnose the problem is a reactive, not proactive, approach. The incident description clearly states an 'Error al intentar acceder a los documentos,' suggesting a potential issue with the data retrieval process, API connectivity, or the document itself. A more appropriate initial action would be to investigate the API endpoint, check for document availability, or verify network connectivity. Reassignment without investigation is a suboptimal solution."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX""],
+  ""recommended_approach"": ""Investigate the API endpoint responsible for document retrieval. Check for API errors, document availability, and network connectivity. Consider logging detailed API requests and responses for debugging.""
+}
+```"
+2025-07-13T19:30:24.011142,"{'incident_id': 'MOCK_INC0012', 'incident_title': 'Problema con datos de asegurados', 'resolution_type': 'reasignacion', 'resolution_summary': 'Parece derivar de clientes con MOCK_NIF duplicados'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution accurately identifies the root cause of the issue (duplicate NIFs) and suggests a suitable solution type (reassignment). It aligns with the incident description and history."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:31:52.416864,"{'incident_id': 'MOCK_INC0013', 'incident_title': 'Error en validación de NIF', 'resolution_type': 'api|comprobarCIF', 'resolution_summary': 'MOCK_NIF. Falla un validador web. Falla en PRE'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the root cause of the validation error. It suggests a 'web validator failure' without investigating the specific data or configuration issues causing the validation to fail. The automatic resolution type 'api|comprobarCIF' is potentially too aggressive without understanding the data context."",
+  ""critique"": ""The resolution lacks detail and doesn't consider the potential for data inconsistencies or incorrect CIF formats. A more thorough approach would involve examining the CIF data itself, the validation rules, and the system configuration. Simply applying an API call to 'comprobarCIF' without understanding the underlying problem is unlikely to be effective and could mask the true issue.  The lack of a manual investigation step is concerning given the 'Alta' priority."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""api|comprobarCIF"", ""backend_data_updates""],
+  ""recommended_approach"": ""Initiate a manual investigation to examine the specific CIF data being validated. Check for data inconsistencies, incorrect formatting, or potential typos. Review the validation rules and configuration to ensure they are correctly applied. Consider a manual data cleanse or correction if the issue is due to incorrect data.""
+}
+```"
+2025-07-13T19:33:19.533505,"{'incident_id': 'MOCK_INC0014', 'incident_title': 'Problema con PDF de tarjeta', 'resolution_type': 'api|scriptCarga', 'resolution_summary': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause (missing data) and suggests a specific solution (script execution). The resolution type (api|scriptCarga) is appropriate for data-related issues."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:34:51.242713,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comas dobles por simples'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution incorrectly identifies the issue and suggests a solution that doesn't address the core problem. The incident description clearly states the issue is with special characters and quotes, not the presence of double quotes."",
+  ""critique"": ""The resolution misinterprets the root cause of the error. The problem is related to special characters and quotes within the 'Médico Realizador' field, not the use of double quotes. A more appropriate solution would involve validating the input field to prevent special characters and quotes. Simply changing double quotes to single quotes is unlikely to resolve the underlying issue and could introduce new problems."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""manual"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""A manual investigation of the input validation logic for the 'Médico Realizador' field is required. The solution should focus on preventing the entry of invalid characters (special characters and quotes) rather than attempting to modify existing data.""
+}
+```"
+2025-07-13T19:35:28.237351,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comillas dobles por simples'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident description, which states that the 'Médico Realizador' field does not accept special characters or quotes. The suggested action – modifying double quotes to single quotes – is a straightforward and appropriate solution for this front-end issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:41:31.500444,"{'incident_id': 'MOCK_INC0021', 'incident_title': 'Apelación rechazo póliza', 'resolution_type': 'cierre', 'resolution_summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a review of the policy requirements, which is a standard and appropriate response to a policy rejection appeal."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:50:03.483487,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by referencing the '[SPAI]' tag which indicates a system-identified root cause – the MOCK_TYPE policy preventing beneficiary visualization. The resolution type (cierre) is appropriate given the automated identification of the issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:51:49.280385,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""ALREADY_TRIED"",
+  ""reason"": ""The proposed resolution is identical to previous automatic resolutions (identified by '[SPAI]' tags) which state the issue is due to the policy type 'MOCK_TYPE' and resulted in a closure. This indicates a known and recurring problem that the system automatically addresses."",
+  ""critique"": ""While the resolution accurately describes the root cause based on the history, simply closing the incident without investigating potential underlying issues or exploring alternative solutions is not a robust approach. It's a reactive, rather than proactive, response."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate if the 'MOCK_TYPE' policy definition is correct and if there are any discrepancies in the beneficiary data associated with this policy. Consider a manual review of the beneficiary records to ensure accuracy.""
+}
+```"
+2025-07-13T19:54:19.170784,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by utilizing an API call to validate the IBAN. The resolution type (api|comprobarIban) is appropriate for the problem, and the history is empty, indicating this is a new attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:56:00.322193,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by acknowledging the specific issue related to 'MOCK_TYPE' policies and suggesting a closure based on this understanding. The resolution aligns with the incident history and the automated system's previous action."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T19:57:42.728084,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T19:58:27.936009,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T19:59:12.941719,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T20:00:47.671297,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a manual intervention based on a trace, but doesn't address the root cause or provide a clear path forward. It simply states the NIF wasn't found in Active Directory without suggesting any investigation or corrective action."",
+  ""critique"": ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""
+}
+```"
+2025-07-13T20:01:24.343735,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the NIF not found in Active Directory – as indicated in the trace provided. The manual resolution type is appropriate for investigating and potentially resolving this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Configuration"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:08:54.995725,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident, aligning with the automated system's previous attempts to resolve the issue. The root cause identified (MOCK_TYPE policy restrictions) is consistent with the '[SPAI]' tags in the incident history."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue to accept and utilize the automated closure, as it accurately reflects the underlying data restriction preventing access to beneficiary information for specific policy types.""
+}
+```"
+2025-07-13T20:10:43.567302,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""ALREADY_TRIED"",
+  ""reason"": ""The proposed resolution is identical to previous automatic resolutions (identified by '[SPAI]' tags) which state the issue is due to the policy type 'MOCK_TYPE' and resulted in a closure. This indicates a known and recurring problem that the system automatically addresses."",
+  ""critique"": ""While the resolution accurately describes the root cause based on the history, simply closing the incident without investigating potential underlying issues or exploring alternative solutions is not a robust approach. It's a reactive, rather than proactive, response."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate if the 'MOCK_TYPE' policy definition is correct and if there are any discrepancies in the beneficiary data associated with this policy. Consider a manual review of the beneficiary records to ensure accuracy.""
+}
+```"
+2025-07-13T20:17:42.444085,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution jumps to a specific conclusion (MOCK_TYPE) without sufficient evidence from the incident history. The history indicates a verification of access permissions and a potential API version issue, not a specific type causing the problem.  The resolution is too presumptive."",
+  ""critique"": ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.""
+}
+```"
+2025-07-13T20:18:20.956755,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': '', 'resolution_summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) restricting beneficiary visibility. The resolution type (cierre) is appropriate given the identified issue. The history indicates a focus on API versions, aligning with the proposed solution."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:19:49.822997,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) preventing beneficiary visibility. The closure resolution type is appropriate for this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:22:16.777052,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by utilizing an API call to validate the IBAN. The resolution type (api|comprobarIban) is appropriate for the problem, and the history is empty, indicating this is a new attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:23:55.800470,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution aligns with the incident details and history. The incident description specifically mentions a type MOCK_TYPE and the resolution suggests this is the root cause of the issue. The resolution type 'cierre' is appropriate given the identified root cause."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""cierre""
+}
+```"
+2025-07-13T20:25:47.608942,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T20:26:32.859383,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T20:27:17.943147,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T20:29:03.900323,"{'incident_id': 'MOCK_INC0009', 'incident_title': 'Error en gestión de pólizas', 'resolution_type': 'reasignacion', 'resolution_summary': 'Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident's root cause, which is identified as an issue with the 'searchByPolicy' API call not returning the correct data. The suggested action of reassigning to MOCK_BUZON aligns with the identified problem type and the history of attempts to resolve it."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the reassignation to MOCK_BUZON. Monitor the resolution to ensure the issue is fully resolved.""
+}
+```"
+2025-07-13T20:30:43.009557,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a manual intervention based on a trace, but doesn't address the root cause or provide a clear path forward. It simply states the NIF wasn't found in Active Directory without suggesting any investigation or corrective action."",
+  ""critique"": ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""
+}
+```"
+2025-07-13T20:31:19.019809,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the NIF not found in Active Directory – as indicated in the trace provided. The manual resolution type is appropriate for investigating and potentially resolving this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Configuration"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:32:50.136937,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a re-assignment and doesn't address the root cause of the download error. It simply passes the issue to another team without investigating the underlying problem."",
+  ""critique"": ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""reasignacion""],
+  ""recommended_approach"": ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""
+}
+```"
+2025-07-13T20:33:22.712072,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution is appropriate for the incident type and severity. Reassigning the incident to the relevant team for manual document upload aligns with the described problem and the high priority."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:34:49.389149,"{'incident_id': 'MOCK_INC0012', 'incident_title': 'Problema con datos de asegurados', 'resolution_type': 'reasignacion', 'resolution_summary': 'Parece derivar de clientes con MOCK_NIF duplicados'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution accurately identifies the root cause of the issue (duplicate NIFs) and suggests a suitable resolution type (reasignacion) given the nature of the problem."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:36:10.921549,"{'incident_id': 'MOCK_INC0013', 'incident_title': 'Error en validación de NIF', 'resolution_type': 'api|comprobarCIF', 'resolution_summary': 'MOCK_NIF. Falla un validador web. Falla en PRE'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a validation issue with the NIF/CIF and suggests an API call to verify the CIF. The resolution type 'api|comprobarCIF' is appropriate for this type of data validation error."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:37:38.544526,"{'incident_id': 'MOCK_INC0014', 'incident_title': 'Problema con PDF de tarjeta', 'resolution_type': 'api|scriptCarga', 'resolution_summary': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a missing data element (product not loaded in the intermediate database) and suggests a script to rectify it. This aligns with the incident description of a blank PDF generated from the digital card."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:39:09.796897,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comas dobles por simples'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue of accepting special characters. The incident description explicitly states the problem is with special characters, not just double quotes. A manual resolution focusing solely on replacing double quotes is unlikely to resolve the underlying problem and may introduce new issues."",
+  ""critique"": ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""manual"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""
+}
+```"
+2025-07-13T20:39:44.184094,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comillas dobles por simples'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident description, which states the field is rejecting special characters and quotes. Modifying quotes is a straightforward and appropriate solution for this front-end issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T20:45:44.974062,"{'incident_id': 'MOCK_INC0021', 'incident_title': 'Apelación rechazo póliza', 'resolution_type': 'cierre', 'resolution_summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a review of the policy requirements, which is a standard and appropriate response to a policy rejection appeal."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:23:10.810087,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution jumps to a specific conclusion (MOCK_TYPE) without sufficient evidence from the incident history. The history indicates a verification of access permissions and a potential API version issue, not a specific type causing the problem.  The resolution is too presumptive."",
+  ""critique"": ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.""
+}
+```"
+2025-07-13T21:23:49.583473,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': '', 'resolution_summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) restricting beneficiary visibility. The resolution type (cierre) is appropriate given the identified issue. The history indicates a focus on API versions, aligning with the proposed solution."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:25:26.019617,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the policy type MOCK_TYPE restricting beneficiary visibility. The automatic resolution type (cierre) is appropriate given the system's diagnosis."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""N/A""
+}
+```"
+2025-07-13T21:27:54.989216,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by utilizing an API call to validate the IBAN. The resolution type (api|comprobarIban) is appropriate for the problem, and the history is empty, indicating this is a new attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:29:36.919065,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by referencing the specific issue identified in the incident history – that the problem occurs with 'MOCK_TYPE' policies and that the system should not show any beneficiaries in those cases. The automated resolution type (cierre) is appropriate given the nature of the problem and the previous automated attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:31:19.915558,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T21:32:05.300731,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T21:32:50.459633,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T21:34:24.683893,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a manual intervention based on a trace, but doesn't address the root cause or provide a clear path forward. It simply states the NIF wasn't found in Active Directory without suggesting any investigation or corrective action."",
+  ""critique"": ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""
+}
+```"
+2025-07-13T21:35:00.628046,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the NIF not found in Active Directory – as indicated in the trace provided. The manual resolution type is appropriate for investigating and potentially resolving this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Configuration"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:36:25.447688,"{'incident_id': 'MOCK_INC0013', 'incident_title': 'Error en validación de NIF', 'resolution_type': 'api|comprobarCIF', 'resolution_summary': 'MOCK_NIF. Falla un validador web. Falla en PRE'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a validation issue with the NIF/CIF and suggests an API call to verify the CIF. The resolution type 'api|comprobarCIF' is appropriate for this type of data validation error."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:37:53.549894,"{'incident_id': 'MOCK_INC0014', 'incident_title': 'Problema con PDF de tarjeta', 'resolution_type': 'api|scriptCarga', 'resolution_summary': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a missing data element (product not loaded in the intermediate database) and suggests a script to rectify it. This aligns with the incident description of a blank PDF generated from the digital card."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:39:25.526574,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comas dobles por simples'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue of accepting special characters. The incident description explicitly states the problem is with special characters, not just double quotes. A manual resolution focusing solely on replacing double quotes is unlikely to resolve the underlying problem and may introduce new issues."",
+  ""critique"": ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""manual"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""
+}
+```"
+2025-07-13T21:40:00.071522,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comillas dobles por simples'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident description, which states the field is rejecting special characters and quotes. Modifying quotes is a straightforward and appropriate solution for this front-end issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:53:25.232133,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution jumps to a specific conclusion (MOCK_TYPE) without sufficient evidence from the incident history. The history indicates a verification of access permissions and a potential API version issue, not a specific type causing the problem.  The resolution is too presumptive."",
+  ""critique"": ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.""
+}
+```"
+2025-07-13T21:54:03.717180,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': '', 'resolution_summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) restricting beneficiary visibility. The resolution type (cierre) is appropriate given the identified issue. The history indicates a focus on API versions, aligning with the proposed solution."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:55:32.948301,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) preventing beneficiary visibility. The closure resolution type is appropriate for this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:58:01.348032,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by utilizing an API call to validate the IBAN. The resolution type (api|comprobarIban) is appropriate for the problem, and the history is empty, indicating this is a new attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T21:59:40.636871,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution aligns with the incident details and history. The incident description specifically mentions a type MOCK_TYPE and the resolution suggests this is the root cause of the issue. The resolution type 'cierre' is appropriate given the identified root cause."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""cierre""
+}
+```"
+2025-07-13T22:01:32.730102,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T22:02:18.133283,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T22:03:03.553198,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T22:04:50.124220,"{'incident_id': 'MOCK_INC0009', 'incident_title': 'Error en gestión de pólizas', 'resolution_type': 'reasignacion', 'resolution_summary': 'Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident's root cause, which is identified as an issue with the 'searchByPolicy' API call not returning the correct data. The suggested action of reassigning to MOCK_BUZON aligns with the identified problem type and the history of attempts to resolve it."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the reassignation to MOCK_BUZON. Monitor the resolution to ensure the issue is fully resolved.""
+}
+```"
+2025-07-13T22:06:30.611348,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a manual intervention based on a trace, but doesn't address the root cause or provide a clear path forward. It simply states the NIF wasn't found in Active Directory without suggesting any investigation or corrective action."",
+  ""critique"": ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""
+}
+```"
+2025-07-13T22:07:06.921268,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the NIF not found in Active Directory – as indicated in the trace provided. The manual resolution type is appropriate for investigating and potentially resolving this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Configuration"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:08:38.799682,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a re-assignment and doesn't address the root cause of the download error. It simply passes the issue to another team without investigating the underlying problem."",
+  ""critique"": ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""reasignacion""],
+  ""recommended_approach"": ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""
+}
+```"
+2025-07-13T22:09:11.679876,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution is appropriate for the incident type and severity. Reassigning the incident to the relevant team for manual document upload aligns with the described problem and the high priority."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:10:38.756146,"{'incident_id': 'MOCK_INC0012', 'incident_title': 'Problema con datos de asegurados', 'resolution_type': 'reasignacion', 'resolution_summary': 'Parece derivar de clientes con MOCK_NIF duplicados'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution accurately identifies the root cause of the issue (duplicate NIFs) and suggests a suitable resolution type (reasignacion) given the nature of the problem."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:12:01.483905,"{'incident_id': 'MOCK_INC0013', 'incident_title': 'Error en validación de NIF', 'resolution_type': 'api|comprobarCIF', 'resolution_summary': 'MOCK_NIF. Falla un validador web. Falla en PRE'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a validation issue with the NIF/CIF and suggests an API call to verify the CIF. The resolution type 'api|comprobarCIF' is appropriate for this type of data validation error."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:13:29.882997,"{'incident_id': 'MOCK_INC0014', 'incident_title': 'Problema con PDF de tarjeta', 'resolution_type': 'api|scriptCarga', 'resolution_summary': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a missing data element (product not loaded in the intermediate database) and suggests a script to rectify it. This aligns with the incident description of a blank PDF generated from the digital card."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:15:01.812442,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comas dobles por simples'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue of accepting special characters. The incident description explicitly states the problem is with special characters, not just double quotes. A manual resolution focusing solely on replacing double quotes is unlikely to resolve the underlying problem and may introduce new issues."",
+  ""critique"": ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""manual"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""
+}
+```"
+2025-07-13T22:15:36.459884,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comillas dobles por simples'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident description, which states the field is rejecting special characters and quotes. Modifying quotes is a straightforward and appropriate solution for this front-end issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:21:37.050435,"{'incident_id': 'MOCK_INC0021', 'incident_title': 'Apelación rechazo póliza', 'resolution_type': 'cierre', 'resolution_summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a review of the policy requirements, which is a standard and appropriate response to a policy rejection appeal."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:52:01.708865,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution jumps to a specific conclusion (MOCK_TYPE) without sufficient evidence from the incident history. The history indicates a verification of access permissions and a potential API version issue, not a specific type causing the problem.  The resolution is too presumptive."",
+  ""critique"": ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [""cierre""],
+  ""recommended_approach"": ""Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.""
+}
+```"
+2025-07-13T22:52:40.109874,"{'incident_id': 'MOCK_INC0003', 'incident_title': 'Error al cargar documentación general', 'resolution_type': '', 'resolution_summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) restricting beneficiary visibility. The resolution type (cierre) is appropriate given the identified issue. The history indicates a focus on API versions, aligning with the proposed solution."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:54:09.432233,"{'incident_id': 'MOCK_INC0004', 'incident_title': 'Problema con beneficiarios en reembolsos', 'resolution_type': 'cierre', 'resolution_summary': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the specific policy type (MOCK_TYPE) preventing beneficiary visibility. The closure resolution type is appropriate for this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:56:36.947791,"{'incident_id': 'MOCK_INC0006', 'incident_title': 'Problema con IBAN en reembolsos', 'resolution_type': 'api|comprobarIban', 'resolution_summary': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by utilizing an API call to validate the IBAN. The resolution type (api|comprobarIban) is appropriate for the problem, and the history is empty, indicating this is a new attempt."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T22:58:16.159033,"{'incident_id': 'MOCK_INC0007', 'incident_title': 'Error en tarjeta digital', 'resolution_type': 'cierre', 'resolution_summary': 'Al ser póliza MOCK_TYPE no debería ver ninguno'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution aligns with the incident details and history. The incident description specifically mentions a type MOCK_TYPE and the resolution suggests this is the root cause of the issue. The resolution type 'cierre' is appropriate given the identified root cause."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""cierre""
+}
+```"
+2025-07-13T23:00:08.433395,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T23:00:53.964200,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T23:01:39.460558,"{'incident_id': 'MOCK_INC0008', 'incident_title': 'Problema con cuadro médico', 'resolution_type': 'reasignacion', 'resolution_summary': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue described in the incident. The description states a download of an HTML file instead of navigating to a page. The resolution focuses on container issues, which is not directly related to the user's experience or the observed problem."",
+  ""critique"": ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""reasignacion"", ""api|actualizaXXX"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.""
+}
+```"
+2025-07-13T23:03:26.908894,"{'incident_id': 'MOCK_INC0009', 'incident_title': 'Error en gestión de pólizas', 'resolution_type': 'reasignacion', 'resolution_summary': 'Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident's root cause, which is identified as an issue with the 'searchByPolicy' API call not returning the correct data. The suggested action of reassigning to MOCK_BUZON aligns with the identified problem type and the history of attempts to resolve it."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue with the reassignation to MOCK_BUZON. Monitor the resolution to ensure the issue is fully resolved.""
+}
+```"
+2025-07-13T23:05:06.771762,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': None}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a manual intervention based on a trace, but doesn't address the root cause or provide a clear path forward. It simply states the NIF wasn't found in Active Directory without suggesting any investigation or corrective action."",
+  ""critique"": ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [""manual""],
+  ""recommended_approach"": ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""
+}
+```"
+2025-07-13T23:05:42.762944,"{'incident_id': 'MOCK_INC0010', 'incident_title': 'Problema con autorizaciones', 'resolution_type': 'manual', 'resolution_summary': 'manual'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying the root cause – the NIF not found in Active Directory – as indicated in the trace provided. The manual resolution type is appropriate for investigating and potentially resolving this type of issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Configuration"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:07:14.181954,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is a re-assignment and doesn't address the root cause of the download error. It simply passes the issue to another team without investigating the underlying problem."",
+  ""critique"": ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [""reasignacion""],
+  ""recommended_approach"": ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""
+}
+```"
+2025-07-13T23:07:46.893486,"{'incident_id': 'MOCK_INC0011', 'incident_title': 'Error en descarga de documentación', 'resolution_type': 'reasignacion', 'resolution_summary': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution is appropriate for the incident type and severity. Reassigning the incident to the relevant team for manual document upload aligns with the described problem and the high priority."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:09:14.077142,"{'incident_id': 'MOCK_INC0012', 'incident_title': 'Problema con datos de asegurados', 'resolution_type': 'reasignacion', 'resolution_summary': 'Parece derivar de clientes con MOCK_NIF duplicados'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution accurately identifies the root cause of the issue (duplicate NIFs) and suggests a suitable resolution type (reasignacion) given the nature of the problem."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:10:35.881258,"{'incident_id': 'MOCK_INC0013', 'incident_title': 'Error en validación de NIF', 'resolution_type': 'api|comprobarCIF', 'resolution_summary': 'MOCK_NIF. Falla un validador web. Falla en PRE'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a validation issue with the NIF/CIF and suggests an API call to verify the CIF. The resolution type 'api|comprobarCIF' is appropriate for this type of data validation error."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:12:04.626577,"{'incident_id': 'MOCK_INC0014', 'incident_title': 'Problema con PDF de tarjeta', 'resolution_type': 'api|scriptCarga', 'resolution_summary': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by identifying a missing data element (product not loaded in the intermediate database) and suggests a script to rectify it. This aligns with the incident description of a blank PDF generated from the digital card."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Data"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:13:36.780408,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comas dobles por simples'}","```json
+{
+  ""status"": ""REJECTED"",
+  ""reason"": ""The proposed resolution is overly simplistic and doesn't address the core issue of accepting special characters. The incident description explicitly states the problem is with special characters, not just double quotes. A manual resolution focusing solely on replacing double quotes is unlikely to resolve the underlying problem and may introduce new issues."",
+  ""critique"": ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [""manual"", ""backend_data_updates""],
+  ""recommended_approach"": ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""
+}
+```"
+2025-07-13T23:14:11.361740,"{'incident_id': 'MOCK_INC0015', 'incident_title': 'Error en médico realizador', 'resolution_type': 'manual', 'resolution_summary': 'Se modificaran las comillas dobles por simples'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident description, which states the field is rejecting special characters and quotes. Modifying quotes is a straightforward and appropriate solution for this front-end issue."",
+  ""critique"": ""None"",
+  ""problem_type"": ""UI"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:15:44.974077,"{'incident_id': 'MOCK_INC0016', 'incident_title': 'Demora en provisión de póliza', 'resolution_type': 'api|fxprovicion', 'resolution_summary': 'Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a verification API call to investigate the delay in policy provisioning. The resolution type (api|fxprovicion) is appropriate for an API-related incident."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""Continue to monitor the API call and investigate the root cause of the delay. Consider adding more detailed logging to the API call to aid in troubleshooting.""
+}
+```"
+2025-07-13T23:18:09.917803,"{'incident_id': 'MOCK_INC0018', 'incident_title': 'Consulta sobre estado de póliza en provisión', 'resolution_type': 'api|fxprovicion', 'resolution_summary': 'Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting an API call to verify the policy provision status and handling potential delays, aligning with the incident description and API system type."",
+  ""critique"": ""None"",
+  ""problem_type"": ""API"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"
+2025-07-13T23:21:26.006641,"{'incident_id': 'MOCK_INC0021', 'incident_title': 'Apelación rechazo póliza', 'resolution_type': 'cierre', 'resolution_summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}","```json
+{
+  ""status"": ""APPROVED"",
+  ""reason"": ""The proposed resolution directly addresses the incident by suggesting a review of the policy requirements, which is a standard and appropriate response to a policy rejection appeal."",
+  ""critique"": ""None"",
+  ""problem_type"": ""Backend"",
+  ""avoid_solution_types"": [],
+  ""recommended_approach"": ""None""
+}
+```"

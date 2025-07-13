@@ -1795,3 +1795,1234 @@ timestamp,input,output
 2025-07-13T14:55:20.387896,"incident: {'codIncidencia': 'MOCK_INC0020', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Consulta sobre rechazo de póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '09/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E', 'historial': []}, solutions: 1","```json
 [{'score': 0.66879606, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Consulta sobre rechazo de póliza', 'TIPO INCIDENCIA': 'API Sistema', 'SOLUCIÓN': 'Verificar si la póliza está rechazada y explicar motivos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|disconformidad', 'BUZON REASIGNACION': None}, 'summary': 'Se reporta una consulta sobre el rechazo de una póliza, relacionada con la API del sistema.\n'}]
 ```"
+2025-07-13T18:38:27.118050,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}]}, solutions: 2","```json
+[{'score': 0.7584952, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}]
+```"
+2025-07-13T18:39:56.758087,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  'score': 0.7497872,
+  'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None},
+  'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}
+```"
+2025-07-13T18:42:21.761461,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T18:43:59.761813,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T18:44:46.229320,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}], 'critique_context': ""This resolution is completely inadequate. The incident describes a specific card type issue ('MOCK_TYPE') and a component update is underway. A blank resolution provides no guidance and does not acknowledge the existing investigation.  It's crucial to document the specific card type and the ongoing component update to avoid repeating ineffective actions.  Consider a manual investigation into the 'MOCK_TYPE' cards or a request for more information on the component update."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': ""Manual investigation into the 'MOCK_TYPE' cards, or request clarification on the component update and its potential impact on the card rendering issue.""}}, solutions: 3","```json
+{
+  ""score"": 0.68512297,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Muestra una tarjeta dada de baja"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""api|cancelationDate"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""La tarjeta digital muestra una tarjeta dada de baja.""
+}
+```"
+2025-07-13T18:45:34.774863,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}], 'critique_context': ""The resolution jumps to a data-centric solution without fully investigating the root cause as described in the incident history. The 'MOCK_TYPE' detail is completely ignored.  A more appropriate initial step would be to investigate the rendering or processing logic related to 'MOCK_TYPE' cards.  The automatic resolution type (api|cancelationDate) is not suitable without understanding the underlying issue."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|cancelationDate', 'backend_data_updates'], 'recommended_approach': ""Investigate the rendering or processing logic specifically for 'MOCK_TYPE' cards. Consider a UI inspection, debugging the card generation process, or examining the relevant code components.  A manual investigation or UI debugging would be more appropriate at this stage.""}}, solutions: 2","```json
+{
+  ""score"": 0.73773867,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Botón ir a tarjeta digital en la pantalla final, pero apunta a url de PRE"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""Se soluciona modificando la url en el código. Pendiente de subida"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""En espera"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PRE.""
+}
+```"
+2025-07-13T18:47:21.387815,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T18:48:06.904445,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates', 'reasignacion'], 'recommended_approach': ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""}}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T18:48:52.095066,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates', 'reasignacion'], 'recommended_approach': ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""}}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T18:58:06.661543,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}, {'Fecha': '13/7/2025, 18:38:54', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 2","```json
+{
+  ""score"": 0.75264037,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Titular no visualiza los beneficiarios de la póliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos""
+}
+```"
+2025-07-13T18:59:45.553903,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '13/7/2025, 18:40:19', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 3","```json
+{
+'score': 0.7497872,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza',
+'TIPO INCIDENCIA': 'Dato',
+'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'cierre',
+'BUZON REASIGNACION': None
+},
+'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'
+}
+```"
+2025-07-13T19:02:14.912831,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T19:03:53.304419,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T19:04:40.063158,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}], 'critique_context': ""This resolution is completely inadequate. The incident describes a specific card type issue ('MOCK_TYPE') and a component update is underway. A blank resolution provides no guidance and does not acknowledge the existing investigation.  It's crucial to document the specific card type and the ongoing component update to avoid repeating ineffective actions.  Consider a manual investigation into the 'MOCK_TYPE' cards or a request for more information on the component update."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': ""Manual investigation into the 'MOCK_TYPE' cards, or request clarification on the component update and its potential impact on the card rendering issue.""}}, solutions: 3","```json
+{
+  ""score"": 0.68512297,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Muestra una tarjeta dada de baja"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Validar en el código si el modulo está de baja o no (si tiene cancellationDate y en ese caso, que sea posterior a la fecha actual)"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""api|cancelationDate"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""La tarjeta digital muestra una tarjeta dada de baja.""
+}
+```"
+2025-07-13T19:05:27.591603,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}], 'critique_context': ""The resolution jumps to a data-centric solution without fully investigating the root cause as described in the incident history. The 'MOCK_TYPE' detail is completely ignored.  A more appropriate initial step would be to investigate the rendering or processing logic related to 'MOCK_TYPE' cards.  The automatic resolution type (api|cancelationDate) is not suitable without understanding the underlying issue."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|cancelationDate', 'backend_data_updates'], 'recommended_approach': ""Investigate the rendering or processing logic specifically for 'MOCK_TYPE' cards. Consider a UI inspection, debugging the card generation process, or examining the relevant code components.  A manual investigation or UI debugging would be more appropriate at this stage.""}}, solutions: 2","```json
+{
+  ""score"": 0.73773867,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Botón ir a tarjeta digital en la pantalla final, pero apunta a url de PRE"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""Se soluciona modificando la url en el código. Pendiente de subida"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""En espera"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El botón de acceso a la tarjeta digital en la pantalla final redirige incorrectamente a la URL de PRE.""
+}
+```"
+2025-07-13T19:12:26.548124,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}, {'Fecha': '13/7/2025, 18:38:54', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 18:58:37', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 2","```json
+{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos.'}
+```"
+2025-07-13T19:14:11.966140,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '13/7/2025, 18:40:19', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 19:00:11', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 5","```json
+{
+  ""score"": 0.7497872,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Titular no visualiza los beneficiarios de la póliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.""
+}
+```"
+2025-07-13T19:16:47.005053,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T19:18:24.834290,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T19:20:10.843565,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T19:20:56.456460,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates', 'reasignacion'], 'recommended_approach': ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""}}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T19:21:41.690525,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail about the actual steps taken to resolve the issue. It focuses on a technical detail ('contenedores') that is unlikely to be understood by the user or the support team.  A better resolution would describe the fix in terms of the user experience – e.g., ‘Resolved by updating the page rendering logic for the OM selection’ or ‘Fixed the issue by ensuring the correct page is loaded when selecting OM.’  The ‘reasignacion’ solution type is also not appropriate given the nature of the problem."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['api|actualizaXXX', 'backend_data_updates', 'reasignacion'], 'recommended_approach': ""A manual resolution should be implemented, describing the fix in terms of the user experience.  Consider a 'cierre' resolution once the issue is confirmed to be resolved by the user or a developer who understands the UI.""}}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T19:23:29.858147,"incident: {'codIncidencia': 'MOCK_INC0009', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en gestión de pólizas', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [{'Fecha': '05/01/2025 10:15:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En curso', 'detalle': 'Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy. | Análisis de adjuntos:  about coverage roadside for insurance MAPRE access access access coverage', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen003.png']}, {'Fecha': '05/01/2025 13:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Pendiente de confirmación de cambios en el API de MOCK_BUZON. | Análisis de adjuntos:  management and downloads MAPRE access digital onF. your. |  management policy data MAPRE portal access your and your.', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen004.png', 'http://localhost:3000/api/adjuntos/imagen005.png']}, {'Fecha': '05/01/2025 16:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se requiere actualización del componente para adaptarse a la nueva versión del API.', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Pendiente implantar', 'detalle': 'Se ha identificado la causa raíz y se está trabajando en la solución.'}]}, solutions: 3","```json
+{
+  ""score"": 0.74293584,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""No visualiza la poliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.""
+}
+```"
+2025-07-13T19:25:06.680238,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T19:25:45.213090,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't propose a solution. It needs to include steps like verifying Active Directory configuration, checking user permissions, or investigating potential synchronization issues. The 'manual' resolution type is appropriate for investigation but needs to be guided by a specific action plan. The score of 0.7838342 doesn't justify the lack of a defined action."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate solution type would be 'backend_data_updates' combined with a detailed investigation plan. This should include steps to verify Active Directory synchronization, check user permissions, and potentially escalate to the Active Directory team for further investigation.""}}, solutions: 3","```json
+{
+  'score': 0.9062169,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'Error inesperado al finalizar Autorizaciones',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Se cierra por strikes',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Ocurrió un error inesperado durante la finalización del proceso de Autorizaciones, clasificado como un problema de datos.'
+}
+```"
+2025-07-13T19:26:26.875471,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't address the core issue. A more appropriate response would involve investigating the API calls, database interactions, or backend processes related to authorization.  The 'cierre' action should only be considered after a thorough investigation and confirmation that the issue is truly resolved and not just temporarily masked."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['cierre', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the backend processes involved in the authorization workflow. This could involve logging, API monitoring, database query analysis, and potentially engaging with the development team for debugging.'}}, solutions: 2","```json
+{
+  ""score"": 0.7838342,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+    ""TIPO INCIDENCIA"": null,
+    ""SOLUCIÓN"": ""manual"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""manual"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.""
+}
+```"
+2025-07-13T19:27:58.600183,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+[{'score': 0.77880055, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T19:28:37.840189,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [], 'critique_context': ""The resolution simply reassigns the incident to another team. This is a reactive approach and doesn't attempt to diagnose the problem. The incident description clearly states an 'Error al intentar acceder a los documentos,' suggesting a potential issue with the download process itself, the API, or the data retrieval. A more appropriate initial action would be to investigate the API endpoint, check for network connectivity issues, or examine the data being returned. Re-assigning without investigation is a suboptimal strategy."", 'structured_critique': {'problem_type': 'API', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX'], 'recommended_approach': 'Investigate the API endpoint responsible for downloading the documentation. Check for network connectivity issues. Examine the response from the API for error codes or malformed data. Consider logging the API request and response for detailed analysis.'}}, solutions: 1","```json
+[{'score': 0.8032109, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T19:30:10.046555,"incident: {'codIncidencia': 'MOCK_INC0012', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con datos de asegurados', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '06/01/2025 16:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.682189,
+  ""metadata"": {
+    ""COMPONENTE"": ""Gestión Pólizas"",
+    ""DESCRIPCION"": ""No le aparece uno de los beneficiarios"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Parece derivar de clientes con MOCK_NIF duplicados"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.""
+}
+```"
+2025-07-13T19:31:29.945199,"incident: {'codIncidencia': 'MOCK_INC0013', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en validación de NIF', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '07/01/2025 10:30:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF', 'historial': []}, solutions: 1","```json
+[{'score': 0.9540026, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Error validación NIF/CIF', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'MOCK_NIF. Falla un validador web. Falla en PRE', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarCIF', 'BUZON REASIGNACION': None}, 'summary': 'Error en la validación de NIF/CIF durante el proceso de reembolsos.\n'}]
+```"
+2025-07-13T19:33:04.976905,"incident: {'codIncidencia': 'MOCK_INC0014', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con PDF de tarjeta', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '07/01/2025 14:15:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+  'score': 0.7062777,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'PDF en blanco',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|scriptCarga',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.'
+}
+```"
+2025-07-13T19:34:30.127009,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.6561103, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles', 'TIPO INCIDENCIA': 'Front', 'SOLUCIÓN': 'Se modificaran las comas dobles por simples', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'manual', 'BUZON REASIGNACION': None}, 'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'}
+```"
+2025-07-13T19:35:11.910037,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution misinterprets the root cause of the error. The problem is related to special characters and quotes within the 'Médico Realizador' field, not the use of double quotes. A more appropriate solution would involve validating the input field to prevent special characters and quotes. Simply changing double quotes to single quotes is unlikely to resolve the underlying issue and could introduce new problems."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['manual', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': ""A manual investigation of the input validation logic for the 'Médico Realizador' field is required. The solution should focus on preventing the entry of invalid characters (special characters and quotes) rather than attempting to modify existing data.""}}, solutions: 3","```json
+{
+  'score': 0.74493146,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles',
+    'TIPO INCIDENCIA': 'Front',
+    'SOLUCIÓN': 'Se modificaran las comillas dobles por simples',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'manual',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'
+}
+```"
+2025-07-13T19:41:15.926896,"incident: {'codIncidencia': 'MOCK_INC0021', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Apelación rechazo póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '10/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'historial': []}, solutions: 1","```json
+[{'score': 0.6170958, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'TIPO INCIDENCIA': 'Rechazo de póliza', 'SOLUCIÓN': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}]
+```"
+2025-07-13T19:49:43.564018,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}, {'Fecha': '13/7/2025, 18:38:54', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 18:58:37', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 2","```json
+{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos.'}
+```"
+2025-07-13T19:51:26.711092,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '13/7/2025, 18:40:19', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 19:00:11', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 5","```json
+{
+  ""score"": 0.7497872,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Titular no visualiza los beneficiarios de la póliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.""
+}
+```"
+2025-07-13T19:54:03.084279,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T19:55:41.529390,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}, {'Fecha': '13/7/2025, 19:19:06', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]Al ser póliza MOCK_TYPE no debería ver ninguno', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 3","```json
+{
+  ""score"": 0.84573174,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Al ser póliza MOCK_TYPE no debería ver ninguno"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Al ser póliza MOCK_TYPE no debería ver ninguno"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""Al ser póliza MOCK_TYPE no debería ver ninguno""
+}
+```"
+2025-07-13T19:57:19.097404,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T19:58:04.151829,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T19:58:49.248261,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T20:00:25.307890,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T20:01:08.809762,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""}}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': 'manual',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T20:08:32.573916,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}, {'Fecha': '13/7/2025, 18:38:54', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 18:58:37', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 19:50:16', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 3","```json
+{
+  ""score"": 0.75264037,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Titular no visualiza los beneficiarios de la póliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos.""
+}
+```"
+2025-07-13T20:10:20.854439,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '13/7/2025, 18:40:19', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}, {'Fecha': '13/7/2025, 19:00:11', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 5","```json
+{
+  ""score"": 0.7497872,
+  ""metadata"": {
+    ""COMPONENTE"": ""Autorizaciones"",
+    ""DESCRIPCION"": ""Titular no visualiza los beneficiarios de la póliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.""
+}
+```"
+2025-07-13T20:13:01.068428,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T20:17:20.251876,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}]}, solutions: 2","```json
+[{'score': 0.7584952, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}]
+```"
+2025-07-13T20:18:02.721138,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}], 'critique_context': ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."", 'structured_critique': {'problem_type': 'API', 'avoid_solution_types': ['cierre'], 'recommended_approach': 'Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.'}}, solutions: 1","[{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCIÓN AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}]"
+2025-07-13T20:19:34.468441,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  'score': 0.7497872,
+  'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None},
+  'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}
+```"
+2025-07-13T20:22:00.548973,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T20:23:37.626353,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T20:25:23.867981,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T20:26:09.042211,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T20:26:54.142097,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T20:28:42.294697,"incident: {'codIncidencia': 'MOCK_INC0009', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en gestión de pólizas', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [{'Fecha': '05/01/2025 10:15:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En curso', 'detalle': 'Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy. | Análisis de adjuntos:  about coverage roadside for insurance MAPRE access access access coverage', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen003.png']}, {'Fecha': '05/01/2025 13:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Pendiente de confirmación de cambios en el API de MOCK_BUZON. | Análisis de adjuntos:  management and downloads MAPRE access digital onF. your. |  management policy data MAPRE portal access your and your.', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen004.png', 'http://localhost:3000/api/adjuntos/imagen005.png']}, {'Fecha': '05/01/2025 16:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se requiere actualización del componente para adaptarse a la nueva versión del API.', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Pendiente implantar', 'detalle': 'Se ha identificado la causa raíz y se está trabajando en la solución.'}]}, solutions: 3","```json
+{
+  ""score"": 0.74293584,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""No visualiza la poliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.""
+}
+```"
+2025-07-13T20:30:20.804107,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T20:31:03.449830,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""}}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': 'manual',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T20:32:29.926845,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+[{'score': 0.77880055, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T20:33:07.605927,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [], 'critique_context': ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."", 'structured_critique': {'problem_type': 'Data', 'avoid_solution_types': ['reasignacion'], 'recommended_approach': ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""}}, solutions: 1","```json
+[{'score': 0.8032109, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T20:34:34.341018,"incident: {'codIncidencia': 'MOCK_INC0012', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con datos de asegurados', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '06/01/2025 16:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.682189,
+  ""metadata"": {
+    ""COMPONENTE"": ""Gestión Pólizas"",
+    ""DESCRIPCION"": ""No le aparece uno de los beneficiarios"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Parece derivar de clientes con MOCK_NIF duplicados"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.""
+}
+```"
+2025-07-13T20:35:55.462567,"incident: {'codIncidencia': 'MOCK_INC0013', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en validación de NIF', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '07/01/2025 10:30:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF', 'historial': []}, solutions: 1","```json
+[{'score': 0.9540026, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Error validación NIF/CIF', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'MOCK_NIF. Falla un validador web. Falla en PRE', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarCIF', 'BUZON REASIGNACION': None}, 'summary': 'Error en la validación de NIF/CIF durante el proceso de reembolsos.\n'}]
+```"
+2025-07-13T20:37:23.070626,"incident: {'codIncidencia': 'MOCK_INC0014', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con PDF de tarjeta', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '07/01/2025 14:15:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+  'score': 0.7062777,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'PDF en blanco',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|scriptCarga',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.'
+}
+```"
+2025-07-13T20:38:49.004503,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.6561103, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles', 'TIPO INCIDENCIA': 'Front', 'SOLUCIÓN': 'Se modificaran las comas dobles por simples', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'manual', 'BUZON REASIGNACION': None}, 'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'}
+```"
+2025-07-13T20:39:29.355230,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['manual', 'backend_data_updates'], 'recommended_approach': ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""}}, solutions: 3","```json
+{
+  'score': 0.74493146,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles',
+    'TIPO INCIDENCIA': 'Front',
+    'SOLUCIÓN': 'Se modificaran las comillas dobles por simples',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'manual',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'
+}
+```"
+2025-07-13T20:45:29.690840,"incident: {'codIncidencia': 'MOCK_INC0021', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Apelación rechazo póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '10/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'historial': []}, solutions: 1","```json
+[{'score': 0.6170958, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'TIPO INCIDENCIA': 'Rechazo de póliza', 'SOLUCIÓN': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}]
+```"
+2025-07-13T21:22:48.492076,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}]}, solutions: 2","```json
+[{'score': 0.7584952, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}]
+```"
+2025-07-13T21:23:31.315773,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}], 'critique_context': ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."", 'structured_critique': {'problem_type': 'API', 'avoid_solution_types': ['cierre'], 'recommended_approach': 'Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.'}}, solutions: 1","[{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCIÓN AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}]"
+2025-07-13T21:25:09.288120,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '13/7/2025, 20:19:58', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 3","```json
+{
+'score': 0.7497872,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza',
+'TIPO INCIDENCIA': 'Dato',
+'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'cierre',
+'BUZON REASIGNACION': None
+},
+'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'
+}
+```"
+2025-07-13T21:27:38.849866,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T21:29:16.873642,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}, {'Fecha': '13/7/2025, 20:24:19', 'Autor': 'Sistema Automático', 'CodigoResolucion': 'AUTO', 'NotasResolucion': '[SPAI]Al ser póliza MOCK_TYPE no debería ver ninguno', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Resuelta', 'detalle': 'Procesado por sistema automático'}]}, solutions: 2","```json
+{
+  ""score"": 0.85182995,
+  ""metadata"": {
+    ""COMPONENTE"": ""Tarjeta Digital"",
+    ""DESCRIPCION"": ""Al ser póliza MOCK_TYPE no debería ver ninguno"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Al ser póliza MOCK_TYPE no debería ver ninguno"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+    ""BUZON REASIGNACION"": null
+  },
+  ""summary"": ""No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n""
+}
+```"
+2025-07-13T21:30:56.117587,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T21:31:41.254829,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T21:32:26.741181,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T21:34:02.484592,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T21:34:45.145451,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""}}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': 'manual',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T21:36:09.858460,"incident: {'codIncidencia': 'MOCK_INC0013', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en validación de NIF', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '07/01/2025 10:30:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF', 'historial': []}, solutions: 1","```json
+[{'score': 0.9540026, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Error validación NIF/CIF', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'MOCK_NIF. Falla un validador web. Falla en PRE', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarCIF', 'BUZON REASIGNACION': None}, 'summary': 'Error en la validación de NIF/CIF durante el proceso de reembolsos.\n'}]
+```"
+2025-07-13T21:37:37.981883,"incident: {'codIncidencia': 'MOCK_INC0014', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con PDF de tarjeta', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '07/01/2025 14:15:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+  'score': 0.7062777,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'PDF en blanco',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|scriptCarga',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.'
+}
+```"
+2025-07-13T21:39:04.305008,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.6561103, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles', 'TIPO INCIDENCIA': 'Front', 'SOLUCIÓN': 'Se modificaran las comas dobles por simples', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'manual', 'BUZON REASIGNACION': None}, 'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'}
+```"
+2025-07-13T21:39:45.166512,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['manual', 'backend_data_updates'], 'recommended_approach': ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""}}, solutions: 3","```json
+{
+  'score': 0.74493146,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles',
+    'TIPO INCIDENCIA': 'Front',
+    'SOLUCIÓN': 'Se modificaran las comillas dobles por simples',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'manual',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'
+}
+```"
+2025-07-13T21:53:02.839823,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}]}, solutions: 2","```json
+[{'score': 0.7584952, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}]
+```"
+2025-07-13T21:53:45.565038,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}], 'critique_context': ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."", 'structured_critique': {'problem_type': 'API', 'avoid_solution_types': ['cierre'], 'recommended_approach': 'Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.'}}, solutions: 1","[{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCIÓN AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}]"
+2025-07-13T21:55:17.246976,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  'score': 0.7497872,
+  'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None},
+  'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}
+```"
+2025-07-13T21:57:45.107626,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T21:59:22.289702,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T22:01:08.920363,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T22:01:54.226640,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T22:02:39.690680,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T22:04:28.417910,"incident: {'codIncidencia': 'MOCK_INC0009', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en gestión de pólizas', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [{'Fecha': '05/01/2025 10:15:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En curso', 'detalle': 'Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy. | Análisis de adjuntos:  about coverage roadside for insurance MAPRE access access access coverage', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen003.png']}, {'Fecha': '05/01/2025 13:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Pendiente de confirmación de cambios en el API de MOCK_BUZON. | Análisis de adjuntos:  management and downloads MAPRE access digital onF. your. |  management policy data MAPRE portal access your and your.', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen004.png', 'http://localhost:3000/api/adjuntos/imagen005.png']}, {'Fecha': '05/01/2025 16:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se requiere actualización del componente para adaptarse a la nueva versión del API.', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Pendiente implantar', 'detalle': 'Se ha identificado la causa raíz y se está trabajando en la solución.'}]}, solutions: 3","```json
+{
+  ""score"": 0.74293584,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""No visualiza la poliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.""
+}
+```"
+2025-07-13T22:06:08.310775,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T22:06:51.358934,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""}}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': 'manual',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T22:08:18.339680,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+[{'score': 0.77880055, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T22:08:56.530686,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [], 'critique_context': ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."", 'structured_critique': {'problem_type': 'Data', 'avoid_solution_types': ['reasignacion'], 'recommended_approach': ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""}}, solutions: 1","```json
+[{'score': 0.8032109, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T22:10:23.585230,"incident: {'codIncidencia': 'MOCK_INC0012', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con datos de asegurados', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '06/01/2025 16:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.682189,
+  ""metadata"": {
+    ""COMPONENTE"": ""Gestión Pólizas"",
+    ""DESCRIPCION"": ""No le aparece uno de los beneficiarios"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Parece derivar de clientes con MOCK_NIF duplicados"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.""
+}
+```"
+2025-07-13T22:11:45.740459,"incident: {'codIncidencia': 'MOCK_INC0013', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en validación de NIF', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '07/01/2025 10:30:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF', 'historial': []}, solutions: 1","```json
+[{'score': 0.9540026, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Error validación NIF/CIF', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'MOCK_NIF. Falla un validador web. Falla en PRE', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarCIF', 'BUZON REASIGNACION': None}, 'summary': 'Error en la validación de NIF/CIF durante el proceso de reembolsos.\n'}]
+```"
+2025-07-13T22:13:14.256659,"incident: {'codIncidencia': 'MOCK_INC0014', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con PDF de tarjeta', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '07/01/2025 14:15:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+  'score': 0.7062777,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'PDF en blanco',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|scriptCarga',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.'
+}
+```"
+2025-07-13T22:14:40.883387,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.6561103, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles', 'TIPO INCIDENCIA': 'Front', 'SOLUCIÓN': 'Se modificaran las comas dobles por simples', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'manual', 'BUZON REASIGNACION': None}, 'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'}
+```"
+2025-07-13T22:15:21.312188,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['manual', 'backend_data_updates'], 'recommended_approach': ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""}}, solutions: 3","```json
+{
+  'score': 0.74493146,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles',
+    'TIPO INCIDENCIA': 'Front',
+    'SOLUCIÓN': 'Se modificaran las comillas dobles por simples',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'manual',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'
+}
+```"
+2025-07-13T22:21:21.730785,"incident: {'codIncidencia': 'MOCK_INC0021', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Apelación rechazo póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '10/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'historial': []}, solutions: 1","```json
+[{'score': 0.6170958, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'TIPO INCIDENCIA': 'Rechazo de póliza', 'SOLUCIÓN': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}]
+```"
+2025-07-13T22:51:39.309784,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}]}, solutions: 2","```json
+[{'score': 0.7584952, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}]
+```"
+2025-07-13T22:52:21.952168,"incident: {'codIncidencia': 'MOCK_INC0003', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error al cargar documentación general', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '02/01/2025 09:15:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': [{'Fecha': '02/01/2025 10:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON', 'estado': 'En espera', 'detalle': 'Se requiere verificación de permisos de acceso a documentos.'}, {'Fecha': '02/01/2025 14:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se ha verificado que el problema está relacionado con la versión del API de documentación.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Reasignación a equipo técnico para actualización de API.'}], 'critique_context': ""The resolution lacks a clear connection to the incident details. The history shows a focus on permissions and API versions, suggesting a more investigative approach is needed before assigning a specific cause. Simply stating 'MOCK_TYPE' without justification is not a robust solution."", 'structured_critique': {'problem_type': 'API', 'avoid_solution_types': ['cierre'], 'recommended_approach': 'Investigate the API version issue as suggested in the incident history.  Consider a manual investigation of the API calls and responses, or a more targeted API debugging step before resorting to a closure.'}}, solutions: 1","[{'score': 0.75264037, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCIÓN AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos'}]"
+2025-07-13T22:53:53.840355,"incident: {'codIncidencia': 'MOCK_INC0004', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con beneficiarios en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '02/01/2025 11:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: MOCK_NIF Nombre: MOCK_NAME Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  'score': 0.7497872,
+  'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Titular no visualiza los beneficiarios de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'No visualiza a sus beneficiarios debido a que la póliza consultada es de tipo MOCK_TYPE y no pueden verlos', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None},
+  'summary': 'El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.'}
+```"
+2025-07-13T22:56:20.862849,"incident: {'codIncidencia': 'MOCK_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con IBAN en reembolsos', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '03/01/2025 16:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF IBAN: MOCK_IBAN', 'historial': []}, solutions: 2","```json
+[{'score': 0.7832911, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'PROBLEMA con la configuración del IBAN', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'Se valida el IBAN del usuario con el sistema api|comprobarIban para comprobar si es correcto, en caso de que no sea correcto se solicita al usuario que vuelva a probar y se indica el motivo del error', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarIban', 'BUZON REASIGNACION': None}, 'summary': 'Existe un problema de configuración del IBAN asociado al componente de Reembolsos, originado por un error en la validación de los datos proporcionados por el usuario.\n'}]
+```"
+2025-07-13T22:57:58.013976,"incident: {'codIncidencia': 'MOCK_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en tarjeta digital', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 10:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_NIF Nombre: MOCK_NAME', 'historial': [{'Fecha': '04/01/2025 11:20:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Se ha identificado que el problema ocurre solo con tarjetas de tipo MOCK_TYPE.'}, {'Fecha': '04/01/2025 15:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': 'Se está trabajando en la actualización del componente de generación de tarjetas digitales.', 'buzonComentario': 'MOCK_BUZON', 'buzonAsignado': 'MOCK_BUZON_TECNICO', 'estado': 'En curso', 'detalle': 'Implementando solución para manejo de tarjetas MOCK_TYPE. | Análisis de adjuntos:  application and settings MAPRE portal secure access network |  about coverage health care individuals MAPRE policies services', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen001.png', 'http://localhost:3000/api/adjuntos/imagen002.png']}]}, solutions: 3","```json
+{
+  'score': 0.84573174,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'No aparecen todos los beneficiarios',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'Al ser póliza MOCK_TYPE no debería ver ninguno',
+    'FECHA DE RESOLUCIÓN': null,
+    'RESOLUCION AUTOMÁTICA': 'cierre',
+    'BUZON REASIGNACION': null
+  },
+  'summary': 'No se visualizan correctamente todos los beneficiarios en la Tarjeta Digital.\n'
+}
+```"
+2025-07-13T22:59:44.348905,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.814746,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página"",
+    ""TIPO INCIDENCIA"": ""Código Front"",
+    ""SOLUCIÓN"": ""El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente"",
+    ""FECHA DE RESOLUCIÓN"": None,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.""
+}
+```"
+2025-07-13T23:00:29.943472,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T23:01:15.492496,"incident: {'codIncidencia': 'MOCK_INC0008', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con cuadro médico', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '04/01/2025 15:30:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo HTML en lugar de mostrar la página. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't explain *why* the container issue was causing the HTML download. It doesn't consider the user's perspective or the specific functionality failing. A more appropriate response would involve investigating the front-end code, the routing, or the page rendering process. Simply stating a container issue was fixed is insufficient without understanding the root cause and how it manifested in the user's experience."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['reasignacion', 'api|actualizaXXX', 'backend_data_updates'], 'recommended_approach': 'Investigate the front-end code responsible for rendering the OM page. This should include checking the routing, the page template, and any JavaScript that might be involved in the navigation. Consider using browser developer tools to inspect the network requests and page source.'}}, solutions: 2","```json
+{
+  'score': 0.814746,
+  'metadata': {
+    'COMPONENTE': 'Cuadro Médico',
+    'DESCRIPCION': 'Si entro en el CM público y pincho en OM, se me descarga el fichero de OM html no me va a la página',
+    'TIPO INCIDENCIA': 'Código Front',
+    'SOLUCIÓN': 'El error derivaba de las contenedoras. Se le comunica y al modificar las páginas funciona correctamente',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'reasignacion',
+    'BUZON REASIGNACION': 'MOCK_BUZON'
+  },
+  'summary': 'Al acceder al Cuadro Médico público y seleccionar OM, el archivo HTML de OM no se carga, sino que se descarga directamente.'
+}
+```"
+2025-07-13T23:03:05.027626,"incident: {'codIncidencia': 'MOCK_INC0009', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en gestión de pólizas', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la información. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [{'Fecha': '05/01/2025 10:15:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En curso', 'detalle': 'Se ha identificado que el problema está relacionado con la llamada al API searchByPolicy. | Análisis de adjuntos:  about coverage roadside for insurance MAPRE access access access coverage', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen003.png']}, {'Fecha': '05/01/2025 13:45:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': None, 'NotasResolucion': None, 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'En espera', 'detalle': 'Pendiente de confirmación de cambios en el API de MOCK_BUZON. | Análisis de adjuntos:  management and downloads MAPRE access digital onF. your. |  management policy data MAPRE portal access your and your.', 'adjuntos': ['http://localhost:3000/api/adjuntos/imagen004.png', 'http://localhost:3000/api/adjuntos/imagen005.png']}, {'Fecha': '05/01/2025 16:30:00 CEST', 'Autor': 'MOCK_NAME', 'CodigoResolucion': 'MOCK_CODE', 'NotasResolucion': 'Se requiere actualización del componente para adaptarse a la nueva versión del API.', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_AUTORIZACIONES', 'estado': 'Pendiente implantar', 'detalle': 'Se ha identificado la causa raíz y se está trabajando en la solución.'}]}, solutions: 3","```json
+{
+  ""score"": 0.74293584,
+  ""metadata"": {
+    ""COMPONENTE"": ""Cuadro Médico"",
+    ""DESCRIPCION"": ""No visualiza la poliza"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Se deriva a MOCK_BUZON, en la operación SearchByPolicyOpt no venía la información de la segunda póliza"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.""
+}
+```"
+2025-07-13T23:04:44.332014,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': None,
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T23:05:27.216904,"incident: {'codIncidencia': 'MOCK_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con autorizaciones', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '05/01/2025 11:45:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la solicitud. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks detail and doesn't offer a plan. A manual resolution should involve steps to verify the NIF exists in Active Directory, check user permissions, or investigate potential Active Directory synchronization issues. The 'manual' resolution type is appropriate given the lack of automated options, but the description of the action is insufficient."", 'structured_critique': {'problem_type': 'Backend', 'avoid_solution_types': ['manual'], 'recommended_approach': ""A more appropriate approach would be to initiate a manual investigation focusing on Active Directory verification and user permissions. The resolution should include steps like: 1) Confirming the NIF exists in Active Directory. 2) Verifying the user's Active Directory group memberships. 3) Checking for any synchronization delays between Active Directory and the system.""}}, solutions: 3","```json
+{
+'score': 0.7838342,
+'metadata': {
+'COMPONENTE': 'Autorizaciones',
+'DESCRIPCION': ""Error para solicitar autorizacion con traza 'Se ha capturado una FunctionalException: Cn [MOCK_NIF] dont found in active directory'"",
+'TIPO INCIDENCIA': None,
+'SOLUCIÓN': 'manual',
+'FECHA DE RESOLUCIÓN': None,
+'RESOLUCION AUTOMÁTICA': 'manual',
+'BUZON REASIGNACION': None
+},
+'summary': 'Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.'
+}
+```"
+2025-07-13T23:06:53.675120,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+[{'score': 0.77880055, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T23:07:31.794489,"incident: {'codIncidencia': 'MOCK_INC0011', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en descarga de documentación', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '06/01/2025 13:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': [], 'critique_context': ""The incident description clearly indicates an error during document download. A more appropriate response would involve investigating the system logs, checking the document storage location, or attempting to manually download the documents to diagnose the issue. Re-assigning the incident without investigation is a reactive approach and doesn't contribute to a resolution."", 'structured_critique': {'problem_type': 'Data', 'avoid_solution_types': ['reasignacion'], 'recommended_approach': ""Investigate the document storage location, check system logs for errors related to document retrieval, or attempt a manual download to diagnose the issue. Consider a 'data' resolution type with steps to retrieve or validate the documents.""}}, solutions: 1","```json
+[{'score': 0.8032109, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'No carga documentación particular de la póliza', 'TIPO INCIDENCIA': 'Dato', 'SOLUCIÓN': 'Derivar a MOCK_BUZON. Se deriva a este equipo para que suba los documentos del cliente en caso de no existir', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'reasignacion', 'BUZON REASIGNACION': 'MOCK_BUZON'}, 'summary': 'La aplicación no carga la documentación específica de la póliza.\n'}]
+```"
+2025-07-13T23:08:58.840526,"incident: {'codIncidencia': 'MOCK_INC0012', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con datos de asegurados', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '06/01/2025 16:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_POLICY', 'historial': []}, solutions: 2","```json
+{
+  ""score"": 0.682189,
+  ""metadata"": {
+    ""COMPONENTE"": ""Gestión Pólizas"",
+    ""DESCRIPCION"": ""No le aparece uno de los beneficiarios"",
+    ""TIPO INCIDENCIA"": ""Dato"",
+    ""SOLUCIÓN"": ""Parece derivar de clientes con MOCK_NIF duplicados"",
+    ""FECHA DE RESOLUCIÓN"": null,
+    ""RESOLUCION AUTOMÁTICA"": ""reasignacion"",
+    ""BUZON REASIGNACION"": ""MOCK_BUZON""
+  },
+  ""summary"": ""Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.""
+}
+```"
+2025-07-13T23:10:20.435532,"incident: {'codIncidencia': 'MOCK_INC0013', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en validación de NIF', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '07/01/2025 10:30:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrecto. NIF: MOCK_NIF', 'historial': []}, solutions: 1","```json
+[{'score': 0.9540026, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Error validación NIF/CIF', 'TIPO INCIDENCIA': 'Dato Usuario', 'SOLUCIÓN': 'MOCK_NIF. Falla un validador web. Falla en PRE', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|comprobarCIF', 'BUZON REASIGNACION': None}, 'summary': 'Error en la validación de NIF/CIF durante el proceso de reembolsos.\n'}]
+```"
+2025-07-13T23:11:48.857686,"incident: {'codIncidencia': 'MOCK_INC0014', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Problema con PDF de tarjeta', 'solicitante': 'MOCK_NAME', 'estado': 'En espera', 'apertura': '07/01/2025 14:15:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+  'score': 0.7062777,
+  'metadata': {
+    'COMPONENTE': 'Tarjeta Digital',
+    'DESCRIPCION': 'PDF en blanco',
+    'TIPO INCIDENCIA': 'Dato',
+    'SOLUCIÓN': 'El producto no estaba cargado en la base de datos intermedia. Se realiza script y se carga',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|scriptCarga',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.'
+}
+```"
+2025-07-13T23:13:15.902054,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': []}, solutions: 3","```json
+{
+'score': 0.6561103, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles', 'TIPO INCIDENCIA': 'Front', 'SOLUCIÓN': 'Se modificaran las comas dobles por simples', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'manual', 'BUZON REASIGNACION': None}, 'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'}
+```"
+2025-07-13T23:13:56.459724,"incident: {'codIncidencia': 'MOCK_INC0015', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en médico realizador', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '08/01/2025 09:45:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introducir el nombre. NIF: MOCK_NIF', 'historial': [], 'critique_context': ""The resolution lacks a comprehensive approach. It needs to investigate the allowed characters in the 'Médico Realizador' field. A more appropriate solution would involve reviewing the field's validation rules or potentially implementing a character filtering mechanism. Simply replacing double quotes is a band-aid solution."", 'structured_critique': {'problem_type': 'UI', 'avoid_solution_types': ['manual', 'backend_data_updates'], 'recommended_approach': ""Investigate the field's validation rules or implement a character filtering mechanism. Consider a UI update to clearly communicate allowed characters or a backend validation change to reject invalid input.""}}, solutions: 3","```json
+{
+  'score': 0.74493146,
+  'metadata': {
+    'COMPONENTE': 'Autorizaciones',
+    'DESCRIPCION': 'El campo de Medico Realizador no admite comillas dobles',
+    'TIPO INCIDENCIA': 'Front',
+    'SOLUCIÓN': 'Se modificaran las comillas dobles por simples',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'manual',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'El campo de Médico Realizador no permite el uso de comillas dobles.'
+}
+```"
+2025-07-13T23:15:26.714086,"incident: {'codIncidencia': 'MOCK_INC0016', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Demora en provisión de póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '09/01/2025 10:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Hay demoras excesivas en la provisión de pólizas a través de la API del sistema. Póliza: POL001-FX-PROVISION NIF: 12345678A', 'historial': []}, solutions: 3","```json
+{
+'score': 0.8036938, 'metadata': {'COMPONENTE': 'Reembolsos', 'DESCRIPCION': 'Exceso de tiempo en provisión de póliza', 'TIPO INCIDENCIA': 'API Sistema', 'SOLUCIÓN': 'Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'api|fxprovicion', 'BUZON REASIGNACION': None}, 'summary': 'Hay demoras excesivas en la provisión de pólizas a través de la API del sistema.\n'}
+```"
+2025-07-13T23:17:54.406598,"incident: {'codIncidencia': 'MOCK_INC0018', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Consulta sobre estado de póliza en provisión', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '09/01/2025 14:00:00 CEST', 'prioridad': '3 - Media', 'descripcion': 'Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exceso de tiempo en la provisión, detectado a través de una consulta a la API del sistema. Póliza: POL003-FX-ACTIVA NIF: 11223344C', 'historial': []}, solutions: 1","```json
+{
+  'score': 0.8630807,
+  'metadata': {
+    'COMPONENTE': 'Reembolsos',
+    'DESCRIPCION': 'Consulta sobre estado de póliza en provisión o reclamación por exceso de tiempo en provisión',
+    'TIPO INCIDENCIA': 'API Sistema',
+    'SOLUCIÓN': 'Verificar el estado de la póliza y tiempos de provisión contra el sistema, resolver con api|fxprovicion para comprobar la demora',
+    'FECHA DE RESOLUCIÓN': None,
+    'RESOLUCION AUTOMÁTICA': 'api|fxprovicion',
+    'BUZON REASIGNACION': None
+  },
+  'summary': 'Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exceso de tiempo en la provisión, detectado a través de una consulta a la API del sistema.'
+}
+```"
+2025-07-13T23:21:10.808404,"incident: {'codIncidencia': 'MOCK_INC0021', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Apelación rechazo póliza', 'solicitante': 'MOCK_NAME', 'estado': 'En curso', 'apertura': '10/01/2025 09:00:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'historial': []}, solutions: 1","```json
+[{'score': 0.6170958, 'metadata': {'COMPONENTE': 'Autorizaciones', 'DESCRIPCION': 'Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NIF: 33445566F', 'TIPO INCIDENCIA': 'Rechazo de póliza', 'SOLUCIÓN': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.', 'FECHA DE RESOLUCIÓN': None, 'RESOLUCION AUTOMÁTICA': 'cierre', 'BUZON REASIGNACION': None}, 'summary': 'Revisar los requisitos de la póliza POL006-DISCONF-RECHAZADA para determinar por qué fue rechazada.'}]
+```"

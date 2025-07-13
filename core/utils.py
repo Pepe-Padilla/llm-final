@@ -26,23 +26,32 @@ def convert_json_response(response: str, section: str = "unknown") -> Dict[str, 
     except Exception as e:
         main_logger.error(f"Error convirtiendo JSON en {section}", extra_data={
             "action": f"{section}_conversion_error",
+            "response": response,
             "error": str(e)
         })
         return {}
+
+def evalNullNone(response: str) -> str:
+    """Evalúa la respuesta y reemplaza None por 'null'."""
+    return response.replace("null", "None")
 
 
 def convert_eval_response(response: str, section: str = "unknown") -> Dict[str, Any]:
     """Convierte respuesta usando eval o JSON según el formato."""
     cleaned_response = markdownJson(response)
+    cleaned_response = evalNullNone(cleaned_response)
     try:
         return eval(cleaned_response)
-    except Exception:
+    except Exception as e2:
         try:
             return convert_json_response(response, section)
         except Exception as e:
             main_logger.error(f"Error convirtiendo respuesta en {section}", extra_data={
                 "action": f"{section}_conversion_error",
-                "error": str(e)
+                "response": response,
+                "error": str(e),
+                "error2": str(e2)
+
             })
             return {}
 

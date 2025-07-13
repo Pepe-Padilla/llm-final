@@ -1,0 +1,34 @@
+timestamp,input,output
+2025-07-13T18:32:49.510494,"{'codIncidencia': 'CLOSED_INC0006', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en generación de PDF de facturas', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '25/11/2024 14:20:00 CEST', 'prioridad': '2 - Alta', 'descripcion': 'Error al generar PDF de facturas de reembolso. El archivo se genera corrupto y no se puede abrir. NIF: MOCK_NIF', 'historial': [{'Fecha': '25/11/2024 17:45:00 CEST', 'Autor': 'Equipo Técnico', 'CodigoResolucion': 'RESUELTO', 'NotasResolucion': 'Se actualiza la librería de generación de PDF y se corrige el encoding de caracteres especiales', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_CIERRE', 'estado': 'Resuelta', 'detalle': 'Problema resuelto mediante actualización de librería'}]}","```json
+{
+  ""COMPONENTE"": ""Generación de PDF de Facturas"",
+  ""DESCRIPCION"": ""Error al generar PDF de facturas de reembolso, resultando en archivos corruptos."",
+  ""TIPO INCIDENCIA"": ""Error de Aplicación"",
+  ""SOLUCIÓN"": ""Actualizar la librería de generación de PDF utilizada en el proceso de creación de facturas. Se corrigió el encoding de caracteres especiales para asegurar la correcta generación de archivos PDF."",
+  ""FECHA DE RESOLUCIÓN"": ""25/11/2024 17:45:00 CEST"",
+  ""RESOLUCION AUTOMÁTICA"": ""cierre"",
+  ""BUZON REASIGNACION"": """"
+}
+```"
+2025-07-13T18:33:03.914353,"{'codIncidencia': 'CLOSED_INC0007', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Timeout en consulta de historial médico', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '30/11/2024 09:10:00 CEST', 'prioridad': '1 - Muy Alta', 'descripcion': 'Timeout al consultar historial médico del paciente. La consulta tarda más de 30 segundos en responder. NIF: MOCK_NIF', 'historial': [{'Fecha': '30/11/2024 11:30:00 CEST', 'Autor': 'Equipo Técnico', 'CodigoResolucion': 'RESUELTO', 'NotasResolucion': 'Se optimiza la consulta SQL y se implementa cache para historiales médicos frecuentes', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_CIERRE', 'estado': 'Resuelta', 'detalle': 'Optimización de consulta implementada'}]}","```json
+{
+  ""COMPONENTE"": ""Historial Médico"",
+  ""DESCRIPCION"": ""Timeout al consultar historial médico del paciente."",
+  ""TIPO INCIDENCIA"": ""Rendimiento"",
+  ""SOLUCIÓN"": ""Implementación de cache para historiales médicos frecuentes y optimización de la consulta SQL."",
+  ""FECHA DE RESOLUCIÓN"": ""30/11/2024 11:30:00 CEST"",
+  ""RESOLUCION AUTOMÁTICA"": ""api|optimizarConsultaSQL"",
+  ""BUZON REASIGNACION"": """"
+}
+```"
+2025-07-13T18:33:24.122306,"{'codIncidencia': 'CLOSED_INC0010', 'buzon': 'GR_SAL_COMP_AUTORIZACIONES', 'titulo': 'Error en cálculo de copagos', 'solicitante': 'MOCK_NAME', 'estado': 'Resuelta', 'apertura': '12/12/2024 10:45:00 CEST', 'prioridad': '1 - Muy Alta', 'descripcion': 'Error en el cálculo de copagos para ciertas especialidades médicas. Valores incorrectos. NIF: MOCK_NIF', 'historial': [{'Fecha': '12/12/2024 14:20:00 CEST', 'Autor': 'Equipo Técnico', 'CodigoResolucion': 'RESUELTO', 'NotasResolucion': 'Se actualiza la tabla de tarifas y se corrige la fórmula de cálculo de copagos', 'buzonComentario': 'GR_SAL_COMP_AUTORIZACIONES', 'buzonAsignado': 'GR_SAL_COMP_CIERRE', 'estado': 'Resuelta', 'detalle': 'Fórmula de cálculo corregida'}]}","```json
+{
+  ""COMPONENTE"": ""Cálculo de Copagos"",
+  ""DESCRIPCION"": ""Error en el cálculo de copagos para ciertas especialidades médicas. Valores incorrectos."",
+  ""TIPO INCIDENCIA"": ""Error de Cálculo"",
+  ""SOLUCIÓN"": ""Se actualiza la tabla de tarifas y se corrige la fórmula de cálculo de copagos."",
+  ""FECHA DE RESOLUCIÓN"": ""12/12/2024 14:20:00 CEST"",
+  ""RESOLUCION AUTOMÁTICA"": ""manual"",
+  ""BUZON REASIGNACION"": """"
+}
+```"

@@ -1,0 +1,4 @@
+COMPONENTE,DESCRIPCION,TIPO INCIDENCIA,SOLUCIÓN,FECHA DE RESOLUCIÓN,RESOLUCION AUTOMÁTICA,BUZON REASIGNACION
+Generación de PDF de Facturas,Error al generar PDF de facturas de reembolso. El archivo se genera corrupto y no se puede abrir. NIF: MOCK_NIF,Error de Aplicación,Actualizar la librería de generación de PDF utilizada en el proceso de creación de facturas. Se corrigió el encoding de caracteres especiales para asegurar la correcta generación de archivos PDF.,,cierre,
+Historial Médico,Timeout al consultar historial médico del paciente. La consulta tarda más de 30 segundos en responder. NIF: MOCK_NIF,Rendimiento,Implementación de cache para historiales médicos frecuentes y optimización de la consulta SQL.,,api|optimizarConsultaSQL,
+Cálculo de Copagos,Error en el cálculo de copagos para ciertas especialidades médicas. Valores incorrectos. NIF: MOCK_NIF,Error de Cálculo,Se actualiza la tabla de tarifas y se corrige la fórmula de cálculo de copagos.,,manual,

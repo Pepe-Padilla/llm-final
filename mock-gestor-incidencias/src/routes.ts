@@ -512,7 +512,7 @@ const incidencias: Incidencia[] = [
     estado: "En curso",
     apertura: "09/01/2025 10:00:00 CEST",
     prioridad: "3 - Media",
-    descripcion: "La póliza lleva mucho tiempo en provisión sin finalizar. Póliza: POL001-FX-PROVISION NIF: 12345678A",
+    descripcion: "Hay demoras excesivas en la provisión de pólizas a través de la API del sistema. Póliza: POL001-FX-PROVISION NIF: 12345678A",
     historial: []
   },
   {
@@ -523,7 +523,7 @@ const incidencias: Incidencia[] = [
     estado: "En curso",
     apertura: "09/01/2025 11:30:00 CEST",
     prioridad: "2 - Alta",
-    descripcion: "Cliente reclama por exceso de tiempo en provisión de póliza. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B",
+    descripcion: "La póliza permanece en estado de provisión durante un período prolongado, lo que indica una demora en el proceso de activación a través de la API de provisión. Póliza: POL002-FX-PROVISION-OLD NIF: 87654321B",
     historial: []
   },
   {
@@ -534,7 +534,7 @@ const incidencias: Incidencia[] = [
     estado: "En curso",
     apertura: "09/01/2025 14:00:00 CEST",
     prioridad: "3 - Media",
-    descripcion: "Cliente consulta sobre el estado de su póliza que debería estar finalizada. Póliza: POL003-FX-ACTIVA NIF: 11223344C",
+    descripcion: "Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exceso de tiempo en la provisión, detectado a través de una consulta a la API del sistema. Póliza: POL003-FX-ACTIVA NIF: 11223344C",
     historial: []
   },
   // Casos para disconformidad

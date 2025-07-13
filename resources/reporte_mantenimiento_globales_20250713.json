@@ -1,0 +1,9 @@
+{
+  "fecha": "2025-07-13T18:33:24.145819",
+  "umbral_similitud": 0.65,
+  "procesadas": 10,
+  "nuevas": 3,
+  "porcentaje": 30.0,
+  "tiempo_segundos": 68.1,
+  "archivo": "resources/PROBLEMAS_GLOBALES_20250713.csv"
+}

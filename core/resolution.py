@@ -65,6 +65,9 @@ def process_resolution(resolution, incidencia, keywords):
             resolution_logger.error("Error cerrando incidencia", extra_data={
                 "action": "close_incident_error",
                 "codIncidencia": incidencia["codIncidencia"],
+                "resolution_type": resolution_type,
+                "solucion": solucion,
+                "incidencia": incidencia,
                 "error": str(e)
             })
         resolution["estado_api"] = estado_api
@@ -84,6 +87,8 @@ def process_resolution(resolution, incidencia, keywords):
             resolution_logger.error("Error poniendo incidencia en espera", extra_data={
                 "action": "wait_incident_error",
                 "codIncidencia": incidencia["codIncidencia"],
+                "incidencia": incidencia,
+                "solucion": solucion,
                 "error": str(e)
             })
         resolution["estado_api"] = estado_api
@@ -104,6 +109,8 @@ def process_resolution(resolution, incidencia, keywords):
             resolution_logger.error("Error reasignando incidencia", extra_data={
                 "action": "reassign_incident_error",
                 "codIncidencia": incidencia["codIncidencia"],
+                "incidencia": incidencia,
+                "solucion": solucion,
                 "error": str(e)
             })
         resolution["estado_api"] = estado_api
@@ -146,6 +153,9 @@ def process_resolution(resolution, incidencia, keywords):
             resolution_logger.error("Error en llamada al sistema", extra_data={
                 "action": "system_api_error",
                 "codIncidencia": incidencia["codIncidencia"],
+                "incidencia": incidencia,
+                "solucion": solucion,
+                "keywords": keywords,
                 "error": str(e)
             })
             response = {

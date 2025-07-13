@@ -117,14 +117,16 @@ class SystemMetrics:
             main_logger.warning("⚠️ Alta tasa de rechazo del crítico", extra_data={
                 "action": "high_rejection_rate_warning",
                 "rejection_rate": rejection_rate,
-                "approval_rate": summary["critic_performance"]["approval_rate"]
+                "approval_rate": summary["critic_performance"]["approval_rate"],
+                "summary": summary
             })
         
         if summary["solution_effectiveness"]["incidents_without_solutions"] > summary["solution_effectiveness"]["incidents_with_solutions"]:
             main_logger.warning("⚠️ Muchas incidencias sin soluciones en catálogo", extra_data={
                 "action": "low_solution_coverage_warning",
                 "without_solutions": summary["solution_effectiveness"]["incidents_without_solutions"],
-                "with_solutions": summary["solution_effectiveness"]["incidents_with_solutions"]
+                "with_solutions": summary["solution_effectiveness"]["incidents_with_solutions"],
+                "summary": summary
             })
 
 
