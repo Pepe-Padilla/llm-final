@@ -1,22 +1,17 @@
-import os
+"""Consultas a la base de datos vectorial."""
+
 from typing import List, Dict, Any
-from dotenv import load_dotenv
 from qdrant_client import QdrantClient
-from qdrant_client.http import models
 from .LLMEmbedding import get_embedding
 from .LLMLogger import log_llm_interaction
+from config import VECTOR_DB_URL, QUERY_LIMIT_VECTORDB
 
-# Load environment variables
-load_dotenv()
+def get_qdrant_client():
+    """Obtiene cliente de Qdrant."""
+    return QdrantClient(url=VECTOR_DB_URL)
 
-def get_qdrant_client() -> QdrantClient:
-    """Get a Qdrant client instance."""
-    return QdrantClient(
-        url=os.getenv("QDRANT_URL", "http://localhost:6333")
-    )
-
-def query_vector_db(query: str, limit: int = 2) -> List[Dict[str, Any]]:
-    """Query the vector database for similar incidents."""
+def query_vector_db(query: str, limit: int = QUERY_LIMIT_VECTORDB) -> List[Dict[str, Any]]:
+    """Consulta la base de datos vectorial por incidencias similares."""
     client = get_qdrant_client()
     query_vector = get_embedding(query)
     
@@ -35,7 +30,5 @@ def query_vector_db(query: str, limit: int = 2) -> List[Dict[str, Any]]:
         for hit in search_result
     ]
     
-    # Log the interaction
     log_llm_interaction("LLMQuery", f"query: {query}, limit: {limit}", f"results: {len(result)}")
-    
     return result 

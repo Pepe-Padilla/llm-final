@@ -931,3 +931,79 @@ timestamp,input,output
 ",Vector de 384 dimensiones
 2025-07-13T15:20:29.795838,El usuario no puede agregar información necesaria a un reembolso ya tramitado.,Vector de 384 dimensiones
 2025-07-13T15:20:36.607373,"La tarjeta dental solo se visualiza en el componente de Tarjeta Digital, indicando un problema con la visualización de datos.",Vector de 384 dimensiones
+2025-07-13T15:20:46.782966,"Los datos no se cargan en el componente de Reembolsos debido a una discrepancia en la comparación del MOCK_ID con las pólizas de alta. La solución implica cambiar la búsqueda por MOCK_ID a MOCK_NIF, lo que requiere una definición exhaustiva de las casuísticas y se deriva de la nueva versión del API.
+",Vector de 384 dimensiones
+2025-07-13T15:20:56.365728,"El componente Cuadro Médico presenta un fallo al no cargar pólizas. La causa se identifica en un cambio reciente en el API de MOCK_BUZON, que al incluir un MOCK_ID diferente al del cliente, impide la correcta recuperación de las pólizas, generando un comportamiento inesperado.
+",Vector de 384 dimensiones
+2025-07-13T15:21:03.470425,"El botón de acceso a la tarjeta digital en la pantalla final dirige a una URL incorrecta, apuntando a la URL de PRE.
+",Vector de 384 dimensiones
+2025-07-13T15:21:11.218650,"Se generó un PDF en blanco al utilizar la Tarjeta Digital. La causa fue la falta de carga del producto en la base de datos intermedia, lo cual se solucionó mediante la ejecución de un script de carga.",Vector de 384 dimensiones
+2025-07-13T15:21:18.347695,El titular no visualiza a los beneficiarios de la póliza debido a que la póliza consultada es de tipo MOCK_TYPE.,Vector de 384 dimensiones
+2025-07-13T15:21:25.113389,"Se presenta un fallo al intentar adjuntar una fotografía, lo cual redirige al usuario a la pantalla inicial.
+",Vector de 384 dimensiones
+2025-07-13T15:21:31.765019,"Ocurrió un error inesperado durante la finalización de una solicitud de autorizaciones.
+",Vector de 384 dimensiones
+2025-07-13T15:21:38.099653,No se cargan los apartados de autorizaciones al acceder a la web.,Vector de 384 dimensiones
+2025-07-13T15:21:44.458188,"Error al enviar un archivo después de haberlo completado y adjuntado.
+",Vector de 384 dimensiones
+2025-07-13T15:21:51.086240,"No se visualiza la póliza en el Cuadro Médico debido a un fallo en el código back.
+",Vector de 384 dimensiones
+2025-07-13T15:21:57.331087,"Al compartir un profesional, la URL generada es localhost.
+",Vector de 384 dimensiones
+2025-07-13T15:22:03.668246,Existe un enlace incorrecto en la sección de preguntas frecuentes del Cuadro Médico.,Vector de 384 dimensiones
+2025-07-13T15:22:11.000906,"No se visualizan asegurados al consultar la API de Terceros, específicamente al realizar la búsqueda por póliza (searchByPolicy), retornando un resultado vacío.",Vector de 384 dimensiones
+2025-07-13T15:22:17.721695,"No se genera traza en el componente de Gestión de Pólizas, identificado como un problema de código back.
+",Vector de 384 dimensiones
+2025-07-13T15:22:24.591281,"No se ha registrado el ID_Product en la base de datos de la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T15:22:31.804395,"Error de validación del NIF/CIF en el componente de Reembolsos, relacionado con un fallo en el validador web y en PRE.",Vector de 384 dimensiones
+2025-07-13T15:22:39.888639,"Acceso fallido al componente de Gestión de Pólizas, manifestado como ""Aspa Roja"". El problema se identifica a través de errores detectados en las APIs de terceros, específicamente en las visualizaciones de Kibana.
+",Vector de 384 dimensiones
+2025-07-13T15:22:47.595112,"La póliza no se está cargando correctamente debido a errores detectados en la API de un tercero, específicamente en la búsqueda por rol (searchByRol) que devuelve un bloque de insured vacío.
+",Vector de 384 dimensiones
+2025-07-13T15:22:54.864623,"El usuario no puede adjuntar la documentación en el paso correspondiente debido a que el botón de ""hacer foto"" o ""adjuntar archivos"" no está disponible.
+",Vector de 384 dimensiones
+2025-07-13T15:23:02.343083,"No se visualiza la póliza en el Cuadro Médico debido a un problema con la obtención de información de la segunda póliza en la operación SearchByPolicyOpt.
+",Vector de 384 dimensiones
+2025-07-13T15:23:08.937034,"Al adjuntar un documento, la sesión del usuario se interrumpe.
+",Vector de 384 dimensiones
+2025-07-13T15:23:15.017164,No se visualiza el historial de reembolsos.,Vector de 384 dimensiones
+2025-07-13T15:23:21.237059,Los beneficiarios no cargan en el módulo de reembolsos.,Vector de 384 dimensiones
+2025-07-13T15:23:28.391172,"Múltiples registros de asegurados aparecen en el sistema de reembolsos, junto con la duplicación de cuentas, impidiendo la introducción de nuevos datos.",Vector de 384 dimensiones
+2025-07-13T15:23:35.812028,"Un beneficiario no se muestra debido a la duplicación de NIFs ficticios (MOCK_NIF) en el sistema de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T15:23:42.464360,"La carga de la póliza falla debido a un error con la descripción de la oferta.
+",Vector de 384 dimensiones
+2025-07-13T15:23:48.762710,"No se muestran todos los beneficiarios en la Tarjeta Digital.
+",Vector de 384 dimensiones
+2025-07-13T15:23:55.265077,"No se permite descargar documentación debido a un fallo en el código MOCK_AGENT.
+",Vector de 384 dimensiones
+2025-07-13T15:24:01.914510,"Se produjo una inconsistencia en el intercambio de datos de asegurados dentro del componente de Gestión de Pólizas.
+",Vector de 384 dimensiones
+2025-07-13T15:24:08.105159,"Se presenta un error al cargar un beneficiario inactivo.
+",Vector de 384 dimensiones
+2025-07-13T15:24:14.136585,El proveedor presenta una incorrecta dirección de datos.,Vector de 384 dimensiones
+2025-07-13T15:24:22.505028,"La API de Terceros no está cargando la póliza ni el asegurado debido a que el usuario logueado presenta un campo `cancellationDate` informado en la llamada a `/search_by_policy` con una póliza en estado ALTA.
+",Vector de 384 dimensiones
+2025-07-13T15:24:28.818579,La tarjeta digital muestra una tarjeta dada de baja.,Vector de 384 dimensiones
+2025-07-13T15:24:37.503083,La validación de los datos del beneficiario falla cuando el campo acc_nif_beneficiary en la base de datos está vacío. Se requiere verificar el número de documento de la llamada de la asegurada a la que se le asigna la cuenta bancaria en estos casos.,Vector de 384 dimensiones
+2025-07-13T15:24:43.876536,El campo de Médico Realizador no permite el uso de comillas dobles.,Vector de 384 dimensiones
+2025-07-13T15:24:51.559458,"No se encuentra el reembolso debido a que el campo `lgAmbulatorio` se recibía como un entero en lugar de una cadena de texto en el mapeo de respuestas.
+",Vector de 384 dimensiones
+2025-07-13T15:24:58.423891,"La carga de pólizas y asegurados falla debido a caracteres especiales en el método getPoliciesByToken.
+",Vector de 384 dimensiones
+2025-07-13T15:25:04.331350,"Aparece un mensaje con letras blancas.
+",Vector de 384 dimensiones
+2025-07-13T15:25:11.001359,"Se produjo un fallo en la identificación de la provincia asociada a una solicitud, específicamente cuando esta no contiene caracteres especiales.
+",Vector de 384 dimensiones
+2025-07-13T15:25:18.148545,"Se produjo un error al solicitar autorización, específicamente debido a que el NIF (MOCK_NIF) no fue encontrado en Active Directory.
+",Vector de 384 dimensiones
+2025-07-13T15:25:25.074697,"Hay retrasos en la provisión de la póliza debido a un problema en la API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T15:25:32.265933,"Disconformidad del cliente con los tiempos de procesamiento o resolución de una póliza, originada por un fallo en la API del sistema de reembolsos.",Vector de 384 dimensiones
+2025-07-13T15:25:38.908280,Retraso en la provisión de fondos que resultó en una reclamación por exceso de tiempo.,Vector de 384 dimensiones
+2025-07-13T15:25:46.786966,"Existe una consulta sobre el estado de una póliza que se encuentra en proceso de provisión o reclamación debido a un exceso de tiempo en la provisión. La incidencia se originó en una API del sistema.
+",Vector de 384 dimensiones
+2025-07-13T15:25:53.622748,Existe una disconformidad debido al rechazo de una póliza a través de la API del sistema.,Vector de 384 dimensiones
+2025-07-13T15:26:00.461155,"Se reporta una consulta sobre el rechazo de una póliza, relacionada con una incidencia en la API del sistema.",Vector de 384 dimensiones
+2025-07-13T15:26:07.802131,"Se produjo un rechazo de apelación para una póliza, originado por un fallo en la API del sistema de reembolsos, indicando una disconformidad del cliente.",Vector de 384 dimensiones

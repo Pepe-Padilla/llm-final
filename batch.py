@@ -1,20 +1,20 @@
+"""Batch para subir incidencias a la base de datos vectorial."""
+import json
 import os
 import pandas as pd
-import uuid
-from dotenv import load_dotenv
+import time
+from datetime import datetime
+from typing import List, Dict, Any
 from observabilidad.logger import batch_logger
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 from llm.LLMGenerator import generate_summary
 from llm.LLMEmbedding import get_embedding
-import time
-
-# Load environment variables
-load_dotenv()
+from config import VECTOR_DB_URL, ENTORNO
 
 def init_vector_db():
     # Initialize Qdrant client
-    client = QdrantClient(url=os.getenv("VECTOR_DB_URL"))
+    client = QdrantClient(url=VECTOR_DB_URL)
     
     # Delete existing collections
     batch_logger.info("Limpiando colecciones existentes", extra_data={
@@ -32,7 +32,7 @@ def init_vector_db():
         pass
     
     # Set vector size based on environment
-    vector_size = 384 if os.getenv("ENTORNO") == "DESA" else 1536
+    vector_size = 384 if ENTORNO == "DESA" else 1536
     
     # Create new collection
     batch_logger.info("Creando nueva colección")
@@ -43,6 +43,7 @@ def init_vector_db():
             distance=models.Distance.COSINE
         )
     )
+    batch_logger.info("Colección creada exitosamente")
     
     return client
 
@@ -150,10 +151,6 @@ def main():
         )
 
     total_time = time.time() - start_time
-    
-    # Generar reporte simple
-    from datetime import datetime
-    import json
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
     report_path = f"resources/reporte_batch_{timestamp}.json"

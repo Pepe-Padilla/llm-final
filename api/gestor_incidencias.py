@@ -1,9 +1,10 @@
-import os
+"""API para gestión de incidencias."""
 import requests
-from typing import Dict, Any, List
+from typing import Dict, Any, Optional, List
 from datetime import datetime, timedelta
+from config import MOCK_GESTOR_URL
 
-BASE_URL = os.getenv("MOCK_GESTOR_URL", "http://localhost:3000")
+BASE_URL = MOCK_GESTOR_URL
 
 def get_incidencias(buzon: str = "GR_SAL_COMP_AUTORIZACIONES") -> List[Dict[str, Any]]:
     """Get open incidents. If buzon is provided, filter by that mailbox."""

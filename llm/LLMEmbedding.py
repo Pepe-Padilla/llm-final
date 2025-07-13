@@ -1,32 +1,25 @@
-import os
+"""LLM para generar embeddings."""
+
 from typing import List
-from dotenv import load_dotenv
-from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_ollama import OllamaEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 from .LLMLogger import log_llm_interaction
-
-# Load environment variables
-load_dotenv()
-
-def get_embeddings():
-    """Get the appropriate embedding model based on environment."""
-    if os.getenv("ENTORNO") == "DESA":
-        return OllamaEmbeddings(
-            base_url=os.getenv("OLLAMA_BASE_URL"),
-            model="all-minilm"
-        )
-    else:
-        return OpenAIEmbeddings(
-            model="text-embedding-ada-002",
-            openai_api_key=os.getenv("OPENAI_API_KEY")
-        )
+from config import ENTORNO, OLLAMA_BASE_URL, OPENAI_API_KEY, LLM_MODEL_DESA
 
 def get_embedding(text: str) -> List[float]:
-    """Generate an embedding for the given text."""
-    embeddings = get_embeddings()
-    embedding_result = embeddings.embed_query(text)
+    """Obtiene el embedding de un texto."""
+    if ENTORNO == "DESA":
+        embedding_model = OllamaEmbeddings(
+            base_url=OLLAMA_BASE_URL,
+            model=LLM_MODEL_DESA,
+        )
+    else:
+        embedding_model = OpenAIEmbeddings(
+            openai_api_key=OPENAI_API_KEY
+        )
     
-    # Log the interaction (with truncated result for readability)
-    log_llm_interaction("LLMEmbedding", text, f"Vector de {len(embedding_result)} dimensiones")
+    embedding = embedding_model.embed_query(text)
     
-    return embedding_result 
+    log_llm_interaction("LLMEmbedding", f"text: {text[:100]}...", f"embedding length: {len(embedding)}")
+    
+    return embedding 

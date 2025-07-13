@@ -1,8 +1,9 @@
-import os
+"""API para sistema de gestión."""
 import requests
 from typing import Dict, Any
+from config import MOCK_SISTEMA_URL
 
-BASE_URL = os.getenv("MOCK_SISTEMA_URL", "http://localhost:3001")
+BASE_URL = MOCK_SISTEMA_URL
 
 def get_poliza(numero_poliza: str) -> Dict[str, Any]:
     """Get policy information."""

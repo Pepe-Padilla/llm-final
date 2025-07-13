@@ -1,16 +1,11 @@
-import os
-import json
-from dotenv import load_dotenv
-from qdrant_client import QdrantClient
+"""Backup de la base de datos vectorial."""
 from datetime import datetime
+from qdrant_client import QdrantClient
+from config import VECTOR_DB_URL
 
-# Load environment variables
-load_dotenv()
+client = QdrantClient(url=VECTOR_DB_URL)
 
 def get_all_data():
-    # Initialize Qdrant client
-    client = QdrantClient(url=os.getenv("VECTOR_DB_URL"))
-    
     # Get all points from the collection
     points = client.scroll(
         collection_name="incidencias",

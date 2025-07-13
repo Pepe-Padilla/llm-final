@@ -1,28 +1,25 @@
-import os
+"""LLM para generar resoluciones automáticas."""
+
 from typing import Dict, Any, List
-from dotenv import load_dotenv
 from langchain_ollama import OllamaLLM
 from langchain_community.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from .LLMLogger import log_llm_interaction
-
-# Load environment variables
-load_dotenv()
+from config import ENTORNO, OLLAMA_BASE_URL, OPENAI_API_KEY, LLM_MODEL_DESA, LLM_MODEL_PROD, LLM_TEMPERATURE
 
 def get_llm():
-    """Get the appropriate LLM based on environment."""
-    if os.getenv("ENTORNO") == "DESA":
-        # return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="llama3", temperature=0)
-        return OllamaLLM(base_url=os.getenv("OLLAMA_BASE_URL"), model="gemma3", temperature=0)
+    """Obtiene el LLM apropiado según el entorno."""
+    if ENTORNO == "DESA":
+        return OllamaLLM(base_url=OLLAMA_BASE_URL, model=LLM_MODEL_DESA, temperature=LLM_TEMPERATURE)
     else:
         return ChatOpenAI(
-            model="gpt-4-mini",
-            temperature=0,
-            api_key=os.getenv("OPENAI_API_KEY")
+            model=LLM_MODEL_PROD,
+            temperature=LLM_TEMPERATURE,
+            api_key=OPENAI_API_KEY
         )
 
 def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, Any]]) -> str:
-    """Get the best resolution from a list of relevant solutions."""
+    """Obtiene la mejor resolución de una lista de soluciones relevantes."""
     llm = get_llm()
     
     # Read prompt from file
@@ -49,5 +46,4 @@ def get_resolution(incident: Dict[str, Any], relevant_solutions: List[Dict[str, 
     # Log the interaction
     log_llm_interaction("LLMResolution", f"incident: {incident}, solutions: {len(relevant_solutions)}", resolution)
 
-    # Return the raw response string for the calling service to handle
     return resolution 

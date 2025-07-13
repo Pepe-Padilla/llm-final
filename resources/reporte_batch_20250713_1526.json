@@ -1,0 +1,10 @@
+{
+  "fecha": "2025-07-13T15:26:07.836642",
+  "tiempo_total_segundos": 447.02,
+  "archivos_procesados": [
+    "PROBLEMAS_GLOBALES.csv"
+  ],
+  "total_documentos_cargados": 63,
+  "base_datos_vectorial": "inicializada y cargada",
+  "estado": "completado exitosamente"
+}

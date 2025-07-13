@@ -1,7 +1,4 @@
-import os
-import pandas as pd
-import uuid
-from datetime import datetime, timedelta
+from datetime import datetime
 from dotenv import load_dotenv
 from observabilidad.logger import batch_logger
 from qdrant_client import QdrantClient
@@ -12,8 +9,6 @@ from llm.LLMSuggestion import suggest_solution
 from llm.LLMEmbedding import get_embedding
 from llm.LLMQuery import query_vector_db
 from utils import convert_json_response
-import json
-import time
 
 # Load environment variables
 load_dotenv()
