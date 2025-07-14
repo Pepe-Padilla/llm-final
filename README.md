@@ -2,11 +2,16 @@
 ### LLM y proyecto final - Proyecto para el Bootcamp
 Este proyecto es un entregable para la práctica del Master Bootcamp Inteligencia Artificial Full Stack Edición III realizado por el centro de formación [@Keepcoding](https://github.com/KeepCoding)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=flat-square)](https://opensource.org/licenses/GPL-3.0)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg?style=flat-square)](https://www.python.org/downloads/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg?style=flat-square)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg?style=flat-square)](https://nodejs.org/)
 [![Docker](https://img.shields.io/badge/docker-compose-blue.svg?style=flat-square)](https://docs.docker.com/compose/)
+[![Ollama](https://img.shields.io/badge/Ollama-Local%20LLMs-orange.svg?style=flat-square)](https://ollama.ai/)
 [![MLflow](https://img.shields.io/badge/MLflow-2.0+-orange.svg?style=flat-square)](https://mlflow.org/)
 [![Qdrant](https://img.shields.io/badge/Qdrant-VectorDB-green.svg?style=flat-square)](https://qdrant.tech/)
+[![Grafana](https://img.shields.io/badge/Grafana-Observability-purple.svg?style=flat-square)](https://grafana.com/)
+[![Loki](https://img.shields.io/badge/Loki-Log%20Aggregation-blue.svg?style=flat-square)](https://grafana.com/oss/loki/)
 
 ---
 
