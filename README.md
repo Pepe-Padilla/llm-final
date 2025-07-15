@@ -22,7 +22,7 @@ Este proyecto implementa un sistema avanzado de gestión automática de incidenc
 ## Diagrama de Flujo del Sistema
 
 El flujo del sistema se puede visualizar en el siguiente diagrama:
-![Diagrama de Flujo del Sistema](./resources/solucionIA2_.jpg)
+![Diagrama de Flujo del Sistema](./resources/SolucionIA2_.jpg)
 
 ## Propósito del Proyecto
 

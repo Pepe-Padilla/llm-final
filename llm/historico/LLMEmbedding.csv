@@ -1824,3 +1824,129 @@ timestamp,input,output
 2025-07-13T23:20:18.884627,text: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NI...,embedding length: 384
 2025-07-13T23:20:31.979034,text: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de...,embedding length: 384
 2025-07-13T23:20:42.588147,text: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es...,embedding length: 384
+2025-07-15T18:26:24.384443,"text: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, l...",embedding length: 384
+2025-07-15T18:26:41.932329,"text: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo la letra en blanco....",embedding length: 384
+2025-07-15T18:26:52.686426,"text: El sistema no muestra los mensajes de reembolso, con la letra en blanco, requiriendo la copia y pega...",embedding length: 384
+2025-07-15T18:27:27.617088,text: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Conte...,embedding length: 384
+2025-07-15T18:27:43.425180,"text: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío....",embedding length: 384
+2025-07-15T18:27:54.125143,"text: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con det...",embedding length: 384
+2025-07-15T18:28:32.264689,text: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los docume...,embedding length: 384
+2025-07-15T18:28:46.084109,text: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. ...,embedding length: 384
+2025-07-15T18:28:57.320709,text: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención de...,embedding length: 384
+2025-07-15T18:30:54.887512,text: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: M...,embedding length: 384
+2025-07-15T18:31:10.015267,"text: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado....",embedding length: 384
+2025-07-15T18:31:20.897610,"text: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el tit...",embedding length: 384
+2025-07-15T18:32:26.390459,text: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar ...,embedding length: 384
+2025-07-15T18:32:41.418813,text: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar...,embedding length: 384
+2025-07-15T18:32:52.296329,text: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error ...,embedding length: 384
+2025-07-15T18:33:25.840514,text: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto....,embedding length: 384
+2025-07-15T18:33:40.877477,text: Error de validación de IBAN en reembolsos...,embedding length: 384
+2025-07-15T18:33:51.899158,text: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto...,embedding length: 384
+2025-07-15T18:35:07.422195,text: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_N...,embedding length: 384
+2025-07-15T18:35:22.265317,"text: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder....",embedding length: 384
+2025-07-15T18:35:32.922999,"text: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante....",embedding length: 384
+2025-07-15T18:36:59.097115,"text: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo H...",embedding length: 384
+2025-07-15T18:37:14.364953,"text: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTM...",embedding length: 384
+2025-07-15T18:37:25.375329,"text: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo...",embedding length: 384
+2025-07-15T18:40:23.837204,text: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la infor...,embedding length: 384
+2025-07-15T18:40:37.703728,text: Error al cargar información de pólizas en el componente de gestión....,embedding length: 384
+2025-07-15T18:40:48.297328,text: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información....,embedding length: 384
+2025-07-15T18:42:15.001512,text: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la soli...,embedding length: 384
+2025-07-15T18:42:28.437483,"text: Error al completar el proceso de autorización, el sistema genera un error inesperado....",embedding length: 384
+2025-07-15T18:42:39.059251,"text: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error in...",embedding length: 384
+2025-07-15T18:44:31.690229,text: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF...,embedding length: 384
+2025-07-15T18:44:45.403981,text: No se puede descargar la documentación de la póliza. Error al acceder a los documentos....,embedding length: 384
+2025-07-15T18:44:56.150556,text: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los arch...,embedding length: 384
+2025-07-15T18:46:39.376480,text: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_...,embedding length: 384
+2025-07-15T18:46:53.096362,text: Se presentan datos de asegurados incorrectos en la visualización....,embedding length: 384
+2025-07-15T18:47:03.560168,"text: Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY...",embedding length: 384
+2025-07-15T18:48:09.805114,text: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrec...,embedding length: 384
+2025-07-15T18:48:23.277213,text: Error de validación del NIF/CIF en el proceso de reembolso....,embedding length: 384
+2025-07-15T18:48:33.933300,"text: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto....",embedding length: 384
+2025-07-15T18:49:36.406017,text: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF...,embedding length: 384
+2025-07-15T18:49:49.831309,"text: No se genera PDF de tarjeta digital, el documento resultante es en blanco...",embedding length: 384
+2025-07-15T18:50:00.667448,"text: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco...",embedding length: 384
+2025-07-15T18:51:10.556586,text: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introdu...,embedding length: 384
+2025-07-15T18:51:23.857219,text: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador...,embedding length: 384
+2025-07-15T18:51:34.714063,"text: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales n...",embedding length: 384
+2025-07-15T18:53:24.029009,text: Hay demoras excesivas en la provisión de pólizas a través de la API del sistema. Póliza: POL001-FX-P...,embedding length: 384
+2025-07-15T18:53:37.795503,text: Se presenta retraso en la provisión de pólizas a través de la API....,embedding length: 384
+2025-07-15T18:53:48.826785,"text: Existe un problema de demora en el proceso de provisión de pólizas, específicamente para la póliza P...",embedding length: 384
+2025-07-15T18:54:58.247660,"text: La póliza permanece en estado de provisión durante un período prolongado, lo que indica una demora e...",embedding length: 384
+2025-07-15T18:55:12.298393,text: Se presenta reclamación por demora en la activación de la póliza POL002-FX-PROVISION-OLD a través de...,embedding length: 384
+2025-07-15T18:55:23.379115,"text: La póliza POL002-FX-PROVISION-OLD se encuentra en estado de provisión de forma excesiva, generando u...",embedding length: 384
+2025-07-15T18:55:54.720282,text: Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exces...,embedding length: 384
+2025-07-15T18:56:08.907972,"text: No se visualiza correctamente el estado de la póliza POL003-FX-ACTIVA, que se encuentra en proceso d...",embedding length: 384
+2025-07-15T18:56:20.090184,"text: Se ha detectado una anomalía en el estado de la póliza POL003-FX-ACTIVA, relacionada con provisiones...",embedding length: 384
+2025-07-15T18:57:29.136040,text: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55...,embedding length: 384
+2025-07-15T18:57:42.746272,"text: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D....",embedding length: 384
+2025-07-15T18:57:53.526098,"text: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF ...",embedding length: 384
+2025-07-15T18:58:24.439843,text: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E...,embedding length: 384
+2025-07-15T18:58:37.872754,text: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información....,embedding length: 384
+2025-07-15T18:58:48.849997,text: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud d...,embedding length: 384
+2025-07-15T18:59:20.054798,text: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NI...,embedding length: 384
+2025-07-15T18:59:33.736795,text: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de...,embedding length: 384
+2025-07-15T18:59:44.660487,text: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es...,embedding length: 384
+2025-07-15T20:35:19.542394,"text: Error: Indica que los mensajes de aviso de reembolsos la letra aparece en blanco y no se ven bien, l...",embedding length: 384
+2025-07-15T20:35:36.326479,"text: No visualiza correctamente los mensajes de aviso de reembolso, apareciendo en blanco....",embedding length: 384
+2025-07-15T20:35:46.856705,"text: El sistema no muestra los mensajes de reembolso, con la letra en blanco, impidiendo su lectura....",embedding length: 384
+2025-07-15T20:36:20.106114,text: ERROR AL ENVIAR AUTORIZACION 01/01/2025 10:00H Pantalla en que se produce el error: Al enviar. Conte...,embedding length: 384
+2025-07-15T20:36:35.264410,"text: No se está enviando la autorización correctamente, se presenta un error en la pantalla de envío....",embedding length: 384
+2025-07-15T20:36:45.564204,"text: Existe un fallo al intentar enviar la autorización a través de la aplicación y el navegador, con det...",embedding length: 384
+2025-07-15T20:37:22.407742,text: No se puede visualizar la documentación general de la póliza. Error al intentar acceder a los docume...,embedding length: 384
+2025-07-15T20:37:35.728765,text: Imposibilidad de visualizar la documentación general de la póliza. Error al acceder a los archivos. ...,embedding length: 384
+2025-07-15T20:37:46.609596,text: Se presenta un fallo al cargar la documentación general de la póliza. Se requiere la intervención de...,embedding length: 384
+2025-07-15T20:39:39.264431,text: No se visualizan todos los beneficiarios en el módulo de reembolsos. Solo aparece el titular. NIF: M...,embedding length: 384
+2025-07-15T20:39:53.727492,"text: No se muestran todos los beneficiarios en el módulo de reembolsos, solo aparece el titular indicado....",embedding length: 384
+2025-07-15T20:40:04.235974,"text: El módulo de reembolsos no muestra la totalidad de los beneficiarios, únicamente se visualiza el tit...",embedding length: 384
+2025-07-15T20:41:07.182656,text: No se puede adjuntar documentación en el proceso de reembolso. El sistema muestra error al intentar ...,embedding length: 384
+2025-07-15T20:41:21.582939,text: No se permite adjuntar archivos en el proceso de reembolso. El sistema devuelve un error al intentar...,embedding length: 384
+2025-07-15T20:41:32.271076,text: El usuario MOCK_NAME no puede adjuntar documentación al realizar el reembolso. Se registra un error ...,embedding length: 384
+2025-07-15T20:42:04.802784,text: Error al validar el IBAN en el proceso de reembolso. El sistema indica que el formato es incorrecto....,embedding length: 384
+2025-07-15T20:42:19.225340,text: Error de validación de IBAN en reembolsos...,embedding length: 384
+2025-07-15T20:42:29.935198,text: El sistema rechaza los reembolsos debido a un formato de IBAN incorrecto...,embedding length: 384
+2025-07-15T20:43:42.122981,text: No se puede visualizar la tarjeta digital. El sistema muestra error al intentar acceder. NIF: MOCK_N...,embedding length: 384
+2025-07-15T20:43:56.404235,"text: La tarjeta digital no se visualiza correctamente, mostrando un error al acceder....",embedding length: 384
+2025-07-15T20:44:06.850304,"text: Existe un fallo al intentar acceder a la tarjeta digital, según reportado por el solicitante....",embedding length: 384
+2025-07-15T20:45:29.812243,"text: Error al acceder al cuadro médico público. Al seleccionar especialidad médica, se descarga archivo H...",embedding length: 384
+2025-07-15T20:45:44.644941,"text: No se visualiza el cuadro médico público al seleccionar una especialidad, se descarga un archivo HTM...",embedding length: 384
+2025-07-15T20:45:55.312600,"text: Error de visualización en el cuadro médico público: al elegir una especialidad, se genera un archivo...",embedding length: 384
+2025-07-15T20:48:46.873949,text: No se pueden visualizar los datos de la póliza en el componente de gestión. Error al cargar la infor...,embedding length: 384
+2025-07-15T20:49:00.180192,text: Error al cargar información de pólizas en el componente de gestión....,embedding length: 384
+2025-07-15T20:49:10.561254,text: Imposibilidad de visualizar los datos de la póliza; fallo en la carga de la información....,embedding length: 384
+2025-07-15T20:50:33.470766,text: Error al finalizar el proceso de autorización. El sistema muestra error inesperado al enviar la soli...,embedding length: 384
+2025-07-15T20:50:46.323206,"text: Error al completar el proceso de autorización, el sistema genera un error inesperado....",embedding length: 384
+2025-07-15T20:50:56.701862,"text: Se presenta un fallo en la finalización del proceso de autorización, el sistema devuelve un error in...",embedding length: 384
+2025-07-15T20:52:45.118571,text: No se puede descargar la documentación de la póliza. Error al intentar acceder a los documentos. NIF...,embedding length: 384
+2025-07-15T20:52:58.342611,text: No se puede descargar la documentación de la póliza. Error al acceder a los documentos....,embedding length: 384
+2025-07-15T20:53:08.834902,text: Imposibilidad de descargar la documentación de la póliza. Se presenta un error al acceder a los arch...,embedding length: 384
+2025-07-15T20:54:48.141573,text: Los datos de los asegurados aparecen intercambiados en la visualización. NIF: MOCK_NIF Póliza: MOCK_...,embedding length: 384
+2025-07-15T20:55:01.561241,text: Se presentan datos de asegurados incorrectos en la visualización....,embedding length: 384
+2025-07-15T20:55:11.790751,"text: Existe error en la asignación de datos de asegurados, observando NIF: MOCK_NIF y Póliza: MOCK_POLICY...",embedding length: 384
+2025-07-15T20:56:15.257457,text: Error al validar el NIF/CIF en el proceso de reembolso. El sistema indica que el formato es incorrec...,embedding length: 384
+2025-07-15T20:56:28.377287,text: Error de validación del NIF/CIF en el proceso de reembolso....,embedding length: 384
+2025-07-15T20:56:38.899153,"text: No se valida correctamente el NIF/CIF al realizar el reembolso, indicando formato incorrecto....",embedding length: 384
+2025-07-15T20:57:39.100712,text: El PDF de la tarjeta digital se genera en blanco. No se visualiza ningún contenido. NIF: MOCK_NIF...,embedding length: 384
+2025-07-15T20:57:51.986421,"text: No se genera PDF de tarjeta digital, el documento resultante es en blanco...",embedding length: 384
+2025-07-15T20:58:02.629231,"text: El PDF de la tarjeta digital no muestra información, el documento generado es un archivo en blanco...",embedding length: 384
+2025-07-15T20:59:09.674367,text: El campo de médico realizador no acepta caracteres especiales ni comillas. Error al intentar introdu...,embedding length: 384
+2025-07-15T20:59:22.537964,text: No se permite la introducción de caracteres especiales ni comillas en el campo del médico realizador...,embedding length: 384
+2025-07-15T20:59:33.117996,"text: Error al registrar el nombre del médico realizador, ya que no son permitidos caracteres especiales n...",embedding length: 384
+2025-07-15T21:01:18.222922,text: Hay demoras excesivas en la provisión de pólizas a través de la API del sistema. Póliza: POL001-FX-P...,embedding length: 384
+2025-07-15T21:01:31.346723,text: Se presenta retraso en la provisión de pólizas a través de la API....,embedding length: 384
+2025-07-15T21:01:42.078543,"text: Existe un problema de demora en el proceso de provisión de pólizas, específicamente para la póliza P...",embedding length: 384
+2025-07-15T21:02:48.661753,"text: La póliza permanece en estado de provisión durante un período prolongado, lo que indica una demora e...",embedding length: 384
+2025-07-15T21:03:02.164211,text: Se presenta reclamación por demora en la activación de la póliza POL002-FX-PROVISION-OLD a través de...,embedding length: 384
+2025-07-15T21:03:12.877029,"text: La póliza POL002-FX-PROVISION-OLD se encuentra en estado de provisión de forma excesiva, generando u...",embedding length: 384
+2025-07-15T21:03:43.013968,text: Existe un problema con el estado de una póliza relacionada con provisiones o reclamaciones por exces...,embedding length: 384
+2025-07-15T21:03:56.623680,"text: No se visualiza correctamente el estado de la póliza POL003-FX-ACTIVA, que se encuentra en proceso d...",embedding length: 384
+2025-07-15T21:04:07.511918,"text: Se ha detectado una anomalía en el estado de la póliza POL003-FX-ACTIVA, relacionada con provisiones...",embedding length: 384
+2025-07-15T21:05:13.902627,text: Cliente expresa disconformidad con el rechazo de su póliza. Póliza: POL004-DISCONF-RECHAZADA NIF: 55...,embedding length: 384
+2025-07-15T21:05:26.998174,"text: El cliente presenta una queja por el rechazo de la póliza POL004, NIF 55667788D....",embedding length: 384
+2025-07-15T21:05:37.577170,"text: Se reporta inconformidad del cliente con la denegación de la póliza POL004, identificada con el NIF ...",embedding length: 384
+2025-07-15T21:06:07.458017,text: Cliente no entiende por qué su póliza fue rechazada. Póliza: POL005-DISCONF-ACTIVA NIF: 99887766E...,embedding length: 384
+2025-07-15T21:06:20.579132,text: El cliente consulta el rechazo de su póliza POL005-DISCONF-ACTIVA y solicita información....,embedding length: 384
+2025-07-15T21:06:31.313439,text: Se requiere investigar el motivo del rechazo de la póliza POL005-DISCONF-ACTIVA según la solicitud d...,embedding length: 384
+2025-07-15T21:07:01.542159,text: Cliente apela el rechazo de su póliza por no cumplir requisitos. Póliza: POL006-DISCONF-RECHAZADA NI...,embedding length: 384
+2025-07-15T21:07:14.667687,text: Rechazo de póliza POL006-DISCONF-RECHAZADA: El cliente presenta apelación debido a incumplimiento de...,embedding length: 384
+2025-07-15T21:07:25.232787,text: Se ha recibido una apelación por el rechazo de la póliza POL006-DISCONF-RECHAZADA. El solicitante es...,embedding length: 384
